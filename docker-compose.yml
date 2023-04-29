@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  app:
+    image: 'ynovice/felicita'
+    build:
+      context: .
+    container_name: felicita-application
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://felicita-postgres:5432/felicita
+      - SPRING_DATASOURCE_USERNAME=felicita
+      - SPRING_DATASOURCE_PASSWORD=felicita
+
+  db:
+    image: 'postgres'
+    container_name: felicita-postgres
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=felicita
+      - POSTGRES_PASSWORD=felicita
