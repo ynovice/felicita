@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Development" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <option name="ACTIVE_PROFILES" value="dev" />
+    <envs>
+      <env name="SPRING_DATASOURCE_PASSWORD" value="felicita" />
+      <env name="SPRING_DATASOURCE_URL" value="jdbc:postgresql://localhost:5432/felicita" />
+      <env name="SPRING_DATASOURCE_USERNAME" value="felicita" />
+    </envs>
+    <module name="felicita" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.github.ynovice.felicita.Application" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

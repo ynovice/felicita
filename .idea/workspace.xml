@@ -4,20 +4,81 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Initial commit.">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Backend__Postgres___API_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Development.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Postgres_Docker_Container.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/React_Frontend.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/logos/google.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/logos/vk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/ui/down-arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/Api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/ProxiedButton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/constants.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/contexts/CsrfContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/contexts/UserContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/css/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/css/ErrorPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/css/Header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/css/LoginPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/css/MainPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/css/ProfilePage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/exception/BadRequestException.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/exception/FailedRequestException.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/exception/InternalServerError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/exception/NotAuthorizedException.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/exception/RedirectionException.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/hoc/inCage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/hoc/requiresUser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/hoc/withHeader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ErrorPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/LoginPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/MainPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/setupProxy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/config/CorsProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/config/OAuth2Properties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/CsrfController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/exception/BadRequestException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/exception/InternalServerError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/AuthServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/OAuth2Credential.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/OAuth2CredentialId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/OAuth2CredentialDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/response/CsrfResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/security/CustomAuthenticationSuccessHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/security/CustomCsrfTokenRequestHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/security/CustomOAuth2UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/security/CustomOidcUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/security/TrailingSlashRedirectingFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/CsrfService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/CsrfServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,13 +88,26 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
         <option value="Class" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupnpm">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectId" id="2P63sDXABX79Sl4zSJMCZfRb5uP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -41,37 +115,71 @@
     <option name="showMembers" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "17",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/ynovice/Projects/felicita/frontend/public&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;d41d8cd98f00b204e9800998ecf8427e&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/snap/intellij-idea-ultimate/426/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.github.ynovice.felicita.service.impl" />
+      <recent name="com.github.ynovice.felicita.model" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/public" />
+      <recent name="$PROJECT_DIR$/frontend/public/logos" />
+      <recent name="$PROJECT_DIR$/frontend/src" />
+      <recent name="$PROJECT_DIR$/frontend/src/contexts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/public/ui" />
+      <recent name="$PROJECT_DIR$/frontend/src" />
+      <recent name="$PROJECT_DIR$/frontend/src/components" />
+    </key>
+  </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean" />
       <command value="mvn package" />
+      <command value=".Header .links-row .links-right, .Header .links-row .links-left" />
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="npm.React Frontend">
+    <list>
+      <item itemvalue="Docker.Postgres Docker Container" />
+      <item itemvalue="Docker.Backend (Postgres + API)" />
+      <item itemvalue="npm.React Frontend" />
+      <item itemvalue="Spring Boot.Development" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -81,11 +189,78 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1682725302870</updated>
-      <workItem from="1682725303923" duration="3302000" />
+      <workItem from="1682725303923" duration="6974000" />
+      <workItem from="1682763909627" duration="3150000" />
+      <workItem from="1682772118657" duration="749000" />
+      <workItem from="1682800694312" duration="195000" />
+      <workItem from="1682849164672" duration="8020000" />
+      <workItem from="1682863327143" duration="12853000" />
+      <workItem from="1682947853559" duration="5000" />
+      <workItem from="1682948155484" duration="83000" />
+      <workItem from="1683025713418" duration="9000" />
+      <workItem from="1683025792257" duration="19714000" />
+      <workItem from="1683110429144" duration="12192000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit.">
+      <created>1682728631672</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682728631672</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/security/CustomAuthenticationSuccessHandler.java</url>
+          <line>19</line>
+          <properties class="com.github.ynovice.felicita.security.CustomAuthenticationSuccessHandler" method="onAuthenticationSuccess">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/UserServiceImpl.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/config/WebConfig.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/security/TrailingSlashRedirectingFilter.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
