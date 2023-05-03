@@ -2,7 +2,8 @@ spring:
   profiles:
     active: ${SPRING_PROFILES_ACTIVE}
   datasource:
-    driver-class-name: org.postgresql.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  #    driver-class-name: org.postgresql.Driver
   security:
     oauth2:
       client:
