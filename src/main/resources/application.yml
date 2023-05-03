@@ -1,11 +1,25 @@
 spring:
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE}
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: ${SBERMARKET_MANAGER_POSTGRES_URL}
-    username: ${SBERMARKET_MANAGER_POSTGRES_USERNAME}
-    password: ${SBERMARKET_MANAGER_POSTGRES_PASSWORD}
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 1030707742527-ai4fj55uob9s20gc4h68rnqtv6i22n4o.apps.googleusercontent.com
+            client-secret: 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
 
   jpa:
-    generate-ddl: false
+    generate-ddl: true
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
+
+app:
+  cors:
+    maxAgeSecs: 3600
+    allowedOrigins:
+      - http://localhost:3000
+  oauth2:
+    redirectUri: "http://localhost:3000/"
