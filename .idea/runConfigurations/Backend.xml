@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Development" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-    <option name="ACTIVE_PROFILES" value="dev" />
+  <configuration default="false" name="Backend" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <option name="ACTIVE_PROFILES" value="dev,postgres" />
     <envs>
       <env name="SPRING_DATASOURCE_PASSWORD" value="felicita" />
       <env name="SPRING_DATASOURCE_URL" value="jdbc:postgresql://localhost:5432/felicita" />

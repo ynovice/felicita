@@ -17,30 +17,6 @@ function requiresUser(TargetComponent, errorPageMessage) {
         }
 
         return <TargetComponent />
-
-        // return (
-        //     <React.Fragment>
-        //         <UserConsumer>
-        //             {userContext => {
-        //
-        //                 if(!userContext.isLoaded) {
-        //                     return null;
-        //                 }
-        //
-        //                 if(userContext.hasError) {
-        //
-        //                     throw new Error("Не удаётся установить соединение с сервером, повторите попытку позднее.");
-        //                 }
-        //
-        //                 if(!userContext.user) {
-        //                     return <ErrorPage errorMessage={errorMessage} />;
-        //                 }
-        //
-        //                 return <TargetComponent />;
-        //             }}
-        //         </UserConsumer>
-        //     </React.Fragment>
-        // );
     }
 
     return RequiresUserComponent;
