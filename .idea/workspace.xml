@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Initial commit.">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application-mysql.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application-postgres.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Development.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Backend.xml" afterDir="false" />
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Create separate profiles for PostgreSQL and MySQl dbs. Remove unused code.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/hoc/requiresUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hoc/requiresUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/setupProxy.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +101,7 @@
       <command value=".Header .links-row .links-right, .Header .links-row .links-left" />
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Backend">
+  <component name="RunManager" selected="npm.React Frontend">
     <list>
       <item itemvalue="Docker.Postgres Docker Container" />
       <item itemvalue="Docker.Backend (Postgres + API)" />
@@ -134,7 +129,7 @@
       <workItem from="1683025792257" duration="19714000" />
       <workItem from="1683110429144" duration="12768000" />
       <workItem from="1683125366219" duration="6430000" />
-      <workItem from="1683202206266" duration="1286000" />
+      <workItem from="1683202206266" duration="1404000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1682728631672</created>
@@ -164,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683125519565</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Create separate profiles for PostgreSQL and MySQl dbs. Remove unused code.">
+      <created>1683203563091</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683203563092</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,7 +185,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit." />
+    <MESSAGE value="Create separate profiles for PostgreSQL and MySQl dbs. Remove unused code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create separate profiles for PostgreSQL and MySQl dbs. Remove unused code." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
