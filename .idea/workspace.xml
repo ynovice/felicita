@@ -4,9 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Create separate profiles for PostgreSQL and MySQl dbs. Remove unused code.">
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Delete setupProxy.js">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/AbstractItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/CartEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/Color.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/Image.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/ItemPhysicalCharacteristic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/Material.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/Purchase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/Size.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/SizeQuantity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/setupProxy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/OAuth2CredentialId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/OAuth2CredentialId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,9 +29,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Enum" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -101,7 +113,7 @@
       <command value=".Header .links-row .links-right, .Header .links-row .links-left" />
     </option>
   </component>
-  <component name="RunManager" selected="npm.React Frontend">
+  <component name="RunManager" selected="Spring Boot.Backend">
     <list>
       <item itemvalue="Docker.Postgres Docker Container" />
       <item itemvalue="Docker.Backend (Postgres + API)" />
@@ -129,7 +141,7 @@
       <workItem from="1683025792257" duration="19714000" />
       <workItem from="1683110429144" duration="12768000" />
       <workItem from="1683125366219" duration="6430000" />
-      <workItem from="1683202206266" duration="1404000" />
+      <workItem from="1683202206266" duration="10802000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1682728631672</created>
@@ -166,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683203563092</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Delete setupProxy.js">
+      <created>1683203713488</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1683203713488</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,7 +205,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit." />
     <MESSAGE value="Create separate profiles for PostgreSQL and MySQl dbs. Remove unused code." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create separate profiles for PostgreSQL and MySQl dbs. Remove unused code." />
+    <MESSAGE value="Delete setupProxy.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete setupProxy.js" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

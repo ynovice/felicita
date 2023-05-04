@@ -15,6 +15,7 @@ public class OAuth2CredentialId implements Serializable {
     @JoinColumn(nullable = false)
     private User user;
 
+    @Column(nullable = false)
     private String externalId;
 
     @Enumerated(EnumType.STRING)
