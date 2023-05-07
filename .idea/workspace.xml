@@ -4,21 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Delete setupProxy.js">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/AbstractItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/CartEntry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/Color.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/Image.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/ItemPhysicalCharacteristic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/Material.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/Purchase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/Size.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/SizeQuantity.java" afterDir="false" />
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Add method to create items to ItemService">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/request/CreateItemRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/request/CreateSizeQuantityRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/CategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/ColorRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/ImageRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/ItemRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/MaterialRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/SizeQuantityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/SizeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ItemService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ItemServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/validator/ItemValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/github/ynovice/felicita/service/ItemServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/application-test.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/OAuth2CredentialId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/OAuth2CredentialId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/AbstractItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/ItemPhysicalCharacteristic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/Material.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/SizeQuantity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/SizeQuantity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,11 +36,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -114,12 +122,33 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.Backend">
+    <configuration name="ItemServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="felicita" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.ynovice.felicita.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.github.ynovice.felicita.service" />
+      <option name="MAIN_CLASS_NAME" value="com.github.ynovice.felicita.service.ItemServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Docker.Postgres Docker Container" />
       <item itemvalue="Docker.Backend (Postgres + API)" />
+      <item itemvalue="JUnit.ItemServiceTest" />
       <item itemvalue="npm.React Frontend" />
       <item itemvalue="Spring Boot.Backend" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ItemServiceTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -141,7 +170,10 @@
       <workItem from="1683025792257" duration="19714000" />
       <workItem from="1683110429144" duration="12768000" />
       <workItem from="1683125366219" duration="6430000" />
-      <workItem from="1683202206266" duration="10802000" />
+      <workItem from="1683202206266" duration="18011000" />
+      <workItem from="1683360929098" duration="2657000" />
+      <workItem from="1683377420437" duration="11339000" />
+      <workItem from="1683457087533" duration="3145000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1682728631672</created>
@@ -185,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683203713488</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Create model entities">
+      <created>1683215586263</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683215586263</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +245,9 @@
     <MESSAGE value="Initial commit." />
     <MESSAGE value="Create separate profiles for PostgreSQL and MySQl dbs. Remove unused code." />
     <MESSAGE value="Delete setupProxy.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete setupProxy.js" />
+    <MESSAGE value="Create model entities" />
+    <MESSAGE value="Add method to create items to ItemService" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add method to create items to ItemService" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -226,14 +267,14 @@
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/config/WebConfig.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/security/TrailingSlashRedirectingFilter.java</url>
           <line>40</line>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/github/ynovice/felicita/service/ItemServiceTest.java</url>
+          <line>102</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

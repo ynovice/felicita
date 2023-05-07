@@ -20,5 +20,5 @@ public class Material {
     private String name;
 
     @ManyToMany(mappedBy = "materials", fetch = FetchType.LAZY)
-    private Set<ItemPhysicalCharacteristic> relatedCharacteristics;
+    private Set<Item> relatedItems;
 }

@@ -5,8 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.ZonedDateTime;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "items")
@@ -27,7 +26,7 @@ public class Item {
     @OneToMany(mappedBy = "item", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Image> images;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "items_categories",
             joinColumns = {@JoinColumn(name = "item_id", referencedColumnName = "id")},
@@ -35,9 +34,23 @@ public class Item {
     )
     private Set<Category> categories;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(referencedColumnName = "id", nullable = false)
-    private ItemPhysicalCharacteristic characteristic;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "items_materials",
+            joinColumns = {@JoinColumn(name = "item_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "material_id", referencedColumnName = "id")}
+    )
+    private Set<Material> materials;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "items_colors",
+            joinColumns = {@JoinColumn(name = "item_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "color_id", referencedColumnName = "id")}
+    )
+    private Set<Color> colors;
+
+    private Boolean hasPrint;
 
     @Column(nullable = false)
     private ZonedDateTime createdAt;
@@ -45,11 +58,24 @@ public class Item {
     @Column(nullable = false)
     private Integer price;
 
-    private boolean active;
+    private Boolean active;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "item", cascade = CascadeType.ALL)
-    private Set<SizeQuantity> sizesQuantities;
+    private List<SizeQuantity> sizesQuantities;
 
     @OneToMany(mappedBy = "item", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<CartEntry> cartEntries;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Item item = (Item) o;
+        return Objects.equals(id, item.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }

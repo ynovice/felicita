@@ -2,10 +2,12 @@ package com.github.ynovice.felicita.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "sizes_quantities")
+@NoArgsConstructor
 @Getter
 @Setter
 public class SizeQuantity {
@@ -32,4 +34,14 @@ public class SizeQuantity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(referencedColumnName = "id")
     private Purchase purchase;
+
+    public SizeQuantity(Size size, Integer quantity, Item item) {
+        this.size = size;
+        this.quantity = quantity;
+        this.item = item;
+    }
+
+    public Long getSizeId() {
+        return size == null ? null : size.getId();
+    }
 }
