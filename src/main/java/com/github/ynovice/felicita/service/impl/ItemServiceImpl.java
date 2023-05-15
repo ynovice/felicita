@@ -16,10 +16,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.DataBinder;
 
 import java.time.ZonedDateTime;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -36,7 +33,7 @@ public class ItemServiceImpl implements ItemService {
     private final SizeRepository sizeRepository;
 
     @Override
-    public Item createItem(CreateItemRequestDto requestDto) {
+    public Item createItem(@NonNull CreateItemRequestDto requestDto) {
 
         Item item = new Item();
 
@@ -122,6 +119,11 @@ public class ItemServiceImpl implements ItemService {
         imageRepository.saveAll(item.getImages());
 
         return item;
+    }
+
+    @Override
+    public Optional<Item> getById(@NonNull Long id) {
+        return itemRepository.findById(id);
     }
 
     public BindingResult validate(@NonNull Item item) {
