@@ -25,6 +25,13 @@ public class ItemController {
         );
     }
 
+    @Secured("ROLE_ADMIN")
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteById(@PathVariable Long id) {
+        itemService.deleteById(id);
+        return ResponseEntity.ok().build();
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<ItemDto> getById(@PathVariable Long id) {
 

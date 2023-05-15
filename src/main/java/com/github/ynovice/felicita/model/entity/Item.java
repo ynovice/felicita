@@ -26,7 +26,10 @@ public class Item {
     @OneToMany(mappedBy = "item", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Image> images;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(
+            fetch = FetchType.EAGER,
+            cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH}
+    )
     @JoinTable(
             name = "items_categories",
             joinColumns = {@JoinColumn(name = "item_id", referencedColumnName = "id")},
@@ -34,7 +37,10 @@ public class Item {
     )
     private List<Category> categories;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(
+            fetch = FetchType.EAGER,
+            cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH}
+    )
     @JoinTable(
             name = "items_materials",
             joinColumns = {@JoinColumn(name = "item_id", referencedColumnName = "id")},
@@ -42,7 +48,10 @@ public class Item {
     )
     private List<Material> materials;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(
+            fetch = FetchType.EAGER,
+            cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH}
+    )
     @JoinTable(
             name = "items_colors",
             joinColumns = {@JoinColumn(name = "item_id", referencedColumnName = "id")},

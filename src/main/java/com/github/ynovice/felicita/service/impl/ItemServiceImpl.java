@@ -1,12 +1,14 @@
 package com.github.ynovice.felicita.service.impl;
 
 import com.github.ynovice.felicita.exception.InvalidEntityException;
+import com.github.ynovice.felicita.exception.NotFoundException;
 import com.github.ynovice.felicita.model.entity.Item;
 import com.github.ynovice.felicita.model.entity.Size;
 import com.github.ynovice.felicita.model.entity.SizeQuantity;
 import com.github.ynovice.felicita.model.dto.request.CreateItemRequestDto;
 import com.github.ynovice.felicita.model.dto.request.CreateSizeQuantityRequestDto;
 import com.github.ynovice.felicita.repository.*;
+import com.github.ynovice.felicita.service.ImageService;
 import com.github.ynovice.felicita.service.ItemService;
 import com.github.ynovice.felicita.validator.ItemValidator;
 import lombok.NonNull;
@@ -23,6 +25,8 @@ import java.util.*;
 public class ItemServiceImpl implements ItemService {
 
     private final ItemValidator itemValidator;
+
+    private final ImageService imageService;
 
     private final ItemRepository itemRepository;
 
@@ -124,6 +128,15 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public Optional<Item> getById(@NonNull Long id) {
         return itemRepository.findById(id);
+    }
+
+    @Override
+    public void deleteById(@NonNull Long id) {
+
+        Item item = itemRepository.findById(id).orElseThrow(NotFoundException::new);
+
+        itemRepository.delete(item);
+        item.getImages().forEach(imageService::delete);
     }
 
     public BindingResult validate(@NonNull Item item) {

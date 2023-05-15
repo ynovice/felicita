@@ -11,4 +11,6 @@ public interface ItemService {
     Item createItem(@NonNull CreateItemRequestDto createItemRequestDto);
 
     Optional<Item> getById(@NonNull Long id);
+
+    void deleteById(@NonNull Long id);
 }

@@ -7,6 +7,7 @@ import com.github.ynovice.felicita.exception.NotFoundException;
 import com.github.ynovice.felicita.model.entity.Image;
 import com.github.ynovice.felicita.repository.ImageRepository;
 import com.github.ynovice.felicita.service.ImageService;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.stereotype.Service;
@@ -29,7 +30,7 @@ public class ImageServiceImpl implements ImageService {
     private final ImageRepository imageRepository;
 
     @Override
-    public Image uploadImage(MultipartFile multipartFile) {
+    public Image uploadImage(@NonNull MultipartFile multipartFile) {
 
         byte[] fileBytes;
         try {
@@ -48,9 +49,7 @@ public class ImageServiceImpl implements ImageService {
         image.setExtension(fileExtension);
         imageRepository.saveAndFlush(image);
 
-        Path fileNameAndPath = Paths.get(
-                imgProperties.getUploadDirectory(),
-                image.getId() + "." + fileExtension);
+        Path fileNameAndPath = buildFileNameAndPath(image.getId(), image.getExtension());
 
         try {
             Files.write(fileNameAndPath, fileBytes);
@@ -63,16 +62,35 @@ public class ImageServiceImpl implements ImageService {
     }
 
     @Override
-    public byte[] getContentsById(Long id) {
+    public byte[] getContentsById(@NonNull Long id) {
 
         Image image = imageRepository.findById(id).orElseThrow(NotFoundException::new);
-
-        Path fileNameAndPath = Paths.get(imgProperties.getUploadDirectory(), id + "." + image.getExtension());
+        Path fileNameAndPath = buildFileNameAndPath(image.getId(), image.getExtension());
 
         try {
             return Files.readAllBytes(fileNameAndPath);
         } catch (IOException e) {
             throw new InternalServerError("На сервере произошла ошибка при попытке достать нужное изображение");
         }
+    }
+
+    @Override
+    public void delete(@NonNull Image image) {
+
+        if(imageRepository.existsById(image.getId())) {
+            imageRepository.deleteById(image.getId());
+        }
+
+        Path fileNameAndPath = buildFileNameAndPath(image.getId(), image.getExtension());
+
+        try {
+            Files.delete(fileNameAndPath);
+        } catch (IOException e) {
+            throw new InternalServerError("На сервере произошла ошибка при попытке удалить изображения товара");
+        }
+    }
+
+    private Path buildFileNameAndPath(Long imageId, String extension) {
+        return Paths.get(imgProperties.getUploadDirectory(), imageId + "." + extension);
     }
 }
