@@ -1,6 +1,6 @@
 package com.github.ynovice.felicita.controller;
 
-import com.github.ynovice.felicita.model.response.CsrfResponse;
+import com.github.ynovice.felicita.model.dto.response.CsrfResponse;
 import com.github.ynovice.felicita.service.CsrfService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;

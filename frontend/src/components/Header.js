@@ -43,7 +43,7 @@ function Header() {
                                 return null;
                             }
 
-                            if(userContext.hasError) {
+                            if(userContext.hasError || !userContext.user) {
                                 return (
                                     <div className={"menu-container"}>
                                         <ul className={"menu"}>

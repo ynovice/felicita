@@ -1,7 +1,6 @@
 package com.github.ynovice.felicita.validator;
 
-import com.github.ynovice.felicita.model.Item;
-import com.github.ynovice.felicita.model.SizeQuantity;
+import com.github.ynovice.felicita.model.entity.*;
 import com.github.ynovice.felicita.repository.*;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +10,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 @RequiredArgsConstructor
@@ -91,14 +91,16 @@ public class ItemValidator implements Validator {
             errors.rejectValue(
                     "description",
                     "item.description.tooLong",
-                    "Описание товара должно быть не длиньше 100 символов"
+                    "Описание товара должно быть не длиньше 1000 символов"
             );
         }
     }
 
     public void validateImages(@NonNull Item item, @NonNull Errors errors) {
 
-        if(item.getImages() == null) {
+        List<Image> images = item.getImages();
+
+        if(images == null) {
             errors.rejectValue(
                     "images",
                     "item.images.null",
@@ -107,7 +109,7 @@ public class ItemValidator implements Validator {
             return;
         }
 
-        item.getImages()
+        images
                 .stream()
                 .filter(image -> !imageRepository.existsById(image.getId()))
                 .findAny()
@@ -116,11 +118,26 @@ public class ItemValidator implements Validator {
                         "item.images.dontExist",
                         "Произошла ошибка при загрузке одного или нескольких изображений"
                 ));
+
+        for (int i = 0; i < images.size() - 1; i++) {
+            for (int j = i + 1; j < images.size(); j++) {
+                if (images.get(i).getId().equals(images.get(j).getId())) {
+                    errors.rejectValue(
+                            "images",
+                            "item.images.duplicated",
+                            "Одна и та же фотография указана несколько раз"
+                    );
+                    return;
+                }
+            }
+        }
     }
 
     public void validateCategories(@NonNull Item item, @NonNull Errors errors) {
 
-        if(item.getCategories() == null) {
+        List<Category> categories = item.getCategories();
+
+        if(categories == null) {
             errors.rejectValue(
                     "categories",
                     "item.categories.null",
@@ -129,20 +146,60 @@ public class ItemValidator implements Validator {
             return;
         }
 
-        item.getCategories()
+        categories
                 .stream()
                 .filter(category -> !categoryRepository.existsById(category.getId()))
                 .findAny()
                 .ifPresent(value -> errors.rejectValue(
                         "categories",
                         "item.categories.dontExist",
-                        "Для товара указана несуществующая категория"
+                        "Среди выбранных категорий есть одна или несколько несуществующих категорий"
                 ));
+
+        for (int i = 0; i < categories.size() - 1; i++) {
+            for (int j = i + 1; j < categories.size(); j++) {
+                if (categories.get(i).getId().equals(categories.get(j).getId())) {
+                    errors.rejectValue(
+                            "categories",
+                            "item.categories.duplicated",
+                            "Одна и та же категория указана несколько раз"
+                    );
+                    return;
+                }
+            }
+        }
+
+        for(Category category : categories) {
+
+            Optional<Long> parentId = categoryRepository.findParentIdById(category.getId());
+
+            while(parentId.isPresent()) {
+
+                Optional<Long> finalParentId = parentId;
+                boolean bothParentAndSubcategoryArePresent = categories
+                        .stream()
+                        .anyMatch(c -> finalParentId.get().equals(c.getId()));
+
+                if(bothParentAndSubcategoryArePresent) {
+                    errors.rejectValue(
+                            "categories",
+                            "item.categories.duplicated",
+                            "Вы не можете указать одновременно и родительскую, " +
+                                    "и дочернюю категорию для товара"
+                    );
+                    return;
+                }
+
+                parentId = categoryRepository.findParentIdById(parentId.get());
+            }
+        }
     }
 
     public void validateMaterials(@NonNull Item item, @NonNull Errors errors) {
 
-        if(item.getMaterials() == null) {
+        List<Material> materials = item.getMaterials();
+
+        if(materials == null) {
             errors.rejectValue(
                     "materials",
                     "item.materials.null",
@@ -151,7 +208,7 @@ public class ItemValidator implements Validator {
             return;
         }
 
-        item.getMaterials()
+        materials
                 .stream()
                 .filter(material -> !materialRepository.existsById(material.getId()))
                 .findAny()
@@ -160,11 +217,26 @@ public class ItemValidator implements Validator {
                         "item.materials.dontExist",
                         "Среди выбранных материалов есть несуществующие материалы"
                 ));
+
+        for (int i = 0; i < materials.size() - 1; i++) {
+            for (int j = i + 1; j < materials.size(); j++) {
+                if (materials.get(i).getId().equals(materials.get(j).getId())) {
+                    errors.rejectValue(
+                            "materials",
+                            "item.materials.duplicated",
+                            "Один и тот же материал указан несколько раз"
+                    );
+                    return;
+                }
+            }
+        }
     }
 
     public void validateColors(@NonNull Item item, @NonNull Errors errors) {
 
-        if(item.getColors() == null) {
+        List<Color> colors = item.getColors();
+
+        if(colors == null) {
             errors.rejectValue(
                     "colors",
                     "item.colors.null",
@@ -173,7 +245,7 @@ public class ItemValidator implements Validator {
             return;
         }
 
-        item.getColors()
+        colors
                 .stream()
                 .filter(color -> !colorRepository.existsById(color.getId()))
                 .findAny()
@@ -182,6 +254,19 @@ public class ItemValidator implements Validator {
                         "item.colors.dontExist",
                         "Среди выбранных цветов есть несуществующие цвета"
                 ));
+
+        for (int i = 0; i < colors.size() - 1; i++) {
+            for (int j = i + 1; j < colors.size(); j++) {
+                if (colors.get(i).getId().equals(colors.get(j).getId())) {
+                    errors.rejectValue(
+                            "colors",
+                            "item.colors.duplicated",
+                            "Один и тот же цвет указан несколько раз"
+                    );
+                    return;
+                }
+            }
+        }
     }
 
     public void validateHasPrint(@NonNull Item item, @NonNull Errors errors) {
@@ -226,7 +311,9 @@ public class ItemValidator implements Validator {
 
     public void validateSizesQuantities(@NonNull Item item, @NonNull Errors errors) {
 
-        if(item.getSizesQuantities() == null) {
+        List<SizeQuantity> sizesQuantities = item.getSizesQuantities();
+
+        if(sizesQuantities == null) {
             errors.rejectValue(
                     "sizesQuantities",
                     "item.sizesQuantities.null",
@@ -236,7 +323,7 @@ public class ItemValidator implements Validator {
             return;
         }
 
-        for(SizeQuantity sizeQuantity : item.getSizesQuantities()) {
+        for(SizeQuantity sizeQuantity : sizesQuantities) {
 
             if(sizeQuantity.getQuantity() == null || sizeQuantity.getQuantity() < 0) {
                 errors.rejectValue(
@@ -254,6 +341,21 @@ public class ItemValidator implements Validator {
                         "Для товара указан несуществующий размер"
                 );
                 return;
+            }
+        }
+
+        for (int i = 0; i < sizesQuantities.size() - 1; i++) {
+            for (int j = i + 1; j < sizesQuantities.size(); j++) {
+
+                if(sizesQuantities.get(i).getSizeId()
+                        .equals(sizesQuantities.get(j).getSizeId())) {
+                    errors.rejectValue(
+                            "sizesQuantities",
+                            "item.sizesQuantities.duplicated",
+                            "Один и тот же размер товара указан несколько раз"
+                    );
+                    return;
+                }
             }
         }
     }

@@ -1,13 +1,14 @@
 import {useEffect, useState} from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {UserProvider} from "./contexts/UserContext";
-import {CsrfProvider} from "./contexts/CsrfContext";
 import LoginPage from "./pages/LoginPage";
 import "./css/App.css";
 import MainPage from "./pages/MainPage";
 import ProfilePage from "./pages/ProfilePage";
 import Api from "./Api";
 import FailedRequestException from "./exception/FailedRequestException";
+import AdminPanelPage from "./pages/AdminPanelPage";
+import CreateItemPage from "./pages/CreateItemPage";
 
 function App() {
 
@@ -16,12 +17,6 @@ function App() {
         isLoaded: false,
         hasError: false,
         errorMessage: ""
-    });
-
-    const [csrfContextValue, setCsrfContextValue] = useState({
-        csrfToken: null,
-        csrfHeaderName: null,
-        isLoaded: false
     });
 
     useEffect(() => {
@@ -62,18 +57,8 @@ function App() {
 
         Api.getCsrfData(abortController.signal)
             .then(csrfData => {
-                setCsrfContextValue({
-                    csrfToken: csrfData.csrfToken,
-                    csrfHeaderName: csrfData.csrfHeaderName,
-                    isLoaded: true
-                });
-            })
-            .catch(() => {
-                setCsrfContextValue({
-                    csrfToken: null,
-                    csrfHeaderName: null,
-                    isLoaded: true
-                });
+                Api.setCsrfHeaderName(csrfData.csrfHeaderName);
+                Api.setCsrfToken(csrfData.csrfToken);
             });
 
         return () => abortController.abort();
@@ -81,17 +66,17 @@ function App() {
 
     return (
         <UserProvider value={userContextValue}>
-            <CsrfProvider value={csrfContextValue}>
-                <div className="App">
-                    <BrowserRouter>
-                        <Routes>
-                            <Route path="/" element={<MainPage /> } />
-                            <Route path="/login" element={<LoginPage /> } />
-                            <Route path="/profile" element={<ProfilePage /> } />
-                        </Routes>
-                    </BrowserRouter>
-                </div>
-            </CsrfProvider>
+            <div className="App">
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="/" element={<MainPage /> } />
+                        <Route path="/login" element={<LoginPage /> } />
+                        <Route path="/profile" element={<ProfilePage /> } />
+                        <Route path="/admin" element={<AdminPanelPage />}/>
+                        <Route path="/admin/item/create" element={<CreateItemPage />}/>
+                    </Routes>
+                </BrowserRouter>
+            </div>
         </UserProvider>
     );
 }

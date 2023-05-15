@@ -1,6 +1,6 @@
 package com.github.ynovice.felicita.security;
 
-import com.github.ynovice.felicita.model.User;
+import com.github.ynovice.felicita.model.entity.User;
 import com.github.ynovice.felicita.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;

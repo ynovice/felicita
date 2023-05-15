@@ -7,7 +7,6 @@ import {UserConsumer} from "../contexts/UserContext";
 import React from "react";
 import {SOCIAL_LOGIN_LOGOS_URLS} from "../constants";
 import requiresUser from "../hoc/requiresUser";
-import ErrorPage from "./ErrorPage";
 
 function ProfilePage() {
 
@@ -80,7 +79,10 @@ function ProfilePage() {
                                 </div>
                             </div>
                             <div className="section">
-                                <ProxiedButton href={"/api/logout"} redirect={"/"} children={"Выйти"}/>
+                                <ProxiedButton href={"/api/logout"}
+                                               redirect={"/"}
+                                               children={"Выйти"}
+                                               style={"danger"}/>
                             </div>
                         </React.Fragment>
                     );

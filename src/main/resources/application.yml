@@ -8,6 +8,10 @@ spring:
           google:
             client-id: 1030707742527-ai4fj55uob9s20gc4h68rnqtv6i22n4o.apps.googleusercontent.com
             client-secret: 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
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
 
   jpa:
     generate-ddl: true
@@ -21,3 +25,5 @@ app:
       - http://localhost:3000
   oauth2:
     redirectUri: "http://localhost:3000/"
+  img:
+    uploadDirectory: "./src/main/resources/images"

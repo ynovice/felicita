@@ -1,6 +1,6 @@
 package com.github.ynovice.felicita.service;
 
-import com.github.ynovice.felicita.model.User;
+import com.github.ynovice.felicita.model.entity.User;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
 public interface UserService {

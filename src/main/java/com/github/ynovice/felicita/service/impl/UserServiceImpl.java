@@ -1,7 +1,7 @@
 package com.github.ynovice.felicita.service.impl;
 
 import com.github.ynovice.felicita.exception.InternalServerError;
-import com.github.ynovice.felicita.model.*;
+import com.github.ynovice.felicita.model.entity.*;
 import com.github.ynovice.felicita.repository.UserRepository;
 import com.github.ynovice.felicita.service.UserService;
 import lombok.NonNull;

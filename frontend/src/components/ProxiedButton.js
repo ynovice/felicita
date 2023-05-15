@@ -1,14 +1,14 @@
+import Api from "../Api";
+
 function ProxiedButton ({href, redirect, style="", children}) {
 
     async function clickHandler(e) {
         e.preventDefault();
 
-        const response = await fetch('/api/logout');
-
-        if (response.status === 200) {
+        if(await Api.logout()) {
             window.location.href = redirect;
         } else {
-            alert(response.body)
+            alert("Что-то пошло не так");
         }
     }
 

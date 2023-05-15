@@ -1,27 +1,25 @@
 package com.github.ynovice.felicita.service.impl;
 
-import com.github.ynovice.felicita.model.Item;
-import com.github.ynovice.felicita.model.Size;
-import com.github.ynovice.felicita.model.SizeQuantity;
-import com.github.ynovice.felicita.model.request.CreateItemRequestDto;
-import com.github.ynovice.felicita.model.request.CreateSizeQuantityRequestDto;
+import com.github.ynovice.felicita.exception.InvalidEntityException;
+import com.github.ynovice.felicita.model.entity.Item;
+import com.github.ynovice.felicita.model.entity.Size;
+import com.github.ynovice.felicita.model.entity.SizeQuantity;
+import com.github.ynovice.felicita.model.dto.request.CreateItemRequestDto;
+import com.github.ynovice.felicita.model.dto.request.CreateSizeQuantityRequestDto;
 import com.github.ynovice.felicita.repository.*;
 import com.github.ynovice.felicita.service.ItemService;
 import com.github.ynovice.felicita.validator.ItemValidator;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.DataBinder;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -63,10 +61,10 @@ public class ItemServiceImpl implements ItemService {
                     requestDto.getCategoriesIds()
                             .stream()
                             .map(categoryRepository::getReferenceById)
-                            .collect(Collectors.toSet())
+                            .toList()
             );
         } else {
-            item.setCategories(Collections.emptySet());
+            item.setCategories(Collections.emptyList());
         }
 
         if(requestDto.getMaterialsIds() != null) {
@@ -74,10 +72,10 @@ public class ItemServiceImpl implements ItemService {
                     requestDto.getMaterialsIds()
                             .stream()
                             .map(materialRepository::getReferenceById)
-                            .collect(Collectors.toSet())
+                            .toList()
             );
         } else {
-            item.setMaterials(Collections.emptySet());
+            item.setMaterials(Collections.emptyList());
         }
 
         if(requestDto.getColorsIds() != null) {
@@ -85,10 +83,10 @@ public class ItemServiceImpl implements ItemService {
                     requestDto.getColorsIds()
                             .stream()
                             .map(colorRepository::getReferenceById)
-                            .collect(Collectors.toSet())
+                            .toList()
             );
         } else {
-            item.setColors(Collections.emptySet());
+            item.setColors(Collections.emptyList());
         }
 
         item.setHasPrint(requestDto.getHasPrint());
@@ -117,10 +115,11 @@ public class ItemServiceImpl implements ItemService {
 
         BindingResult validationResult = validate(item);
         if(validationResult.hasErrors()) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+            throw new InvalidEntityException(validationResult);
         }
 
         itemRepository.save(item);
+        imageRepository.saveAll(item.getImages());
 
         return item;
     }

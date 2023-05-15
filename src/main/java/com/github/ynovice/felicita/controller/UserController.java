@@ -1,6 +1,6 @@
 package com.github.ynovice.felicita.controller;
 
-import com.github.ynovice.felicita.model.dto.UserDto;
+import com.github.ynovice.felicita.model.dto.entity.UserDto;
 import com.github.ynovice.felicita.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

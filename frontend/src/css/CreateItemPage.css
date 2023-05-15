@@ -1,0 +1,110 @@
+.CreateItemPage {
+    padding: 30px 30px 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 100px;
+}
+
+.CreateItemPage input[type="file"] {
+    display: none;
+}
+
+.CreateItemPage .page-title {
+    font-size: 24px;
+}
+
+.CreateItemPage .section:not(.block-title):not(.no-margin) {
+    margin-bottom: 20px;
+}
+
+.CreateItemPage .block-title {
+    font-size: 20px;
+}
+
+.CreateItemPage .form-row {
+    display: flex;
+    gap: 20px;
+    font-size: 16px;
+    align-items: baseline;
+}
+.CreateItemPage .form-row.col {
+    flex-direction: column;
+    gap: 10px;
+}
+.CreateItemPage .selects-row {
+    display: flex;
+    gap: 15px;
+    align-items: baseline;
+    max-width: 100%;
+    flex-flow: row wrap;
+}
+.CreateItemPage .selects-row img {
+    max-width: 100px;
+}
+
+.CreateItemPage .form-row label {
+    width: 130px;
+    display: block;
+}
+
+.CreateItemPage input:not([type="button"]),
+.CreateItemPage select,
+.CreateItemPage option {
+    background: #eaeaea;
+    border-radius: 3px;
+    outline: none;
+    border: 0;
+    padding: 4px 12px;
+    font-size: 16px;
+    box-sizing: border-box;
+    width: 220px;
+}
+.CreateItemPage input:not([type="button"])::-webkit-outer-spin-button,
+.CreateItemPage input:not([type="button"])::-webkit-inner-spin-button,
+.CreateItemPage select::-webkit-outer-spin-button,
+.CreateItemPage select::-webkit-inner-spin-button,
+.CreateItemPage option::-webkit-outer-spin-button,
+.CreateItemPage option::-webkit-inner-spin-button
+{
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+.CreateItemPage input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+.CreateItemPage .status-uploading {
+    color: #4285F4;
+}
+
+.CreateItemPage .status-ready {
+    color: #12B347;
+}
+
+.CreateItemPage .errors-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #DE4D4D;
+}
+
+@media screen and (max-width: 599px) {
+
+    .CreateItemPage {
+        padding: 15px 10px 0;
+    }
+    .CreateItemPage .form-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .CreateItemPage .form-row input {
+        width: 100%;
+    }
+
+    .CreateItemPage .selects-row {
+        margin-bottom: 25px;
+    }
+}
