@@ -1,6 +1,7 @@
 import withHeader from "../hoc/withHeader";
 import inCage from "../hoc/inCage";
 import "../css/LoginPage.css";
+import Api from "../Api";
 
 function LoginPage() {
 
@@ -11,7 +12,7 @@ function LoginPage() {
             <div className="second-row">Способы входа в аккаунт:</div>
 
             <div className="social-logos">
-                <a href="http://localhost:8080/oauth2/authorization/google">
+                <a href={Api.getServerDomain() + "/oauth2/authorization/google"}>
                     <img src="/logos/google.png" alt="Google"/>
                 </a>
             </div>

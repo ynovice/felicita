@@ -1,6 +1,7 @@
 import Api from "../Api";
 
-function ProxiedButton ({href, redirect, style="", children}) {
+/** @deprecated */
+function LogoutButton ({redirect}) {
 
     async function clickHandler(e) {
         e.preventDefault();
@@ -13,10 +14,8 @@ function ProxiedButton ({href, redirect, style="", children}) {
     }
 
     return (
-        <a className={"button " + style} href={href} onClick={clickHandler}>
-            {children}
-        </a>
+        <a className={"button danger"} onClick={clickHandler}>Выйти</a>
     );
 }
 
-export default ProxiedButton;
+export default LogoutButton;

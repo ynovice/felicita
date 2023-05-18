@@ -325,7 +325,7 @@ public class ItemValidator implements Validator {
 
         for(SizeQuantity sizeQuantity : sizesQuantities) {
 
-            if(sizeQuantity.getQuantity() == null || sizeQuantity.getQuantity() < 0) {
+            if(sizeQuantity.getQuantity() == null || sizeQuantity.getQuantity() <= 0) {
                 errors.rejectValue(
                         "sizesQuantities",
                         "item.sizesQuantities.invalidQuantity",

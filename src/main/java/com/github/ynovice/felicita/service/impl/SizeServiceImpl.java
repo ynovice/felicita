@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -17,5 +18,10 @@ public class SizeServiceImpl implements SizeService {
     @Override
     public List<Size> getAll() {
         return sizeRepository.findAll();
+    }
+
+    @Override
+    public Optional<Size> getById(Long id) {
+        return sizeRepository.findById(id);
     }
 }

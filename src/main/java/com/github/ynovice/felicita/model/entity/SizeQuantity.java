@@ -41,6 +41,20 @@ public class SizeQuantity {
         this.item = item;
     }
 
+    public SizeQuantity(Size size, Integer quantity, CartEntry cartEntry) {
+        this.size = size;
+        this.quantity = quantity;
+        this.cartEntry = cartEntry;
+    }
+
+    public void incrementQuantity() {
+        quantity++;
+    }
+
+    public void decrementQuantity() {
+        quantity--;
+    }
+
     public Long getSizeId() {
         return size == null ? null : size.getId();
     }

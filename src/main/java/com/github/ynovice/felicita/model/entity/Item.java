@@ -75,6 +75,15 @@ public class Item {
     @OneToMany(mappedBy = "item", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<CartEntry> cartEntries;
 
+    public Integer getQuantityBySizeId(Long sizeId) {
+        return sizesQuantities
+                .stream()
+                .filter(sq -> sq.getSizeId().equals(sizeId))
+                .map(SizeQuantity::getQuantity)
+                .findFirst()
+                .orElse(0);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

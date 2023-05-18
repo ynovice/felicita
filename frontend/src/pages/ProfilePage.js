@@ -1,23 +1,30 @@
 import withHeader from "../hoc/withHeader";
 import inCage from "../hoc/inCage";
 import "../css/ProfilePage.css";
-import ProxiedButton from "../components/ProxiedButton";
 import $ from "jquery";
 import {UserConsumer} from "../contexts/UserContext";
 import React from "react";
 import {SOCIAL_LOGIN_LOGOS_URLS} from "../constants";
 import requiresUser from "../hoc/requiresUser";
+import Button from "../components/Button";
+import Api from "../Api";
 
 function ProfilePage() {
 
-    function handleCredentialDetailsExpand(e) {
-        e.preventDefault();
+    const handleCredentialDetailsExpand = e => {
 
         e.target.classList.toggle("rotated");
 
         const credentialId = e.target.getAttribute("data-id");
         let credentialDetails = $(`.credential-details-container[data-id=${credentialId}]`);
         credentialDetails.slideToggle(200);
+    }
+
+    const handleLogoutClick = () => {
+
+        Api.logout()
+            .then(() => window.location.href = "/")
+            .catch(() => alert("Что-то пошло не так"));
     }
 
     return (
@@ -79,10 +86,7 @@ function ProfilePage() {
                                 </div>
                             </div>
                             <div className="section">
-                                <ProxiedButton href={"/api/logout"}
-                                               redirect={"/"}
-                                               children={"Выйти"}
-                                               style={"danger"}/>
+                                <Button value="Выйти" onClick={() => handleLogoutClick()} danger={true}/>
                             </div>
                         </React.Fragment>
                     );

@@ -4,14 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Create endpoint to delete item by id">
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Create item page">
+      <change afterPath="$PROJECT_DIR$/frontend/public/ui/item-placeholder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Button.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/CartWidget.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/contexts/AppContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/css/Button.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/css/CartWidget.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/css/ItemPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/exception/NotFoundException.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/exception/RequestAbortedException.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ItemPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/CartEntryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/CartEntryDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/CartEntryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/CartEntryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/CartEntryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProxiedButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LogoutButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/contexts/UserContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/contexts/UserContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/LoginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ExceptionsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ExceptionsHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/exception/BadRequestException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/exception/BadRequestException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/CartEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/CartEntry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ImageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ItemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ImageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ImageServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ItemServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/SizeQuantity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/SizeQuantity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/SizeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/SizeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/SizeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/SizeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/validator/ItemValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/validator/ItemValidator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +47,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="CSS File" />
         <option value="Interface" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
         <option value="Class" />
       </list>
     </option>
@@ -63,7 +88,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/ynovice/Desktop/felicita-e4b51455a98e890c697a56ab6311883295fa4dde&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/ynovice/StudioProjects/meetupAppium&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -71,9 +96,9 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15586546&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;c15d1e866df42e567cedc944647c5b1b&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/snap/intellij-idea-ultimate/426/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
@@ -87,8 +112,10 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.github.ynovice.felicita.service.impl" />
+      <recent name="com.github.ynovice.felicita.repository" />
       <recent name="com.github.ynovice.felicita.service" />
+      <recent name="com.github.ynovice.felicita.controller" />
+      <recent name="com.github.ynovice.felicita.service.impl" />
       <recent name="com.github.ynovice.felicita.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -101,6 +128,9 @@
       <recent name="$PROJECT_DIR$/frontend/public/ui" />
       <recent name="$PROJECT_DIR$/frontend/src" />
       <recent name="$PROJECT_DIR$/frontend/src/components" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.github.ynovice.felicita.service" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -115,7 +145,7 @@
       <module name="felicita" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.github.ynovice.felicita.service.*" />
+          <option name="PATTERN" value="com.github.ynovice.felicita.service.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -171,7 +201,13 @@
       <workItem from="1683894747531" duration="21781000" />
       <workItem from="1684074316086" duration="7748000" />
       <workItem from="1684142114749" duration="89000" />
-      <workItem from="1684142230120" duration="10148000" />
+      <workItem from="1684142230120" duration="14065000" />
+      <workItem from="1684232507651" duration="11220000" />
+      <workItem from="1684264754626" duration="14240000" />
+      <workItem from="1684327836614" duration="18474000" />
+      <workItem from="1684406725661" duration="307000" />
+      <workItem from="1684410536290" duration="40000" />
+      <workItem from="1684450583425" duration="1250000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1682728631672</created>
@@ -243,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684149854242</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Create endpoint to delete item by id">
+      <created>1684152388372</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684152388372</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +312,8 @@
     <MESSAGE value="Add ability to create new items" />
     <MESSAGE value="Create endpoint to get item by id" />
     <MESSAGE value="Create endpoint to delete item by id" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create endpoint to delete item by id" />
+    <MESSAGE value="Create item page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create item page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

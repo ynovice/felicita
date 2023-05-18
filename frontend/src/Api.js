@@ -5,6 +5,8 @@ import NotAuthorizedException from "./exception/NotAuthorizedException";
 import FailedRequestException from "./exception/FailedRequestException";
 import EntityValidationResult, {FieldError} from "./EntityValidationResult";
 import InvalidEntityException from "./exception/InvalidEntityException";
+import NotFoundException from "./exception/NotFoundException";
+import RequestAbortedException from "./exception/RequestAbortedException";
 
 const Api = (function () {
 
@@ -39,30 +41,24 @@ const Api = (function () {
 
     const throwCorrespondingException = async (response) => {
 
-        if(response.status === 403) {
-            throw new NotAuthorizedException();
-        }
+        if(response === null) throw new FailedRequestException();
 
-        if(response.status >= 300 && response.status <= 399) {
-            throw new RedirectionException();
-        }
+        if(response.status === 403) throw new NotAuthorizedException();
+
+        if(response.status === 404) throw new NotFoundException();
+
+        if(response.status >= 300 && response.status <= 399) throw new RedirectionException();
 
         if(response.status >= 400 && response.status <= 499) {
 
             const json = await response.json();
 
-            console.log(json)
-
-            if(json["invalidFields"]) {
-                throw new InvalidEntityException(buildEntityValidationResult(json));
-            }
+            if(json["invalidFields"]) throw new InvalidEntityException(buildEntityValidationResult(json));
 
             throw new BadRequestException();
         }
 
-        if(response.status >= 500 && response.status <= 599) {
-            throw new InternalServerError();
-        }
+        if(response.status >= 500 && response.status <= 599) throw new InternalServerError();
     }
 
     return {
@@ -75,45 +71,55 @@ const Api = (function () {
                 headers: {
                     [csrfHeaderName]: csrfToken
                 }
-            });
+            }).catch(() => null);
 
-            return response && response.ok;
+            if(!response || !response.ok) {
+                await throwCorrespondingException(response);
+            }
         },
 
         getCurrentUser: async function (abortSignal) {
 
+            let aborted = false;
+
             const response = await fetch(API_BASE_URL + "/user", {
                 signal: abortSignal,
                 credentials: "include"
-            }).catch(() => {
-                    return null;
-                });
+            }).catch((e) => {
+                if(e.name === "AbortError") aborted = true;
+                return null;
+            });
 
+            if(aborted) throw new RequestAbortedException();
             if(response === null) throw new FailedRequestException()
 
             if(response && response.ok) {
                 return await response.json();
             }
 
-            throwCorrespondingException(response);
+            await throwCorrespondingException(response);
         },
 
         getCsrfData: async function (abortSignal) {
 
+            let aborted = false;
+
             const response = await fetch(API_BASE_URL + "/csrf", {
                 signal: abortSignal,
                 credentials: "include"
-            }).catch(() => {
+            }).catch((e) => {
+                if(e.name === "AbortError") aborted = true;
                 return null;
             });
 
+            if(aborted) throw new RequestAbortedException();
             if(response === null) throw new FailedRequestException()
 
             if(response && response.ok) {
                 return await response.json();
             }
 
-            throwCorrespondingException(response);
+            await throwCorrespondingException(response);
         },
 
         getAllCategories: async function (abortSignal) {
@@ -121,15 +127,13 @@ const Api = (function () {
             const response = await fetch(API_BASE_URL + "/category", {
                 signal: abortSignal,
                 credentials: "include"
-            }).catch(() => {
-                return null;
-            });
+            }).catch(() => null);
 
             if(response && response.ok) {
                 return await response.json();
             }
 
-            throwCorrespondingException(response);
+            await throwCorrespondingException(response);
         },
 
         getAllMaterials: async function (abortSignal) {
@@ -137,15 +141,13 @@ const Api = (function () {
             const response = await fetch(API_BASE_URL + "/material", {
                 signal: abortSignal,
                 credentials: "include"
-            }).catch(() => {
-                return null;
-            });
+            }).catch(() => null);
 
             if(response && response.ok) {
                 return await response.json();
             }
 
-            throwCorrespondingException(response);
+            await throwCorrespondingException(response);
         },
 
         getAllColors: async function (abortSignal) {
@@ -161,7 +163,7 @@ const Api = (function () {
                 return await response.json();
             }
 
-            throwCorrespondingException(response);
+            await throwCorrespondingException(response);
         },
 
         getAllSizes: async function (abortSignal) {
@@ -169,15 +171,13 @@ const Api = (function () {
             const response = await fetch(API_BASE_URL + "/size", {
                 signal: abortSignal,
                 credentials: "include"
-            }).catch(() => {
-                return null;
-            });
+            }).catch(() => null);
 
             if(response && response.ok) {
                 return await response.json();
             }
 
-            throwCorrespondingException(response);
+            await throwCorrespondingException(response);
         },
 
         uploadImage: async function (image, abortSignal) {
@@ -193,15 +193,13 @@ const Api = (function () {
                     [csrfHeaderName]: csrfToken
                 },
                 body: body
-            }).catch(() => {
-                return null;
-            });
+            }).catch(() => null);
 
             if(response && response.ok) {
                 return await response.json();
             }
 
-            throwCorrespondingException(response);
+            await throwCorrespondingException(response);
         },
 
         createItem: async function (requestDto, abortSignal) {
@@ -215,9 +213,7 @@ const Api = (function () {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(requestDto)
-            }).catch(() => {
-                return null;
-            });
+            }).catch(() => null);
 
             if(response && response.ok) {
                 return await response.json();
@@ -226,8 +222,98 @@ const Api = (function () {
             await throwCorrespondingException(response);
         },
 
-        getBaseApiUrl() {
+        getItemById: async function (id, abortSignal) {
+
+            const response = await fetch(API_BASE_URL + "/item/" + id, {
+                signal: abortSignal,
+                credentials: "include"
+            }).catch(() => null)
+
+            if(response && response.ok) {
+                return await response.json();
+            }
+
+            await throwCorrespondingException(response);
+        },
+
+        getCartEntryByUserIdAndItemId: async function (userId, itemId, abortSignal) {
+
+            const response = await fetch(API_BASE_URL + "/ce?" + new URLSearchParams({userId, itemId}), {
+                signal: abortSignal,
+                credentials: "include"
+            }).catch(() => null)
+
+            if(response && response.ok) {
+                return await response.json();
+            }
+
+            await throwCorrespondingException(response);
+        },
+
+        incrementItemQuantityInCart: async function (itemId, sizeId) {
+
+            const response = await fetch(API_BASE_URL + "/ce?" + new URLSearchParams({itemId, sizeId}), {
+                credentials: "include",
+                method: "post",
+                headers: {
+                    [csrfHeaderName]: csrfToken,
+                    "Content-Type": "application/json"
+                }
+            }).catch(() => null);
+
+            if(response && response.ok) {
+                return await response.json();
+            }
+
+            await throwCorrespondingException(response);
+        },
+
+        decrementItemQuantityInCart: async function (itemId, sizeId) {
+
+            const response = await fetch(API_BASE_URL + "/ce?" + new URLSearchParams({itemId, sizeId}), {
+                credentials: "include",
+                method: "delete",
+                headers: {
+                    [csrfHeaderName]: csrfToken,
+                    "Content-Type": "application/json"
+                }
+            }).catch(() => null);
+
+            if(response && response.ok) {
+                return await response.json();
+            }
+
+            await throwCorrespondingException(response);
+        },
+
+        removeSizeQuantityFromCartEntry: async function (itemId, sizeId) {
+
+            const response = await fetch(API_BASE_URL + "/ce/sq?" + new URLSearchParams({itemId, sizeId}), {
+                credentials: "include",
+                method: "delete",
+                headers: {
+                    [csrfHeaderName]: csrfToken,
+                    "Content-Type": "application/json"
+                }
+            }).catch(() => null);
+
+            if(response && response.ok) {
+                return await response.json();
+            }
+
+            await throwCorrespondingException(response);
+        },
+
+        getImageUrlByImageId: function(id) {
+            return this.getBaseApiUrl() + "/image/" + id;
+        },
+
+        getBaseApiUrl: function () {
             return API_BASE_URL;
+        },
+
+        getServerDomain: function () {
+            return SERVER_DOMAIN;
         },
 
         setCsrfHeaderName(name) {
