@@ -3,6 +3,8 @@ package com.github.ynovice.felicita.controller;
 import com.github.ynovice.felicita.exception.NotFoundException;
 import com.github.ynovice.felicita.model.dto.entity.ItemDto;
 import com.github.ynovice.felicita.model.dto.request.CreateItemRequestDto;
+import com.github.ynovice.felicita.model.dto.request.ItemFilterParamsDto;
+import com.github.ynovice.felicita.model.dto.response.ItemsPageDto;
 import com.github.ynovice.felicita.model.entity.Item;
 import com.github.ynovice.felicita.service.ItemService;
 import lombok.RequiredArgsConstructor;
@@ -38,5 +40,14 @@ public class ItemController {
         Item item = itemService.getById(id).orElseThrow(NotFoundException::new);
 
         return ResponseEntity.ok(ItemDto.fromEntity(item));
+    }
+
+    @GetMapping
+    public ResponseEntity<ItemsPageDto> getByFilters(@RequestParam(defaultValue = "0") int page,
+                                                     ItemFilterParamsDto filterParams) {
+
+        return ResponseEntity.ok(
+                ItemsPageDto.fromEntity(itemService.getByFilters(page, filterParams))
+        );
     }
 }

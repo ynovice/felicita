@@ -2,6 +2,7 @@ package com.github.ynovice.felicita.service.impl;
 
 import com.github.ynovice.felicita.exception.InvalidEntityException;
 import com.github.ynovice.felicita.exception.NotFoundException;
+import com.github.ynovice.felicita.model.dto.request.ItemFilterParamsDto;
 import com.github.ynovice.felicita.model.entity.Item;
 import com.github.ynovice.felicita.model.entity.Size;
 import com.github.ynovice.felicita.model.entity.SizeQuantity;
@@ -13,6 +14,8 @@ import com.github.ynovice.felicita.service.ItemService;
 import com.github.ynovice.felicita.validator.ItemValidator;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.DataBinder;
@@ -23,6 +26,8 @@ import java.util.*;
 @Service
 @RequiredArgsConstructor
 public class ItemServiceImpl implements ItemService {
+
+    private final static int ITEMS_PER_PAGE = 20;
 
     private final ItemValidator itemValidator;
 
@@ -128,6 +133,14 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public Optional<Item> getById(@NonNull Long id) {
         return itemRepository.findById(id);
+    }
+
+    @Override
+    public Page<Item> getByFilters(int page, ItemFilterParamsDto filterParams) {
+        return itemRepository.findAllByFilterParameters(
+                filterParams,
+                PageRequest.of(page, ITEMS_PER_PAGE)
+        );
     }
 
     @Override
