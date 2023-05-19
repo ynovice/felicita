@@ -6,7 +6,7 @@ import Api from "../Api";
 import NotFoundException from "../exception/NotFoundException";
 import Button from "./Button";
 
-function CartWidget({itemId, chosenSizeId, maxQuantity=0}) {
+function CartWidget({item, chosenSizeId, maxQuantity=0}) {
 
     const appContext = useContext(AppContext);
     const userContext = useContext(UpdatedUserContext);
@@ -31,7 +31,7 @@ function CartWidget({itemId, chosenSizeId, maxQuantity=0}) {
 
         const userId = userContext.user["id"];
 
-        Api.getCartEntryByUserIdAndItemId(userId, itemId)
+        Api.getCartEntryByUserIdAndItemId(userId, item["id"])
             .then(retrievedCartEntry => {
                 setCartEntry(retrievedCartEntry);
                 setCartEntryState(CartEntryState.PRESENT);
@@ -44,11 +44,11 @@ function CartWidget({itemId, chosenSizeId, maxQuantity=0}) {
             })
 
         return () => abortController.abort();
-    }, [appContext, userContext, itemId, CartEntryState.PRESENT, CartEntryState.EMPTY]);
+    }, [appContext, userContext, item, CartEntryState.PRESENT, CartEntryState.EMPTY]);
 
     const handleAddItemToCartClick = () => {
 
-        Api.incrementItemQuantityInCart(itemId, chosenSizeId)
+        Api.incrementItemQuantityInCart(item["id"], chosenSizeId)
             .then(updatedCartEntry => {
                 setCartEntry(updatedCartEntry);
                 setCartEntryState(CartEntryState.PRESENT);
@@ -61,7 +61,7 @@ function CartWidget({itemId, chosenSizeId, maxQuantity=0}) {
             return;
         }
 
-        Api.incrementItemQuantityInCart(itemId, chosenSizeId)
+        Api.incrementItemQuantityInCart(item["id"], chosenSizeId)
             .then(updatedCartEntry => {
                 setCartEntry(updatedCartEntry);
                 setCartEntryState(CartEntryState.PRESENT);
@@ -70,7 +70,7 @@ function CartWidget({itemId, chosenSizeId, maxQuantity=0}) {
 
     const handleDecrementItemQuantityInCartClick = () => {
 
-        Api.decrementItemQuantityInCart(itemId, chosenSizeId)
+        Api.decrementItemQuantityInCart(item["id"], chosenSizeId)
             .then(updatedCartEntry => {
                 setCartEntry(updatedCartEntry);
                 setCartEntryState(CartEntryState.PRESENT);
@@ -79,7 +79,7 @@ function CartWidget({itemId, chosenSizeId, maxQuantity=0}) {
 
     const handleRemoveSizeQuantityFromCartEntryClick = () => {
 
-        Api.removeSizeQuantityFromCartEntry(itemId, chosenSizeId)
+        Api.removeSizeQuantityFromCartEntry(item["id"], chosenSizeId)
             .then(updatedCartEntry => {
                 setCartEntry(updatedCartEntry);
                 setCartEntryState(CartEntryState.PRESENT);
@@ -132,13 +132,18 @@ function CartWidget({itemId, chosenSizeId, maxQuantity=0}) {
             <div className="controls">
                 <div className="inverter">
                     <div className="cart-quantity-counter">
-                        <span className="noselect"
-                              onClick={() => handleDecrementItemQuantityInCartClick()}>-</span>
-                        <span className="noselect disabled">{getQuantityByChosenSizeId()}</span>
-                        <span className={"noselect" + (getQuantityByChosenSizeId() === maxQuantity ? " disabled" : "")}
-                              onClick={() => handleIncrementItemQuantityInCartClick()}>
-                            +
-                        </span>
+                        <div className="counter-controls">
+                            <span className="noselect"
+                                  onClick={() => handleDecrementItemQuantityInCartClick()}>-</span>
+                            <span className="noselect disabled">{getQuantityByChosenSizeId()}</span>
+                            <span className={"noselect" + (getQuantityByChosenSizeId() === maxQuantity ? " disabled" : "")}
+                                  onClick={() => handleIncrementItemQuantityInCartClick()}>
+                                +
+                            </span>
+                        </div>
+                        <div className="total-price">
+                            {item["price"] * getQuantityByChosenSizeId()}₽
+                        </div>
                     </div>
                     {getQuantityByChosenSizeId() === maxQuantity && <p>Больше не добавить</p>}
                 </div>

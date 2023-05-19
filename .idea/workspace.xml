@@ -4,24 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Create endpoint to retrieve filtered list of items by page">
-      <change afterPath="$PROJECT_DIR$/.idea/sqlDataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/ItemsFilter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/css/CatalogPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/css/ItemsFilter.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/CatalogPage.js" afterDir="false" />
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Create catalog page, add similar items catalog to item page, update favicon">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/CreateItemPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/CreateItemPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/ItemPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/ItemPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/CartWidget.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/CartWidget.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/CartWidget.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/CartWidget.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/ItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ItemPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -194,7 +180,7 @@
       <workItem from="1684406725661" duration="307000" />
       <workItem from="1684410536290" duration="40000" />
       <workItem from="1684450583425" duration="6864000" />
-      <workItem from="1684486259603" duration="21560000" />
+      <workItem from="1684486259603" duration="22205000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1682728631672</created>
@@ -287,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684491429841</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Create catalog page, add similar items catalog to item page, update favicon">
+      <created>1684507900496</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684507900497</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,7 +308,8 @@
     <MESSAGE value="Create endpoint to delete item by id" />
     <MESSAGE value="Create item page" />
     <MESSAGE value="Create endpoint to retrieve filtered list of items by page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create endpoint to retrieve filtered list of items by page" />
+    <MESSAGE value="Create catalog page, add similar items catalog to item page, update favicon" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create catalog page, add similar items catalog to item page, update favicon" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

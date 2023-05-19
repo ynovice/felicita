@@ -212,7 +212,7 @@ function ItemPage() {
                 </div>
 
                 {item["sizesQuantities"].length > 0 ?
-                    <CartWidget itemId={itemId}
+                    <CartWidget item={item}
                                 chosenSizeId={getSizeByIndex(chosenSizeIndex)["id"]}
                                 maxQuantity={getQuantityBySizeIndex(chosenSizeIndex)}/> :
                     <CartWidget itemId={item} chosenSizeId={null} maxQuantity={0}/>
@@ -231,7 +231,7 @@ function ItemPage() {
 
                                 return (
                                     <div key={similarItem["id"]} className="item">
-                                        <a href={"/item/" + item["id"]}>
+                                        <a href={"/item/" + similarItem["id"]}>
                                             <div className="image-container">
                                                 <img src={imageUrl} alt={similarItem["name"]}/>
                                             </div>

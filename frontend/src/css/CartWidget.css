@@ -25,6 +25,11 @@
     align-items: baseline;
     border-radius: 10px;
     display: flex;
+    gap: 15px;
+}
+
+.CartWidget .cart-quantity-counter .total-price {
+    font-weight: 700;
 }
 
 .CartWidget .cart-quantity-counter span {
@@ -78,5 +83,10 @@
 
     .CartWidget .inverter {
         flex-direction: row-reverse;
+    }
+
+    .CartWidget .cart-quantity-counter {
+        flex-direction: column;
+        align-items: flex-end;
     }
 }
