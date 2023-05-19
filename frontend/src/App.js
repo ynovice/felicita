@@ -13,6 +13,7 @@ import ItemPage from "./pages/ItemPage";
 import RequestAbortedException from "./exception/RequestAbortedException";
 import NotAuthorizedException from "./exception/NotAuthorizedException";
 import {AccessLevel, AppContextProvider, ServerState} from "./contexts/AppContext";
+import CatalogPage from "./pages/CatalogPage";
 
 function App() {
 
@@ -130,6 +131,7 @@ function App() {
                                 <Route path="/login" element={<LoginPage /> } />
                                 <Route path="/profile" element={<ProfilePage /> } />
                                 <Route path="/item/:id" element={<ItemPage /> } />
+                                <Route path="/catalog" element={<CatalogPage />}/>
                                 <Route path="/admin" element={<AdminPanelPage />}/>
                                 <Route path="/admin/item/create" element={<CreateItemPage />}/>
                             </Routes>

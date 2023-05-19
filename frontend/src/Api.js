@@ -304,6 +304,20 @@ const Api = (function () {
             await throwCorrespondingException(response);
         },
 
+        getItemsPageByFilterParams: async function (searchParams, abortSignal) {
+
+            const response = await fetch(API_BASE_URL + "/item?" + new URLSearchParams(searchParams), {
+                signal: abortSignal,
+                credentials: "include",
+            }).catch(() => null);
+
+            if(response && response.ok) {
+                return await response.json();
+            }
+
+            await throwCorrespondingException(response);
+        },
+
         getImageUrlByImageId: function(id) {
             return this.getBaseApiUrl() + "/image/" + id;
         },

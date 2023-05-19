@@ -92,7 +92,7 @@ function Header() {
                     <li><a className={"header-link"} href="#">Скидки</a></li>
                 </ul>
                 <ul className="links-right">
-                    <li><a className={"header-link"} href="#">Каталог</a></li>
+                    <li><a className={"header-link"} href="/catalog">Каталог</a></li>
                 </ul>
             </div>
 

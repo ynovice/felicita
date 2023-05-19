@@ -37,3 +37,42 @@
 .link.danger:hover {
     text-shadow: 0 0 5px #ff9a9a;
 }
+
+input:not([type="button"], [type="checkbox"]),
+select, option {
+    background: #eaeaea;
+    border-radius: 3px;
+    outline: none;
+    border: 0;
+    padding: 4px 12px;
+    font-size: 16px;
+    box-sizing: border-box;
+    width: 220px;
+}
+input:not([type="button"])::-webkit-outer-spin-button,
+input:not([type="button"])::-webkit-inner-spin-button,
+input:not([type="checkbox"])::-webkit-outer-spin-button,
+input:not([type="checkbox"])::-webkit-inner-spin-button,
+select::-webkit-outer-spin-button,
+select::-webkit-inner-spin-button,
+option::-webkit-outer-spin-button,
+option::-webkit-inner-spin-button
+{
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+.pagination {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+}
+.pagination .pagination-title {
+    font-size: 16px;
+}
+.pagination span {
+    font-size: 20px;
+}

@@ -53,6 +53,30 @@ function ItemPage() {
     const getSizeByIndex = i => item["sizesQuantities"][i]["size"];
     const getQuantityBySizeIndex = i => item["sizesQuantities"][i]["quantity"];
 
+    const [similarItemsPage, setSimilarItemsPage] = useState([]);
+
+    useEffect(() => {
+
+        const abortController = new AbortController();
+
+        Api.getItemsPageByFilterParams({}, abortController.signal)
+            .then(itemsPage => {
+
+
+                for (let i = 0; i < itemsPage["items"].length; i++) {
+                    if(itemsPage["items"][i]["id"] === Number(itemId)) {
+                        // itemsPage["items"].splice(i, 1);
+                        break;
+                    }
+                }
+
+                console.log(itemsPage);
+
+                setSimilarItemsPage(itemsPage);
+            });
+
+        return () => abortController.abort();
+    }, [itemId]);
 
     if(appContext.serverState === ServerState.UNDEFINED) {
         return null;
@@ -83,7 +107,7 @@ function ItemPage() {
 
                 </div>
                 {item["images"].length > 1 &&
-                    <div className="image-selectors">
+                    <div className="pagination">
                         {item["images"].map((image, i) => {
 
                             if(i === displayedImageIndex)
@@ -192,6 +216,33 @@ function ItemPage() {
                                 chosenSizeId={getSizeByIndex(chosenSizeIndex)["id"]}
                                 maxQuantity={getQuantityBySizeIndex(chosenSizeIndex)}/> :
                     <CartWidget itemId={item} chosenSizeId={null} maxQuantity={0}/>
+                }
+
+                {similarItemsPage["items"].length > 0 &&
+                    <div className="similar-items">
+                        <div className="section-title">Похожие товары: </div>
+
+                        <div className="similar-items-catalog">
+                            {similarItemsPage["items"].map(similarItem => {
+
+                                const imageUrl = similarItem["images"].length > 0 ?
+                                    Api.getImageUrlByImageId(similarItem["images"][0]["id"]) :
+                                    "/ui/item-placeholder.png";
+
+                                return (
+                                    <div key={similarItem["id"]} className="item">
+                                        <a href={"/item/" + item["id"]}>
+                                            <div className="image-container">
+                                                <img src={imageUrl} alt={similarItem["name"]}/>
+                                            </div>
+                                            <p className="item-name">{similarItem["name"]}</p>
+                                            <p className="item-price">{similarItem["price"]}₽</p>
+                                        </a>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
                 }
             </div>
 
