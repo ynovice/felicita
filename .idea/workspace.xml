@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Create catalog page, add similar items catalog to item page, update favicon">
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Add total price display to CartWidget, fix similar items catalog link on item page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/CartWidget.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/CartWidget.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/CartWidget.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/CartWidget.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ItemPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/config/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +110,7 @@
       <command value=".Header .links-row .links-right, .Header .links-row .links-left" />
     </option>
   </component>
-  <component name="RunManager" selected="npm.React Frontend">
+  <component name="RunManager" selected="Spring Boot.Backend">
     <configuration name="ItemServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="felicita" />
       <extension name="coverage">
@@ -180,7 +178,7 @@
       <workItem from="1684406725661" duration="307000" />
       <workItem from="1684410536290" duration="40000" />
       <workItem from="1684450583425" duration="6864000" />
-      <workItem from="1684486259603" duration="22205000" />
+      <workItem from="1684486259603" duration="27931000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1682728631672</created>
@@ -280,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684507900497</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Add total price display to CartWidget, fix similar items catalog link on item page">
+      <created>1684508572201</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684508572201</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,7 +314,8 @@
     <MESSAGE value="Create item page" />
     <MESSAGE value="Create endpoint to retrieve filtered list of items by page" />
     <MESSAGE value="Create catalog page, add similar items catalog to item page, update favicon" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create catalog page, add similar items catalog to item page, update favicon" />
+    <MESSAGE value="Add total price display to CartWidget, fix similar items catalog link on item page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add total price display to CartWidget, fix similar items catalog link on item page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

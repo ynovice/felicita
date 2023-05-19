@@ -50,11 +50,11 @@ public class SecurityConfig {
                 .authorizeHttpRequests(requests -> requests
                         .requestMatchers("/api/csrf").permitAll()
                         .requestMatchers(HttpMethod.GET,
-                                "/api/material/*",
-                                "/api/category/*",
-                                "/api/color/*",
+                                "/api/material/**",
+                                "/api/category/**",
+                                "/api/color/**",
                                 "/api/image/**",
-                                "/api/size/*",
+                                "/api/size/**",
                                 "/api/item/**").permitAll()
                         .anyRequest().authenticated())
                 .logout(l -> l
