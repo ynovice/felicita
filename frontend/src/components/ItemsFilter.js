@@ -42,9 +42,7 @@ function ItemsFilter({setItemsPage, setCatalogState, onSuccessCatalogState}) {
 
                 const updatedIsSizeChosen = [];
 
-                console.log(retrievedSizes)
                 for (let i = 0; i < retrievedSizes.length; i++) updatedIsSizeChosen.push(false);
-                console.log(updatedIsSizeChosen);
 
                 if(searchParams.get("sizesIds") !== null) {
 
@@ -56,15 +54,10 @@ function ItemsFilter({setItemsPage, setCatalogState, onSuccessCatalogState}) {
 
                             if(retrievedSizes[i]["id"] === Number(splitSizesIds[j])) {
                                 updatedIsSizeChosen[i] = true;
-                                console.log(j);
-                                console.log(retrievedSizes[i])
                             }
                         }
                     }
-
-                    console.log(splitSizesIds);
                 }
-                console.log(updatedIsSizeChosen)
 
                 setExistingSizes(retrievedSizes);
                 setIsSizeChosen(updatedIsSizeChosen);
@@ -131,7 +124,6 @@ function ItemsFilter({setItemsPage, setCatalogState, onSuccessCatalogState}) {
                 <div className="filter-values">
                     {existingSizes.map((existingSize, i) => {
 
-                        console.log(existingSize, isSizeChosen[i])
                         return (
                             <div key={existingSize["id"]} className="value-row">
                                 <input id={existingSize["id"]} type="checkbox" checked={isSizeChosen[i]}  onClick={() => choseSizeByIndex(i)}/>

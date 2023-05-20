@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Create mysql run configuration">
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Fix bug with error after creating new item">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ItemPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ItemsFilter.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ItemsFilter.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +196,7 @@
       <workItem from="1684450583425" duration="6864000" />
       <workItem from="1684486259603" duration="27931000" />
       <workItem from="1684516314390" duration="125000" />
-      <workItem from="1684581440970" duration="2658000" />
+      <workItem from="1684581440970" duration="2764000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1682728631672</created>
@@ -324,7 +324,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684583440810</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Fix bug with error after creating new item">
+      <created>1684584132717</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1684584132717</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,7 +364,8 @@
     <MESSAGE value="Fix security bug" />
     <MESSAGE value="Optimize imports" />
     <MESSAGE value="Create mysql run configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create mysql run configuration" />
+    <MESSAGE value="Fix bug with error after creating new item" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix bug with error after creating new item" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
