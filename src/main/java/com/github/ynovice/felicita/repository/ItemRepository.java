@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface ItemRepository extends JpaRepository<Item, Long> {
 
-    @Query("SELECT i FROM Item i " +
+    @Query("SELECT DISTINCT i FROM Item i " +
             "LEFT JOIN i.sizesQuantities sq " +
             "LEFT JOIN i.materials mrl " +
             "LEFT JOIN i.categories ctg " +
