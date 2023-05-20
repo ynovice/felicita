@@ -65,12 +65,10 @@ function ItemPage() {
 
                 for (let i = 0; i < itemsPage["items"].length; i++) {
                     if(itemsPage["items"][i]["id"] === Number(itemId)) {
-                        // itemsPage["items"].splice(i, 1);
+                        itemsPage["items"].splice(i, 1);
                         break;
                     }
                 }
-
-                console.log(itemsPage);
 
                 setSimilarItemsPage(itemsPage);
             });
@@ -211,14 +209,14 @@ function ItemPage() {
                     </div>
                 </div>
 
-                {item["sizesQuantities"].length > 0 ?
+                {item["id"] && item["sizesQuantities"].length > 0 ?
                     <CartWidget item={item}
                                 chosenSizeId={getSizeByIndex(chosenSizeIndex)["id"]}
                                 maxQuantity={getQuantityBySizeIndex(chosenSizeIndex)}/> :
-                    <CartWidget itemId={item} chosenSizeId={null} maxQuantity={0}/>
+                    <CartWidget item={item} chosenSizeId={null} maxQuantity={0}/>
                 }
 
-                {similarItemsPage["items"].length > 0 &&
+                {similarItemsPage["items"] && similarItemsPage["items"].length > 0 &&
                     <div className="similar-items">
                         <div className="section-title">Похожие товары: </div>
 
