@@ -27,8 +27,8 @@ public class User {
     @Column(nullable = false, length = 60)
     private String username;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<CartEntry> cartEntries;
+    @OneToOne(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Cart cart;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Purchase> purchases;

@@ -4,16 +4,12 @@ import com.github.ynovice.felicita.exception.BadRequestException;
 import com.github.ynovice.felicita.model.entity.*;
 import com.github.ynovice.felicita.repository.CartEntryRepository;
 import com.github.ynovice.felicita.repository.SizeQuantityRepository;
-import com.github.ynovice.felicita.service.CartEntryService;
-import com.github.ynovice.felicita.service.ItemService;
-import com.github.ynovice.felicita.service.SizeService;
-import com.github.ynovice.felicita.service.UserService;
+import com.github.ynovice.felicita.service.*;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Optional;
 
 @Service
@@ -23,6 +19,7 @@ public class CartEntryServiceImpl implements CartEntryService {
     private final UserService userService;
     private final ItemService itemService;
     private final SizeService sizeService;
+    private final CartService cartService;
 
     private final CartEntryRepository cartEntryRepository;
 
@@ -41,29 +38,25 @@ public class CartEntryServiceImpl implements CartEntryService {
                                                  Long sizeId,
                                                  @NonNull OAuth2User principal) {
 
-        User user = userService.getUser(principal);
-
         Item item = itemService.getById(itemId)
                 .orElseThrow(() -> new BadRequestException("Товар с id " + itemId + " не существует"));
 
-        CartEntry cartEntry = cartEntryRepository
-                .findByItemIdAndUser(itemId, user)
-                .orElseGet(() -> buildCartEntry(user, item));
+        Size size = sizeService.getById(sizeId)
+                .orElseThrow(() -> new BadRequestException("Выбран несуществующий размер"));
 
-        int incrementedQuantity = cartEntry.getQuantityBySizeId(sizeId) + 1;
-        Integer quantityAvailable = item.getQuantityBySizeId(sizeId);
+        Cart cart = cartService.getByPrincipal(principal);
+
+        int incrementedQuantity = cart.getQuantityByItemAndSize(item, size);
+        int quantityAvailable = item.getQuantityBySize(size);
 
         if(incrementedQuantity > quantityAvailable)
             throw new BadRequestException(
                 "В наличии только " + quantityAvailable + " единиц этого товара"
             );
 
-        Size size = sizeService.getById(sizeId)
-                        .orElseThrow(() -> new BadRequestException("Выбран несуществующий размер товара"));
+        CartEntry cartEntry = cart.incrementItemQuantityBySize(item, size);
 
-        cartEntry.incrementQuantityBySize(size);
-
-        cartEntryRepository.saveAndFlush(cartEntry);
+        cartService.saveAndFlush(cart);
 
         return cartEntry;
     }
@@ -71,20 +64,30 @@ public class CartEntryServiceImpl implements CartEntryService {
     @Override
     public CartEntry decrementItemQuantityInCart(Long itemId, Long sizeId, @NonNull OAuth2User principal) {
 
-        User user = userService.getUser(principal);
+        Item item = itemService.getById(itemId)
+                .orElseThrow(() -> new BadRequestException("Товар с id " + itemId + " не существует"));
 
-        CartEntry cartEntry = cartEntryRepository.findByItemIdAndUser(itemId, user)
-                .orElseThrow(() -> new BadRequestException("Вы не добавляли этот товар в корзину"));
+        Size size = sizeService.getById(sizeId)
+                .orElseThrow(() -> new BadRequestException("Выбран несуществующий размер"));
 
-        SizeQuantity sizeQuantity = cartEntry.getSizeQuantityBySizeId(sizeId)
-                .orElseThrow(() -> new BadRequestException("Вы не добавляли этот товар в корзину"));
+        Cart cart = cartService.getByPrincipal(principal);
 
-        sizeQuantity.decrementQuantity();
+        int currentQuantity = cart.getQuantityByItemAndSize(item, size);
+        if(currentQuantity == 0) {
+            throw new BadRequestException("Вы не добавляли этот товар в корзину");
+        }
 
-        if(sizeQuantity.getQuantity() == 0)
-            deleteSizeQuantityFromCartEntryWithRepository(sizeQuantity, cartEntry);
-        else
-            cartEntryRepository.save(cartEntry);
+        CartEntry cartEntry = cart.decrementItemQuantityBySize(item, size);
+
+        cartEntry
+                .getSizeQuantityBySizeId(sizeId)
+                .ifPresent(sq -> {
+                    if(sq.getQuantity() == 0) {
+                        deleteSizeQuantityFromCartEntryWithRepository(sq, cartEntry);
+                    }
+                });
+
+        cartService.saveAndFlush(cart);
 
         return cartEntry;
     }
@@ -92,15 +95,33 @@ public class CartEntryServiceImpl implements CartEntryService {
     @Override
     public CartEntry removeSizeQuantityFromCartEntry(Long itemId, Long sizeId, @NonNull OAuth2User principal) {
 
+        Item item = itemService.getById(itemId)
+                .orElseThrow(() -> new BadRequestException("Товар с id " + itemId + " не существует"));
+
+        Size size = sizeService.getById(sizeId)
+                .orElseThrow(() -> new BadRequestException("Выбран несуществующий размер"));
+
+        Cart cart = cartService.getByPrincipal(principal);
+
+        int currentQuantity = cart.getQuantityByItemAndSize(item, size);
+
+        if(currentQuantity == 0) {
+            throw new BadRequestException("Вы не добавляли этот товар в корзину");
+        }
+
         User user = userService.getUser(principal);
 
         CartEntry cartEntry = cartEntryRepository.findByItemIdAndUser(itemId, user)
                 .orElseThrow(() -> new BadRequestException("Вы не добавляли этот товар в корзину"));
 
-        SizeQuantity sizeQuantity = cartEntry.getSizeQuantityBySizeId(sizeId)
-                .orElseThrow(() -> new BadRequestException("Вы не добавляли этот товар в корзину"));
+        cartEntry
+                .getSizeQuantityBySizeId(sizeId)
+                .ifPresent(sq -> deleteSizeQuantityFromCartEntryWithRepository(sq, cartEntry));
 
-        deleteSizeQuantityFromCartEntryWithRepository(sizeQuantity, cartEntry);
+        cart.setTotalItems(cart.getTotalItems() - currentQuantity);
+        cart.setTotalPrice(cart.getTotalPrice() - currentQuantity * item.getPrice());
+
+        cartService.saveAndFlush(cart);
 
         return cartEntry;
     }
@@ -111,14 +132,9 @@ public class CartEntryServiceImpl implements CartEntryService {
         cartEntry.removeSizeQuantityBySizeId(sizeQuantity.getSizeId());
         sizeQuantityRepository.delete(sizeQuantity);
 
-        if(cartEntry.getSizesQuantities().isEmpty()) cartEntryRepository.delete(cartEntry);
-    }
-
-    private CartEntry buildCartEntry(User user, Item item) {
-        CartEntry ce = new CartEntry();
-        ce.setUser(user);
-        ce.setItem(item);
-        ce.setSizesQuantities(new ArrayList<>());
-        return ce;
+        if(cartEntry.getSizesQuantities().isEmpty()) {
+            cartEntry.getCart().getEntries().remove(cartEntry);
+            cartEntryRepository.delete(cartEntry);
+        }
     }
 }

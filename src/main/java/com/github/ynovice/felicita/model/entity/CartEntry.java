@@ -10,7 +10,7 @@ import java.util.Optional;
 @Table(
         name = "cart_entries",
         uniqueConstraints = {
-                @UniqueConstraint(columnNames = {"user_id", "item_id"})
+                @UniqueConstraint(columnNames = {"cart_id", "item_id"})
         }
 )
 @Getter
@@ -23,7 +23,7 @@ public class CartEntry {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(nullable = false, referencedColumnName = "id")
-    private User user;
+    private Cart cart;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(nullable = false, referencedColumnName = "id")
@@ -44,8 +44,8 @@ public class CartEntry {
     )
     private List<SizeQuantityPrevState> sizesQuantitiesPrevStates;
 
-    public Integer getQuantityBySizeId(Long sizeId) {
-        return getSizeQuantityBySizeId(sizeId)
+    public Integer getQuantityBySize(Size size) {
+        return getSizeQuantityBySizeId(size.getId())
                 .map(SizeQuantity::getQuantity)
                 .orElse(0);
     }
@@ -56,6 +56,10 @@ public class CartEntry {
                         SizeQuantity::incrementQuantity,
                         () -> sizesQuantities.add(new SizeQuantity(size, 1, this))
                 );
+    }
+
+    public void decrementQuantityBySize(Size size) {
+        getSizeQuantityBySizeId(size.getId()).ifPresent(SizeQuantity::decrementQuantity);
     }
 
     public void removeSizeQuantityBySizeId(Long sizeId) {
@@ -75,8 +79,9 @@ public class CartEntry {
                 .findFirst();
     }
 
+    @Deprecated
     public Long getUserId() {
-        return user != null ? user.getId() : null;
+        return cart != null ? cart.getUserId() : null;
     }
 
     public Long getItemId() {

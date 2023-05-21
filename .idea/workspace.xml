@@ -4,11 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Refactor and update Header">
-      <change afterPath="$PROJECT_DIR$/frontend/src/css/CartPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/CartPage.js" afterDir="false" />
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Refactor cart functionality">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Cart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/CartRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/CartService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/CartServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/CartEntryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/CartEntryDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/CartEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/CartEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Size.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Size.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/CartEntryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/CartEntryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/CartEntryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/CartEntryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,10 +29,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
-        <option value="Class" />
         <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -85,10 +95,10 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.github.ynovice.felicita.service.impl" />
       <recent name="com.github.ynovice.felicita.repository" />
       <recent name="com.github.ynovice.felicita.service" />
       <recent name="com.github.ynovice.felicita.controller" />
-      <recent name="com.github.ynovice.felicita.service.impl" />
       <recent name="com.github.ynovice.felicita.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -199,7 +209,7 @@
       <workItem from="1684486259603" duration="27931000" />
       <workItem from="1684516314390" duration="125000" />
       <workItem from="1684581440970" duration="21397000" />
-      <workItem from="1684641790227" duration="12894000" />
+      <workItem from="1684641790227" duration="20580000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1682728631672</created>
@@ -369,7 +379,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684651578746</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Create empty cart page">
+      <created>1684655389975</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1684655389975</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,7 +425,9 @@
     <MESSAGE value="Add ability to filter items by colors, materials and print" />
     <MESSAGE value="Add ability to filter items by categories" />
     <MESSAGE value="Refactor and update Header" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor and update Header" />
+    <MESSAGE value="Create empty cart page" />
+    <MESSAGE value="Refactor cart functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor cart functionality" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -417,6 +436,11 @@
           <url>file://$PROJECT_DIR$/src/test/java/com/github/ynovice/felicita/service/ItemServiceTest.java</url>
           <line>105</line>
           <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/CartEntryServiceImpl.java</url>
+          <line>134</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

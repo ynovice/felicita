@@ -52,7 +52,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUser(OAuth2User oAuth2User) {
+    public User getUser(@NonNull OAuth2User oAuth2User) {
 
         String externalId = oAuth2User.getName();
         AuthServer authServer = defineAuthServer(oAuth2User);

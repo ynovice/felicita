@@ -77,12 +77,12 @@ public class Item {
     @OneToMany(mappedBy = "item", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<CartEntry> cartEntries;
 
-    public Integer getQuantityBySizeId(Long sizeId) {
+    public Integer getQuantityBySize(Size size) {
         return sizesQuantities
                 .stream()
-                .filter(sq -> sq.getSizeId().equals(sizeId))
-                .map(SizeQuantity::getQuantity)
+                .filter(sq -> sq.getSize().equals(size))
                 .findFirst()
+                .map(SizeQuantity::getQuantity)
                 .orElse(0);
     }
 
