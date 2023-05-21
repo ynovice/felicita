@@ -4,21 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Refactor cart functionality">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Cart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/CartRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/CartService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/CartServiceImpl.java" afterDir="false" />
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Add content to cart page">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/CartController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/CartDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/CartPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/CartPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CartPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CartPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/CartEntryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/CartEntryDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/CartEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/CartEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Size.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Size.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/CartEntryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/CartEntryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/CartEntryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/CartEntryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +203,7 @@
       <workItem from="1684486259603" duration="27931000" />
       <workItem from="1684516314390" duration="125000" />
       <workItem from="1684581440970" duration="21397000" />
-      <workItem from="1684641790227" duration="20580000" />
+      <workItem from="1684641790227" duration="29948000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1682728631672</created>
@@ -386,7 +380,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684655389975</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Refactor cart functionality">
+      <created>1684663035875</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1684663035875</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -427,7 +428,8 @@
     <MESSAGE value="Refactor and update Header" />
     <MESSAGE value="Create empty cart page" />
     <MESSAGE value="Refactor cart functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor cart functionality" />
+    <MESSAGE value="Add content to cart page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add content to cart page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -436,11 +438,6 @@
           <url>file://$PROJECT_DIR$/src/test/java/com/github/ynovice/felicita/service/ItemServiceTest.java</url>
           <line>105</line>
           <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/CartEntryServiceImpl.java</url>
-          <line>134</line>
-          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

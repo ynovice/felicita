@@ -46,7 +46,7 @@ public class CartEntryServiceImpl implements CartEntryService {
 
         Cart cart = cartService.getByPrincipal(principal);
 
-        int incrementedQuantity = cart.getQuantityByItemAndSize(item, size);
+        int incrementedQuantity = cart.getQuantityByItemAndSize(item, size) + 1;
         int quantityAvailable = item.getQuantityBySize(size);
 
         if(incrementedQuantity > quantityAvailable)

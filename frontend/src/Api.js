@@ -236,6 +236,21 @@ const Api = (function () {
             await throwCorrespondingException(response);
         },
 
+        getCart: async function (abortSignal) {
+
+            const response = await fetch(API_BASE_URL + "/cart", {
+                signal: abortSignal,
+                credentials: "include"
+            }).catch(() => null)
+
+            if(response && response.ok) {
+                return await response.json();
+            }
+
+            await throwCorrespondingException(response);
+        },
+
+
         getCartEntryByUserIdAndItemId: async function (userId, itemId, abortSignal) {
 
             const response = await fetch(API_BASE_URL + "/ce?" + new URLSearchParams({userId, itemId}), {
