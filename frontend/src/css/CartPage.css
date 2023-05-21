@@ -1,0 +1,11 @@
+.CartPage {
+    display: flex;
+    gap: 80px;
+    padding: 20px 30px 0;
+}
+
+.CartPage .left-side {
+    width: 705px;
+
+    background: red;
+}
