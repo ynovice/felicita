@@ -1,7 +1,9 @@
 import "../css/Header.css";
-import {UserConsumer} from "../contexts/UserContext";
-import {useState} from "react";
+import {UpdatedUserContext, UserPresenceState} from "../contexts/UserContext";
+import {useContext, useEffect, useState} from "react";
 import $ from "jquery";
+import {AccessLevel, AppContext} from "../contexts/AppContext";
+import Api from "../Api";
 
 $(window).on('resize', function(){
     let win = $(this); //this = window
@@ -22,6 +24,21 @@ function Header() {
         setMobileMenuOpened(!mobileMenuOpened);
     };
 
+    const {accessLevel} = useContext(AppContext);
+    const {userPresenceState} = useContext(UpdatedUserContext);
+
+    const [rootCategories, setRootCategories] = useState([]);
+
+    useEffect(() => {
+
+        const abortController = new AbortController();
+
+        Api.getAllCategories(abortController.signal)
+            .then(retrievedCategories => setRootCategories(retrievedCategories));
+
+        return () => abortController.abort();
+    }, []);
+
     return (
         <header className={"Header"}>
 
@@ -35,68 +52,58 @@ function Header() {
                     меню
                 </div>
 
-                <UserConsumer>
-                    {
-                        userContext => {
+                <div className="menu-container">
+                    <ul className="menu">
 
-                            if(!userContext.isLoaded) {
-                                return null;
-                            }
-
-                            if(userContext.hasError || !userContext.user) {
-                                return (
-                                    <div className={"menu-container"}>
-                                        <ul className={"menu"}>
-                                            <li className={"menu-item"}>
-                                                <a href="#">Блог</a>
-                                            </li>
-                                            <li className={"menu-item"}>
-                                                <a href="/login">Войти</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                );
-                            }
-
-                            return (
-                                <div className="menu-container">
-                                    <ul className={"menu"}>
-                                        <li className={"menu-item"}>
-                                            <a href="#">Блог</a>
-                                        </li>
-                                        <li className={"menu-item"}>
-                                            <a href="/profile">Профиль</a>
-                                        </li>
-                                        <li className={"menu-item"}>
-                                            <a href="#">Корзина</a>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                            );
+                        {accessLevel === AccessLevel.ADMIN &&
+                            <li className="menu-item">
+                                <a href="/admin">Админ-панель</a>
+                            </li>
                         }
-                    }
-                </UserConsumer>
 
+                        <li className="menu-item">
+                            <a href="/blog">Блог</a>
+                        </li>
+
+                        {userPresenceState === UserPresenceState.EMPTY &&
+                            <li className="menu-item">
+                                <a href="/login">Войти</a>
+                            </li>
+                        }
+
+                        {userPresenceState === UserPresenceState.PRESENT &&
+                            <li className="menu-item">
+                                <a href="/profile">Профиль</a>
+                            </li>
+                        }
+
+                        {userPresenceState === UserPresenceState.PRESENT &&
+                            <li className="menu-item">
+                                <a href="/cart">Корзина</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
             </div>
 
             <div className="links-row">
                 <ul className="links-left">
-                    <li><a className={"header-link"} href="#">Футболки</a></li>
-                    <li><a className={"header-link"} href="#">Штанишки</a></li>
-                    <li><a className={"header-link"} href="#">Платья</a></li>
-                    <li><a className={"header-link"} href="#">Скидки</a></li>
-                    <li><a className={"header-link"} href="#">Футболки</a></li>
-                    <li><a className={"header-link"} href="#">Штанишки</a></li>
-                    <li><a className={"header-link"} href="#">Платья</a></li>
-                    <li><a className={"header-link"} href="#">Скидки</a></li>
+                    {rootCategories.map(rootCategory => {
+                            return (
+                                <li>
+                                    <a className="header-link"
+                                       href={"/catalog?categoriesIds=" + rootCategory["id"]}>
+                                        {rootCategory["name"]}
+                                    </a>
+                                </li>
+                            );
+                        }
+                    )}
                 </ul>
                 <ul className="links-right">
                     <li><a className={"header-link"} href="/catalog">Каталог</a></li>
                 </ul>
             </div>
-
-
         </header>
     );
 }
