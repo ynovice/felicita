@@ -60,6 +60,6 @@ public class ItemFilterParamsDto {
 
     public void setColorsIds(List<Long> colorsIds) {
         this.colorsIds = colorsIds;
-        filterByColors = colorsIds != null && categoriesIds.size() > 0;
+        filterByColors = colorsIds != null && colorsIds.size() > 0;
     }
 }

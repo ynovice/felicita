@@ -134,7 +134,8 @@ function ItemPage() {
                                     {item["categories"].map((category, index) => {
                                         return (
                                             <React.Fragment key={category["id"]}>
-                                                <a href="#" className="link">{category["name"]}</a>
+                                                <a href={"/catalog?categoriesIds=" + category["id"]}
+                                                   className="link">{category["name"]}</a>
                                                 {index !== item["categories"].length - 1 && ", "}
                                             </React.Fragment>
                                         );
@@ -149,7 +150,8 @@ function ItemPage() {
                                     {item["materials"].map((material, index) => {
                                         return (
                                             <React.Fragment key={material["id"]}>
-                                                <a href="#" className="link">{material["name"]}</a>
+                                                <a href={"/catalog?materialsIds=" + material["id"]}
+                                                   className="link">{material["name"]}</a>
                                                 {index !== item["materials"].length - 1 && ", "}
                                             </React.Fragment>
                                         );
@@ -164,7 +166,8 @@ function ItemPage() {
                                     {item["colors"].map((color, index) => {
                                         return (
                                             <React.Fragment key={color["id"]}>
-                                                <a href="#" className="link">{color["name"]}</a>
+                                                <a href={"/catalog?colorsIds=" + color["id"]}
+                                                   className="link">{color["name"]}</a>
                                                 {index !== item["colors"].length - 1 && ", "}
                                             </React.Fragment>
                                         );
@@ -175,7 +178,8 @@ function ItemPage() {
                         <div className="property">
                             <div className="name">Принт</div>
                             <div className="values">
-                                <a href="#" className="link">{item["hasPrint"] ? "Да" : "Нет"}</a>
+                                <a href={"/catalog?hasPrint=" + item["hasPrint"]}
+                                   className="link">{item["hasPrint"] ? "Да" : "Нет"}</a>
                             </div>
                         </div>
                     </div>

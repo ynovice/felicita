@@ -49,32 +49,6 @@
     display: block;
 }
 
-/*.CreateItemPage input:not([type="button"]),*/
-/*.CreateItemPage select,*/
-/*.CreateItemPage option {*/
-/*    background: #eaeaea;*/
-/*    border-radius: 3px;*/
-/*    outline: none;*/
-/*    border: 0;*/
-/*    padding: 4px 12px;*/
-/*    font-size: 16px;*/
-/*    box-sizing: border-box;*/
-/*    width: 220px;*/
-/*}*/
-/*.CreateItemPage input:not([type="button"])::-webkit-outer-spin-button,*/
-/*.CreateItemPage input:not([type="button"])::-webkit-inner-spin-button,*/
-/*.CreateItemPage select::-webkit-outer-spin-button,*/
-/*.CreateItemPage select::-webkit-inner-spin-button,*/
-/*.CreateItemPage option::-webkit-outer-spin-button,*/
-/*.CreateItemPage option::-webkit-inner-spin-button*/
-/*{*/
-/*    -webkit-appearance: none;*/
-/*    margin: 0; !* <-- Apparently some margin are still there even though it's hidden *!*/
-/*}*/
-/*.CreateItemPage input[type=number] {*/
-/*    -moz-appearance:textfield; !* Firefox *!*/
-/*}*/
-
 .CreateItemPage .status-uploading {
     color: #4285F4;
 }

@@ -38,7 +38,7 @@
     text-shadow: 0 0 5px #ff9a9a;
 }
 
-input:not([type="button"], [type="checkbox"]),
+input:not([type="button"], [type="checkbox"], [type="radio"]),
 select, option {
     background: #eaeaea;
     border-radius: 3px;
@@ -53,6 +53,8 @@ input:not([type="button"])::-webkit-outer-spin-button,
 input:not([type="button"])::-webkit-inner-spin-button,
 input:not([type="checkbox"])::-webkit-outer-spin-button,
 input:not([type="checkbox"])::-webkit-inner-spin-button,
+input:not([type="radio"])::-webkit-outer-spin-button,
+input:not([type="radio"])::-webkit-inner-spin-button,
 select::-webkit-outer-spin-button,
 select::-webkit-inner-spin-button,
 option::-webkit-outer-spin-button,

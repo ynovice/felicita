@@ -542,7 +542,7 @@ function CreateItemPage() {
 
         const categoriesIds = [];
         for (let i = 0; i < selectedCategoriesSequences.length; i++)
-            categoriesIds.push(selectedCategoriesSequences[i][selectedCategoriesSequences[i].length - 1]);
+            categoriesIds.push(...selectedCategoriesSequences[i]);
 
         const sizesQuantitiesDtos = [];
         for (let i = 0; i < sizesQuantities.length; i++)

@@ -180,12 +180,11 @@ public class ItemValidator implements Validator {
                         .stream()
                         .anyMatch(c -> finalParentId.get().equals(c.getId()));
 
-                if(bothParentAndSubcategoryArePresent) {
+                if(!bothParentAndSubcategoryArePresent) {
                     errors.rejectValue(
                             "categories",
                             "item.categories.duplicated",
-                            "Вы не можете указать одновременно и родительскую, " +
-                                    "и дочернюю категорию для товара"
+                            "Нельзя указать дочернюю категорию, не указав при этом родительскую категорию"
                     );
                     return;
                 }

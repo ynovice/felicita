@@ -2,7 +2,7 @@ import withHeader from "../hoc/withHeader";
 import inCage from "../hoc/inCage";
 import "../css/CatalogPage.css";
 import React, {useState} from "react";
-import ItemsFilter from "../components/ItemsFilter";
+import ItemFiltersContainer from "../components/ItemFiltersContainer";
 import Api from "../Api";
 import {useSearchParams} from "react-router-dom";
 
@@ -36,9 +36,9 @@ function CatalogPage() {
     return (
         <div className="CatalogPage">
 
-            <ItemsFilter setItemsPage={setItemsPage}
-                         setCatalogState={setCatalogState}
-                         onSuccessCatalogState={CatalogState.LOADED}/>
+            <ItemFiltersContainer setItemsPage={setItemsPage}
+                                  setCatalogState={setCatalogState}
+                                  onSuccessCatalogState={CatalogState.LOADED}/>
 
             <div className="right-side">
 
