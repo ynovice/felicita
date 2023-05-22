@@ -90,7 +90,7 @@ function Header() {
                 <ul className="links-left">
                     {rootCategories.map(rootCategory => {
                             return (
-                                <li>
+                                <li key={"root-category-header-link-container-" + rootCategory["id"]}>
                                     <a className="header-link"
                                        href={"/catalog?categoriesIds=" + rootCategory["id"]}>
                                         {rootCategory["name"]}

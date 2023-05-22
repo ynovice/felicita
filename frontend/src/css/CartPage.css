@@ -14,6 +14,15 @@
     padding-bottom: 20px;
 }
 
+.CartPage .no-items-message-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.CartPage .no-items-message-container * {
+    font-size: 18px;
+}
+
 .CartPage .cart-items {
     display: flex;
     flex-direction: column;

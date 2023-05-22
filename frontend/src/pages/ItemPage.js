@@ -1,5 +1,5 @@
 import "../css/ItemPage.css";
-import withHeader from "../hoc/withHeader";
+import withHeaderAndFooter from "../hoc/withHeaderAndFooter";
 import inCage from "../hoc/inCage";
 import React, {useContext, useEffect, useState} from "react";
 import Api from "../Api";
@@ -252,4 +252,4 @@ function ItemPage() {
     )
 }
 
-export default inCage(withHeader(ItemPage));
+export default inCage(withHeaderAndFooter(ItemPage));

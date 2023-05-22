@@ -1,4 +1,4 @@
-import withHeader from "../hoc/withHeader";
+import withHeaderAndFooter from "../hoc/withHeaderAndFooter";
 import inCage from "../hoc/inCage";
 import "../css/LoginPage.css";
 import Api from "../Api";
@@ -23,4 +23,4 @@ function LoginPage() {
     )
 }
 
-export default inCage(withHeader(LoginPage));
+export default inCage(withHeaderAndFooter(LoginPage));

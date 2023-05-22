@@ -4,15 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Add content to cart page">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/CartController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/CartDto.java" afterDir="false" />
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Create footer, fill main page with content, update cart page">
+      <change afterPath="$PROJECT_DIR$/frontend/public/ui/banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Footer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/ItemsCatalog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/css/Footer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/css/ItemsCatalog.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/css/PageWithHeaderAndFooter.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/css/CartPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/CartPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/MainPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/MainPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/hoc/withHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hoc/withHeaderAndFooter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminPanelPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/AdminPanelPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/CartPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CartPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/CartEntryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/CartEntryDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/CartEntryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/CartEntryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CatalogPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CatalogPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CreateItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CreateItemPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ErrorPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ErrorPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ItemPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/LoginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/MainPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,10 +35,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="JavaScript File" />
-        <option value="CSS File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -64,7 +76,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/ynovice/Projects/felicita/frontend/public&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/cgw/Projects/felicita/frontend/public/ui&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -75,7 +87,7 @@
     &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15586546&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;c15d1e866df42e567cedc944647c5b1b&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/snap/intellij-idea-ultimate/426/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -96,6 +108,7 @@
       <recent name="com.github.ynovice.felicita.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/public/ui" />
       <recent name="$PROJECT_DIR$/frontend/public" />
       <recent name="$PROJECT_DIR$/frontend/public/logos" />
       <recent name="$PROJECT_DIR$/frontend/src" />
@@ -117,7 +130,14 @@
       <command value=".Header .links-row .links-right, .Header .links-row .links-left" />
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Backend MySQL">
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="npm.React Frontend">
     <configuration name="ItemServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="felicita" />
       <extension name="coverage">
@@ -204,6 +224,10 @@
       <workItem from="1684516314390" duration="125000" />
       <workItem from="1684581440970" duration="21397000" />
       <workItem from="1684641790227" duration="29948000" />
+      <workItem from="1684710104545" duration="679000" />
+      <workItem from="1684710928607" duration="275000" />
+      <workItem from="1684711293168" duration="7009000" />
+      <workItem from="1684747502488" duration="8433000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1682728631672</created>
@@ -429,7 +453,8 @@
     <MESSAGE value="Create empty cart page" />
     <MESSAGE value="Refactor cart functionality" />
     <MESSAGE value="Add content to cart page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add content to cart page" />
+    <MESSAGE value="Create footer, fill main page with content, update cart page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create footer, fill main page with content, update cart page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

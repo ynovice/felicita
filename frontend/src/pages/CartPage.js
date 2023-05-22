@@ -1,4 +1,4 @@
-import withHeader from "../hoc/withHeader";
+import withHeaderAndFooter from "../hoc/withHeaderAndFooter";
 import inCage from "../hoc/inCage";
 import {useCallback, useEffect, useState} from "react";
 import requiresUser from "../hoc/requiresUser";
@@ -25,8 +25,6 @@ function CartPage() {
     }, [CartState.LOADED]);
 
     useEffect(() => {
-
-        console.log("reloading cart")
 
         const abortController = new AbortController();
 
@@ -62,34 +60,50 @@ function CartPage() {
         }
     }
 
-    const [similarItemsPage, setSimilarItemsPage] = useState([]);
+    const [similarItemsPage, setSimilarItemsPage] = useState(null);
+    const [cachedSimilarItemsPage, setCachedSimilarItemsPage] = useState(null);
+
     useEffect(() => {
 
         const abortController = new AbortController();
 
         Api.getItemsPageByFilterParams({}, abortController.signal)
-            .then(itemsPage => {
-
-
-                const itemsInCartIds = [];
-                cart["entries"].forEach(cartEntry => {
-                    itemsInCartIds.push(cartEntry["item"]["id"]);
-                });
-
-                const actualSimilarItems = [];
-
-                for (let i = 0; i < itemsPage["items"].length; i++) {
-                    if(itemsInCartIds.indexOf(itemsPage["items"][i]["id"]) === -1) {
-                        actualSimilarItems.push(itemsPage["items"][i]);
-                    }
-                }
-                itemsPage["items"] = actualSimilarItems;
-
-                setSimilarItemsPage(itemsPage);
-            });
+            .then(retrievedSimilarItemsPage => setCachedSimilarItemsPage(retrievedSimilarItemsPage));
 
         return () => abortController.abort();
-    }, [cart]);
+
+    }, []);
+
+    useEffect(() => {
+
+        const abortController = new AbortController();
+
+        if(cartState === CartState.LOADING) {
+            return;
+        }
+
+        const itemsInCartIds = [];
+        cart["entries"].forEach(cartEntry => {
+            itemsInCartIds.push(cartEntry["item"]["id"]);
+        });
+
+        const actualSimilarItems = [];
+
+        if(!cachedSimilarItemsPage) {
+            return;
+        }
+
+        for (let i = 0; i < cachedSimilarItemsPage["items"].length; i++) {
+            if(itemsInCartIds.indexOf(cachedSimilarItemsPage["items"][i]["id"]) === -1) {
+                actualSimilarItems.push(cachedSimilarItemsPage["items"][i]);
+            }
+        }
+        cachedSimilarItemsPage["items"] = actualSimilarItems;
+
+        setSimilarItemsPage(cachedSimilarItemsPage);
+
+        return () => abortController.abort();
+    }, [CartState.LOADING, cachedSimilarItemsPage, cart, cartState]);
 
     return (
         <div className="CartPage">
@@ -100,6 +114,13 @@ function CartPage() {
 
                 {cartState === CartState.LOADED &&
                     <div className="cart-items">
+
+                        {cart["entries"].length === 0 &&
+                            <div className="no-items-message-container">
+                                <p>Ваша корзина пуста.</p>
+                                <a href="/catalog" className="link">За покупками →</a>
+                            </div>
+                        }
 
                         {cart["entries"].map(cartEntry => {
 
@@ -170,16 +191,17 @@ function CartPage() {
                             <p>Итого</p>
                             <p>{cart["totalPrice"]}₽</p>
                         </div>
-                        <div className="button-container">
-                            <input type="button" className="button" value="Зарезервировать"/>
-                        </div>
+                        {cart["totalItems"] > 0 &&
+                            <div className="button-container">
+                                <input type="button" className="button" value="Зарезервировать"/>
+                            </div>
+                        }
                     </div>
                 }
             </div>
 
             <div className="right-side">
-
-                {similarItemsPage["items"] && similarItemsPage["items"].length > 0 &&
+                {similarItemsPage && similarItemsPage["items"] && similarItemsPage["items"].length > 0 &&
                     <div className="similar-items">
                         <div className="section-title">А ещё тебе точно нужно это:</div>
 
@@ -206,14 +228,12 @@ function CartPage() {
                     </div>
                 }
 
-
-
             </div>
 
         </div>
     );
 }
 
-export default inCage(withHeader(requiresUser(
+export default inCage(withHeaderAndFooter(requiresUser(
     CartPage,
     "Войдите в аккаунт, чтобы пользоваться корзиной.")));

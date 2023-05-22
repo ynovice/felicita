@@ -1,5 +1,5 @@
 import inCage from "../hoc/inCage";
-import withHeader from "../hoc/withHeader";
+import withHeaderAndFooter from "../hoc/withHeaderAndFooter";
 import requiresUser from "../hoc/requiresUser";
 import "../css/CreateItemPage.css";
 import React, {useEffect, useRef, useState} from "react";
@@ -798,7 +798,7 @@ function CreateItemPage() {
     );
 }
 
-export default inCage(withHeader(requiresUser(
+export default inCage(withHeaderAndFooter(requiresUser(
     CreateItemPage,
     "Чтобы просмотреть эту страницу, нужно войти в аккаунт администратора.",
     true

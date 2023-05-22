@@ -7,7 +7,7 @@ function ErrorPage ({errorMessage = "Что-то пошло не так."}) {
             <p className={"page-title"}>Oops :(</p>
             <p className={"error-message"}>{errorMessage}</p>
             <div className="links">
-                <a href="#" className={"link"} onClick={() => window.history.back()}>☜ Взад</a>
+                <span className="link" onClick={() => window.history.back()}>☜ Взад</span>
             </div>
         </div>
     )
