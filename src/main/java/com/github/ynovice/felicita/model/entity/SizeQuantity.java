@@ -33,7 +33,7 @@ public class SizeQuantity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(referencedColumnName = "id")
-    private Purchase purchase;
+    private Reserve reserve;
 
     public SizeQuantity(Size size, Integer quantity, Item item) {
         this.size = size;

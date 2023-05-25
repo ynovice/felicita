@@ -4,27 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Create footer, fill main page with content, update cart page">
-      <change afterPath="$PROJECT_DIR$/frontend/public/ui/banner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Footer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/ItemsCatalog.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/css/Footer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/css/ItemsCatalog.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/css/PageWithHeaderAndFooter.css" afterDir="false" />
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Add ability to create and get articles by id, rename Purchase to Reserve, update application.yml">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ArticleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/ArticleDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/request/CreateArticleDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Article.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/ArticleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ArticleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ArticleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/validator/ArticleValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/CartPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/CartPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/MainPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/MainPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/hoc/withHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hoc/withHeaderAndFooter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminPanelPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/AdminPanelPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CartPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CartPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CatalogPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CatalogPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CreateItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CreateItemPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ErrorPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ErrorPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ItemPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/LoginPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/MainPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Purchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Reserve.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/SizeQuantity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/SizeQuantity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,10 +29,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
-        <option value="Class" />
         <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -76,7 +70,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/cgw/Projects/felicita/frontend/public/ui&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/cgw/Desktop/meetupAppium&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -87,7 +81,7 @@
     &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15586546&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;c15d1e866df42e567cedc944647c5b1b&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/snap/intellij-idea-ultimate/426/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -101,11 +95,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.github.ynovice.felicita.model.dto.request" />
+      <recent name="com.github.ynovice.felicita.model.dto.entity" />
       <recent name="com.github.ynovice.felicita.service.impl" />
       <recent name="com.github.ynovice.felicita.repository" />
       <recent name="com.github.ynovice.felicita.service" />
-      <recent name="com.github.ynovice.felicita.controller" />
-      <recent name="com.github.ynovice.felicita.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend/public/ui" />
@@ -137,7 +131,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="npm.React Frontend">
+  <component name="RunManager" selected="Spring Boot.Backend MySQL">
     <configuration name="ItemServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="felicita" />
       <extension name="coverage">
@@ -227,7 +221,13 @@
       <workItem from="1684710104545" duration="679000" />
       <workItem from="1684710928607" duration="275000" />
       <workItem from="1684711293168" duration="7009000" />
-      <workItem from="1684747502488" duration="8433000" />
+      <workItem from="1684747502488" duration="8487000" />
+      <workItem from="1684772698647" duration="37000" />
+      <workItem from="1684914928687" duration="189000" />
+      <workItem from="1684915267567" duration="396000" />
+      <workItem from="1684916000316" duration="100000" />
+      <workItem from="1684918555164" duration="8695000" />
+      <workItem from="1685026671544" duration="5781000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1682728631672</created>
@@ -411,7 +411,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684663035875</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Create footer, fill main page with content, update cart page">
+      <created>1684758638547</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1684758638547</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,7 +436,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial commit." />
     <MESSAGE value="Create separate profiles for PostgreSQL and MySQl dbs. Remove unused code." />
     <MESSAGE value="Delete setupProxy.js" />
     <MESSAGE value="Create model entities" />
@@ -454,7 +460,8 @@
     <MESSAGE value="Refactor cart functionality" />
     <MESSAGE value="Add content to cart page" />
     <MESSAGE value="Create footer, fill main page with content, update cart page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create footer, fill main page with content, update cart page" />
+    <MESSAGE value="Add ability to create and get articles by id, rename Purchase to Reserve, update application.yml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ability to create and get articles by id, rename Purchase to Reserve, update application.yml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

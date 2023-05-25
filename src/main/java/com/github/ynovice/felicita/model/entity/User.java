@@ -31,5 +31,5 @@ public class User {
     private Cart cart;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Purchase> purchases;
+    private List<Reserve> reserves;
 }

@@ -8,10 +8,10 @@ import java.time.ZonedDateTime;
 import java.util.Set;
 
 @Entity
-@Table(name = "purchases")
+@Table(name = "reserves")
 @Getter
 @Setter
-public class Purchase {
+public class Reserve {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
