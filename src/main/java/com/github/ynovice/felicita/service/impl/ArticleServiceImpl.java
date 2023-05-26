@@ -28,13 +28,14 @@ public class ArticleServiceImpl implements ArticleService {
     private final ArticleValidator articleValidator;
 
     @Override
-    public Article create(String content, OAuth2User authorPrincipal) {
+    public Article create(String name, String content, OAuth2User authorPrincipal) {
 
         User user = userService.getUser(authorPrincipal);
 
         Article article = new Article();
         article.setCreatedAt(ZonedDateTime.now());
         article.setAuthor(user.getUsername());
+        article.setName(name);
         article.setContent(content);
 
         BindingResult validationResult = validate(article);

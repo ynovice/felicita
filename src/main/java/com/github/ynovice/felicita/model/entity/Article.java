@@ -22,6 +22,9 @@ public class Article {
     @Column(nullable = false)
     private String author;
 
+    @Column(nullable = false, length = 200)
+    private String name;
+
     @Column(nullable = false, length = 50000)
     private String content;
 }

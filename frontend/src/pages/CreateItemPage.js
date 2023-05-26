@@ -568,7 +568,7 @@ function CreateItemPage() {
                 if(e instanceof InvalidEntityException) {
                     setFieldErrors(e.validationResult.fieldErrors);
                 }
-            })
+            });
     }
 
     return (
@@ -580,7 +580,8 @@ function CreateItemPage() {
             <div className="section block-title">Основное</div>
             <div className="section form-row no-margin">
                 <label htmlFor="name">Название</label>
-                <input value={name}
+                <input className="flct-input"
+                       value={name}
                        onChange={(e) => setName(e.target.value)}
                        type="text"
                        id={"name"}
@@ -588,7 +589,8 @@ function CreateItemPage() {
             </div>
             <div className="section form-row no-margin">
                 <label htmlFor="description">Описание</label>
-                <input value={description}
+                <input className="flct-input"
+                       value={description}
                        onChange={(e) => setDescription(e.target.value)}
                        type="text"
                        id={"description"}
@@ -596,7 +598,8 @@ function CreateItemPage() {
             </div>
             <div className="section form-row">
                 <label htmlFor="price">Цена (₽)</label>
-                <input value={price}
+                <input className="flct-input"
+                       value={price}
                        onChange={(e) => setPrice(e.target.value)}
                        type="number"
                        id={"price"}
@@ -643,14 +646,17 @@ function CreateItemPage() {
 
                                 return (
                                     <React.Fragment key={categoryId}>
-                                        <select value={categoryId}
+                                        <select className="flct-input"
+                                                value={categoryId}
                                                 onChange={(e) => handleChangeCategorySelect(e)}>
 
-                                            <option value={categoryId}>{getCategoryById(categoryId)["name"]}</option>
+                                            <option className="flct-input"
+                                                    value={categoryId}>{getCategoryById(categoryId)["name"]}</option>
                                             {
                                                 getUnselectedCategorySiblingsById(categoryId).map(sibling => {
                                                     return (
-                                                        <option key={sibling["id"]}
+                                                        <option className="flct-input"
+                                                                key={sibling["id"]}
                                                                 value={sibling["id"]}>{sibling["name"]}</option>
                                                     );
                                                 })
@@ -689,11 +695,15 @@ function CreateItemPage() {
                     return (
                         <div key={materialId} className={"selects-row"}>
                             <React.Fragment>
-                                <select value={materialId} onChange={(e) => handleChangeMaterialSelect(e)}>
-                                    <option value={id}>{name}</option>
+                                <select className="flct-input"
+                                        value={materialId}
+                                        onChange={(e) => handleChangeMaterialSelect(e)}>
+                                    <option className="flct-input" value={id}>{name}</option>
                                     {getUnselectedMaterials().map((unselectedMaterial) => {
                                         return (
-                                            <option key={unselectedMaterial["id"]} value={unselectedMaterial["id"]}>
+                                            <option className="flct-input"
+                                                    key={unselectedMaterial["id"]}
+                                                    value={unselectedMaterial["id"]}>
                                                 {unselectedMaterial["name"]}
                                             </option>
                                         );
@@ -721,11 +731,15 @@ function CreateItemPage() {
                     return (
                         <div key={colorId} className={"selects-row"}>
                             <React.Fragment>
-                                <select value={colorId} onChange={(e) => handleChangeColorSelect(e)}>
-                                    <option value={id}>{name}</option>
+                                <select className="flct-input"
+                                        value={colorId}
+                                        onChange={(e) => handleChangeColorSelect(e)}>
+                                    <option className="flct-input" value={id}>{name}</option>
                                     {getUnselectedColors().map((unselectedColor) => {
                                         return (
-                                            <option key={unselectedColor["id"]} value={unselectedColor["id"]}>
+                                            <option className="flct-input"
+                                                    key={unselectedColor["id"]}
+                                                    value={unselectedColor["id"]}>
                                                 {unselectedColor["name"]}
                                             </option>
                                         );
@@ -751,14 +765,19 @@ function CreateItemPage() {
                 {sizesQuantities.length > 0 && sizesQuantities.map((sq) => {
                     return (
                         <div className="selects-row" key={sq["size"]["id"]}>
-                            <select value={sq["size"]["id"]} onChange={(e) => handleChangeSizeQuantitySelect(e)}>
-                                <option value={sq["size"]["id"]}>{sq["size"]["name"]}</option>
+                            <select className="flct-input"
+                                    value={sq["size"]["id"]}
+                                    onChange={(e) => handleChangeSizeQuantitySelect(e)}>
+                                <option className="flct-input"
+                                        value={sq["size"]["id"]}>{sq["size"]["name"]}</option>
                                 {getUnselectedSizes().map(unselectedSize => {
-                                    return <option value={unselectedSize["id"]}
+                                    return <option className="flct-input"
+                                                   value={unselectedSize["id"]}
                                                    key={unselectedSize["id"]}>{unselectedSize["name"]}</option>
                                 })}
                             </select>
-                            <input type="number"
+                            <input className="flct-input"
+                                   type="number"
                                    value={sq["quantity"]}
                                    placeholder="Количество (шт)"
                                    onChange={(e) => handleSizeQuantityQuantityChange(e, sq["size"]["id"])}/>

@@ -15,6 +15,7 @@ import NotAuthorizedException from "./exception/NotAuthorizedException";
 import {AccessLevel, AppContextProvider, ServerState} from "./contexts/AppContext";
 import CatalogPage from "./pages/CatalogPage";
 import CartPage from "./pages/CartPage";
+import CreateArticlePage from "./pages/CreateArticlePage";
 
 function App() {
 
@@ -136,6 +137,7 @@ function App() {
                                 <Route path="/cart" element={<CartPage />}/>
                                 <Route path="/admin" element={<AdminPanelPage />}/>
                                 <Route path="/admin/item/create" element={<CreateItemPage />}/>
+                                <Route path="/admin/article/create" element={<CreateArticlePage />}/>
                             </Routes>
                         </BrowserRouter>
                     </div>

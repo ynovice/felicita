@@ -13,7 +13,11 @@ function AdminPanelPage() {
             </div>
 
             <div className="section">
-                <a href="/admin/item/create" className="link">Добавить новый товар</a>
+                <a href="/admin/item/create" className="link">Создать новый товар</a>
+            </div>
+
+            <div className="section">
+                <a href="/admin/article/create" className="link">Создать статью для блога</a>
             </div>
 
         </div>

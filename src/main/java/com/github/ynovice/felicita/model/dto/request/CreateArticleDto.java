@@ -7,5 +7,6 @@ import lombok.Setter;
 @Setter
 public class CreateArticleDto {
 
+    private String name;
     private String content;
 }

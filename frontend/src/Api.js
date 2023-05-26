@@ -333,8 +333,31 @@ const Api = (function () {
             await throwCorrespondingException(response);
         },
 
+        createArticle: async function (requestDto) {
+
+            const response = await fetch(API_BASE_URL + "/article", {
+                credentials: "include",
+                method: "post",
+                headers: {
+                    [csrfHeaderName]: csrfToken,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(requestDto)
+            }).catch(() => null);
+
+            if(response && response.ok) {
+                return await response.json();
+            }
+
+            await throwCorrespondingException(response);
+        },
+
         getImageUrlByImageId: function(id) {
-            return this.getBaseApiUrl() + "/image/" + id;
+            return API_BASE_URL + "/image/" + id;
+        },
+
+        getImageUploadUrl: function () {
+            return API_BASE_URL + "/image"
         },
 
         getBaseApiUrl: function () {
@@ -348,9 +371,15 @@ const Api = (function () {
         setCsrfHeaderName(name) {
             csrfHeaderName = name;
         },
+        getCsrfHeaderName() {
+            return csrfHeaderName;
+        },
 
         setCsrfToken(token) {
             csrfToken = token;
+        },
+        getCsrfToken() {
+            return csrfToken;
         }
     }
 })();

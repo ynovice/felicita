@@ -1,0 +1,186 @@
+.CreateArticlePage {
+    padding: 30px 30px 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 100px;
+}
+
+.CreateArticlePage .page-title {
+    font-size: 24px;
+}
+
+.CreateArticlePage .form-row {
+    display: flex;
+    gap: 20px;
+    align-items: baseline;
+}
+
+.CreateArticlePage #editor * {
+    font-size: 18px;
+    line-height: 26px;
+}
+.CreateArticlePage #editor h1 {
+    font-size: 24px;
+}
+.CreateArticlePage #editor h2 {
+    font-size: 22px;
+}
+.CreateArticlePage #editor h3 {
+    font-size: 20px;
+}
+.CreateArticlePage #editor h4 {
+    font-size: 18px;
+}
+.CreateArticlePage #editor h5 {
+    font-size: 16px;
+}
+.CreateArticlePage #editor h6 {
+    font-size: 14px;
+}
+
+.CreateArticlePage #editor {
+    max-width: 860px;
+}
+.CreateArticlePage .codex-editor__redactor {
+    padding-bottom: 100px !important;
+}
+.CreateArticlePage .ce-block__content,
+.CreateArticlePage .ce-toolbar__content {
+    max-width: 860px;
+}
+.CreateArticlePage .ce-toolbar__actions {
+    left: 100%;
+    padding-left: 5px;
+}
+.CreateArticlePage .ce-paragraph[data-placeholder]:empty::before {
+    color: #727270;
+}
+
+.CreateArticlePage .article-name-editor,
+.CreateArticlePage .article-content-editor {
+    width: 860px;
+    height: 122px;
+    font-size: 18px;
+    padding-bottom: 100px;
+    border: none;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    resize: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.CreateArticlePage .article-name-editor {
+    font-size: 32px;
+    padding: 0;
+    height: 38px;
+}
+
+.CreateArticlePage .errors-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #DE4D4D;
+}
+
+/*.CreateArticlePage .mode-switch {*/
+/*    display: flex;*/
+/*    gap: 10px;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.CreateArticlePage .article-preview {*/
+/*    padding-bottom: 20px;*/
+/*}*/
+
+/*.CreateArticlePage .article-name-preview {*/
+/*    max-width: 860px;*/
+/*    font-size: 32px;*/
+/*    padding-bottom: 26px;*/
+/*}*/
+
+/*.CreateArticlePage .article-content-preview {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    gap: 26px;*/
+/*    font-size: 18px;*/
+/*    width: 860px;*/
+/*}*/
+
+/*.CreateArticlePage .article-content-preview p {*/
+/*    line-height: 26px;*/
+/*}*/
+
+/*.CreateArticlePage .article-content-preview h1 {*/
+/*    font-size: 24px;*/
+/*}*/
+/*.CreateArticlePage .article-content-preview img {*/
+/*    max-width: 80%;*/
+/*}*/
+
+
+/*!* The switch - the box around the slider *!*/
+/*.switch {*/
+/*    position: relative;*/
+/*    display: inline-block;*/
+/*    width: 60px;*/
+/*    height: 34px;*/
+/*}*/
+
+/*!* Hide default HTML checkbox *!*/
+/*.switch input {*/
+/*    opacity: 0;*/
+/*    width: 0;*/
+/*    height: 0;*/
+/*}*/
+
+/*!* The slider *!*/
+/*.slider {*/
+/*    position: absolute;*/
+/*    cursor: pointer;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    bottom: 0;*/
+/*    background-color: #ccc;*/
+/*    -webkit-transition: .4s;*/
+/*    transition: .4s;*/
+/*}*/
+
+/*.slider:before {*/
+/*    position: absolute;*/
+/*    content: "";*/
+/*    height: 26px;*/
+/*    width: 26px;*/
+/*    left: 4px;*/
+/*    bottom: 4px;*/
+/*    background-color: white;*/
+/*    -webkit-transition: .4s;*/
+/*    transition: .4s;*/
+/*}*/
+
+/*input:checked + .slider {*/
+/*    background-color: #2196F3;*/
+/*}*/
+
+/*input:focus + .slider {*/
+/*    box-shadow: 0 0 1px #2196F3;*/
+/*}*/
+
+/*input:checked + .slider:before {*/
+/*    -webkit-transform: translateX(26px);*/
+/*    -ms-transform: translateX(26px);*/
+/*    transform: translateX(26px);*/
+/*}*/
+
+/*!* Rounded sliders *!*/
+/*.slider.round {*/
+/*    border-radius: 34px;*/
+/*}*/
+
+/*.slider.round:before {*/
+/*    border-radius: 50%;*/
+/*}*/

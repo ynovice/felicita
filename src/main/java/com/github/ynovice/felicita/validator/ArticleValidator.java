@@ -20,7 +20,39 @@ public class ArticleValidator  implements Validator {
 
         Article article = (Article) target;
 
-        if(!StringUtils.hasText(article.getContent())) {
+        validateName(article, errors);
+        validateContent(article, errors);
+    }
+
+    public void validateName(@NonNull Article article, @NonNull Errors errors) {
+
+        String name = article.getName();
+
+        if(!StringUtils.hasText(name)) {
+            errors.rejectValue(
+                    "name",
+                    "article.name.empty",
+                    "Название статьи не должно быть пустым"
+
+            );
+            return;
+        }
+
+        if(name.length() > 200) {
+            errors.rejectValue(
+                    "name",
+                    "article.name.tooLong",
+                    "Название статьи не должно быть болльше 50 000 символов"
+
+            );
+        }
+    }
+
+    public void validateContent(@NonNull Article article, @NonNull Errors errors) {
+
+        String content = article.getContent();
+
+        if(!StringUtils.hasText(content)) {
             errors.rejectValue(
                     "content",
                     "article.content.empty",
@@ -30,7 +62,7 @@ public class ArticleValidator  implements Validator {
             return;
         }
 
-        if(article.getContent().length() > 50000) {
+        if(content.length() > 50000) {
             errors.rejectValue(
                     "content",
                     "article.content.tooLong",

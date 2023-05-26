@@ -4,21 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Add ability to create and get articles by id, rename Purchase to Reserve, update application.yml">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ArticleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/ArticleDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/request/CreateArticleDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Article.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/ArticleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ArticleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ArticleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/validator/ArticleValidator.java" afterDir="false" />
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Specify environment variables names in application properties">
+      <change afterPath="$PROJECT_DIR$/frontend/src/css/CreateArticlePage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/CreateArticlePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Purchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Reserve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/SizeQuantity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/SizeQuantity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ItemCategoryFilter.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ItemCategoryFilter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ItemFiltersContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ItemFiltersContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminPanelPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/AdminPanelPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CreateItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CreateItemPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/ArticleDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/ArticleDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/request/CreateArticleDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/request/CreateArticleDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ArticleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ArticleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/validator/ArticleValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/validator/ArticleValidator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,10 +35,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="JavaScript File" />
-        <option value="CSS File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -58,41 +64,41 @@
     <option name="showMembers" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/cgw/Desktop/meetupAppium&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15586546&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;c15d1e866df42e567cedc944647c5b1b&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/snap/intellij-idea-ultimate/426/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "/home/cgw/Projects/felicita/frontend/src/libs",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15586546",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "spring.configuration.checksum": "c15d1e866df42e567cedc944647c5b1b",
+    "ts.external.directory.path": "/snap/intellij-idea-ultimate/430/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;,
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql",
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.github.ynovice.felicita.model.dto.request" />
@@ -102,11 +108,11 @@
       <recent name="com.github.ynovice.felicita.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/libs" />
       <recent name="$PROJECT_DIR$/frontend/public/ui" />
       <recent name="$PROJECT_DIR$/frontend/public" />
       <recent name="$PROJECT_DIR$/frontend/public/logos" />
       <recent name="$PROJECT_DIR$/frontend/src" />
-      <recent name="$PROJECT_DIR$/frontend/src/contexts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend/public/ui" />
@@ -227,7 +233,7 @@
       <workItem from="1684915267567" duration="396000" />
       <workItem from="1684916000316" duration="100000" />
       <workItem from="1684918555164" duration="8695000" />
-      <workItem from="1685026671544" duration="5781000" />
+      <workItem from="1685026671544" duration="27930000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1682728631672</created>
@@ -418,7 +424,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684758638547</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Add ability to create and get articles by id, rename Purchase to Reserve">
+      <created>1685036096435</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1685036096436</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Specify environment variables names in application properties">
+      <created>1685036126018</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1685036126018</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -436,8 +456,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create separate profiles for PostgreSQL and MySQl dbs. Remove unused code." />
-    <MESSAGE value="Delete setupProxy.js" />
     <MESSAGE value="Create model entities" />
     <MESSAGE value="Add method to create items to ItemService" />
     <MESSAGE value="Add ability to create new items" />
@@ -461,7 +479,9 @@
     <MESSAGE value="Add content to cart page" />
     <MESSAGE value="Create footer, fill main page with content, update cart page" />
     <MESSAGE value="Add ability to create and get articles by id, rename Purchase to Reserve, update application.yml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add ability to create and get articles by id, rename Purchase to Reserve, update application.yml" />
+    <MESSAGE value="Add ability to create and get articles by id, rename Purchase to Reserve" />
+    <MESSAGE value="Specify environment variables names in application properties" />
+    <option name="LAST_COMMIT_MESSAGE" value="Specify environment variables names in application properties" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

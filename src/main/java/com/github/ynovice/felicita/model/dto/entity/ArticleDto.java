@@ -14,6 +14,7 @@ public class ArticleDto {
 
     private  Long id;
     private String createdAtPresentation;
+    private String name;
     private String content;
     private String author;
 
@@ -24,6 +25,7 @@ public class ArticleDto {
         dto.setCreatedAtPresentation(
                 article.getCreatedAt().format(DateTimeFormatter.ofPattern(DATE_TIME_PRESENTATION_FORMAT))
         );
+        dto.setName(article.getName());
         dto.setContent(article.getContent());
         dto.setAuthor(article.getAuthor());
 

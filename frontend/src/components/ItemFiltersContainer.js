@@ -110,14 +110,16 @@ function ItemFiltersContainer({setItemsPage, setCatalogState, onSuccessCatalogSt
                 <div className="filter-name">Цена</div>
                 <div>
                     <label htmlFor="priceFrom">От (₽)</label>
-                    <input id="priceFrom"
+                    <input className="flct-input"
+                           id="priceFrom"
                            type="number"
                            value={priceFrom}
                            onChange={(e) => setPriceFrom(e.target.value)}/>
                 </div>
                 <div>
                     <label htmlFor="priceTo">До (₽)</label>
-                    <input id="priceTo"
+                    <input className="flct-input"
+                           id="priceTo"
                            type="number"
                            value={priceTo}
                            onChange={(e) => setPriceTo(e.target.value)}/>

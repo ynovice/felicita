@@ -29,7 +29,7 @@ public class ArticleController {
                                              @AuthenticationPrincipal OAuth2User principal) {
 
         return ResponseEntity.ok(
-                ArticleDto.fromEntity(articleService.create(dto.getContent(), principal))
+                ArticleDto.fromEntity(articleService.create(dto.getName(), dto.getContent(), principal))
         );
     }
 }
