@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Add ability to edit articles">
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Fix links style at the article page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/ArticlePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/ArticlePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +119,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Backend MySQL">
+  <component name="RunManager" selected="npm.React Frontend">
     <configuration name="ItemServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="felicita" />
       <extension name="coverage">
@@ -216,7 +216,8 @@
       <workItem from="1684916000316" duration="100000" />
       <workItem from="1684918555164" duration="8695000" />
       <workItem from="1685026671544" duration="34748000" />
-      <workItem from="1685070865325" duration="1389000" />
+      <workItem from="1685070865325" duration="2128000" />
+      <workItem from="1685134242806" duration="358000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1682728631672</created>
@@ -435,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685065701639</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Fix links style at the article page">
+      <created>1685072807757</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1685072807757</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -453,7 +461,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create endpoint to get item by id" />
     <MESSAGE value="Create endpoint to delete item by id" />
     <MESSAGE value="Create item page" />
     <MESSAGE value="Create endpoint to retrieve filtered list of items by page" />
@@ -478,7 +485,8 @@
     <MESSAGE value="Add ability to create articles via UI" />
     <MESSAGE value="Create Article page" />
     <MESSAGE value="Add ability to edit articles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add ability to edit articles" />
+    <MESSAGE value="Fix links style at the article page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix links style at the article page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
