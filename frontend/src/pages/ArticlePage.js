@@ -65,7 +65,7 @@ function ArticlePage () {
                     <div className="author">Создана {article["createdAtPresentation"]}</div>
                 </div>
                 {accessLevel === AccessLevel.ADMIN &&
-                    <div><a href="/admin/article/create" className="link">Редактировать →</a></div>
+                    <div><a href={"/admin/article/create?id=" + article["id"]} className="link">Редактировать →</a></div>
                 }
             </div>
 

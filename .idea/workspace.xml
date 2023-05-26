@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Create Article page">
-      <change afterPath="$PROJECT_DIR$/frontend/src/css/ArticlePage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" afterDir="false" />
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Add ability to edit articles">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/request/UpdateArticleDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ItemCategoryFilter.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ItemCategoryFilter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/ArticlePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/ArticlePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CreateArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CreateArticlePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ArticleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ArticleServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +27,9 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -220,7 +224,7 @@
       <workItem from="1684915267567" duration="396000" />
       <workItem from="1684916000316" duration="100000" />
       <workItem from="1684918555164" duration="8695000" />
-      <workItem from="1685026671544" duration="30130000" />
+      <workItem from="1685026671544" duration="34748000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1682728631672</created>
@@ -432,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685063528009</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Create Article page">
+      <created>1685065701639</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1685065701639</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +461,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add ability to create new items" />
     <MESSAGE value="Create endpoint to get item by id" />
     <MESSAGE value="Create endpoint to delete item by id" />
     <MESSAGE value="Create item page" />
@@ -475,7 +485,8 @@
     <MESSAGE value="Specify environment variables names in application properties" />
     <MESSAGE value="Add ability to create articles via UI" />
     <MESSAGE value="Create Article page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create Article page" />
+    <MESSAGE value="Add ability to edit articles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ability to edit articles" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

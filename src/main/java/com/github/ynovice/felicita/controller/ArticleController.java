@@ -2,6 +2,7 @@ package com.github.ynovice.felicita.controller;
 
 import com.github.ynovice.felicita.model.dto.entity.ArticleDto;
 import com.github.ynovice.felicita.model.dto.request.CreateArticleDto;
+import com.github.ynovice.felicita.model.dto.request.UpdateArticleDto;
 import com.github.ynovice.felicita.service.ArticleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -24,13 +25,20 @@ public class ArticleController {
         );
     }
 
-    @PostMapping
     @Secured("ROLE_ADMIN")
+    @PutMapping
+    public ResponseEntity<ArticleDto> update(@RequestBody UpdateArticleDto dto) {
+        return ResponseEntity.ok(
+                ArticleDto.fromEntity(articleService.update(dto))
+        );
+    }
+
+    @Secured("ROLE_ADMIN")
+    @PostMapping
     public ResponseEntity<ArticleDto> create(@RequestBody CreateArticleDto dto,
                                              @AuthenticationPrincipal OAuth2User principal) {
-
         return ResponseEntity.ok(
-                ArticleDto.fromEntity(articleService.create(dto.getName(), dto.getContent(), principal))
+                ArticleDto.fromEntity(articleService.create(dto, principal))
         );
     }
 }

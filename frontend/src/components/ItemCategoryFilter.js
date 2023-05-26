@@ -118,8 +118,7 @@ function ItemCategoryFilter ({getParamName, title, categoriesTrees, chosenIds, s
             return (
                 <React.Fragment key={htmlIdentifier}>
                     <div className="value">
-                        <input className="flct-input"
-                               id={htmlIdentifier}
+                        <input id={htmlIdentifier}
                                type="checkbox"
                                checked={categoryIsChosen}
                                onChange={() => switchCategoryById(categoryId)}/>

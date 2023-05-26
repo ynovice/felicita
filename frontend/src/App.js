@@ -140,6 +140,7 @@ function App() {
                                 <Route path="/admin" element={<AdminPanelPage />}/>
                                 <Route path="/admin/item/create" element={<CreateItemPage />}/>
                                 <Route path="/admin/article/create" element={<CreateArticlePage />}/>
+                                <Route path="/admin/article/create/:id" element={<CreateArticlePage />}/>
                             </Routes>
                         </BrowserRouter>
                     </div>
