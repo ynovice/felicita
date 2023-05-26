@@ -2,7 +2,6 @@ package com.github.ynovice.felicita.controller;
 
 import com.github.ynovice.felicita.model.dto.entity.ArticleDto;
 import com.github.ynovice.felicita.model.dto.request.CreateArticleDto;
-import com.github.ynovice.felicita.model.entity.Article;
 import com.github.ynovice.felicita.service.ArticleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -19,8 +18,10 @@ public class ArticleController {
     private final ArticleService articleService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Article> getById(@PathVariable Long id) {
-        return ResponseEntity.ok(articleService.getById(id));
+    public ResponseEntity<ArticleDto> getById(@PathVariable Long id) {
+        return ResponseEntity.ok(
+                ArticleDto.fromEntity(articleService.getById(id))
+        );
     }
 
     @PostMapping

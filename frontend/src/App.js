@@ -16,6 +16,7 @@ import {AccessLevel, AppContextProvider, ServerState} from "./contexts/AppContex
 import CatalogPage from "./pages/CatalogPage";
 import CartPage from "./pages/CartPage";
 import CreateArticlePage from "./pages/CreateArticlePage";
+import ArticlePage from "./pages/ArticlePage";
 
 function App() {
 
@@ -135,6 +136,7 @@ function App() {
                                 <Route path="/item/:id" element={<ItemPage /> } />
                                 <Route path="/catalog" element={<CatalogPage />}/>
                                 <Route path="/cart" element={<CartPage />}/>
+                                <Route path="/article/:id" element={<ArticlePage />}/>
                                 <Route path="/admin" element={<AdminPanelPage />}/>
                                 <Route path="/admin/item/create" element={<CreateItemPage />}/>
                                 <Route path="/admin/article/create" element={<CreateArticlePage />}/>

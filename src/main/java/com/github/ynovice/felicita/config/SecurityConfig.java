@@ -55,7 +55,8 @@ public class SecurityConfig {
                                 "/api/color/**",
                                 "/api/image/**",
                                 "/api/size/**",
-                                "/api/item/**").permitAll()
+                                "/api/item/**",
+                                "/api/article/**").permitAll()
                         .anyRequest().authenticated())
                 .logout(l -> l
 

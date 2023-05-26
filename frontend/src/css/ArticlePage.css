@@ -1,0 +1,69 @@
+.ArticlePage {
+    padding: 20px 30px 0;
+    display: flex;
+    gap: 40px;
+}
+
+.ArticlePage .article {
+    min-width: 860px;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.ArticlePage .article .name {
+    font-size: 36px;
+    font-weight: normal;
+}
+
+.ArticlePage .article .content {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+.ArticlePage .article .content p {
+    line-height: 26px;
+    font-size: 18px;
+}
+.ArticlePage .article .content h1 {
+    font-size: 24px;
+}
+.ArticlePage .article .content h2 {
+    font-size: 22px;
+}
+.ArticlePage .article .content h3 {
+    font-size: 20px;
+}
+.ArticlePage .article .content h4 {
+    font-size: 18px;
+}
+.ArticlePage .article .content h5 {
+    font-size: 16px;
+}
+.ArticlePage .article .content h6 {
+    font-size: 14px;
+}
+
+.ArticlePage .article .article-meta {
+    color: #727270;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 18px;
+}
+
+.ArticlePage .article .link {
+    font-size: 18px;
+}
+
+.ArticlePage .similar-articles {
+    flex-grow: 1;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.ArticlePage .similar-articles .section-title {
+    font-size: 18px;
+}
