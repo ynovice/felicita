@@ -11,4 +11,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     @Query("select c.id.user from OAuth2Credential c where c.id.externalId = ?1 and c.id.authServer = ?2")
     Optional<User> findByExternalIdAndAuthServer(String externalId, AuthServer authServer);
+
+    boolean existsByUsername(String username);
 }

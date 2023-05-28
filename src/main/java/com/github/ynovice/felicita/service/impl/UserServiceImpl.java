@@ -42,7 +42,7 @@ public class UserServiceImpl implements UserService {
                     User user = new User();
                     credentialId.setUser(user);
                     user.setRole(Role.USER);
-                    user.setOAuth2Credentials(Collections.singleton(credential));
+                    user.setOAuth2Credentials(Collections.singletonList(credential));
                     user.setUsername(oAuth2User.getAttribute("name"));
 
                     userRepository.saveAndFlush(user);

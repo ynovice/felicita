@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Fix links style at the article page">
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Create tests for UserService">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/github/ynovice/felicita/AuthenticationHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/github/ynovice/felicita/service/UserServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/ynovice/felicita/service/ItemServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/ynovice/felicita/service/ItemServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/application-test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/application-test.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +126,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="npm.React Frontend">
+  <component name="RunManager" selected="JUnit.ItemServiceTest">
     <configuration name="ItemServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="felicita" />
       <extension name="coverage">
@@ -131,6 +138,37 @@
       <option name="PACKAGE_NAME" value="com.github.ynovice.felicita.service" />
       <option name="MAIN_CLASS_NAME" value="com.github.ynovice.felicita.service.ItemServiceTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="felicita" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.ynovice.felicita.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.github.ynovice.felicita.service" />
+      <option name="MAIN_CLASS_NAME" value="com.github.ynovice.felicita.service.UserServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.registerIfNotRegistered_givenNotRegistered_thenRegister" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="felicita" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.ynovice.felicita.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.github.ynovice.felicita.service" />
+      <option name="MAIN_CLASS_NAME" value="com.github.ynovice.felicita.service.UserServiceTest" />
+      <option name="METHOD_NAME" value="registerIfNotRegistered_givenNotRegistered_thenRegister" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -152,6 +190,8 @@
       <item itemvalue="Docker.MySQL Docker Container" />
       <item itemvalue="Docker.Postgres Docker Container" />
       <item itemvalue="Docker.Backend (Postgres + API)" />
+      <item itemvalue="JUnit.UserServiceTest.registerIfNotRegistered_givenNotRegistered_thenRegister" />
+      <item itemvalue="JUnit.UserServiceTest" />
       <item itemvalue="JUnit.ItemServiceTest" />
       <item itemvalue="npm.React Frontend" />
       <item itemvalue="Spring Boot.Backend Postgres" />
@@ -160,6 +200,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ItemServiceTest" />
+        <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="JUnit.UserServiceTest.registerIfNotRegistered_givenNotRegistered_thenRegister" />
       </list>
     </recent_temporary>
   </component>
@@ -217,7 +259,11 @@
       <workItem from="1684918555164" duration="8695000" />
       <workItem from="1685026671544" duration="34748000" />
       <workItem from="1685070865325" duration="2128000" />
-      <workItem from="1685134242806" duration="358000" />
+      <workItem from="1685134242806" duration="6935000" />
+      <workItem from="1685209800854" duration="92000" />
+      <workItem from="1685267932837" duration="5906000" />
+      <workItem from="1685274331819" duration="1153000" />
+      <workItem from="1685275510727" duration="242000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1682728631672</created>
@@ -443,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685072807757</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Fix article page load error message">
+      <created>1685134625450</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1685134625450</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -461,8 +514,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create endpoint to delete item by id" />
-    <MESSAGE value="Create item page" />
     <MESSAGE value="Create endpoint to retrieve filtered list of items by page" />
     <MESSAGE value="Create catalog page, add similar items catalog to item page, update favicon" />
     <MESSAGE value="Add total price display to CartWidget, fix similar items catalog link on item page" />
@@ -486,14 +537,16 @@
     <MESSAGE value="Create Article page" />
     <MESSAGE value="Add ability to edit articles" />
     <MESSAGE value="Fix links style at the article page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix links style at the article page" />
+    <MESSAGE value="Fix article page load error message" />
+    <MESSAGE value="Create tests for UserService" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create tests for UserService" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/github/ynovice/felicita/service/ItemServiceTest.java</url>
-          <line>105</line>
+          <line>107</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
