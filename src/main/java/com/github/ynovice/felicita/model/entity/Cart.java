@@ -2,6 +2,7 @@ package com.github.ynovice.felicita.model.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 
 import java.util.ArrayList;
@@ -34,57 +35,32 @@ public class Cart {
         return user != null ? user.getId() : null;
     }
 
-    public Integer getQuantityByItemAndSize(Item item, Size size) {
+    public CartEntry getCartEntryByItem(@NonNull Item item) {
 
         return entries
                 .stream()
                 .filter(ce -> ce.getItem().equals(item))
                 .findFirst()
-                .map(ce -> ce.getQuantityBySize(size))
-                .orElse(0);
+                .orElseGet(() -> createAndLinkCartEntry(item));
     }
 
-    public CartEntry incrementItemQuantityBySize(Item item, Size size) {
+    public void updateTotalItems(int difference) {
+        totalItems += difference;
+    }
 
-        CartEntry cartEntry = entries
-                .stream()
-                .filter(ce -> ce.getItem().equals(item))
-                .findFirst()
-                .orElseGet(() -> {
-                    CartEntry ce = buildCartEntry(item, this);
-                    entries.add(ce);
-                    return ce;
-                });
+    public void updateTotalPrice(int difference) {
+        totalPrice += difference;
+    }
 
-        cartEntry.incrementQuantityBySize(size);
+    private CartEntry createAndLinkCartEntry(Item item) {
 
-        totalItems++;
-        totalPrice += item.getPrice();
+        CartEntry cartEntry = new CartEntry();
+        cartEntry.setCart(this);
+        cartEntry.setItem(item);
+        cartEntry.setSizesQuantities(new ArrayList<>());
+        cartEntry.setSizesQuantitiesPrevStates(new ArrayList<>());
 
+        entries.add(cartEntry);
         return cartEntry;
-    }
-
-    public CartEntry decrementItemQuantityBySize(Item item, Size size) {
-
-        CartEntry cartEntry = entries
-                .stream()
-                .filter(ce -> ce.getItem().equals(item))
-                .findFirst()
-                .orElseThrow(IllegalStateException::new);
-
-        cartEntry.decrementQuantityBySize(size);
-
-        totalItems--;
-        totalPrice -= item.getPrice();
-
-        return cartEntry;
-    }
-
-    private CartEntry buildCartEntry(Item item, Cart cart) {
-        CartEntry ce = new CartEntry();
-        ce.setItem(item);
-        ce.setCart(cart);
-        ce.setSizesQuantities(new ArrayList<>());
-        return ce;
     }
 }

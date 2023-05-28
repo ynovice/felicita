@@ -17,20 +17,18 @@ public class Reserve {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(referencedColumnName = "id", nullable = false)
     private Item item;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "purchases_sizes_quantities",
-            joinColumns = {@JoinColumn(name = "purchase_id", referencedColumnName = "id")},
-            inverseJoinColumns = {@JoinColumn(name = "size_quantity_id", referencedColumnName = "id")}
-    )
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "reserve", cascade = CascadeType.ALL)
     private Set<SizeQuantity> sizesQuantities;
 
     @Column(nullable = false)
     private Integer pricePerItem;
+
+    @Column(nullable = false)
+    private Integer totalPrice;
 
     @Column(nullable = false)
     private ZonedDateTime createdAt;

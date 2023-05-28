@@ -7,6 +7,7 @@ import lombok.Setter;
 import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 
 @Entity
@@ -78,12 +79,16 @@ public class Item {
     private Set<CartEntry> cartEntries;
 
     public Integer getQuantityBySize(Size size) {
+        return getSizeQuantityBySize(size)
+                .map(SizeQuantity::getQuantity)
+                .orElse(0);
+    }
+
+    public Optional<SizeQuantity> getSizeQuantityBySize(Size size) {
         return sizesQuantities
                 .stream()
                 .filter(sq -> sq.getSize().equals(size))
-                .findFirst()
-                .map(SizeQuantity::getQuantity)
-                .orElse(0);
+                .findFirst();
     }
 
     @Override

@@ -3,8 +3,8 @@ package com.github.ynovice.felicita.model.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Entity
 @Table(
@@ -29,12 +29,7 @@ public class CartEntry {
     @JoinColumn(nullable = false, referencedColumnName = "id")
     private Item item;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "cart_entries_sizes_quantities",
-            joinColumns = {@JoinColumn(name = "cart_entry_id", referencedColumnName = "id")},
-            inverseJoinColumns = {@JoinColumn(name = "size_quantity_id", referencedColumnName = "id")}
-    )
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "cartEntry", cascade = CascadeType.ALL)
     private List<SizeQuantity> sizesQuantities;
 
     @ElementCollection
@@ -44,41 +39,6 @@ public class CartEntry {
     )
     private List<SizeQuantityPrevState> sizesQuantitiesPrevStates;
 
-    public Integer getQuantityBySize(Size size) {
-        return getSizeQuantityBySizeId(size.getId())
-                .map(SizeQuantity::getQuantity)
-                .orElse(0);
-    }
-
-    public void incrementQuantityBySize(@NonNull Size size) {
-        getSizeQuantityBySizeId(size.getId())
-                .ifPresentOrElse(
-                        SizeQuantity::incrementQuantity,
-                        () -> sizesQuantities.add(new SizeQuantity(size, 1, this))
-                );
-    }
-
-    public void decrementQuantityBySize(Size size) {
-        getSizeQuantityBySizeId(size.getId()).ifPresent(SizeQuantity::decrementQuantity);
-    }
-
-    public void removeSizeQuantityBySizeId(Long sizeId) {
-
-        SizeQuantity sizeQuantity = getSizeQuantityBySizeId(sizeId)
-                .orElseThrow(() -> new IllegalStateException(
-                        String.format("SizeQuantity с cartEntryId=%d sizeId=%d не найден", getId(), sizeId)
-                ));
-
-        this.sizesQuantities.remove(sizeQuantity);
-    }
-
-    public Optional<SizeQuantity> getSizeQuantityBySizeId(Long sizeId) {
-        return sizesQuantities
-                .stream()
-                .filter(sq -> sq.getSizeId().equals(sizeId))
-                .findFirst();
-    }
-
     @Deprecated
     public Long getUserId() {
         return cart != null ? cart.getUserId() : null;
@@ -86,6 +46,33 @@ public class CartEntry {
 
     public Long getItemId() {
         return item != null ? item.getId() : null;
+    }
+
+    public void addSizeQuantityPrevState(SizeQuantityPrevState sqps) {
+
+        if(this.sizesQuantitiesPrevStates == null)
+            sizesQuantitiesPrevStates = new ArrayList<>();
+
+        sizesQuantitiesPrevStates.add(sqps);
+    }
+
+    public SizeQuantity getSizeQuantityBySize(@NonNull Size size) {
+        return sizesQuantities
+                .stream()
+                .filter(sq -> sq.getSize().equals(size))
+                .findFirst()
+                .orElseGet(() -> createAndLinkSizeQuantity(size));
+    }
+
+    private SizeQuantity createAndLinkSizeQuantity(@NonNull Size size) {
+
+        SizeQuantity sizeQuantity = new SizeQuantity();
+        sizeQuantity.setSize(size);
+        sizeQuantity.setQuantity(0);
+        sizeQuantity.setCartEntry(this);
+
+        sizesQuantities.add(sizeQuantity);
+        return sizeQuantity;
     }
 
     @Embeddable
@@ -100,5 +87,9 @@ public class CartEntry {
 
         @Column(nullable = false)
         private Integer quantity;
+
+        public SizeQuantityPrevState(SizeQuantity source) {
+            this(source.getSize(), source.getQuantity());
+        }
     }
 }

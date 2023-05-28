@@ -267,12 +267,16 @@ const Api = (function () {
 
         incrementItemQuantityInCart: async function (itemId, sizeId) {
 
-            const response = await fetch(API_BASE_URL + "/ce?" + new URLSearchParams({itemId, sizeId}), {
+            const urlSearchParams = new URLSearchParams({
+                itemId, sizeId,
+                action: "append"
+            });
+
+            const response = await fetch(API_BASE_URL + "/cart?" + urlSearchParams, {
                 credentials: "include",
-                method: "post",
+                method: "put",
                 headers: {
-                    [csrfHeaderName]: csrfToken,
-                    "Content-Type": "application/json"
+                    [csrfHeaderName]: csrfToken
                 }
             }).catch(() => null);
 
@@ -283,14 +287,18 @@ const Api = (function () {
             await throwCorrespondingException(response);
         },
 
-        decrementItemQuantityInCart: async function (itemId, sizeId) {
+        removeOneItemFromCartBySize: async function (itemId, sizeId) {
 
-            const response = await fetch(API_BASE_URL + "/ce?" + new URLSearchParams({itemId, sizeId}), {
+            const urlSearchParams = new URLSearchParams({
+                itemId, sizeId,
+                action: "removeOne"
+            });
+
+            const response = await fetch(API_BASE_URL + "/cart?" + urlSearchParams, {
                 credentials: "include",
-                method: "delete",
+                method: "put",
                 headers: {
                     [csrfHeaderName]: csrfToken,
-                    "Content-Type": "application/json"
                 }
             }).catch(() => null);
 
@@ -301,14 +309,18 @@ const Api = (function () {
             await throwCorrespondingException(response);
         },
 
-        removeSizeQuantityFromCartEntry: async function (itemId, sizeId) {
+        removeAllItemsFromCartBySize: async function (itemId, sizeId) {
 
-            const response = await fetch(API_BASE_URL + "/ce/sq?" + new URLSearchParams({itemId, sizeId}), {
+            const urlSearchParams = new URLSearchParams({
+                itemId, sizeId,
+                action: "removeAll"
+            });
+
+            const response = await fetch(API_BASE_URL + "/cart?" + urlSearchParams, {
                 credentials: "include",
-                method: "delete",
+                method: "put",
                 headers: {
                     [csrfHeaderName]: csrfToken,
-                    "Content-Type": "application/json"
                 }
             }).catch(() => null);
 
@@ -383,6 +395,21 @@ const Api = (function () {
             }
 
             await throwCorrespondingException(response);
+        },
+
+        reserveItemsInCart: async function() {
+
+            const response = await fetch(API_BASE_URL + "/reserve", {
+                credentials: "include",
+                method: "post",
+                headers: {
+                    [csrfHeaderName]: csrfToken
+                }
+            }).catch(() => null);
+
+            if(!response || !response.ok) {
+                await throwCorrespondingException(response);
+            }
         },
 
         getImageUrlByImageId: function(id) {

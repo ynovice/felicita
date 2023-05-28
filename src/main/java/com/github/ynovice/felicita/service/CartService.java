@@ -6,7 +6,11 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 
 public interface CartService {
 
-    Cart getByPrincipal(OAuth2User principal);
+    Cart getByPrincipal(@NonNull OAuth2User principal);
 
-    void saveAndFlush(@NonNull Cart cart);
+    Cart appendOneItemBySize(Long itemId, Long sizeId, @NonNull OAuth2User oAuth2User);
+
+    Cart removeItemsBySize(Long itemId, Long sizeId, @NonNull OAuth2User oAuth2User);
+
+    Cart removeItemsBySize(Long itemId, Long sizeId, @NonNull OAuth2User oAuth2User, Integer amount);
 }

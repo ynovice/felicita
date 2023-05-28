@@ -47,12 +47,8 @@ public class SizeQuantity {
         this.cartEntry = cartEntry;
     }
 
-    public void incrementQuantity() {
-        quantity++;
-    }
-
-    public void decrementQuantity() {
-        quantity--;
+    public void updateQuantity(int difference) {
+        quantity += difference;
     }
 
     public Long getSizeId() {

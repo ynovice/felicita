@@ -1,9 +1,8 @@
 import "../css/CartWidget.css";
-import {useContext, useEffect, useState} from "react";
+import {useCallback, useContext, useEffect, useState} from "react";
 import {UpdatedUserContext, UserPresenceState} from "../contexts/UserContext";
 import {AppContext, ServerState} from "../contexts/AppContext";
 import Api from "../Api";
-import NotFoundException from "../exception/NotFoundException";
 import Button from "./Button";
 
 function CartWidget({item, chosenSizeId, maxQuantity=0}) {
@@ -20,6 +19,15 @@ function CartWidget({item, chosenSizeId, maxQuantity=0}) {
     const [cartEntry, setCartEntry] = useState(null);
     const [cartEntryState, setCartEntryState] = useState(CartEntryState.LOADING);
 
+    const getCartEntryByItem = useCallback((cart) => {
+
+        for (let i = 0; i < cart["entries"].length; i++) {
+            if(cart["entries"][i]["itemId"] === item["id"]) {
+                return cart["entries"][i];
+            }
+        }
+    }, [item]);
+
     useEffect(() => {
 
         if(appContext.serverState !== ServerState.AVAILABLE
@@ -29,28 +37,20 @@ function CartWidget({item, chosenSizeId, maxQuantity=0}) {
 
         const abortController = new AbortController();
 
-        const userId = userContext.user["id"];
-
-        Api.getCartEntryByUserIdAndItemId(userId, item["id"])
-            .then(retrievedCartEntry => {
-                setCartEntry(retrievedCartEntry);
+        Api.getCart(abortController.signal)
+            .then(retrievedCart => {
+                setCartEntry(getCartEntryByItem(retrievedCart));
                 setCartEntryState(CartEntryState.PRESENT);
-            })
-            .catch((e) => {
-                if(e instanceof NotFoundException) {
-                    setCartEntry(null);
-                    setCartEntryState(CartEntryState.EMPTY);
-                }
-            })
+            });
 
         return () => abortController.abort();
-    }, [appContext, userContext, item, CartEntryState.PRESENT, CartEntryState.EMPTY]);
+    }, [appContext, userContext, item, CartEntryState.PRESENT, CartEntryState.EMPTY, getCartEntryByItem]);
 
     const handleAddItemToCartClick = () => {
 
         Api.incrementItemQuantityInCart(item["id"], chosenSizeId)
-            .then(updatedCartEntry => {
-                setCartEntry(updatedCartEntry);
+            .then(updatedCart => {
+                setCartEntry(getCartEntryByItem(updatedCart));
                 setCartEntryState(CartEntryState.PRESENT);
             });
     }
@@ -62,31 +62,34 @@ function CartWidget({item, chosenSizeId, maxQuantity=0}) {
         }
 
         Api.incrementItemQuantityInCart(item["id"], chosenSizeId)
-            .then(updatedCartEntry => {
-                setCartEntry(updatedCartEntry);
+            .then(updatedCart => {
+                setCartEntry(getCartEntryByItem(updatedCart));
                 setCartEntryState(CartEntryState.PRESENT);
             });
     }
 
     const handleDecrementItemQuantityInCartClick = () => {
 
-        Api.decrementItemQuantityInCart(item["id"], chosenSizeId)
-            .then(updatedCartEntry => {
-                setCartEntry(updatedCartEntry);
+        Api.removeOneItemFromCartBySize(item["id"], chosenSizeId)
+            .then(updatedCart => {
+                setCartEntry(getCartEntryByItem(updatedCart));
                 setCartEntryState(CartEntryState.PRESENT);
             });
     }
 
     const handleRemoveSizeQuantityFromCartEntryClick = () => {
 
-        Api.removeSizeQuantityFromCartEntry(item["id"], chosenSizeId)
-            .then(updatedCartEntry => {
-                setCartEntry(updatedCartEntry);
+        Api.removeAllItemsFromCartBySize(item["id"], chosenSizeId)
+            .then(updatedCart => {
+                setCartEntry(getCartEntryByItem(updatedCart));
                 setCartEntryState(CartEntryState.PRESENT);
             });
     }
 
     const getQuantityByChosenSizeId = () => {
+
+        if(!cartEntry || !cartEntry["sizesQuantities"])
+            return 0;
 
         for (let i = 0; i < cartEntry["sizesQuantities"].length; i++) {
             if(cartEntry["sizesQuantities"][i]["size"]["id"] === chosenSizeId)

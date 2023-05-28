@@ -34,7 +34,7 @@ function CartPage() {
         }, [reloadCart]);
 
     const handleDecrementItemQuantityInCartClick = (item, size) => {
-        Api.decrementItemQuantityInCart(item["id"], size["id"])
+        Api.removeOneItemFromCartBySize(item["id"], size["id"])
             .then(() => reloadCart(new AbortController().signal));
     }
 
@@ -49,7 +49,7 @@ function CartPage() {
     }
 
     const handleRemoveSizeQuantityFromCartEntryClick = (item, size) => {
-        Api.removeSizeQuantityFromCartEntry(item["id"], size["id"])
+        Api.removeAllItemsFromCartBySize(item["id"], size["id"])
             .then(() => reloadCart(new AbortController().signal));
     }
 
@@ -193,7 +193,10 @@ function CartPage() {
                         </div>
                         {cart["totalItems"] > 0 &&
                             <div className="button-container">
-                                <input type="button" className="button" value="Зарезервировать"/>
+                                <input onClick={() => Api.reserveItemsInCart()}
+                                       type="button"
+                                       className="button"
+                                       value="Зарезервировать"/>
                             </div>
                         }
                     </div>
