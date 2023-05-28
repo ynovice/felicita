@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.ZonedDateTime;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name = "reserves")
@@ -17,18 +17,14 @@ public class Reserve {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(referencedColumnName = "id", nullable = false)
-    private Item item;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "reserve", cascade = CascadeType.ALL)
-    private Set<SizeQuantity> sizesQuantities;
-
-    @Column(nullable = false)
-    private Integer pricePerItem;
+    @OneToMany(mappedBy = "reserve", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<ReserveEntry> entries;
 
     @Column(nullable = false)
     private Integer totalPrice;
+
+    @Column(nullable = false)
+    private Integer totalItems;
 
     @Column(nullable = false)
     private ZonedDateTime createdAt;

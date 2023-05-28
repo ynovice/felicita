@@ -78,6 +78,9 @@ public class Item {
     @OneToMany(mappedBy = "item", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<CartEntry> cartEntries;
 
+    @OneToMany(mappedBy = "item", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<ReserveEntry> reserveEntries;
+
     public Integer getQuantityBySize(Size size) {
         return getSizeQuantityBySize(size)
                 .map(SizeQuantity::getQuantity)
