@@ -11,6 +11,8 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/article")
 @RequiredArgsConstructor
@@ -22,6 +24,16 @@ public class ArticleController {
     public ResponseEntity<ArticleDto> getById(@PathVariable Long id) {
         return ResponseEntity.ok(
                 ArticleDto.fromEntity(articleService.getById(id))
+        );
+    }
+
+    @GetMapping
+    public ResponseEntity<List<ArticleDto>> getAll() {
+        return ResponseEntity.ok(
+                articleService.getAll()
+                        .stream()
+                        .map(ArticleDto::fromEntity)
+                        .toList()
         );
     }
 
@@ -40,5 +52,11 @@ public class ArticleController {
         return ResponseEntity.ok(
                 ArticleDto.fromEntity(articleService.create(dto, principal))
         );
+    }
+
+    @Secured("ROLE_ADMIN")
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Long id) {
+        articleService.deleteById(id);
     }
 }

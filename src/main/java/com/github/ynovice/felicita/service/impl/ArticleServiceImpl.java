@@ -18,6 +18,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.DataBinder;
 
 import java.time.ZonedDateTime;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -48,6 +49,11 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
+    public List<Article> getAll() {
+        return articleRepository.findAll();
+    }
+
+    @Override
     public Article update(UpdateArticleDto dto) {
 
         Article article = articleRepository.findById(dto.getId()).orElseThrow(NotFoundException::new);
@@ -65,6 +71,11 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public Article getById(Long id) {
         return articleRepository.findById(id).orElseThrow(NotFoundException::new);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        articleRepository.deleteById(id);
     }
 
     private BindingResult validate(@NonNull Article article) {

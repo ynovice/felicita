@@ -442,6 +442,35 @@ const Api = (function () {
             await throwCorrespondingException(response);
         },
 
+        getAllArticles: async function (abortSignal) {
+
+            const response = await fetch(API_BASE_URL + "/article", {
+                signal: abortSignal,
+                credentials: "include"
+            }).catch(() => null)
+
+            if(response && response.ok) {
+                return await response.json();
+            }
+
+            await throwCorrespondingException(response);
+        },
+
+        deleteArticleById: async function (id) {
+
+            const response = await fetch(API_BASE_URL + "/article/" + id, {
+                credentials: "include",
+                method: "delete",
+                headers: {
+                    [csrfHeaderName]: csrfToken
+                }
+            }).catch(() => null);
+
+            if(response && response.ok) return true;
+
+            await throwCorrespondingException(response);
+        },
+
         getImageUrlByImageId: function(id) {
             return API_BASE_URL + "/image/" + id;
         },

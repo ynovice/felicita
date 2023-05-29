@@ -4,19 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Create reserves list page">
-      <change afterPath="$PROJECT_DIR$/frontend/src/css/ReservesListPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ReservesListPage.js" afterDir="false" />
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Create blog page; add ability to delete articles">
+      <change afterPath="$PROJECT_DIR$/frontend/public/ui/article-image-placeholder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/css/BlogPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/BlogPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/CartPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/CartPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ReserveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ReserveController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/ReserveRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/ReserveRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ReserveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ReserveService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/CartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/CartServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ReserveServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ReserveServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/ArticlePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/ArticlePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ReservesListPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ReservesListPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ArticleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ArticleServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +68,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "/home/cgw/Projects/felicita/frontend/src/libs",
+    "last_opened_file_path": "/home/cgw/Projects/felicita/frontend/public/ui",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -100,8 +100,8 @@
       <recent name="com.github.ynovice.felicita.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/frontend/src/libs" />
       <recent name="$PROJECT_DIR$/frontend/public/ui" />
+      <recent name="$PROJECT_DIR$/frontend/src/libs" />
       <recent name="$PROJECT_DIR$/frontend/public" />
       <recent name="$PROJECT_DIR$/frontend/public/logos" />
       <recent name="$PROJECT_DIR$/frontend/src" />
@@ -267,7 +267,7 @@
       <workItem from="1685267932837" duration="5906000" />
       <workItem from="1685274331819" duration="1153000" />
       <workItem from="1685275510727" duration="242000" />
-      <workItem from="1685288608847" duration="51166000" />
+      <workItem from="1685288608847" duration="56309000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1682728631672</created>
@@ -542,7 +542,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685351988697</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Create reserves list page">
+      <created>1685358211736</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1685358211736</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -560,7 +567,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix bug with error after creating new item" />
     <MESSAGE value="Remove unused console logs from ItemsFilter" />
     <MESSAGE value="Fix SQL request in ItemRepository" />
     <MESSAGE value="Add ability to filter items by colors, materials and print" />
@@ -585,7 +591,8 @@
     <MESSAGE value="Create reserve page; adapt ui for mobile and tablet devices." />
     <MESSAGE value="adapt article page for mobile and tablet devices." />
     <MESSAGE value="Create reserves list page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create reserves list page" />
+    <MESSAGE value="Create blog page; add ability to delete articles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create blog page; add ability to delete articles" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

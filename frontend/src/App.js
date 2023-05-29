@@ -20,6 +20,7 @@ import ArticlePage from "./pages/ArticlePage";
 import ConfirmReservePage from "./pages/ConfirmReservePage";
 import ReservePage from "./pages/ReservePage";
 import ReservesListPage from "./pages/ReservesListPage";
+import BlogPage from "./pages/BlogPage";
 
 function App() {
 
@@ -139,6 +140,7 @@ function App() {
                                 <Route path="/item/:id" element={<ItemPage /> } />
                                 <Route path="/catalog" element={<CatalogPage />}/>
                                 <Route path="/cart" element={<CartPage />}/>
+                                <Route path="/blog" element={<BlogPage />}/>
                                 <Route path="/article/:id" element={<ArticlePage />}/>
                                 <Route path="/reserve" element={<ReservesListPage />}/>
                                 <Route path="/reserve/:id" element={<ReservePage />}/>

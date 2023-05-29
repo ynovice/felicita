@@ -45,7 +45,20 @@ function ArticlePage () {
             });
 
         return () => abortController.abort();
-    }, [ArticleState.ERROR, ArticleState.NOT_FOUND, ArticleState.PRESENT, id])
+    }, [ArticleState.ERROR, ArticleState.NOT_FOUND, ArticleState.PRESENT, id]);
+
+    const handleDeleteArticleClick = () => {
+
+        Api.deleteArticleById(article["id"])
+            .then(() => {
+                window.location.href = "/blog";
+            })
+            .catch(e => {
+                console.log(e);
+                alert("Проищошла ошибка при попытке удалить статью.")
+            })
+
+    }
 
     if(articleState === ArticleState.LOADING) {
         return;
@@ -54,7 +67,6 @@ function ArticlePage () {
     } else if (articleState === ArticleState.ERROR) {
         return <ErrorPage errorMessage="Произошла какая-то ошибка при попытке открыть статью."/>
     }
-
 
     return (
         <div className="ArticlePage">
@@ -66,7 +78,10 @@ function ArticlePage () {
                     <div className="author">Создана {article["createdAtPresentation"]}</div>
                 </div>
                 {accessLevel === AccessLevel.ADMIN &&
-                    <div><a href={"/admin/article/create?id=" + article["id"]} className="link">Редактировать →</a></div>
+                    <div className="admin-controls">
+                        <a href={"/admin/article/create?id=" + article["id"]} className="link">Редактировать →</a>
+                        <span onClick={() => handleDeleteArticleClick()} className="link danger">Удалить</span>
+                    </div>
                 }
             </div>
 

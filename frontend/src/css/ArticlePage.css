@@ -82,6 +82,12 @@
     font-size: 18px;
 }
 
+.ArticlePage .admin-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 @media screen and (max-width: 1279px){
 
     .ArticlePage {

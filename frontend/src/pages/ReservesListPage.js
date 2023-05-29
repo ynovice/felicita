@@ -35,7 +35,7 @@ function ReservesListPage() {
             });
 
         return () => abortController.abort();
-    }, []);
+    }, [ReservesState.ERROR, ReservesState.LOADED, ReservesState.NOT_AUTHORIZED]);
 
     if(reservesState === ReservesState.LOADING) return;
 
