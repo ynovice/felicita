@@ -5,30 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Create reserve page; adapt ui for mobile and tablet devices.">
-      <change afterPath="$PROJECT_DIR$/frontend/src/css/ReservePage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ReservePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/exception/NotAuthorizedException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ItemFiltersContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ItemFiltersContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/CartPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/CartPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/CatalogPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/CatalogPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/ConfirmReservePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/ConfirmReservePage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/Header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/ItemPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/ItemPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/ItemsCatalog.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/ItemsCatalog.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/ItemsFilter.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/ItemsFilter.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/MainPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/MainPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CartPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CartPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CatalogPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CatalogPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ConfirmReservePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ConfirmReservePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ExceptionsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ExceptionsHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ReserveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ReserveController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/ReserveDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/ReserveDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ReserveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ReserveService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ReserveServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ReserveServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/ArticlePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/ArticlePage.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,7 +257,7 @@
       <workItem from="1685267932837" duration="5906000" />
       <workItem from="1685274331819" duration="1153000" />
       <workItem from="1685275510727" duration="242000" />
-      <workItem from="1685288608847" duration="45422000" />
+      <workItem from="1685288608847" duration="45705000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1682728631672</created>
@@ -540,7 +518,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685327492486</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Create reserve page; adapt ui for mobile and tablet devices.">
+      <created>1685351634476</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1685351634476</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

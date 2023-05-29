@@ -81,3 +81,27 @@
 .ArticlePage .similar-articles .section-title {
     font-size: 18px;
 }
+
+@media screen and (max-width: 1279px){
+
+    .ArticlePage {
+        flex-direction: column;
+    }
+
+    .ArticlePage .article {
+        width: 100%;
+        min-width: unset;
+        box-sizing: border-box;
+    }
+
+    .ArticlePage .article .content img {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 599px){
+
+    .ArticlePage {
+        padding: 15px 10px 0;
+    }
+}
