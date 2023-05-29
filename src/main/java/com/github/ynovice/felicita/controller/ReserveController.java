@@ -9,6 +9,8 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/reserve")
 @RequiredArgsConstructor
@@ -28,6 +30,16 @@ public class ReserveController {
     public ResponseEntity<ReserveDto> getById(@PathVariable Long id, @AuthenticationPrincipal OAuth2User principal) {
         return ResponseEntity.ok(
                 ReserveDto.fromEntity(reserveService.getById(id, principal))
+        );
+    }
+
+    @GetMapping
+    public ResponseEntity<List<ReserveDto>> getAllByUser(@AuthenticationPrincipal OAuth2User principal) {
+        return ResponseEntity.ok(
+            reserveService.getAllByUser(principal)
+                    .stream()
+                    .map(ReserveDto::fromEntity)
+                    .toList()
         );
     }
 }

@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -76,6 +77,11 @@ public class ReserveServiceImpl implements ReserveService {
             throw new NotAuthorizedException("Вы не можете просматривать этот резерв");
 
         return reserve;
+    }
+
+    @Override
+    public List<Reserve> getAllByUser(@NonNull OAuth2User oAuth2User) {
+        return reserveRepository.findAllByUser(userService.getUser(oAuth2User));
     }
 
     private Reserve createAndLinkReserve(@NonNull Cart cart) {

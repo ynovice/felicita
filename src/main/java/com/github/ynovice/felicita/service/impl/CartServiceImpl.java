@@ -11,6 +11,7 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -117,11 +118,14 @@ public class CartServiceImpl implements CartService {
 
     private void updateCart(@NonNull Cart cart) {
 
+        List<CartEntry> cartEntriesToDelete = new ArrayList<>();
+
         for(CartEntry cartEntry : cart.getEntries()) {
 
             Item item = cartEntry.getItem();
+            List<SizeQuantity> cartEntrySizesQuantitiesToDelete = new ArrayList<>();
 
-            for(SizeQuantity  cartEntrySQ : cartEntry.getSizesQuantities()) {
+            for(SizeQuantity cartEntrySQ : cartEntry.getSizesQuantities()) {
 
                 Size size = cartEntrySQ.getSize();
 
@@ -132,12 +136,28 @@ public class CartServiceImpl implements CartService {
                     CartEntry.SizeQuantityPrevState sqps = new CartEntry.SizeQuantityPrevState(cartEntrySQ);
                     cartEntry.addSizeQuantityPrevState(sqps);
 
-                    cartEntrySQ.setQuantity(cartEntrySQ.getQuantity() - amountOfItemsGone);
+                    cartEntrySQ.updateQuantity(-amountOfItemsGone);
+
+                    if(cartEntrySQ.getQuantity() <= 0)
+                        cartEntrySizesQuantitiesToDelete.add(cartEntrySQ);
 
                     cart.updateTotalItems(-amountOfItemsGone);
                     cart.updateTotalPrice(-item.getPrice() * amountOfItemsGone);
                 }
             }
+
+            for(SizeQuantity cartEntrySQ : cartEntrySizesQuantitiesToDelete) {
+                cartEntry.getSizesQuantities().remove(cartEntrySQ);
+                sizeQuantityRepository.delete(cartEntrySQ);
+            }
+
+            if(cartEntry.getSizesQuantities().size() == 0)
+                cartEntriesToDelete.add(cartEntry);
+        }
+
+        for(CartEntry cartEntry : cartEntriesToDelete) {
+            cart.getEntries().remove(cartEntry);
+            cartEntryRepository.delete(cartEntry);
         }
     }
 

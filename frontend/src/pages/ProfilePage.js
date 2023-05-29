@@ -40,8 +40,7 @@ function ProfilePage() {
                                 <p>Привет, <span className="username">{username}</span></p>
                                 <p>Это страинца твоего профиля</p>
                                 <div className="links">
-                                    <a href="#" className="link">Избранное</a>
-                                    <a href="#" className="link">История покупок</a>
+                                    <a href="/reserve" className="link">Резервы</a>
                                 </div>
                             </div>
                             <div className="section">

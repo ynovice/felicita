@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Create reserve page; adapt ui for mobile and tablet devices.">
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Create reserves list page">
+      <change afterPath="$PROJECT_DIR$/frontend/src/css/ReservesListPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ReservesListPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/ArticlePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/ArticlePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/CartPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/CartPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ReserveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ReserveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/ReserveRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/ReserveRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ReserveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ReserveService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/CartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/CartServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ReserveServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ReserveServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +28,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="JavaScript File" />
         <option value="Class" />
+        <option value="JavaScript File" />
         <option value="CSS File" />
       </list>
     </option>
@@ -119,7 +129,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="npm.React Frontend">
+  <component name="RunManager" selected="Spring Boot.Backend MySQL">
     <configuration name="ItemServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="felicita" />
       <extension name="coverage">
@@ -257,7 +267,7 @@
       <workItem from="1685267932837" duration="5906000" />
       <workItem from="1685274331819" duration="1153000" />
       <workItem from="1685275510727" duration="242000" />
-      <workItem from="1685288608847" duration="45705000" />
+      <workItem from="1685288608847" duration="51166000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1682728631672</created>
@@ -525,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685351634476</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="adapt article page for mobile and tablet devices.">
+      <created>1685351988697</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1685351988697</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -543,8 +560,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Optimize imports" />
-    <MESSAGE value="Create mysql run configuration" />
     <MESSAGE value="Fix bug with error after creating new item" />
     <MESSAGE value="Remove unused console logs from ItemsFilter" />
     <MESSAGE value="Fix SQL request in ItemRepository" />
@@ -568,7 +583,9 @@
     <MESSAGE value="Add ability to reserve items from cart" />
     <MESSAGE value="Add item updates after reserve; create ConfirmReservePage" />
     <MESSAGE value="Create reserve page; adapt ui for mobile and tablet devices." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create reserve page; adapt ui for mobile and tablet devices." />
+    <MESSAGE value="adapt article page for mobile and tablet devices." />
+    <MESSAGE value="Create reserves list page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create reserves list page" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

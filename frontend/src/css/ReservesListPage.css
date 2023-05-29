@@ -1,0 +1,68 @@
+.ReservesListPage {
+    padding: 20px 30px 0;
+}
+
+.ReservesListPage .page-title {
+    max-width: 760px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    font-size: 18px;
+}
+
+.ReservesListPage .reserves-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ReservesListPage .reserves-list .reserve a {
+    background: #F9F9F9;
+    width: 100%;
+    max-width: 760px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin: 0 auto;
+    text-decoration: none;
+    color: inherit;
+}
+
+.ReservesListPage .reserves-list .reserve a div {
+    display: flex;
+    gap: 10px;
+    height: 100%;
+    align-items: center;
+}
+
+.ReservesListPage .reserves-list .reserve img {
+    width: 16px;
+    height: 16px;
+}
+
+.ReservesListPage .reserve-status {
+    color: #46A06A;
+}
+.ReservesListPage .reserve-total-price {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 599px) {
+
+    .ReservesListPage {
+        padding: 15px 10px 0;
+    }
+
+    .ReservesListPage .reserves-list .reserve img {
+        display: none;
+    }
+
+    .ReservesListPage .reserves-list .reserve a div {
+        white-space: nowrap;
+        max-width: 25%;
+        max-height: 20px;
+        overflow: hidden;
+    }
+}

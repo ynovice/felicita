@@ -428,6 +428,20 @@ const Api = (function () {
             await throwCorrespondingException(response);
         },
 
+        getReservesForCurrentUser: async function (abortSignal) {
+
+            const response = await fetch(API_BASE_URL + "/reserve", {
+                signal: abortSignal,
+                credentials: "include"
+            }).catch(() => null)
+
+            if(response && response.ok) {
+                return await response.json();
+            }
+
+            await throwCorrespondingException(response);
+        },
+
         getImageUrlByImageId: function(id) {
             return API_BASE_URL + "/image/" + id;
         },
