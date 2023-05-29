@@ -6,7 +6,9 @@ import com.github.ynovice.felicita.repository.CartRepository;
 import com.github.ynovice.felicita.repository.ReserveRepository;
 import com.github.ynovice.felicita.repository.SizeQuantityRepository;
 import com.github.ynovice.felicita.service.CartService;
+import com.github.ynovice.felicita.service.ItemService;
 import com.github.ynovice.felicita.service.ReserveService;
+import jakarta.transaction.Transactional;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.oauth2.core.user.OAuth2User;
@@ -22,12 +24,14 @@ public class ReserveServiceImpl implements ReserveService {
     private final ReserveRepository  reserveRepository;
 
     private final CartService cartService;
+    private final ItemService itemService;
 
     private final CartRepository cartRepository;
     private final CartEntryRepository cartEntryRepository;
     private final SizeQuantityRepository sizeQuantityRepository;
 
     @Override
+    @Transactional
     public Reserve reserveAllItemsInCart(@NonNull OAuth2User oAuth2User) {
 
         Cart cart = cartService.getByPrincipal(oAuth2User);
@@ -51,6 +55,8 @@ public class ReserveServiceImpl implements ReserveService {
         cartRepository.saveAndFlush(cart);
         reserveRepository.saveAndFlush(reserve);
 
+        itemService.updateItemQuantitiesAfterReserve(reserve);
+
         return reserve;
     }
 
@@ -73,6 +79,7 @@ public class ReserveServiceImpl implements ReserveService {
     private void createAndLinkReserveEntry(@NonNull CartEntry cartEntry, @NonNull Reserve reserve) {
 
         ReserveEntry reserveEntry = new ReserveEntry();
+        reserveEntry.setSizesQuantities(new ArrayList<>());
         reserveEntry.setItem(cartEntry.getItem());
         reserveEntry.setPricePerItem(cartEntry.getItem().getPrice());
 

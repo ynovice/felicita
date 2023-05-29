@@ -397,7 +397,7 @@ const Api = (function () {
             await throwCorrespondingException(response);
         },
 
-        reserveItemsInCart: async function() {
+        reserveAllItemsInCart: async function() {
 
             const response = await fetch(API_BASE_URL + "/reserve", {
                 credentials: "include",
@@ -407,9 +407,11 @@ const Api = (function () {
                 }
             }).catch(() => null);
 
-            if(!response || !response.ok) {
-                await throwCorrespondingException(response);
+            if(response && response.ok) {
+                return await response.json();
             }
+
+            await throwCorrespondingException(response);
         },
 
         getImageUrlByImageId: function(id) {

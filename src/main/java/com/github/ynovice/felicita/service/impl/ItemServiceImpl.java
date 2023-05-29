@@ -1,13 +1,12 @@
 package com.github.ynovice.felicita.service.impl;
 
+import com.github.ynovice.felicita.exception.InternalServerError;
 import com.github.ynovice.felicita.exception.InvalidEntityException;
 import com.github.ynovice.felicita.exception.NotFoundException;
 import com.github.ynovice.felicita.model.dto.request.CreateItemRequestDto;
 import com.github.ynovice.felicita.model.dto.request.CreateSizeQuantityRequestDto;
 import com.github.ynovice.felicita.model.dto.request.ItemFilterParamsDto;
-import com.github.ynovice.felicita.model.entity.Item;
-import com.github.ynovice.felicita.model.entity.Size;
-import com.github.ynovice.felicita.model.entity.SizeQuantity;
+import com.github.ynovice.felicita.model.entity.*;
 import com.github.ynovice.felicita.repository.*;
 import com.github.ynovice.felicita.service.ImageService;
 import com.github.ynovice.felicita.service.ItemService;
@@ -40,6 +39,7 @@ public class ItemServiceImpl implements ItemService {
     private final MaterialRepository materialRepository;
     private final ColorRepository colorRepository;
     private final SizeRepository sizeRepository;
+    private final SizeQuantityRepository sizeQuantityRepository;
 
     @Override
     public Item createItem(@NonNull CreateItemRequestDto requestDto) {
@@ -128,6 +128,34 @@ public class ItemServiceImpl implements ItemService {
         imageRepository.saveAll(item.getImages());
 
         return item;
+    }
+
+    @Override
+    public void updateItemQuantitiesAfterReserve(@NonNull Reserve reserve) {
+
+        for(ReserveEntry reserveEntry : reserve.getEntries()) {
+
+            Item item = reserveEntry.getItem();
+
+            for(SizeQuantity reserveEntrySQ : reserveEntry.getSizesQuantities()) {
+
+                Size size = reserveEntrySQ.getSize();
+
+                SizeQuantity itemSQ = item.getSizeQuantityBySize(size).orElseThrow(
+                        () -> new InternalServerError("Произошла ошибка при попытке зарезервировать товар"));
+
+                itemSQ.updateQuantity(-reserveEntrySQ.getQuantity());
+
+                if(itemSQ.getQuantity() <= 0) {
+                    item.getSizesQuantities().remove(itemSQ);
+                    sizeQuantityRepository.delete(itemSQ);
+                }
+            }
+
+            item.setActive(shouldBeActive(item));
+            itemRepository.save(item);
+        }
+
     }
 
     @Override

@@ -14,7 +14,7 @@ function requiresUser(TargetComponent, errorPageMessage, mustBeAdmin=false) {
         }
 
         if(hasError || !user || (mustBeAdmin && user["role"] !== "ADMIN")) {
-            return <ErrorPage errorMessage={userContextErrorMessage ? userContextErrorMessage : errorPageMessage}/>
+            return <ErrorPage errorMessage={errorPageMessage ? errorPageMessage : userContextErrorMessage}/>
         }
 
         return <TargetComponent />

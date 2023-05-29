@@ -193,7 +193,7 @@ function CartPage() {
                         </div>
                         {cart["totalItems"] > 0 &&
                             <div className="button-container">
-                                <input onClick={() => Api.reserveItemsInCart()}
+                                <input onClick={() => window.location.href = "/confirm-reserve"}
                                        type="button"
                                        className="button"
                                        value="Зарезервировать"/>

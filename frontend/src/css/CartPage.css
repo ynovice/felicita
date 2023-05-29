@@ -27,7 +27,7 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
-    padding-bottom: 45px;
+    padding-bottom: 30px;
 }
 
 .CartPage .cart-item {
