@@ -2,6 +2,7 @@ package com.github.ynovice.felicita.controller;
 
 import com.github.ynovice.felicita.exception.BadRequestException;
 import com.github.ynovice.felicita.exception.InvalidEntityException;
+import com.github.ynovice.felicita.exception.NotAuthorizedException;
 import com.github.ynovice.felicita.exception.NotFoundException;
 import com.github.ynovice.felicita.model.dto.exception.ExceptionDto;
 import com.github.ynovice.felicita.model.dto.exception.InvalidEntityDto;
@@ -31,5 +32,11 @@ public class ExceptionsHandler {
     public ResponseEntity<ExceptionDto> handleBadRequestException(BadRequestException e) {
         ExceptionDto exceptionDto = new ExceptionDto("badRequest", e.getMessage());
         return ResponseEntity.badRequest().body(exceptionDto);
+    }
+
+    @ExceptionHandler(NotAuthorizedException.class)
+    public ResponseEntity<ExceptionDto> handleNotAuthorizedException(NotAuthorizedException e) {
+        ExceptionDto exceptionDto = new ExceptionDto("notAuthorized", e.getMessage());
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(exceptionDto);
     }
 }

@@ -9,4 +9,6 @@ import org.springframework.stereotype.Service;
 public interface ReserveService {
 
     Reserve reserveAllItemsInCart(@NonNull OAuth2User oAuth2User);
+
+    Reserve getById(Long id, @NonNull OAuth2User oAuth2User);
 }

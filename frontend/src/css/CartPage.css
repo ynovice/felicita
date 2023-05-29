@@ -1,7 +1,7 @@
 .CartPage {
     display: flex;
     gap: 80px;
-    padding: 20px 30px 65px;
+    padding: 20px 30px 0;
 }
 
 .CartPage .left-side {
@@ -164,7 +164,6 @@
     white-space: nowrap
 }
 
-
 .CartPage .item a {
     width: 130px;
     display: flex;
@@ -178,4 +177,64 @@
 .CartPage .similar-items .section-title {
     font-size: 18px;
     padding-bottom: 10px;
+}
+
+@media screen and (max-width: 1279px) {
+
+    .CartPage {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .CartPage .left-side {
+        width: 100%;
+    }
+    .CartPage .cart-item {
+        min-width: auto;
+    }
+    .CartPage .cart-summary {
+        width: 100%;
+        margin-left: -30px;
+        min-width: auto;
+    }
+    .CartPage .similar-items-catalog {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        overflow-x: scroll;
+        white-space: nowrap;
+        flex-wrap: nowrap;
+    }
+    .CartPage .similar-items-catalog::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+
+    .CartPage {
+        padding: 15px 10px 0;
+        gap: 15px;
+    }
+    .CartPage .left-side {
+        width: 100%;
+    }
+    .CartPage .cart-item {
+        min-width: auto;
+    }
+    .CartPage .cart-summary {
+        width: 100%;
+        padding: 25px 10px;
+        margin-left: -10px;
+    }
+    .CartPage .similar-items-catalog {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        overflow-x: scroll;
+        white-space: nowrap;
+        flex-wrap: nowrap;
+    }
+    .CartPage .similar-items-catalog::-webkit-scrollbar {
+        display: none;
+    }
 }

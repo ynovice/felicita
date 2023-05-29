@@ -106,6 +106,7 @@
 }
 .ItemPage .item .image-container img {
     width: 130px;
+    height: 190px;
 }
 
 .ItemPage .item .item-name {
@@ -189,5 +190,16 @@
 
     .ItemPage .property {
         justify-content: space-between;
+    }
+
+    .ItemPage .similar-items-catalog {
+        display: flex;
+        gap: 20px;
+        flex-wrap: nowrap;
+        max-width: unset;
+        overflow-x: scroll;
+    }
+    .ItemPage .similar-items-catalog::-webkit-scrollbar {
+        display: none;
     }
 }

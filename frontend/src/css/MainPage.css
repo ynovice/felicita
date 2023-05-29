@@ -38,3 +38,15 @@
 .MainPage .section .section-link {
     font-size: 18px;
 }
+
+@media screen and (max-width: 599px) {
+
+    .MainPage{
+        padding: 15px 10px 0;
+    }
+
+    .MainPage .feedback-proposal {
+        font-size: 20px;
+        text-align: center;
+    }
+}

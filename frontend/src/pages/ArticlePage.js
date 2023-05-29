@@ -7,7 +7,7 @@ import {useParams} from "react-router-dom";
 import Api from "../Api";
 import NotFoundException from "../exception/NotFoundException";
 import {AccessLevel, AppContext} from "../contexts/AppContext";
-import RequestAbortedException from "../exception/RequestAbortedException";
+import FailedRequestException from "../exception/FailedRequestException";
 
 function ArticlePage () {
 
@@ -39,7 +39,7 @@ function ArticlePage () {
             .catch(e => {
                 if(e instanceof NotFoundException) {
                     setArticleState(ArticleState.NOT_FOUND);
-                } else if (!(e instanceof RequestAbortedException)) {
+                } else if (!(e instanceof FailedRequestException)) {
                     setArticleState(ArticleState.ERROR);
                 }
             });

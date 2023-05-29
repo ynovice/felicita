@@ -73,7 +73,7 @@ function ConfirmReservePage() {
                                         {item["price"] * sq["quantity"]}₽
                                     </div>
 
-                                    <div className="cart-item-controls">
+                                    <div className="cart-item-controls noselect disabled">
 
                                         <div className="left"></div>
                                         <div className="right">

@@ -9,6 +9,12 @@
     color: #404040;
 }
 
+.ItemsFilter .heading {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+}
+
 .ItemsFilter .title {
     font-size: 24px;
     font-weight: normal;
@@ -54,4 +60,35 @@
     flex-direction: column;
     gap: 8px;
     padding-left: 8px;
+}
+
+@media screen and (max-width: 1279px) {
+
+    .ItemsFilter {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        background: #fff;
+        padding: 20px 60px;
+        padding-left: 30px;
+        overflow: scroll;
+        height: 100vh;
+        width: auto;
+    }
+    .ItemsFilter:not(.opened) {
+        display: none;
+    }
+    .filters-background-darkener {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 500;
+    }
+    .filters-background-darkener:not(.opened) {
+        display: none;
+    }
 }

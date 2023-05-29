@@ -414,18 +414,27 @@ const Api = (function () {
             await throwCorrespondingException(response);
         },
 
-        getImageUrlByImageId: function(id) {
-            return API_BASE_URL + "/image/" + id;
+        getReserveById: async function(id, abortSignal) {
+
+            const response = await fetch(API_BASE_URL + "/reserve/" + id, {
+                signal: abortSignal,
+                credentials: "include"
+            }).catch(() => null)
+
+            if(response && response.ok) {
+                return await response.json();
+            }
+
+            await throwCorrespondingException(response);
         },
 
-        getImageUploadUrl: function () {
-            return API_BASE_URL + "/image"
+        getImageUrlByImageId: function(id) {
+            return API_BASE_URL + "/image/" + id;
         },
 
         getBaseApiUrl: function () {
             return API_BASE_URL;
         },
-
         getServerDomain: function () {
             return SERVER_DOMAIN;
         },
@@ -433,15 +442,8 @@ const Api = (function () {
         setCsrfHeaderName(name) {
             csrfHeaderName = name;
         },
-        getCsrfHeaderName() {
-            return csrfHeaderName;
-        },
-
         setCsrfToken(token) {
             csrfToken = token;
-        },
-        getCsrfToken() {
-            return csrfToken;
         }
     }
 })();

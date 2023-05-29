@@ -1,5 +1,7 @@
 package com.github.ynovice.felicita.service.impl;
 
+import com.github.ynovice.felicita.exception.NotAuthorizedException;
+import com.github.ynovice.felicita.exception.NotFoundException;
 import com.github.ynovice.felicita.model.entity.*;
 import com.github.ynovice.felicita.repository.CartEntryRepository;
 import com.github.ynovice.felicita.repository.CartRepository;
@@ -8,6 +10,7 @@ import com.github.ynovice.felicita.repository.SizeQuantityRepository;
 import com.github.ynovice.felicita.service.CartService;
 import com.github.ynovice.felicita.service.ItemService;
 import com.github.ynovice.felicita.service.ReserveService;
+import com.github.ynovice.felicita.service.UserService;
 import jakarta.transaction.Transactional;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -25,6 +28,7 @@ public class ReserveServiceImpl implements ReserveService {
 
     private final CartService cartService;
     private final ItemService itemService;
+    private final UserService userService;
 
     private final CartRepository cartRepository;
     private final CartEntryRepository cartEntryRepository;
@@ -56,6 +60,20 @@ public class ReserveServiceImpl implements ReserveService {
         reserveRepository.saveAndFlush(reserve);
 
         itemService.updateItemQuantitiesAfterReserve(reserve);
+
+        return reserve;
+    }
+
+    @Override
+    public Reserve getById(Long id, @NonNull OAuth2User oAuth2User) {
+
+        User user = userService.getUser(oAuth2User);
+
+        Reserve reserve = reserveRepository.findById(id)
+                .orElseThrow(NotFoundException::new);
+
+        if(!reserve.getUser().equals(user))
+            throw new NotAuthorizedException("Вы не можете просматривать этот резерв");
 
         return reserve;
     }

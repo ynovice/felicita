@@ -4,17 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Add ability to reserve items from cart">
-      <change afterPath="$PROJECT_DIR$/frontend/src/css/ConfirmReservePage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ConfirmReservePage.js" afterDir="false" />
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Create reserve page; adapt ui for mobile and tablet devices.">
+      <change afterPath="$PROJECT_DIR$/frontend/src/css/ReservePage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ReservePage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/exception/NotAuthorizedException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ItemFiltersContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ItemFiltersContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/css/CartPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/CartPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/hoc/requiresUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hoc/requiresUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/CatalogPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/CatalogPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/ConfirmReservePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/ConfirmReservePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/Header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/ItemPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/ItemPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/ItemsCatalog.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/ItemsCatalog.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/ItemsFilter.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/ItemsFilter.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/MainPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/MainPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/CartPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CartPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ItemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ItemServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CatalogPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CatalogPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ConfirmReservePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ConfirmReservePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ExceptionsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ExceptionsHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ReserveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ReserveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/ReserveDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/ReserveDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ReserveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ReserveService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ReserveServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ReserveServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,8 +40,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JavaScript File" />
+        <option value="Class" />
         <option value="CSS File" />
       </list>
     </option>
@@ -128,7 +141,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Backend MySQL">
+  <component name="RunManager" selected="npm.React Frontend">
     <configuration name="ItemServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="felicita" />
       <extension name="coverage">
@@ -266,7 +279,7 @@
       <workItem from="1685267932837" duration="5906000" />
       <workItem from="1685274331819" duration="1153000" />
       <workItem from="1685275510727" duration="242000" />
-      <workItem from="1685288608847" duration="31852000" />
+      <workItem from="1685288608847" duration="45422000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1682728631672</created>
@@ -520,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685318334248</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Add item updates after reserve; create ConfirmReservePage">
+      <created>1685327492486</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1685327492486</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -538,8 +558,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add total price display to CartWidget, fix similar items catalog link on item page" />
-    <MESSAGE value="Fix security bug" />
     <MESSAGE value="Optimize imports" />
     <MESSAGE value="Create mysql run configuration" />
     <MESSAGE value="Fix bug with error after creating new item" />
@@ -563,7 +581,9 @@
     <MESSAGE value="Refactor cart functionality" />
     <MESSAGE value="Add images directory to git" />
     <MESSAGE value="Add ability to reserve items from cart" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add ability to reserve items from cart" />
+    <MESSAGE value="Add item updates after reserve; create ConfirmReservePage" />
+    <MESSAGE value="Create reserve page; adapt ui for mobile and tablet devices." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create reserve page; adapt ui for mobile and tablet devices." />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

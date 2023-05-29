@@ -18,6 +18,7 @@ import CartPage from "./pages/CartPage";
 import CreateArticlePage from "./pages/CreateArticlePage";
 import ArticlePage from "./pages/ArticlePage";
 import ConfirmReservePage from "./pages/ConfirmReservePage";
+import ReservePage from "./pages/ReservePage";
 
 function App() {
 
@@ -138,6 +139,7 @@ function App() {
                                 <Route path="/catalog" element={<CatalogPage />}/>
                                 <Route path="/cart" element={<CartPage />}/>
                                 <Route path="/article/:id" element={<ArticlePage />}/>
+                                <Route path="/reserve/:id" element={<ReservePage />}/>
                                 <Route path="/confirm-reserve" element={<ConfirmReservePage />}/>
                                 <Route path="/admin" element={<AdminPanelPage />}/>
                                 <Route path="/admin/item/create" element={<CreateItemPage />}/>

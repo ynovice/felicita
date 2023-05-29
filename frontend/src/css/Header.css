@@ -68,6 +68,10 @@
 .Header .links-row .links-left {
     align-items: flex-start;
 }
+.Header .links-row .links-left li a {
+    white-space: nowrap;
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 .Header .links-row::-webkit-scrollbar {
     display: none;

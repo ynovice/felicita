@@ -1,12 +1,12 @@
 import {useSearchParams} from "react-router-dom";
 import Api from "../Api";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import "../css/ItemsFilter.css";
 import ItemCategoryFilter from "./ItemCategoryFilter";
 import ItemCheckboxFilter from "./ItemCheckboxFilter";
 import ItemRadioFilter from "./ItemRadioFilter";
 
-function ItemFiltersContainer({setItemsPage, setCatalogState, onSuccessCatalogState}) {
+function ItemFiltersContainer({opened, setOpened, setItemsPage, setCatalogState, onSuccessCatalogState}) {
 
     const [searchParams] = useSearchParams();
 
@@ -103,68 +103,76 @@ function ItemFiltersContainer({setItemsPage, setCatalogState, onSuccessCatalogSt
     }
 
     return (
-        <div className="ItemsFilter">
-            <div className="title">Фильтры</div>
+        <React.Fragment>
+            <div className={"filters-background-darkener" + (opened ? " opened" : "")}></div>
 
-            <div className="inputs-filter">
-                <div className="filter-name">Цена</div>
-                <div>
-                    <label htmlFor="priceFrom">От (₽)</label>
-                    <input className="flct-input"
-                           id="priceFrom"
-                           type="number"
-                           value={priceFrom}
-                           onChange={(e) => setPriceFrom(e.target.value)}/>
+            <div className={"ItemsFilter" + (opened ? " opened" : "")}>
+
+                <div className="heading">
+                    <p className="title">Фильтры</p>
+                    <span className="link danger" onClick={() => setOpened(!opened)}>Скрыть</span>
                 </div>
-                <div>
-                    <label htmlFor="priceTo">До (₽)</label>
-                    <input className="flct-input"
-                           id="priceTo"
-                           type="number"
-                           value={priceTo}
-                           onChange={(e) => setPriceTo(e.target.value)}/>
+
+                <div className="inputs-filter">
+                    <div className="filter-name">Цена</div>
+                    <div>
+                        <label htmlFor="priceFrom">От (₽)</label>
+                        <input className="flct-input"
+                               id="priceFrom"
+                               type="number"
+                               value={priceFrom}
+                               onChange={(e) => setPriceFrom(e.target.value)}/>
+                    </div>
+                    <div>
+                        <label htmlFor="priceTo">До (₽)</label>
+                        <input className="flct-input"
+                               id="priceTo"
+                               type="number"
+                               value={priceTo}
+                               onChange={(e) => setPriceTo(e.target.value)}/>
+                    </div>
                 </div>
+
+                <ItemCategoryFilter getParamName={"categoriesIds"}
+                                    title={"Категории"}
+                                    categoriesTrees={existingCategoriesTrees}
+                                    chosenIds={chosenCategoriesIds}
+                                    setChosenIds={setChosenCategoriesIds}/>
+
+                <ItemCheckboxFilter getParamName={"sizesIds"}
+                                    title={"Размер"}
+                                    options={existingSizes}
+                                    setIds={setChosenSizesIds}/>
+
+                <ItemCheckboxFilter getParamName={"colorsIds"}
+                                    title={"Цвет"}
+                                    options={existingColors}
+                                    setIds={setChosenColorsIds}/>
+
+                <ItemCheckboxFilter getParamName={"materialsIds"}
+                                    title={"Материал"}
+                                    options={existingMaterials}
+                                    setIds={setChosenMaterialsIds}/>
+
+                <ItemRadioFilter getParamName={"hasPrint"}
+                                 title={"Принт"}
+                                 chosenValue={hasPrint}
+                                 setChosenValue={setHasPrint}
+                                 options={[
+                                     {name: "С принтом", value: "true"},
+                                     {name: "Без принта", value: "false"},
+                                     {name: "Любое", value: null}
+                                 ]}/>
+
+                <input type="button"
+                       className="button"
+                       value="Применить"
+                       onClick={() => handleApplyFiltersClick()}/>
+
+                <span onClick={() => window.location.href = window.location.href.split("?")[0]}
+                      className="link danger">Сбросить</span>
             </div>
-
-            <ItemCategoryFilter getParamName={"categoriesIds"}
-                                title={"Категории"}
-                                categoriesTrees={existingCategoriesTrees}
-                                chosenIds={chosenCategoriesIds}
-                                setChosenIds={setChosenCategoriesIds}/>
-
-            <ItemCheckboxFilter getParamName={"sizesIds"}
-                                title={"Размер"}
-                                options={existingSizes}
-                                setIds={setChosenSizesIds}/>
-
-            <ItemCheckboxFilter getParamName={"colorsIds"}
-                                title={"Цвет"}
-                                options={existingColors}
-                                setIds={setChosenColorsIds}/>
-
-            <ItemCheckboxFilter getParamName={"materialsIds"}
-                                title={"Материал"}
-                                options={existingMaterials}
-                                setIds={setChosenMaterialsIds}/>
-
-            <ItemRadioFilter getParamName={"hasPrint"}
-                             title={"Принт"}
-                             chosenValue={hasPrint}
-                             setChosenValue={setHasPrint}
-                             options={[
-                                 {name: "С принтом", value: "true"},
-                                 {name: "Без принта", value: "false"},
-                                 {name: "Любое", value: null}
-                             ]}/>
-
-            <input type="button"
-                   className="button"
-                   value="Применить"
-                   onClick={() => handleApplyFiltersClick()}/>
-
-            <span onClick={() => window.location.href = window.location.href.split("?")[0]}
-                  className="link danger">Сбросить</span>
-        </div>
+        </React.Fragment>
     );
 }
 

@@ -28,22 +28,30 @@ function CatalogPage() {
     }
 
     const switchPage = (pageNumber) => {
-
         searchParams.set("page", pageNumber);
         window.location.href = window.location.href.split("?")[0] + "?" + searchParams;
     }
 
+    const [filtersOpened, setFiltersOpened] = useState(false);
+
     return (
         <div className="CatalogPage">
 
-            <ItemFiltersContainer setItemsPage={setItemsPage}
+            <ItemFiltersContainer opened={filtersOpened}
+                                  setOpened={setFiltersOpened}
+                                  setItemsPage={setItemsPage}
                                   setCatalogState={setCatalogState}
                                   onSuccessCatalogState={CatalogState.LOADED}/>
 
             <div className="right-side">
-
+                
                 <div className="heading">Каталог</div>
 
+                <input className="button toggle-filters-button"
+                       type="button"
+                       value="Фильтры"
+                       onClick={() => setFiltersOpened(!filtersOpened)}/>
+                
                 {catalogState === CatalogState.LOADED && itemsPage["items"].length > 0 &&
                     <div className="catalog-items">
                         {itemsPage["items"].map(item => {
@@ -70,7 +78,6 @@ function CatalogPage() {
                     <div className="catalog-items">Товары по вашему запросу не найдены</div>
                 }
 
-
                 {pagesNumbers.length > 0 &&
                     <div className="pagination">
                         <span className="pagination-title">Страницa:</span>
@@ -89,9 +96,6 @@ function CatalogPage() {
                         })}
                     </div>
                 }
-
-
-
             </div>
         </div>
     )

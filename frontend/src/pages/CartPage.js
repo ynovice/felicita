@@ -135,7 +135,7 @@ function CartPage() {
                                 const noMoreToAdd = getItemQuantityBySize(item, sq["size"]) === sq["quantity"];
 
                                 return (
-                                    <div key={"cart-sq-" + sq["id"]} className="cart-item">
+                                    <div key={"cart-sq-" + sq["size"]["id"] + "-" + item["id"]} className="cart-item">
 
                                         <div className="image-container">
                                             <img src={imageUrl} alt={item["name"]}/>

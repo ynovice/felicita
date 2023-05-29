@@ -124,3 +124,40 @@
     display: flex;
     justify-content: flex-end;
 }
+
+@media screen and (max-width: 1279px) {
+
+    .ConfirmReservePage .page-title {
+        text-align: left;
+    }
+
+    .ConfirmReservePage .cart-item {
+        width: 100%;
+        min-width: unset;
+        max-width: unset;
+    }
+
+    .ConfirmReservePage .cart-summary {
+        width: 100%;
+        box-sizing: content-box;
+        margin-left: -30px;
+    }
+}
+
+@media screen and (max-width: 599px) {
+
+    .ConfirmReservePage {
+        padding: 15px 10px 0;
+        box-sizing: border-box;
+    }
+
+    .ConfirmReservePage .page-title {
+        font-size: 18px;
+    }
+
+    .ConfirmReservePage .cart-summary {
+        width: 100%;
+        padding: 25px 10px;
+        margin-left: -10px;
+    }
+}
