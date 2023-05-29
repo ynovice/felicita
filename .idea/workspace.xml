@@ -4,25 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Remove inCage high order component">
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Refactor CreateItemPage&#10;&#10;Replace 'a' tags with 'span' tags where links weren't actually links.">
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminPanelPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/AdminPanelPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/BlogPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/BlogPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CartPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CartPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CatalogPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CatalogPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ConfirmReservePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ConfirmReservePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CreateArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CreateArticlePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/CreateItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CreateItemPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ItemPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/LoginPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/MainPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ReservePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ReservePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ReservesListPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ReservesListPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -555,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685358211736</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Remove inCage high order component">
+      <created>1685398581148</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1685398581148</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +565,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix SQL request in ItemRepository" />
     <MESSAGE value="Add ability to filter items by colors, materials and print" />
     <MESSAGE value="Add ability to filter items by categories" />
     <MESSAGE value="Refactor and update Header" />
@@ -598,7 +589,8 @@
     <MESSAGE value="Create reserves list page" />
     <MESSAGE value="Create blog page; add ability to delete articles" />
     <MESSAGE value="Remove inCage high order component" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove inCage high order component" />
+    <MESSAGE value="Refactor CreateItemPage&#10;&#10;Replace 'a' tags with 'span' tags where links weren't actually links." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor CreateItemPage&#10;&#10;Replace 'a' tags with 'span' tags where links weren't actually links." />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

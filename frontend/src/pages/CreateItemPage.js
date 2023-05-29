@@ -617,7 +617,8 @@ function CreateItemPage() {
                 {imagesData.length !== 0 && imagesData.map((imageData) => {
                     return (
                         <div key={imageData["uploadedImage"]["id"]} className="selects-row">
-                            <img src={Api.getBaseApiUrl() + "/image/" + imageData["uploadedImage"]["id"]} />
+                            <img src={Api.getBaseApiUrl() + "/image/" + imageData["uploadedImage"]["id"]}
+                                 alt={imageData["uploadedImage"]["id"]}/>
                             <span>{imageData["name"]}</span><span className="status-ready">загружена</span>
                         </div>
                     );
@@ -630,9 +631,10 @@ function CreateItemPage() {
                     );
                 })}
 
-                <a href="#"
-                   className="link"
-                   onClick={(e) => handleAddImageInput(e)}>Добавить</a>
+                <span className="link"
+                      onClick={(e) => handleAddImageInput(e)}>
+                    Добавить
+                </span>
             </div>
 
             <div className="section block-title">Категории</div>
@@ -666,23 +668,25 @@ function CreateItemPage() {
                                 );
                             })}
                             {getHasSubCategoriesById(sequence[sequence.length - 1]) &&
-                                <a href="#"
-                                   className="link"
+                                <span className="link"
                                    onClick={(e) => handleAddSubCategorySelect(e, sequence[sequence.length - 1])}>
                                     Уточнить
-                                </a>
+                                </span>
                             }
-                            <a href="#"
-                               className="link danger"
-                               onClick={(e) => handleReduceCategoriesSequenceLength(e, sequence[0])}>Убрать</a>
+                            <span className="link danger"
+                                  onClick={(e) => handleReduceCategoriesSequenceLength(e, sequence[0])}>
+                                Убрать
+                            </span>
                         </div>
                     );
                 })}
 
                 {!getAllRootCategoriesAreSelected() &&
-                    <a href="#"
-                       className="link"
-                       onClick={(e) => handleAddRootCategorySelect(e)}>Добавить</a>
+                    <span
+                        className="link"
+                        onClick={(e) => handleAddRootCategorySelect(e)}>
+                        Добавить
+                    </span>
                 }
             </div>
 
@@ -708,17 +712,20 @@ function CreateItemPage() {
                                         );
                                     })}
                                 </select>
-                                <a href="#"
-                                   className="link danger"
-                                   onClick={(e) => handleRemoveChosenMaterial(e, id)}>Убрать</a>
+                                <span
+                                    className="link danger"
+                                    onClick={(e) => handleRemoveChosenMaterial(e, id)}>
+                                    Убрать
+                                </span>
                             </React.Fragment>
                         </div>
                     );
                 })}
                 {!getAllMaterialsAreSelected() &&
-                    <a href="#"
-                       className="link"
-                       onClick={(e) => handleAddMaterial(e)}>Добавить</a>
+                    <span className="link"
+                          onClick={(e) => handleAddMaterial(e)}>
+                        Добавить
+                    </span>
                 }
             </div>
 
@@ -744,17 +751,21 @@ function CreateItemPage() {
                                         );
                                     })}
                                 </select>
-                                <a href="#"
-                                   className="link danger"
-                                   onClick={(e) => handleRemoveChosenColor(e, id)}>Убрать</a>
+                                <span
+                                    className="link danger"
+                                    onClick={(e) => handleRemoveChosenColor(e, id)}>
+                                    Убрать
+                                </span>
                             </React.Fragment>
                         </div>
                     );
                 })}
                 {!getAllColorsAreSelected() &&
-                    <a href="#"
-                       className="link"
-                       onClick={(e) => handleAddColor(e)}>Добавить</a>
+                    <span
+                        className="link"
+                        onClick={(e) => handleAddColor(e)}>
+                        Добавить
+                    </span>
                 }
             </div>
 
@@ -780,16 +791,18 @@ function CreateItemPage() {
                                    value={sq["quantity"]}
                                    placeholder="Количество (шт)"
                                    onChange={(e) => handleSizeQuantityQuantityChange(e, sq["size"]["id"])}/>
-                            <a href="#"
-                               className="link danger"
-                               onClick={(e) => handleRemoveSizeQuantity(e, sq["size"]["id"])}>Убрать</a>
+                            <span className="link danger"
+                                  onClick={(e) => handleRemoveSizeQuantity(e, sq["size"]["id"])}>
+                                Убрать
+                            </span>
                         </div>
                     );
                 })}
                 {!getAllSizesAreSelected() &&
-                    <a href="#"
-                       className="link"
-                       onClick={(e) => handleAddSizeQuantity(e)}>Добавить</a>
+                    <span className="link"
+                       onClick={(e) => handleAddSizeQuantity(e)}>
+                        Добавить
+                    </span>
                 }
             </div>
 
@@ -804,7 +817,10 @@ function CreateItemPage() {
             </div>
 
             <div className="section">
-                <a className="button" onClick={(e) => handleCreateItem(e)}>Создать</a>
+                <input type="button"
+                       className="button"
+                       onClick={(e) => handleCreateItem(e)}
+                       value="Создать"/>
             </div>
 
             <div className="errors-container">
