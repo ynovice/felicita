@@ -1,5 +1,4 @@
 import withHeaderAndFooter from "../hoc/withHeaderAndFooter";
-import inCage from "../hoc/inCage";
 import "../css/MainPage.css";
 import {useEffect, useMemo, useState} from "react";
 import Api from "../Api";
@@ -81,4 +80,4 @@ function MainPage() {
     );
 }
 
-export default inCage(withHeaderAndFooter(MainPage));
+export default withHeaderAndFooter(MainPage);

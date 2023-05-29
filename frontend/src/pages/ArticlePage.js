@@ -1,4 +1,3 @@
-import inCage from "../hoc/inCage";
 import withHeaderAndFooter from "../hoc/withHeaderAndFooter";
 import "../css/ArticlePage.css";
 import {useContext, useEffect, useMemo, useState} from "react";
@@ -93,4 +92,4 @@ function ArticlePage () {
     );
 }
 
-export default inCage(withHeaderAndFooter(ArticlePage));
+export default withHeaderAndFooter(ArticlePage);

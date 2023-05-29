@@ -1,4 +1,3 @@
-import inCage from "../hoc/inCage";
 import withHeaderAndFooter from "../hoc/withHeaderAndFooter";
 import requiresUser from "../hoc/requiresUser";
 import "../css/ReservesListPage.css";
@@ -78,7 +77,7 @@ function ReservesListPage() {
     );
 }
 
-export default inCage(withHeaderAndFooter(requiresUser(
+export default withHeaderAndFooter(requiresUser(
     ReservesListPage,
     "Войдите в аккаунт, чтобы просмотреть зарезервированные вами товары."
-)))
+));

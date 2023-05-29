@@ -1,5 +1,4 @@
 import withHeaderAndFooter from "../hoc/withHeaderAndFooter";
-import inCage from "../hoc/inCage";
 import "../css/ProfilePage.css";
 import $ from "jquery";
 import {UserConsumer} from "../contexts/UserContext";
@@ -96,6 +95,6 @@ function ProfilePage() {
     );
 }
 
-export default inCage(withHeaderAndFooter(requiresUser(
+export default withHeaderAndFooter(requiresUser(
     ProfilePage, "Чтобы просмотреть эту страницу, нужно войти в аккаунт."
-)));
+));

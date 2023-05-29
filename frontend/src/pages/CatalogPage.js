@@ -1,5 +1,4 @@
 import withHeaderAndFooter from "../hoc/withHeaderAndFooter";
-import inCage from "../hoc/inCage";
 import "../css/CatalogPage.css";
 import React, {useState} from "react";
 import ItemFiltersContainer from "../components/ItemFiltersContainer";
@@ -101,4 +100,4 @@ function CatalogPage() {
     )
 }
 
-export default inCage(withHeaderAndFooter(CatalogPage));
+export default withHeaderAndFooter(CatalogPage);

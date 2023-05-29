@@ -1,7 +1,6 @@
 import "../css/ConfirmReservePage.css";
 import withHeaderAndFooter from "../hoc/withHeaderAndFooter";
 import requiresUser from "../hoc/requiresUser";
-import inCage from "../hoc/inCage";
 import {useEffect, useState} from "react";
 import Api from "../Api";
 
@@ -112,7 +111,7 @@ function ConfirmReservePage() {
     );
 }
 
-export default inCage(withHeaderAndFooter(requiresUser(
+export default withHeaderAndFooter(requiresUser(
     ConfirmReservePage,
     "Войдите в аккаунт, чтобы иметь возможность резервировать товары"
-)));
+));

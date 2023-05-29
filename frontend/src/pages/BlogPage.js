@@ -1,4 +1,3 @@
-import inCage from "../hoc/inCage";
 import withHeaderAndFooter from "../hoc/withHeaderAndFooter";
 import "../css/BlogPage.css";
 import {useEffect, useState} from "react";
@@ -52,15 +51,12 @@ function BlogPage() {
                     {articles.map(article => {
 
                         return (
-                            <a ket={"article-" + article["id"]}
+                            <a key={"article-" + article["id"]}
                                href={"/article/" + article["id"]}
                                className="article">
-                                <img src="/ui/article-image-placeholder.png" alt="article image"/>
+                                <img src="/ui/article-image-placeholder.png" alt="article"/>
                                 <div className="article-info">
                                     <div className="article-name">{article["name"]}</div>
-                                    {/*<div className="article-description">*/}
-                                    {/*    Краткое описание этой статьи или первые преложения из неё будут здесь.*/}
-                                    {/*</div>*/}
                                     <div className="article-createdAt">
                                         {article["createdAtPresentation"].substring(0, 10)}
                                     </div>
@@ -75,4 +71,4 @@ function BlogPage() {
 
 }
 
-export default inCage(withHeaderAndFooter(BlogPage));
+export default withHeaderAndFooter(BlogPage);

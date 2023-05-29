@@ -1,4 +1,3 @@
-import inCage from "../hoc/inCage";
 import withHeaderAndFooter from "../hoc/withHeaderAndFooter";
 import requiresUser from "../hoc/requiresUser";
 import "../css/CreateArticlePage.css";
@@ -175,8 +174,8 @@ function CreateArticlePage() {
     );
 }
 
-export default inCage(withHeaderAndFooter(requiresUser(
+export default withHeaderAndFooter(requiresUser(
     CreateArticlePage,
     "Чтобы просмотреть эту страницу, нужно войти в аккаунт администратора.",
     true
-)))
+));

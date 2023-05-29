@@ -1,5 +1,4 @@
 import withHeaderAndFooter from "../hoc/withHeaderAndFooter";
-import inCage from "../hoc/inCage";
 import {useCallback, useEffect, useState} from "react";
 import requiresUser from "../hoc/requiresUser";
 import "../css/CartPage.css";
@@ -237,6 +236,7 @@ function CartPage() {
     );
 }
 
-export default inCage(withHeaderAndFooter(requiresUser(
+export default withHeaderAndFooter(requiresUser(
     CartPage,
-    "Войдите в аккаунт, чтобы пользоваться корзиной.")));
+    "Войдите в аккаунт, чтобы пользоваться корзиной."
+));

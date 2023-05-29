@@ -38,17 +38,6 @@
     text-shadow: 0 0 5px #ff9a9a;
 }
 
-/*input:not([type="button"], [type="checkbox"], [type="radio"]),*/
-/*select, option {*/
-/*    background: #eaeaea;*/
-/*    border-radius: 3px;*/
-/*    outline: none;*/
-/*    border: 0;*/
-/*    padding: 4px 12px;*/
-/*    font-size: 16px;*/
-/*    box-sizing: border-box;*/
-/*    width: 220px;*/
-/*}*/
 .flct-input {
     background: #eaeaea;
     border-radius: 3px;
@@ -59,20 +48,7 @@
     box-sizing: border-box;
     width: 220px;
 }
-/*input:not([type="button"])::-webkit-outer-spin-button,*/
-/*input:not([type="button"])::-webkit-inner-spin-button,*/
-/*input:not([type="checkbox"])::-webkit-outer-spin-button,*/
-/*input:not([type="checkbox"])::-webkit-inner-spin-button,*/
-/*input:not([type="radio"])::-webkit-outer-spin-button,*/
-/*input:not([type="radio"])::-webkit-inner-spin-button,*/
-/*select::-webkit-outer-spin-button,*/
-/*select::-webkit-inner-spin-button,*/
-/*option::-webkit-outer-spin-button,*/
-/*option::-webkit-inner-spin-button*/
-/*{*/
-/*    -webkit-appearance: none;*/
-/*    margin: 0; !* <-- Apparently some margin are still there even though it's hidden *!*/
-/*}*/
+
 .flct-input::-webkit-outer-spin-button,
 .flct-input::-webkit-inner-spin-button,
 select::-webkit-outer-spin-button,

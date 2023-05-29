@@ -1,5 +1,4 @@
 import withHeaderAndFooter from "../hoc/withHeaderAndFooter";
-import inCage from "../hoc/inCage";
 import requiresUser from "../hoc/requiresUser";
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
@@ -134,7 +133,7 @@ function ReservePage() {
     );
 }
 
-export default inCage(withHeaderAndFooter(requiresUser(
+export default withHeaderAndFooter(requiresUser(
     ReservePage,
     "Войдите в аккаунт, чтобы просмотреть зарезервированные вами товары"
-)));
+));
