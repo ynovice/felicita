@@ -52,12 +52,11 @@
 
 .BlogPage .article .article-info * {
     color: #727270;
-    /*max-height: 30%;*/
-    /*max-height: 50px;*/
     text-overflow: ellipsis;
     overflow: hidden;
 }
 
 .BlogPage .article .article-info .article-name {
     font-size: 20px;
+    color: #000;
 }

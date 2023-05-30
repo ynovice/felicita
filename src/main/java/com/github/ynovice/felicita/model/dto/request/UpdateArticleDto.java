@@ -9,5 +9,6 @@ public class UpdateArticleDto {
 
     private Long id;
     private String name;
+    private Long previewId;
     private String content;
 }

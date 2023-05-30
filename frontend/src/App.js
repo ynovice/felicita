@@ -24,10 +24,11 @@ import BlogPage from "./pages/BlogPage";
 import userApi from "./api/UserApi";
 import BaseApi from "./api/BaseApi";
 import {ApiContextProvider} from "./contexts/ApiContext";
+import imageApi from "./api/ImageApi";
 
 function App() {
 
-    const [accessLevel, setAccessLevel] = useState(AccessLevel.GUEST);
+    const [accessLevel, setAccessLevel] = useState(AccessLevel.UNDEFINED);
     const [serverState, setServerState] = useState(ServerState.UNDEFINED);
 
     const appContextValue = {
@@ -44,7 +45,7 @@ function App() {
     };
 
     const apiContextValue = {
-        userApi
+        userApi, imageApi
     };
 
     useEffect(() => {
@@ -85,7 +86,10 @@ function App() {
 
             })
             .catch((e) => {
-                if(e instanceof NotAuthorizedException) setUserPresenceState(UserPresenceState.EMPTY);
+                if(e instanceof NotAuthorizedException) {
+                    setUserPresenceState(UserPresenceState.EMPTY);
+                    setAccessLevel(AccessLevel.GUEST);
+                }
                 else if (e instanceof FailedRequestException) setUserPresenceState(UserPresenceState.ERROR);
             })
 

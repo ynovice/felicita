@@ -1,6 +1,7 @@
 import React from "react";
 
 export const AccessLevel = {
+    UNDEFINED: "UNDEFINED",
     GUEST: "GUEST",
     AUTHENTICATED: "AUTHENTICATED",
     ADMIN: "ADMIN"

@@ -1,9 +1,10 @@
 import withHeaderAndFooter from "../hoc/withHeaderAndFooter";
 import "../css/BlogPage.css";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import Api from "../Api";
 import FailedRequestException from "../exception/FailedRequestException";
 import ErrorPage from "./ErrorPage";
+import {ApiContext} from "../contexts/ApiContext";
 
 function BlogPage() {
 
@@ -32,6 +33,8 @@ function BlogPage() {
         return () => abortController.abort();
     }, [ArticlesState.ERROR, ArticlesState.LOADED, ArticlesState.NOT_AUTHORIZED]);
 
+    const { imageApi } = useContext(ApiContext);
+
     if(articlesState === ArticlesState.LOADING) return;
 
     else if (articlesState === ArticlesState.ERROR)
@@ -50,11 +53,15 @@ function BlogPage() {
                 <div className="articles-list">
                     {articles.map(article => {
 
+                        const imageUrl = article["preview"] !== null ?
+                            imageApi.getImageUrlByImageId(article["preview"]["id"]) :
+                            "/ui/placeholders/article-placeholder.png";
+
                         return (
                             <a key={"article-" + article["id"]}
                                href={"/article/" + article["id"]}
                                className="article">
-                                <img src="/ui/placeholders/article-placeholder.png" alt="article"/>
+                                <img src={imageUrl} alt="article"/>
                                 <div className="article-info">
                                     <div className="article-name">{article["name"]}</div>
                                     <div className="article-createdAt">

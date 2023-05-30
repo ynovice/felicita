@@ -12,8 +12,9 @@ public class ArticleDto {
 
     private static final String DATE_TIME_PRESENTATION_FORMAT = "dd.MM.YYYY в HH:mm";
 
-    private  Long id;
+    private Long id;
     private String createdAtPresentation;
+    private ImageDto preview;
     private String name;
     private String content;
     private String author;
@@ -24,6 +25,9 @@ public class ArticleDto {
         dto.setId(article.getId());
         dto.setCreatedAtPresentation(
                 article.getCreatedAt().format(DateTimeFormatter.ofPattern(DATE_TIME_PRESENTATION_FORMAT))
+        );
+        dto.setPreview(
+                ImageDto.fromEntity(article.getPreview())
         );
         dto.setName(article.getName());
         dto.setContent(article.getContent());

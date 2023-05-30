@@ -1,13 +1,15 @@
 import withHeaderAndFooter from "../hoc/withHeaderAndFooter";
 import requiresUser from "../hoc/requiresUser";
 import "../css/CreateArticlePage.css";
-import React, {useEffect, useMemo, useState} from "react";
+import React, {useContext, useEffect, useMemo, useRef, useState} from "react";
 import EditorJS from '@editorjs/editorjs';
 import Api from "../Api";
 import edjsHtml from "editorjs-html";
 import InvalidEntityException from "../exception/InvalidEntityException";
 import {useSearchParams} from "react-router-dom";
 import adminAccessOnly from "../hoc/adminAccessOnly";
+import Button from "../components/Button";
+import {ApiContext} from "../contexts/ApiContext";
 
 function CreateArticlePage() {
 
@@ -71,6 +73,7 @@ function CreateArticlePage() {
                         .then(article => {
 
                             setName(article["name"]);
+                            setUploadedImage(article["preview"]);
 
                             (function loopedEditorUpdater() {
                                 setTimeout(function () {
@@ -114,7 +117,8 @@ function CreateArticlePage() {
                 const requestDto = {
                     id: Number(searchParams.get("id")),
                     name: name,
-                    content: DOMPurify.sanitize(html.join(""))
+                    content: DOMPurify.sanitize(html.join("")),
+                    previewId: uploadedImage["id"]
                 };
 
                 Api.updateArticle(requestDto)
@@ -129,7 +133,8 @@ function CreateArticlePage() {
             } else {
                 const requestDto = {
                     name: name,
-                    content: DOMPurify.sanitize(html.join(""))
+                    content: DOMPurify.sanitize(html.join("")),
+                    previewId: uploadedImage["id"]
                 };
 
                 Api.createArticle(requestDto)
@@ -148,10 +153,56 @@ function CreateArticlePage() {
         });
     }
 
+    const [uploadedImage, setUploadedImage] = useState(null);
+    const [previewFileInputRef] = useState(useRef());
+    const { imageApi } = useContext(ApiContext);
+
+    const handleImageUpload = (e) => {
+        e.preventDefault();
+
+        const image = e.target.files[0];
+
+        if(!image) return;
+
+        imageApi.uploadImage(image)
+            .then((newUploadedImage) => setUploadedImage(newUploadedImage))
+            .catch(() => alert("Что-то пошло не так при загрузке изображения."));
+    }
+
+    const handleChooseAnotherPreviewClick = () => {
+        previewFileInputRef.current.click();
+    }
+
+    const imageUrl = uploadedImage ?
+        imageApi.getImageUrlByImageId(uploadedImage["id"]) :
+        "/ui/placeholders/article-placeholder.png";
 
     return (
         <div className="CreateArticlePage">
             <h1 className="page-title">Создание статьи</h1>
+
+            <div className="section">
+                <p className="section-title">Превью статьи</p>
+
+                <input type="file"
+                       id="file-uploader"
+                       ref={previewFileInputRef}
+                       onChange={(e) => handleImageUpload(e)}/>
+
+                <img src={imageUrl}
+                     alt="article preview"
+                     className="article-preview"/>
+
+                <Button value="Выбрать другое" onClick={() => handleChooseAnotherPreviewClick()}/>
+
+                {uploadedImage !== null &&
+                    <span id="reset-preview"
+                          className="link danger" onClick={() => setUploadedImage(null)}>
+                        Сбросить
+                    </span>
+                }
+
+            </div>
 
             <textarea ref={nameAreaRef}
                       onChange={(e) => setName(e.target.value)}

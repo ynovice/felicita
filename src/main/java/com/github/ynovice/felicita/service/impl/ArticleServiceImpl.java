@@ -40,10 +40,13 @@ public class ArticleServiceImpl implements ArticleService {
 
         Article article = new Article();
         article.setCreatedAt(ZonedDateTime.now());
-        article.setPreview(imageRepository.getReferenceById(dto.getPreviewId()));
         article.setAuthor(user.getUsername());
         article.setName(dto.getName());
         article.setContent(dto.getContent());
+
+        if(dto.getPreviewId() != null) {
+            article.setPreview(imageRepository.getReferenceById(dto.getPreviewId()));
+        }
 
         BindingResult validationResult = validate(article);
         if (validationResult.hasErrors()) throw new InvalidEntityException(validationResult);
@@ -64,6 +67,10 @@ public class ArticleServiceImpl implements ArticleService {
 
         article.setName(dto.getName());
         article.setContent(dto.getContent());
+
+        if(dto.getPreviewId() != null) {
+            article.setPreview(imageRepository.getReferenceById(dto.getPreviewId()));
+        }
 
         BindingResult validationResult = validate(article);
         if(validationResult.hasErrors()) throw new InvalidEntityException(validationResult);
