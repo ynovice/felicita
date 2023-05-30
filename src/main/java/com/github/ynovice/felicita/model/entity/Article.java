@@ -19,6 +19,10 @@ public class Article {
     @Column(nullable = false)
     private ZonedDateTime createdAt;
 
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "preview_id", referencedColumnName = "id")
+    private Image preview;
+
     @Column(nullable = false)
     private String author;
 

@@ -20,4 +20,7 @@ public class Image {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(referencedColumnName = "id")
     private Item item;
+
+    @OneToOne(mappedBy = "preview")
+    private Article article;
 }

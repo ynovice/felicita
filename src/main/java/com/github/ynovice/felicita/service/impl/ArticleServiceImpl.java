@@ -2,11 +2,12 @@ package com.github.ynovice.felicita.service.impl;
 
 import com.github.ynovice.felicita.exception.InvalidEntityException;
 import com.github.ynovice.felicita.exception.NotFoundException;
-import com.github.ynovice.felicita.model.dto.request.CreateArticleDto;
+import com.github.ynovice.felicita.model.dto.request.CreateArticleRequestDto;
 import com.github.ynovice.felicita.model.dto.request.UpdateArticleDto;
 import com.github.ynovice.felicita.model.entity.Article;
 import com.github.ynovice.felicita.model.entity.User;
 import com.github.ynovice.felicita.repository.ArticleRepository;
+import com.github.ynovice.felicita.repository.ImageRepository;
 import com.github.ynovice.felicita.service.ArticleService;
 import com.github.ynovice.felicita.service.UserService;
 import com.github.ynovice.felicita.validator.ArticleValidator;
@@ -28,15 +29,18 @@ public class ArticleServiceImpl implements ArticleService {
 
     private final UserService userService;
 
+    private final ImageRepository imageRepository;
+
     private final ArticleValidator articleValidator;
 
     @Override
-    public Article create(CreateArticleDto dto, OAuth2User authorPrincipal) {
+    public Article create(CreateArticleRequestDto dto, OAuth2User authorPrincipal) {
 
         User user = userService.getUser(authorPrincipal);
 
         Article article = new Article();
         article.setCreatedAt(ZonedDateTime.now());
+        article.setPreview(imageRepository.getReferenceById(dto.getPreviewId()));
         article.setAuthor(user.getUsername());
         article.setName(dto.getName());
         article.setContent(dto.getContent());

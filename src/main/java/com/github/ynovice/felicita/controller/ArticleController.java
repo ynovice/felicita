@@ -1,7 +1,7 @@
 package com.github.ynovice.felicita.controller;
 
 import com.github.ynovice.felicita.model.dto.entity.ArticleDto;
-import com.github.ynovice.felicita.model.dto.request.CreateArticleDto;
+import com.github.ynovice.felicita.model.dto.request.CreateArticleRequestDto;
 import com.github.ynovice.felicita.model.dto.request.UpdateArticleDto;
 import com.github.ynovice.felicita.service.ArticleService;
 import lombok.RequiredArgsConstructor;
@@ -47,7 +47,7 @@ public class ArticleController {
 
     @Secured("ROLE_ADMIN")
     @PostMapping
-    public ResponseEntity<ArticleDto> create(@RequestBody CreateArticleDto dto,
+    public ResponseEntity<ArticleDto> create(@RequestBody CreateArticleRequestDto dto,
                                              @AuthenticationPrincipal OAuth2User principal) {
         return ResponseEntity.ok(
                 ArticleDto.fromEntity(articleService.create(dto, principal))
