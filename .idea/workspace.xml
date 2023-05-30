@@ -4,9 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Create adminAccessOnly hoc">
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Remove inCage hoc">
+      <change afterPath="$PROJECT_DIR$/frontend/public/ui/social/inst.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/ui/social/maps.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/ui/social/vk.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminPanelPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/AdminPanelPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/logos/google.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/ui/oauth/google.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/logos/vk.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/ui/oauth/vk.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/ui/article-image-placeholder.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/ui/placeholders/article-placeholder.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/ui/item-placeholder.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/ui/placeholders/item-placeholder.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/Button.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/Button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/Footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/Footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/Header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/BlogPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/BlogPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ItemPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/LoginPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,41 +60,41 @@
     <option name="showMembers" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/cgw/Desktop/sbermanager&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15586546&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;c15d1e866df42e567cedc944647c5b1b&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/snap/intellij-idea-ultimate/430/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "/home/cgw/Projects/felicita/frontend/public/ui/social",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15586546",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "spring.configuration.checksum": "c15d1e866df42e567cedc944647c5b1b",
+    "ts.external.directory.path": "/snap/intellij-idea-ultimate/430/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;,
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql",
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.github.ynovice.felicita.repository" />
@@ -90,13 +104,15 @@
       <recent name="com.github.ynovice.felicita.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/public/ui/social" />
       <recent name="$PROJECT_DIR$/frontend/public/ui" />
       <recent name="$PROJECT_DIR$/frontend/src/libs" />
       <recent name="$PROJECT_DIR$/frontend/public" />
       <recent name="$PROJECT_DIR$/frontend/public/logos" />
-      <recent name="$PROJECT_DIR$/frontend/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/public/ui/oauth" />
+      <recent name="$PROJECT_DIR$/frontend/public/ui/placeholders" />
       <recent name="$PROJECT_DIR$/frontend/public/ui" />
       <recent name="$PROJECT_DIR$/frontend/src" />
       <recent name="$PROJECT_DIR$/frontend/src/components" />
@@ -258,7 +274,7 @@
       <workItem from="1685274331819" duration="1153000" />
       <workItem from="1685275510727" duration="242000" />
       <workItem from="1685288608847" duration="56309000" />
-      <workItem from="1685446499405" duration="2122000" />
+      <workItem from="1685446499405" duration="5759000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1682728631672</created>
@@ -575,7 +591,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685448502275</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Remove inCage hoc">
+      <created>1685448640023</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1685448640023</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,7 +616,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactor and update Header" />
     <MESSAGE value="Create empty cart page" />
     <MESSAGE value="Add content to cart page" />
     <MESSAGE value="Create footer, fill main page with content, update cart page" />
@@ -618,7 +640,8 @@
     <MESSAGE value="Refactor CreateItemPage&#10;&#10;Replace 'a' tags with 'span' tags where links weren't actually links." />
     <MESSAGE value="Get rid of deprecated UserContext; Create BaseApi, UserApi and ApiContext." />
     <MESSAGE value="Create adminAccessOnly hoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create adminAccessOnly hoc" />
+    <MESSAGE value="Remove inCage hoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove inCage hoc" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

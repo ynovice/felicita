@@ -54,7 +54,7 @@ function BlogPage() {
                             <a key={"article-" + article["id"]}
                                href={"/article/" + article["id"]}
                                className="article">
-                                <img src="/ui/article-image-placeholder.png" alt="article"/>
+                                <img src="/ui/placeholders/article-placeholder.png" alt="article"/>
                                 <div className="article-info">
                                     <div className="article-name">{article["name"]}</div>
                                     <div className="article-createdAt">

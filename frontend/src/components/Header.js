@@ -39,12 +39,25 @@ function Header() {
         return () => abortController.abort();
     }, []);
 
+    const PHONE_NUMBER = "8 (919) 339-50-97";
+    const TITLE = "FELICITA";
+
     return (
         <header className={"Header"}>
 
             <div className="main-row">
+
+                <p className="phone-number">{PHONE_NUMBER}</p>
+
                 <div className="title">
-                    <a href="/">Felicita</a>
+                    <a href="/">{TITLE}</a>
+                </div>
+
+                <div className="mobile-reversed-title-number">
+                    <div className="title">
+                        <a href="/">{TITLE}</a>
+                    </div>
+                    <p className="phone-number">{PHONE_NUMBER}</p>
                 </div>
 
                 <div className="menu-opener noselect"

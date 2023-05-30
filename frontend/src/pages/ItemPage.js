@@ -99,7 +99,7 @@ function ItemPage() {
                     {item["images"].length > 0 ?
                         <img src={Api.getImageUrlByImageId(getImageIdByIndex(displayedImageIndex))}
                              alt="Фотография товара"/> :
-                        <img src="/ui/item-placeholder.png" alt="У товара нет фотографий"/>
+                        <img src="/ui/placeholders/item-placeholder.png" alt="У товара нет фотографий"/>
                     }
 
                 </div>

@@ -1,17 +1,24 @@
 .Header .main-row {
     display: flex;
     justify-content: space-between;
-    background: #F9F9F9;
+    background: #FFC700;
     box-sizing: border-box;
     padding: 0 30px;
     align-items: center;
     min-height: 48px;
     width: 100%;
 }
+.Header .mobile-reversed-title-number {
+    display: none;
+}
 .Header .main-row .title {
     display: flex;
     align-items: center;
-    height: 48px;
+    height: 56px;
+    letter-spacing: 2px;
+}
+.Header .main-row .phone-number {
+    color: #484846;
 }
 .Header .main-row .title a {
     height: 30px;
@@ -37,7 +44,7 @@
 
 .Header .main-row .menu .menu-item a {
     text-decoration: none;
-    color: #727270;
+    color: #484846;
     font-size: 16px;
     font-weight: 700;
 }
@@ -55,6 +62,7 @@
     box-sizing: border-box;
     max-width: 100vw;
     overflow-x: scroll;
+    background: #fff3de;
 }
 
 .Header .links-row .links-right, .Header .links-row .links-left {
@@ -99,17 +107,38 @@
 
 
 @media screen and (max-width: 599px) {
-    .Header .links-row {
-        width: 100%;
-        overflow-x: scroll;
-        box-sizing: border-box;
-        padding-left: 10px;
-        padding-right: 10px;
+
+    .Header .mobile-reversed-title-number {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Header .mobile-reversed-title-number > .title {
+        height: auto;
+        padding-top: 10px;
+    }
+
+    .Header .mobile-reversed-title-number > .title a {
+        line-height: 22px;
+        height: auto;
+    }
+
+    .Header .mobile-reversed-title-number > .phone-number {
+        padding: 5px;
     }
 
     .Header .main-row {
         flex-direction: column;
         padding-bottom: 0;
+    }
+
+    .Header .main-row > .title {
+        display: none;
+    }
+
+    .Header .main-row > .phone-number {
+        display: none;
     }
 
     .Header .main-row .menu-opener {
@@ -134,10 +163,18 @@
     }
 
     .Header .main-row .menu .menu-item {
-        background: #fff;
-        border-bottom: 1px solid #FCFCFC;
+        background: #fff3de;
         padding: 8px 0;
         text-align: center;
         width: 100vw;
+    }
+
+    .Header .links-row {
+        width: 100%;
+        overflow-x: scroll;
+        box-sizing: border-box;
+        padding-left: 10px;
+        padding-right: 10px;
+        background: none;
     }
 }

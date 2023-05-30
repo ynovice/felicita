@@ -12,7 +12,7 @@ function LoginPage() {
 
             <div className="social-logos">
                 <a href={Api.getServerDomain() + "/oauth2/authorization/google"}>
-                    <img src="/logos/google.png" alt="Google"/>
+                    <img src="/ui/oauth/google.png" alt="Google"/>
                 </a>
             </div>
 
