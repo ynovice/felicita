@@ -4,6 +4,7 @@ import "../css/CreateItemPage.css";
 import React, {useEffect, useRef, useState} from "react";
 import Api from "../Api";
 import InvalidEntityException from "../exception/InvalidEntityException";
+import adminAccessOnly from "../hoc/adminAccessOnly";
 
 function CreateItemPage() {
 
@@ -832,7 +833,7 @@ function CreateItemPage() {
     );
 }
 
-export default withHeaderAndFooter(requiresUser(
+export default withHeaderAndFooter(adminAccessOnly(requiresUser(
     CreateItemPage,
     "Чтобы просмотреть эту страницу, нужно войти в аккаунт администратора."
-));
+)));

@@ -1,6 +1,8 @@
 import withHeaderAndFooter from "../hoc/withHeaderAndFooter";
 import requiresUser from "../hoc/requiresUser";
 import "../css/AdminPanelPage.css";
+import inCage from "../hoc/inCage";
+import adminAccessOnly from "../hoc/adminAccessOnly";
 
 function AdminPanelPage() {
 
@@ -23,7 +25,7 @@ function AdminPanelPage() {
     )
 }
 
-export default withHeaderAndFooter(requiresUser(
+export default inCage(withHeaderAndFooter(adminAccessOnly(requiresUser(
     AdminPanelPage,
     "Чтобы просмотреть эту страницу, нужно войти в аккаунт администратора."
-));
+))));

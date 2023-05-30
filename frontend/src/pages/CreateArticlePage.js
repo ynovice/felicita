@@ -7,6 +7,7 @@ import Api from "../Api";
 import edjsHtml from "editorjs-html";
 import InvalidEntityException from "../exception/InvalidEntityException";
 import {useSearchParams} from "react-router-dom";
+import adminAccessOnly from "../hoc/adminAccessOnly";
 
 function CreateArticlePage() {
 
@@ -174,7 +175,7 @@ function CreateArticlePage() {
     );
 }
 
-export default withHeaderAndFooter(requiresUser(
+export default withHeaderAndFooter(adminAccessOnly(requiresUser(
     CreateArticlePage,
     "Чтобы просмотреть эту страницу, нужно войти в аккаунт администратора."
-));
+)));

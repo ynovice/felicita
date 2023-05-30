@@ -5,21 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Get rid of deprecated UserContext; Create BaseApi, UserApi and ApiContext.">
-      <change afterPath="$PROJECT_DIR$/frontend/src/api/BaseApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/api/UserApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/contexts/ApiContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/hoc/adminAccessOnly.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/EntityValidationResult.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/EntityValidationResult.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/contexts/AppContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/contexts/AppContext.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/contexts/UserContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/contexts/UserContext.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/hoc/requiresUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hoc/requiresUser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminPanelPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/AdminPanelPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/CreateArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CreateArticlePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/CreateItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CreateItemPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,7 +261,7 @@
       <workItem from="1685274331819" duration="1153000" />
       <workItem from="1685275510727" duration="242000" />
       <workItem from="1685288608847" duration="56309000" />
-      <workItem from="1685446499405" duration="1471000" />
+      <workItem from="1685446499405" duration="1962000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1682728631672</created>
@@ -567,7 +557,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685399023082</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Get rid of deprecated UserContext; Create BaseApi, UserApi and ApiContext.">
+      <created>1685448015899</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1685448015899</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Get rid of deprecated UserContext; Create BaseApi, UserApi and ApiContext.">
+      <created>1685448034674</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1685448034674</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
