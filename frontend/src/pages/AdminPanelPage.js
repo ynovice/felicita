@@ -25,6 +25,5 @@ function AdminPanelPage() {
 
 export default withHeaderAndFooter(requiresUser(
     AdminPanelPage,
-    "Чтобы просмотреть эту страницу, нужно войти в аккаунт администратора.",
-    true
+    "Чтобы просмотреть эту страницу, нужно войти в аккаунт администратора."
 ));

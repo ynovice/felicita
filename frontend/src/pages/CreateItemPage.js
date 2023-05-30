@@ -834,6 +834,5 @@ function CreateItemPage() {
 
 export default withHeaderAndFooter(requiresUser(
     CreateItemPage,
-    "Чтобы просмотреть эту страницу, нужно войти в аккаунт администратора.",
-    true
+    "Чтобы просмотреть эту страницу, нужно войти в аккаунт администратора."
 ));

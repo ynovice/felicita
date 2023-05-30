@@ -176,6 +176,5 @@ function CreateArticlePage() {
 
 export default withHeaderAndFooter(requiresUser(
     CreateArticlePage,
-    "Чтобы просмотреть эту страницу, нужно войти в аккаунт администратора.",
-    true
+    "Чтобы просмотреть эту страницу, нужно войти в аккаунт администратора."
 ));
