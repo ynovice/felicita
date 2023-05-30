@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Get rid of deprecated UserContext; Create BaseApi, UserApi and ApiContext.">
-      <change afterPath="$PROJECT_DIR$/frontend/src/hoc/adminAccessOnly.js" afterDir="false" />
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Create adminAccessOnly hoc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminPanelPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/AdminPanelPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CreateArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CreateArticlePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CreateItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CreateItemPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,7 +258,7 @@
       <workItem from="1685274331819" duration="1153000" />
       <workItem from="1685275510727" duration="242000" />
       <workItem from="1685288608847" duration="56309000" />
-      <workItem from="1685446499405" duration="1962000" />
+      <workItem from="1685446499405" duration="2122000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1682728631672</created>
@@ -571,7 +568,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685448034674</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Create adminAccessOnly hoc">
+      <created>1685448502275</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1685448502275</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -589,7 +593,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add ability to filter items by categories" />
     <MESSAGE value="Refactor and update Header" />
     <MESSAGE value="Create empty cart page" />
     <MESSAGE value="Add content to cart page" />
@@ -614,7 +617,8 @@
     <MESSAGE value="Remove inCage high order component" />
     <MESSAGE value="Refactor CreateItemPage&#10;&#10;Replace 'a' tags with 'span' tags where links weren't actually links." />
     <MESSAGE value="Get rid of deprecated UserContext; Create BaseApi, UserApi and ApiContext." />
-    <option name="LAST_COMMIT_MESSAGE" value="Get rid of deprecated UserContext; Create BaseApi, UserApi and ApiContext." />
+    <MESSAGE value="Create adminAccessOnly hoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create adminAccessOnly hoc" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
