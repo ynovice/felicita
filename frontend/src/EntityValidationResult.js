@@ -1,6 +1,29 @@
 class EntityValidationResult {
 
     _fieldErrors;
+    _hasErrors;
+
+    constructor(invalidEntityDto) {
+
+        if(invalidEntityDto) {
+
+            if(invalidEntityDto["invalidFeilds"].length > 0) this._fieldErrors = true;
+
+            let fieldErrors = [];
+
+            for(const index in invalidEntityDto["invalidFields"]) {
+                fieldErrors.push(
+                    new FieldError(
+                        invalidEntityDto["invalidFields"][index]["fieldName"],
+                        invalidEntityDto["invalidFields"][index]["errorCode"],
+                        invalidEntityDto["invalidFields"][index]["errorMessage"]
+                    )
+                );
+            }
+
+            this._fieldErrors = fieldErrors
+        }
+    }
 
     get fieldErrors() {
         return this._fieldErrors;
@@ -8,6 +31,15 @@ class EntityValidationResult {
 
     set fieldErrors(value) {
         this._fieldErrors = value;
+    }
+
+
+    get hasErrors() {
+        return this._hasErrors;
+    }
+
+    set hasErrors(value) {
+        this._hasErrors = value;
     }
 }
 

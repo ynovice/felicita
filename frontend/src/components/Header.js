@@ -65,7 +65,7 @@ function Header() {
                             <a href="/blog">Блог</a>
                         </li>
 
-                        {userPresenceState === UserPresenceState.EMPTY &&
+                        {userPresenceState !== UserPresenceState.PRESENT &&
                             <li className="menu-item">
                                 <a href="/login">Войти</a>
                             </li>

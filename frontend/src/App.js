@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {UpdatedUserContextProvider, UserPresenceState, UserProvider} from "./contexts/UserContext";
+import {UpdatedUserContextProvider, UserPresenceState} from "./contexts/UserContext";
 import LoginPage from "./pages/LoginPage";
 import "./css/App.css";
 import MainPage from "./pages/MainPage";
@@ -21,6 +21,9 @@ import ConfirmReservePage from "./pages/ConfirmReservePage";
 import ReservePage from "./pages/ReservePage";
 import ReservesListPage from "./pages/ReservesListPage";
 import BlogPage from "./pages/BlogPage";
+import userApi from "./api/UserApi";
+import BaseApi from "./api/BaseApi";
+import {ApiContextProvider} from "./contexts/ApiContext";
 
 function App() {
 
@@ -30,7 +33,7 @@ function App() {
     const appContextValue = {
         accessLevel, setAccessLevel,
         serverState, setServerState
-    }
+    };
 
     const [user, setUser] = useState(null);
     const [userPresenceState, setUserPresenceState] = useState(UserPresenceState.LOADING);
@@ -40,72 +43,9 @@ function App() {
         userPresenceState, setUserPresenceState
     };
 
-    useEffect(() => {
-
-        const abortController = new AbortController();
-
-        Api
-            .getCurrentUser(abortController.signal)
-            .then(user => {
-                setUser(user);
-                setUserPresenceState(UserPresenceState.PRESENT);
-
-                if(user["role"] === "USER") setAccessLevel(AccessLevel.AUTHENTICATED);
-                else if(user["role"] === "ADMIN") setAccessLevel(AccessLevel.ADMIN);
-
-            })
-            .catch(() => {
-                setUserPresenceState(UserPresenceState.EMPTY);
-            })
-
-        return () => abortController.abort();
-    }, []);
-
-    const [userContextValue, setUserContextValue] = useState({
-        user: null,
-        isLoaded: false,
-        hasError: false,
-        errorMessage: ""
-    });
-
-    useEffect(() => {
-
-        const abortController = new AbortController();
-
-         Api
-             .getCurrentUser(abortController.signal)
-             .then(user => {
-                 setUserContextValue({
-                     user,
-                     isLoaded: true,
-                     hasError: false
-                 });
-             })
-             .catch(e => {
-
-                 if(e instanceof RequestAbortedException) return null;
-
-                 let errorMessage = null;
-
-                 if(e instanceof FailedRequestException) {
-                     errorMessage = "Не удаётся установить соединение с сервером. Повторите попытку позже."
-                 }
-
-                 if(e instanceof NotAuthorizedException) {
-                     errorMessage = "Вы не вошли в аккаунт"
-                 }
-
-                 setUserContextValue({
-                     user: null,
-                     isLoaded: true,
-                     hasError: true,
-                     errorMessage
-                 });
-
-             });
-
-        return () => abortController.abort();
-    }, []);
+    const apiContextValue = {
+        userApi
+    };
 
     useEffect(() => {
 
@@ -115,6 +55,9 @@ function App() {
             .then(csrfData => {
                 Api.setCsrfHeaderName(csrfData["csrfHeaderName"]);
                 Api.setCsrfToken(csrfData["csrfToken"]);
+
+                BaseApi.csrfHeaderName = csrfData["csrfHeaderName"];
+                BaseApi.csrfToken = csrfData["csrfToken"];
 
                 setServerState(ServerState.AVAILABLE);
 
@@ -127,10 +70,32 @@ function App() {
         return () => abortController.abort();
     }, []);
 
+    useEffect(() => {
+
+        const abortController = new AbortController();
+
+        userApi
+            .getCurrentUser(abortController.signal)
+            .then(user => {
+                setUser(user);
+                setUserPresenceState(UserPresenceState.PRESENT);
+
+                if(user["role"] === "USER") setAccessLevel(AccessLevel.AUTHENTICATED);
+                else if(user["role"] === "ADMIN") setAccessLevel(AccessLevel.ADMIN);
+
+            })
+            .catch((e) => {
+                if(e instanceof NotAuthorizedException) setUserPresenceState(UserPresenceState.EMPTY);
+                else if (e instanceof FailedRequestException) setUserPresenceState(UserPresenceState.ERROR);
+            })
+
+        return () => abortController.abort();
+    }, []);
+
     return (
         <AppContextProvider value={appContextValue}>
             <UpdatedUserContextProvider value={updatedUserContextValue}>
-                <UserProvider value={userContextValue}>
+                <ApiContextProvider value={apiContextValue}>
                     <div className="App">
                         <BrowserRouter>
                             <Routes>
@@ -152,7 +117,7 @@ function App() {
                             </Routes>
                         </BrowserRouter>
                     </div>
-                </UserProvider>
+                </ApiContextProvider>
             </UpdatedUserContextProvider>
      </AppContextProvider>
     );

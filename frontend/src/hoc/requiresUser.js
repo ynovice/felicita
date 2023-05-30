@@ -1,21 +1,20 @@
-import {UserContext} from "../contexts/UserContext";
+import {UpdatedUserContext, UserPresenceState} from "../contexts/UserContext";
 import React, {useContext} from "react";
 import ErrorPage from "../pages/ErrorPage";
 
-function requiresUser(TargetComponent, errorPageMessage, mustBeAdmin=false) {
+function requiresUser(TargetComponent, errorMessage) {
 
     function RequiresUserComponent () {
 
-        const {isLoaded, hasError, errorMessage, user} = useContext(UserContext);
-        const userContextErrorMessage = errorMessage;
+        const { userPresenceState } = useContext(UpdatedUserContext);
 
-        if(!isLoaded) {
-            return null;
-        }
+        if(userPresenceState === UserPresenceState.LOADING) return;
 
-        if(hasError || !user || (mustBeAdmin && user["role"] !== "ADMIN")) {
-            return <ErrorPage errorMessage={errorPageMessage ? errorPageMessage : userContextErrorMessage}/>
-        }
+        if(userPresenceState === UserPresenceState.EMPTY)
+            return <ErrorPage errorMessage={errorMessage}/>
+
+        if(userPresenceState === UserPresenceState.ERROR)
+            return <ErrorPage errorMessage="Произошла ошибка при аутентификации."/>
 
         return <TargetComponent />
     }

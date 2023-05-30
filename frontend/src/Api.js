@@ -8,6 +8,9 @@ import InvalidEntityException from "./exception/InvalidEntityException";
 import NotFoundException from "./exception/NotFoundException";
 import RequestAbortedException from "./exception/RequestAbortedException";
 
+/**
+ * @deprecated
+ */
 const Api = (function () {
 
     const SERVER_DOMAIN = "http://localhost:8080";
@@ -76,28 +79,6 @@ const Api = (function () {
             if(!response || !response.ok) {
                 await throwCorrespondingException(response);
             }
-        },
-
-        getCurrentUser: async function (abortSignal) {
-
-            let aborted = false;
-
-            const response = await fetch(API_BASE_URL + "/user", {
-                signal: abortSignal,
-                credentials: "include"
-            }).catch((e) => {
-                if(e.name === "AbortError") aborted = true;
-                return null;
-            });
-
-            if(aborted) throw new RequestAbortedException();
-            if(response === null) throw new FailedRequestException()
-
-            if(response && response.ok) {
-                return await response.json();
-            }
-
-            await throwCorrespondingException(response);
         },
 
         getCsrfData: async function (abortSignal) {
