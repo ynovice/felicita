@@ -188,7 +188,7 @@ function ItemCategoriesSelector({emptyListMessage,
                         {sequence.map(categoryId => {
 
                             return (
-                                <React.Fragment>
+                                <React.Fragment key={`selector-category-${categoryId}`}>
                                     <select className="flct-input"
                                             value={categoryId}
                                             onChange={(e) => handleChangeCategorySelect(e)}>
