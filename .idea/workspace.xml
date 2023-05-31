@@ -4,20 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Add preview field to Article model">
-      <change afterPath="$PROJECT_DIR$/frontend/src/api/ImageApi.js" afterDir="false" />
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Refactor CreateItemPage; fix images urls in constants">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/ItemCategoriesSelector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/ItemPropertySelector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/SizesQuantitiesSelector.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/ui/placeholders/article-placeholder.png" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/ui/placeholders/article-placeholder.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/contexts/AppContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/contexts/AppContext.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/BlogPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/BlogPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/CreateArticlePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/CreateArticlePage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/hoc/adminAccessOnly.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hoc/adminAccessOnly.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/BlogPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/BlogPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CreateArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CreateArticlePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/ArticleDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/ArticleDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/request/UpdateArticleDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/request/UpdateArticleDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ArticleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CreateItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CreateItemPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,7 +265,7 @@
       <workItem from="1685275510727" duration="242000" />
       <workItem from="1685288608847" duration="56309000" />
       <workItem from="1685446499405" duration="6891000" />
-      <workItem from="1685461509254" duration="6933000" />
+      <workItem from="1685461509254" duration="14701000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1682728631672</created>
@@ -610,7 +603,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685463180823</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Display preview at blog page">
+      <created>1685469954144</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1685469954144</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -628,8 +628,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create footer, fill main page with content, update cart page" />
-    <MESSAGE value="Add ability to create and get articles by id, rename Purchase to Reserve, update application.yml" />
     <MESSAGE value="Add ability to create and get articles by id, rename Purchase to Reserve" />
     <MESSAGE value="Specify environment variables names in application properties" />
     <MESSAGE value="Add ability to create articles via UI" />
@@ -653,7 +651,9 @@
     <MESSAGE value="Remove inCage hoc" />
     <MESSAGE value="Change header and footer design, add social links" />
     <MESSAGE value="Add preview field to Article model" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add preview field to Article model" />
+    <MESSAGE value="Display preview at blog page" />
+    <MESSAGE value="Refactor CreateItemPage; fix images urls in constants" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor CreateItemPage; fix images urls in constants" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
