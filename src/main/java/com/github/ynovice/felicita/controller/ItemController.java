@@ -2,7 +2,7 @@ package com.github.ynovice.felicita.controller;
 
 import com.github.ynovice.felicita.exception.NotFoundException;
 import com.github.ynovice.felicita.model.dto.entity.ItemDto;
-import com.github.ynovice.felicita.model.dto.request.CreateItemRequestDto;
+import com.github.ynovice.felicita.model.dto.request.ModifyItemRequestDto;
 import com.github.ynovice.felicita.model.dto.request.ItemFilterParamsDto;
 import com.github.ynovice.felicita.model.dto.response.ItemsPageDto;
 import com.github.ynovice.felicita.model.entity.Item;
@@ -21,9 +21,18 @@ public class ItemController {
 
     @Secured("ROLE_ADMIN")
     @PostMapping
-    public ResponseEntity<ItemDto> create(@RequestBody CreateItemRequestDto requestDto) {
+    public ResponseEntity<ItemDto> create(@RequestBody ModifyItemRequestDto requestDto) {
         return ResponseEntity.ok(
             ItemDto.fromEntity(itemService.createItem(requestDto))
+        );
+    }
+
+    @Secured("ROLE_ADMIN")
+    @PutMapping("/{id}")
+    public ResponseEntity<ItemDto> updateById(@PathVariable Long id,
+                                              @RequestBody ModifyItemRequestDto requestDto) {
+        return ResponseEntity.ok(
+                ItemDto.fromEntity(itemService.updateItem(id, requestDto))
         );
     }
 

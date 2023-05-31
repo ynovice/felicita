@@ -140,15 +140,14 @@ public class CartServiceImpl implements CartService {
 
                     if(cartEntrySQ.getQuantity() <= 0)
                         cartEntrySizesQuantitiesToDelete.add(cartEntrySQ);
-
-                    cart.updateTotalItems(-amountOfItemsGone);
-                    cart.updateTotalPrice(-item.getPrice() * amountOfItemsGone);
                 }
             }
 
             for(SizeQuantity cartEntrySQ : cartEntrySizesQuantitiesToDelete) {
                 cartEntry.getSizesQuantities().remove(cartEntrySQ);
-                sizeQuantityRepository.delete(cartEntrySQ);
+                try {
+                    sizeQuantityRepository.deleteById(cartEntrySQ.getId());
+                } catch (RuntimeException ignored) {}
             }
 
             if(cartEntry.getSizesQuantities().size() == 0)
@@ -158,6 +157,18 @@ public class CartServiceImpl implements CartService {
         for(CartEntry cartEntry : cartEntriesToDelete) {
             cart.getEntries().remove(cartEntry);
             cartEntryRepository.delete(cartEntry);
+        }
+
+        cart.setTotalPrice(0);
+        cart.setTotalItems(0);
+
+        for(CartEntry cartEntry : cart.getEntries()) {
+
+            cartEntry.getSizesQuantities()
+                    .forEach(sq -> {
+                        cart.updateTotalItems(sq.getQuantity());
+                        cart.updateTotalPrice(sq.getQuantity() * cartEntry.getItem().getPrice());
+                    });
         }
     }
 

@@ -4,20 +4,19 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
-import java.util.Set;
 
 @Getter
 @Setter
-public class CreateItemRequestDto {
+public class ModifyItemRequestDto {
 
     private String name;
     private String description;
 
     private List<Long> imagesIds;
-    private Set<Long> categoriesIds;
+    private List<Long> categoriesIds;
 
-    private Set<Long> materialsIds;
-    private Set<Long> colorsIds;
+    private List<Long> materialsIds;
+    private List<Long> colorsIds;
     private Boolean hasPrint;
 
     private Integer price;

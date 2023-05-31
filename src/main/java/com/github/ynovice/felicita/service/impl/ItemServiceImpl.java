@@ -3,7 +3,7 @@ package com.github.ynovice.felicita.service.impl;
 import com.github.ynovice.felicita.exception.InternalServerError;
 import com.github.ynovice.felicita.exception.InvalidEntityException;
 import com.github.ynovice.felicita.exception.NotFoundException;
-import com.github.ynovice.felicita.model.dto.request.CreateItemRequestDto;
+import com.github.ynovice.felicita.model.dto.request.ModifyItemRequestDto;
 import com.github.ynovice.felicita.model.dto.request.CreateSizeQuantityRequestDto;
 import com.github.ynovice.felicita.model.dto.request.ItemFilterParamsDto;
 import com.github.ynovice.felicita.model.entity.*;
@@ -11,10 +11,12 @@ import com.github.ynovice.felicita.repository.*;
 import com.github.ynovice.felicita.service.ImageService;
 import com.github.ynovice.felicita.service.ItemService;
 import com.github.ynovice.felicita.validator.ItemValidator;
+import jakarta.transaction.Transactional;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.DataBinder;
@@ -42,77 +44,23 @@ public class ItemServiceImpl implements ItemService {
     private final SizeQuantityRepository sizeQuantityRepository;
 
     @Override
-    public Item createItem(@NonNull CreateItemRequestDto requestDto) {
+    public Item createItem(@NonNull ModifyItemRequestDto requestDto) {
 
         Item item = new Item();
 
         item.setName(requestDto.getName());
         item.setDescription(requestDto.getDescription());
 
-        if(requestDto.getImagesIds() != null) {
-            item.setImages(
-                    requestDto.getImagesIds()
-                            .stream()
-                            .map(imageRepository::getReferenceById)
-                            .peek(image -> image.setItem(item))
-                            .toList()
-            );
-        } else {
-            item.setImages(Collections.emptyList());
-        }
-
-
-        if(requestDto.getCategoriesIds() != null) {
-            item.setCategories(
-                    requestDto.getCategoriesIds()
-                            .stream()
-                            .map(categoryRepository::getReferenceById)
-                            .toList()
-            );
-        } else {
-            item.setCategories(Collections.emptyList());
-        }
-
-        if(requestDto.getMaterialsIds() != null) {
-            item.setMaterials(
-                    requestDto.getMaterialsIds()
-                            .stream()
-                            .map(materialRepository::getReferenceById)
-                            .toList()
-            );
-        } else {
-            item.setMaterials(Collections.emptyList());
-        }
-
-        if(requestDto.getColorsIds() != null) {
-            item.setColors(
-                    requestDto.getColorsIds()
-                            .stream()
-                            .map(colorRepository::getReferenceById)
-                            .toList()
-            );
-        } else {
-            item.setColors(Collections.emptyList());
-        }
-
         item.setHasPrint(requestDto.getHasPrint());
         item.setPrice(requestDto.getPrice());
 
-        if(requestDto.getSizesQuantities() != null) {
+        bidirectionalAttachImagesToItem(requestDto.getImagesIds(), item);
+        createAndLinkSizesQuantities(requestDto.getSizesQuantities(), item);
 
-            List<SizeQuantity> sizesQuantities = new ArrayList<>();
+        item.setCategories(getEntitiesReferences(requestDto.getCategoriesIds(), categoryRepository));
+        item.setMaterials(getEntitiesReferences(requestDto.getMaterialsIds(), materialRepository));
+        item.setColors(getEntitiesReferences(requestDto.getColorsIds(), colorRepository));
 
-            for(CreateSizeQuantityRequestDto sizeQuantityDto : requestDto.getSizesQuantities()) {
-                Size size = sizeRepository.getReferenceById(sizeQuantityDto.getSizeId());
-                Integer quantity = sizeQuantityDto.getQuantity();
-                sizesQuantities.add(new SizeQuantity(size, quantity, item));
-            }
-
-            item.setSizesQuantities(sizesQuantities);
-
-        } else {
-            item.setSizesQuantities(Collections.emptyList());
-        }
 
         item.setCartEntries(new HashSet<>());
 
@@ -128,6 +76,15 @@ public class ItemServiceImpl implements ItemService {
         imageRepository.saveAll(item.getImages());
 
         return item;
+    }
+
+    @Override
+    @Transactional
+    public Item updateItem(Long id, @NonNull ModifyItemRequestDto requestDto) {
+
+
+
+        return null;
     }
 
     @Override
@@ -191,5 +148,55 @@ public class ItemServiceImpl implements ItemService {
         return item.getSizesQuantities()
                 .stream()
                 .anyMatch(sizeQuantity -> sizeQuantity.getQuantity() > 0);
+    }
+
+    private <T> List<T> getEntitiesReferences(Collection<Long> entitiesIds,
+                                              @NonNull JpaRepository<T, Long> repository) {
+
+        List<T> entitiesReferences = new ArrayList<>();
+
+        if(entitiesIds == null) return entitiesReferences;
+
+        for(Long id : entitiesIds)
+            entitiesReferences.add(repository.getReferenceById(id));
+
+        return entitiesReferences;
+    }
+
+    private void bidirectionalAttachImagesToItem(Collection<Long> imagesIds,
+                                                 @NonNull Item item) {
+
+        List<Image> imagesReferences = new ArrayList<>();
+
+        if(imagesIds == null) {
+            item.setImages(imagesReferences);
+            return;
+        }
+
+        imagesIds.stream()
+                .map(imageRepository::getReferenceById)
+                .peek(imageRef -> imageRef.setItem(item))
+                .forEach(imagesReferences::add);
+
+        item.setImages(imagesReferences);
+    }
+
+    private void createAndLinkSizesQuantities(List<CreateSizeQuantityRequestDto> createSqDtos,
+                                              @NonNull Item item) {
+
+        List<SizeQuantity> createdSizesQuantities = new ArrayList<>();
+
+        if(createSqDtos == null) {
+            item.setSizesQuantities(createdSizesQuantities);
+            return;
+        }
+
+        for(CreateSizeQuantityRequestDto createSqDto : createSqDtos) {
+            Size size = sizeRepository.getReferenceById(createSqDto.getSizeId());
+            Integer quantity = createSqDto.getQuantity();
+            createdSizesQuantities.add(new SizeQuantity(size, quantity, item));
+        }
+
+        item.setSizesQuantities(createdSizesQuantities);
     }
 }

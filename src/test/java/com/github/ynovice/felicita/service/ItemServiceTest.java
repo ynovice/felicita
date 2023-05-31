@@ -1,7 +1,7 @@
 package com.github.ynovice.felicita.service;
 
 import com.github.ynovice.felicita.Application;
-import com.github.ynovice.felicita.model.dto.request.CreateItemRequestDto;
+import com.github.ynovice.felicita.model.dto.request.ModifyItemRequestDto;
 import com.github.ynovice.felicita.model.dto.request.CreateSizeQuantityRequestDto;
 import com.github.ynovice.felicita.model.entity.Item;
 import com.github.ynovice.felicita.model.entity.SizeQuantity;
@@ -19,10 +19,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.DataBinder;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
@@ -49,7 +46,7 @@ public class ItemServiceTest {
     @Test
     public void createValidItemTest() {
 
-        CreateItemRequestDto requestDto = validCreateItemRequestDto();
+        ModifyItemRequestDto requestDto = validCreateItemRequestDto();
         Item item = itemService.createItem(requestDto);
 
         // id
@@ -108,9 +105,9 @@ public class ItemServiceTest {
         assertFalse(validate(item).hasErrors());
     }
 
-    private boolean shouldBeActive(@NonNull CreateItemRequestDto createItemRequestDto) {
+    private boolean shouldBeActive(@NonNull ModifyItemRequestDto modifyItemRequestDto) {
 
-        List<CreateSizeQuantityRequestDto> sizesQuantitiesDtos = createItemRequestDto.getSizesQuantities();
+        List<CreateSizeQuantityRequestDto> sizesQuantitiesDtos = modifyItemRequestDto.getSizesQuantities();
 
         if(sizesQuantitiesDtos == null) return false;
 
@@ -129,17 +126,17 @@ public class ItemServiceTest {
                                 && entity.getQuantity().equals(dto.getQuantity())));
     }
 
-    private CreateItemRequestDto validCreateItemRequestDto() {
+    private ModifyItemRequestDto validCreateItemRequestDto() {
 
-        CreateItemRequestDto requestDto = new CreateItemRequestDto();
+        ModifyItemRequestDto requestDto = new ModifyItemRequestDto();
 
         requestDto.setName("Adidas Sneakers");
         requestDto.setDescription("Item description");
         requestDto.setImagesIds(Collections.emptyList());
-        requestDto.setCategoriesIds(Collections.emptySet());
+        requestDto.setCategoriesIds(Collections.emptyList());
 
-        requestDto.setMaterialsIds(new HashSet<>());
-        requestDto.setColorsIds(new HashSet<>());
+        requestDto.setMaterialsIds(new ArrayList<>());
+        requestDto.setColorsIds(new ArrayList<>());
         requestDto.setHasPrint(false);
 
         requestDto.setPrice(5000);

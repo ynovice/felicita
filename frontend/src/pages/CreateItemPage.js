@@ -23,12 +23,17 @@ function CreateItemPage() {
 
     useEffect(() => {
         Api.getAllCategories()
-            .then(categories => setCategoriesTrees(categories))
+            .then(categories => {
+
+                setCategoriesTrees(categories);
+
+
+
+            })
             .catch(() => alert("Ошибка при получении списка категорий, свяжитесь с разработчиком"));
 
 
     }, []);
-
 
     const [materials, setMaterials] = useState([]);
     const [selectedMaterialsIds, setSelectedMaterialsIds] = useState([]);
@@ -154,6 +159,12 @@ function CreateItemPage() {
                 }
             });
     }
+
+    useEffect(() => {
+
+        
+
+    }, []);
 
     return (
         <div className={"CreateItemPage"}>
