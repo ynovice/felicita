@@ -11,4 +11,6 @@ public interface ImageService {
     byte[] getContentsById(@NonNull Long id);
 
     void delete(@NonNull Image image);
+
+    void deleteById(Long id);
 }

@@ -8,6 +8,7 @@ import ErrorPage from "./ErrorPage";
 import CartWidget from "../components/CartWidget";
 import {AppContext, ServerState} from "../contexts/AppContext";
 import RequestAbortedException from "../exception/RequestAbortedException";
+import {ApiContext} from "../contexts/ApiContext";
 
 function ItemPage() {
 
@@ -24,13 +25,14 @@ function ItemPage() {
     const [item, setItem] = useState(null);
     const [itemState, setItemState] = useState(ItemState.LOADING);
 
+    const { itemApi } = useContext(ApiContext);
     useEffect(() => {
 
         const abortController = new AbortController();
 
         if(appContext.serverState !== ServerState.AVAILABLE) return;
 
-        Api.getItemById(itemId, abortController.signal)
+        itemApi.getById(itemId, abortController.signal)
             .then(retrievedItem => {
                 setItem(retrievedItem);
                 setItemState(ItemState.PRESENT);
@@ -43,7 +45,7 @@ function ItemPage() {
             });
 
         return () => abortController.abort();
-    }, [ItemState.EMPTY, ItemState.PRESENT, appContext.serverState, itemId])
+    }, [ItemState.EMPTY, ItemState.PRESENT, appContext.serverState, itemApi, itemId])
 
     const [displayedImageIndex, setDisplayedImageIndex] = useState(0);
     const getImageIdByIndex = i => item["images"][i]["id"];
@@ -116,6 +118,11 @@ function ItemPage() {
                         })}
                     </div>
                 }
+
+                <div className="admin-controls">
+                    <a href={`/admin/item/save?id=${itemId}`} className="link">Редактировать</a>
+                    <span className="link danger">Удалить</span>
+                </div>
             </div>
 
             <div className="item-info">

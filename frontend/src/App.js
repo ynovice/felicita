@@ -8,14 +8,14 @@ import ProfilePage from "./pages/ProfilePage";
 import Api from "./Api";
 import FailedRequestException from "./exception/FailedRequestException";
 import AdminPanelPage from "./pages/AdminPanelPage";
-import CreateItemPage from "./pages/CreateItemPage";
+import SaveItemPage from "./pages/SaveItemPage";
 import ItemPage from "./pages/ItemPage";
 import RequestAbortedException from "./exception/RequestAbortedException";
 import NotAuthorizedException from "./exception/NotAuthorizedException";
 import {AccessLevel, AppContextProvider, ServerState} from "./contexts/AppContext";
 import CatalogPage from "./pages/CatalogPage";
 import CartPage from "./pages/CartPage";
-import CreateArticlePage from "./pages/CreateArticlePage";
+import SaveArticlePage from "./pages/SaveArticlePage";
 import ArticlePage from "./pages/ArticlePage";
 import ConfirmReservePage from "./pages/ConfirmReservePage";
 import ReservePage from "./pages/ReservePage";
@@ -25,6 +25,7 @@ import userApi from "./api/UserApi";
 import BaseApi from "./api/BaseApi";
 import {ApiContextProvider} from "./contexts/ApiContext";
 import imageApi from "./api/ImageApi";
+import itemApi from "./api/ItemApi";
 
 function App() {
 
@@ -45,7 +46,7 @@ function App() {
     };
 
     const apiContextValue = {
-        userApi, imageApi
+        userApi, imageApi, itemApi
     };
 
     useEffect(() => {
@@ -115,9 +116,8 @@ function App() {
                                 <Route path="/reserve/:id" element={<ReservePage />}/>
                                 <Route path="/confirm-reserve" element={<ConfirmReservePage />}/>
                                 <Route path="/admin" element={<AdminPanelPage />}/>
-                                <Route path="/admin/item/create" element={<CreateItemPage />}/>
-                                <Route path="/admin/article/create" element={<CreateArticlePage />}/>
-                                <Route path="/admin/article/create/:id" element={<CreateArticlePage />}/>
+                                <Route path="/admin/item/save" element={<SaveItemPage />}/>
+                                <Route path="/admin/article/save" element={<SaveArticlePage />}/>
                             </Routes>
                         </BrowserRouter>
                     </div>

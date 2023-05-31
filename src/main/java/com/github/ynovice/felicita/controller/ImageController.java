@@ -16,12 +16,18 @@ public class ImageController {
 
     private final ImageService imageService;
 
-    @PostMapping
     @Secured("ROLE_ADMIN")
+    @PostMapping
     public ResponseEntity<ImageDto> uploadImage(@RequestParam("image") MultipartFile multipartFile) {
         return ResponseEntity.ok(
                 ImageDto.fromEntity(imageService.uploadImage(multipartFile))
         );
+    }
+
+    @Secured("ROLE_ADMIN")
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Long id) {
+        imageService.deleteById(id);
     }
 
     @GetMapping(

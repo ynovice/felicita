@@ -16,7 +16,7 @@ class BaseApi {
     static _csrfHeaderName = null;
     static _csrfToken = null;
 
-    async performRequest(url, params) {
+    async performRequest(url, params={}) {
 
         this.appendCommonDataToRequest(params);
 
@@ -34,7 +34,7 @@ class BaseApi {
         }
     }
 
-    async performRequestGetResponseBody(url, params) {
+    async performRequestGetResponseBody(url, params={}) {
 
         this.appendCommonDataToRequest(params);
 
@@ -63,8 +63,7 @@ class BaseApi {
             headers[BaseApi.csrfHeaderName] = BaseApi.csrfToken;
         }
 
-        requestParams["headers"] = headers;
-
+        requestParams["headers"] = {...requestParams["headers"], ...headers};
         requestParams["credentials"] = "include";
     }
 

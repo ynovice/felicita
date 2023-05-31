@@ -1,6 +1,6 @@
 import withHeaderAndFooter from "../hoc/withHeaderAndFooter";
 import requiresUser from "../hoc/requiresUser";
-import "../css/CreateArticlePage.css";
+import "../css/SaveArticlePage.css";
 import React, {useContext, useEffect, useMemo, useRef, useState} from "react";
 import EditorJS from '@editorjs/editorjs';
 import Api from "../Api";
@@ -11,7 +11,7 @@ import adminAccessOnly from "../hoc/adminAccessOnly";
 import Button from "../components/Button";
 import {ApiContext} from "../contexts/ApiContext";
 
-function CreateArticlePage() {
+function SaveArticlePage() {
 
     const [searchParams] = useSearchParams();
 
@@ -178,7 +178,7 @@ function CreateArticlePage() {
         "/ui/placeholders/article-placeholder.png";
 
     return (
-        <div className="CreateArticlePage">
+        <div className="SaveArticlePage">
             <h1 className="page-title">Создание статьи</h1>
 
             <div className="section">
@@ -227,6 +227,6 @@ function CreateArticlePage() {
 }
 
 export default withHeaderAndFooter(adminAccessOnly(requiresUser(
-    CreateArticlePage,
+    SaveArticlePage,
     "Чтобы просмотреть эту страницу, нужно войти в аккаунт администратора."
 )));

@@ -21,6 +21,16 @@
     width: 300px;
 }
 
+.ItemPage .admin-controls {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+}
+.ItemPage .admin-controls .link {
+    font-weight: 700;
+}
+
 .ItemPage .name-description-section {
     display: flex;
     flex-direction: column;

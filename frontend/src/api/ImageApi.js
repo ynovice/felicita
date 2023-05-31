@@ -15,6 +15,13 @@ class ImageApi extends BaseApi {
         return await this.performRequestGetResponseBody(BaseApi.API_BASE_URL + "/image", requestParams);
     }
 
+    async deleteById(id) {
+        const requestParams = {
+            method: "delete"
+        }
+        await this.performRequest(BaseApi.API_BASE_URL + `/image/${id}`, requestParams);
+    }
+
     getImageUrlByImageId (id) {
         return BaseApi.API_BASE_URL + "/image/" + id;
     }

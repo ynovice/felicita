@@ -1,4 +1,4 @@
-.CreateArticlePage {
+.SaveArticlePage {
     padding: 30px 30px 0;
     box-sizing: border-box;
     display: flex;
@@ -7,83 +7,83 @@
     margin-bottom: 100px;
 }
 
-.CreateArticlePage .page-title {
+.SaveArticlePage .page-title {
     font-size: 24px;
 }
 
-.CreateArticlePage #file-uploader {
+.SaveArticlePage #file-uploader {
     display: none;
 }
 
-.CreateArticlePage .section {
+.SaveArticlePage .section {
     padding-bottom: 40px;
 }
 
-.CreateArticlePage .section-title {
+.SaveArticlePage .section-title {
     font-size: 20px;
     padding-bottom: 20px;
 }
 
-.CreateArticlePage .article-preview {
+.SaveArticlePage .article-preview {
     width: 350px;
     max-width: 100%;
     padding-bottom: 20px;
 }
 
-.CreateArticlePage #reset-preview {
+.SaveArticlePage #reset-preview {
     margin-top: 10px;
     display: block;
 }
 
-.CreateArticlePage .form-row {
+.SaveArticlePage .form-row {
     display: flex;
     gap: 20px;
     align-items: baseline;
 }
 
-.CreateArticlePage #editor * {
+.SaveArticlePage #editor * {
     font-size: 18px;
     line-height: 26px;
 }
-.CreateArticlePage #editor h1 {
+.SaveArticlePage #editor h1 {
     font-size: 24px;
 }
-.CreateArticlePage #editor h2 {
+.SaveArticlePage #editor h2 {
     font-size: 22px;
 }
-.CreateArticlePage #editor h3 {
+.SaveArticlePage #editor h3 {
     font-size: 20px;
 }
-.CreateArticlePage #editor h4 {
+.SaveArticlePage #editor h4 {
     font-size: 18px;
 }
-.CreateArticlePage #editor h5 {
+.SaveArticlePage #editor h5 {
     font-size: 16px;
 }
-.CreateArticlePage #editor h6 {
+.SaveArticlePage #editor h6 {
     font-size: 14px;
 }
 
-.CreateArticlePage #editor {
+.SaveArticlePage #editor {
     max-width: 860px;
 }
-.CreateArticlePage .codex-editor__redactor {
+.SaveArticlePage .codex-editor__redactor {
     padding-bottom: 100px !important;
 }
-.CreateArticlePage .ce-block__content,
-.CreateArticlePage .ce-toolbar__content {
+.SaveArticlePage .ce-block__content,
+.SaveArticlePage .ce-toolbar__content {
     max-width: 860px;
 }
-.CreateArticlePage .ce-toolbar__actions {
+.SaveArticlePage .ce-toolbar__actions {
     left: 100%;
     padding-left: 5px;
 }
-.CreateArticlePage .ce-paragraph[data-placeholder]:empty::before {
+.SaveArticlePage .ce-paragraph[data-placeholder]:empty::before {
     color: #727270;
 }
 
-.CreateArticlePage .article-name-editor,
-.CreateArticlePage .article-content-editor {
+.SaveArticlePage .article-name-editor,
+.SaveArticlePage .article-content-editor {
     width: 860px;
     max-width: 100%;
     height: 122px;
@@ -98,13 +98,13 @@
     overflow-x: hidden;
     overflow-y: hidden;
 }
-.CreateArticlePage .article-name-editor {
+.SaveArticlePage .article-name-editor {
     font-size: 32px;
     padding: 0;
     height: 38px;
 }
 
-.CreateArticlePage .errors-container {
+.SaveArticlePage .errors-container {
     display: flex;
     flex-direction: column;
     gap: 10px;

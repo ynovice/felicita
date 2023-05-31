@@ -78,7 +78,7 @@ function ArticlePage () {
                 </div>
                 {accessLevel === AccessLevel.ADMIN &&
                     <div className="admin-controls">
-                        <a href={"/admin/article/create?id=" + article["id"]} className="link">Редактировать →</a>
+                        <a href={"/admin/article/save?id=" + article["id"]} className="link">Редактировать →</a>
                         <span onClick={() => handleDeleteArticleClick()} className="link danger">Удалить</span>
                     </div>
                 }

@@ -3,7 +3,7 @@ import BadRequestException from "./exception/BadRequestException";
 import InternalServerError from "./exception/InternalServerError";
 import NotAuthorizedException from "./exception/NotAuthorizedException";
 import FailedRequestException from "./exception/FailedRequestException";
-import EntityValidationResult, {FieldError} from "./EntityValidationResult";
+import EntityValidationResult from "./EntityValidationResult";
 import InvalidEntityException from "./exception/InvalidEntityException";
 import NotFoundException from "./exception/NotFoundException";
 import RequestAbortedException from "./exception/RequestAbortedException";
@@ -19,29 +19,6 @@ const Api = (function () {
     let csrfHeaderName = null;
     let csrfToken = null;
 
-    const buildEntityValidationResult = (invalidEntityDto) => {
-
-        let objectValidationResult = new EntityValidationResult();
-
-        objectValidationResult.hasErrors = true;
-
-        let fieldErrors = [];
-
-        for(const index in invalidEntityDto["invalidFields"]) {
-            fieldErrors.push(
-                new FieldError(
-                    invalidEntityDto["invalidFields"][index]["fieldName"],
-                    invalidEntityDto["invalidFields"][index]["errorCode"],
-                    invalidEntityDto["invalidFields"][index]["errorMessage"]
-                )
-            );
-        }
-
-        objectValidationResult.fieldErrors = fieldErrors;
-
-        return objectValidationResult;
-    }
-
     const throwCorrespondingException = async (response) => {
 
         if(response === null) throw new FailedRequestException();
@@ -56,7 +33,7 @@ const Api = (function () {
 
             const json = await response.json();
 
-            if(json["invalidFields"]) throw new InvalidEntityException(buildEntityValidationResult(json));
+            if(json["invalidFields"]) throw new InvalidEntityException(new EntityValidationResult(json));
 
             throw new BadRequestException();
         }
@@ -183,58 +160,9 @@ const Api = (function () {
             await throwCorrespondingException(response);
         },
 
-        createItem: async function (requestDto, abortSignal) {
-
-            const response = await fetch(API_BASE_URL + "/item", {
-                signal: abortSignal,
-                credentials: "include",
-                method: "post",
-                headers: {
-                    [csrfHeaderName]: csrfToken,
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(requestDto)
-            }).catch(() => null);
-
-            if(response && response.ok) {
-                return await response.json();
-            }
-
-            await throwCorrespondingException(response);
-        },
-
-        getItemById: async function (id, abortSignal) {
-
-            const response = await fetch(API_BASE_URL + "/item/" + id, {
-                signal: abortSignal,
-                credentials: "include"
-            }).catch(() => null)
-
-            if(response && response.ok) {
-                return await response.json();
-            }
-
-            await throwCorrespondingException(response);
-        },
-
         getCart: async function (abortSignal) {
 
             const response = await fetch(API_BASE_URL + "/cart", {
-                signal: abortSignal,
-                credentials: "include"
-            }).catch(() => null)
-
-            if(response && response.ok) {
-                return await response.json();
-            }
-
-            await throwCorrespondingException(response);
-        },
-
-
-        getCartEntryByUserIdAndItemId: async function (userId, itemId, abortSignal) {
-
-            const response = await fetch(API_BASE_URL + "/ce?" + new URLSearchParams({userId, itemId}), {
                 signal: abortSignal,
                 credentials: "include"
             }).catch(() => null)

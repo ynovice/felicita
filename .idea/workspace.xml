@@ -4,9 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Refactor ItemServiceImpl.createItem">
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Add ability to edit items">
+      <change afterPath="$PROJECT_DIR$/frontend/src/api/ItemApi.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ItemCategoriesSelector.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ItemCategoriesSelector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/BaseApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/BaseApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/ImageApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/ImageApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/CreateArticlePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/SaveArticlePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/CreateItemPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/SaveItemPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/ItemPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/ItemPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminPanelPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/AdminPanelPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CreateArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/SaveArticlePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CreateItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/SaveItemPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ItemPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ImageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ImageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ImageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ImageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ItemServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +35,8 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -261,14 +277,7 @@
       <workItem from="1685275510727" duration="242000" />
       <workItem from="1685288608847" duration="56309000" />
       <workItem from="1685446499405" duration="6891000" />
-      <workItem from="1685461509254" duration="24567000" />
-    </task>
-    <task id="LOCAL-00003" summary="Initial commit.">
-      <created>1683125144367</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1683125144367</updated>
+      <workItem from="1685461509254" duration="33873000" />
     </task>
     <task id="LOCAL-00004" summary="Initial commit.">
       <created>1683125519564</created>
@@ -606,7 +615,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685564920595</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Fix &quot;key&quot; field in ItemCategoriesSelector">
+      <created>1685565074016</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1685565074016</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -624,8 +640,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Specify environment variables names in application properties" />
-    <MESSAGE value="Add ability to create articles via UI" />
     <MESSAGE value="Create Article page" />
     <MESSAGE value="Add ability to edit articles" />
     <MESSAGE value="Fix links style at the article page" />
@@ -649,7 +663,9 @@
     <MESSAGE value="Display preview at blog page" />
     <MESSAGE value="Refactor CreateItemPage; fix images urls in constants" />
     <MESSAGE value="Refactor ItemServiceImpl.createItem" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor ItemServiceImpl.createItem" />
+    <MESSAGE value="Fix &quot;key&quot; field in ItemCategoriesSelector" />
+    <MESSAGE value="Add ability to edit items" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ability to edit items" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -658,11 +674,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/CartServiceImpl.java</url>
           <line>120</line>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/CartServiceImpl.java</url>
-          <line>176</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/CartServiceImpl.java</url>

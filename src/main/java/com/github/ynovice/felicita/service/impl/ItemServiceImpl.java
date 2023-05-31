@@ -48,22 +48,9 @@ public class ItemServiceImpl implements ItemService {
 
         Item item = new Item();
 
-        item.setName(requestDto.getName());
-        item.setDescription(requestDto.getDescription());
-
-        item.setHasPrint(requestDto.getHasPrint());
-        item.setPrice(requestDto.getPrice());
-
-        bidirectionalAttachImagesToItem(requestDto.getImagesIds(), item);
-        createAndLinkSizesQuantities(requestDto.getSizesQuantities(), item);
-
-        item.setCategories(getEntitiesReferences(requestDto.getCategoriesIds(), categoryRepository));
-        item.setMaterials(getEntitiesReferences(requestDto.getMaterialsIds(), materialRepository));
-        item.setColors(getEntitiesReferences(requestDto.getColorsIds(), colorRepository));
-
+        injectDtoDataToItem(requestDto, item);
 
         item.setCartEntries(new HashSet<>());
-
         item.setCreatedAt(ZonedDateTime.now());
         item.setActive(shouldBeActive(item));
 
@@ -82,9 +69,32 @@ public class ItemServiceImpl implements ItemService {
     @Transactional
     public Item updateItem(Long id, @NonNull ModifyItemRequestDto requestDto) {
 
+        Item item = itemRepository.findById(id)
+                .orElseThrow(NotFoundException::new);
 
+        List<Image> itemImagesListCopy = new ArrayList<>(item.getImages());
+        List<SizeQuantity> itemSizesQuantitiesCopy = new ArrayList<>(item.getSizesQuantities());
 
-        return null;
+        injectDtoDataToItem(requestDto, item);
+
+        item.setActive(shouldBeActive(item));
+
+        BindingResult validationResult = validate(item);
+        if(validationResult.hasErrors()) {
+            throw new InvalidEntityException(validationResult);
+        }
+
+        itemImagesListCopy
+                .stream()
+                .filter(image -> !item.getImages().contains(image))
+                .forEach(imageService::delete);
+
+        sizeQuantityRepository.deleteAll(itemSizesQuantitiesCopy);
+
+        itemRepository.save(item);
+        imageRepository.saveAll(item.getImages());
+
+        return item;
     }
 
     @Override
@@ -198,5 +208,21 @@ public class ItemServiceImpl implements ItemService {
         }
 
         item.setSizesQuantities(createdSizesQuantities);
+    }
+
+    private void injectDtoDataToItem(@NonNull ModifyItemRequestDto dto, @NonNull Item item) {
+
+        item.setName(dto.getName());
+        item.setDescription(dto.getDescription());
+
+        item.setHasPrint(dto.getHasPrint());
+        item.setPrice(dto.getPrice());
+
+        bidirectionalAttachImagesToItem(dto.getImagesIds(), item);
+        createAndLinkSizesQuantities(dto.getSizesQuantities(), item);
+
+        item.setCategories(getEntitiesReferences(dto.getCategoriesIds(), categoryRepository));
+        item.setMaterials(getEntitiesReferences(dto.getMaterialsIds(), materialRepository));
+        item.setColors(getEntitiesReferences(dto.getColorsIds(), colorRepository));
     }
 }

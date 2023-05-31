@@ -90,6 +90,15 @@ public class ImageServiceImpl implements ImageService {
         }
     }
 
+    @Override
+    public void deleteById(Long id) {
+
+        Image image = imageRepository.findById(id)
+                .orElseThrow(NotFoundException::new);
+
+        delete(image);
+    }
+
     private Path buildFileNameAndPath(Long imageId, String extension) {
         return Paths.get(imgProperties.getUploadDirectory(), imageId + "." + extension);
     }

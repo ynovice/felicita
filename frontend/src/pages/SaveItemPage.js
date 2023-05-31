@@ -1,15 +1,18 @@
 import withHeaderAndFooter from "../hoc/withHeaderAndFooter";
 import requiresUser from "../hoc/requiresUser";
-import "../css/CreateItemPage.css";
-import React, {useEffect, useRef, useState} from "react";
+import "../css/SaveItemPage.css";
+import React, {useContext, useEffect, useRef, useState} from "react";
 import Api from "../Api";
 import InvalidEntityException from "../exception/InvalidEntityException";
 import adminAccessOnly from "../hoc/adminAccessOnly";
 import ItemPropertySelector from "../components/ItemPropertySelector";
 import SizesQuantitiesSelector from "../components/SizesQuantitiesSelector";
 import ItemCategoriesSelector from "../components/ItemCategoriesSelector";
+import {useSearchParams} from "react-router-dom";
+import {ApiContext} from "../contexts/ApiContext";
+import imageApi from "../api/ImageApi";
 
-function CreateItemPage() {
+function SaveItemPage() {
 
     const [categoriesTrees, setCategoriesTrees] = useState([]);
 
@@ -20,24 +23,14 @@ function CreateItemPage() {
         ]
      */
     const [selectedCategoriesSequences, setSelectedCategoriesSequences] = useState([]);
-
     useEffect(() => {
         Api.getAllCategories()
-            .then(categories => {
-
-                setCategoriesTrees(categories);
-
-
-
-            })
+            .then(categories => setCategoriesTrees(categories))
             .catch(() => alert("Ошибка при получении списка категорий, свяжитесь с разработчиком"));
-
-
     }, []);
 
     const [materials, setMaterials] = useState([]);
     const [selectedMaterialsIds, setSelectedMaterialsIds] = useState([]);
-
     useEffect(() => {
         Api.getAllMaterials()
             .then(retrievedMaterials => setMaterials(retrievedMaterials))
@@ -47,7 +40,6 @@ function CreateItemPage() {
 
     const [colors, setColors] = useState([]);
     const [selectedColorsIds, setSelectedColorsIds] = useState([]);
-
     useEffect(() => {
         Api.getAllColors()
             .then(retrievedColors => setColors(retrievedColors))
@@ -57,7 +49,6 @@ function CreateItemPage() {
 
     const [sizes, setSizes] = useState([]);
     const [sizesQuantities, setSizesQuantities] = useState([]);
-
     useEffect(() => {
         Api.getAllSizes()
             .then(retrievedSizes => setSizes(retrievedSizes))
@@ -114,6 +105,18 @@ function CreateItemPage() {
         setOngoingUploadImagesNames(updatedOngoingUploadImagesNames);
     }
 
+    const removeImageByIndex = (i) => {
+
+        const imageId = imagesData[i]["uploadedImage"]["id"];
+
+        imageApi.deleteById(imageId)
+            .then(() => {
+                const updatedImagesData = structuredClone(imagesData);
+                updatedImagesData.splice(i, 1);
+                setImagesData(updatedImagesData);
+            });
+    }
+
 
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
@@ -123,7 +126,7 @@ function CreateItemPage() {
 
     const [fieldErrors, setFieldErrors] = useState([]);
 
-    const handleCreateItem = (e) => {
+    const handleSaveItem = (e) => {
         e.preventDefault();
 
         const imagesIds = [];
@@ -141,35 +144,110 @@ function CreateItemPage() {
             });
 
 
-        const createItemRequestDto = {
+        const modifyItemRequestDto = {
             name, description, price, hasPrint, imagesIds, categoriesIds,
             materialsIds: selectedMaterialsIds,
             colorsIds: selectedColorsIds,
             sizesQuantities: sizesQuantitiesDtos
         };
 
-        Api.createItem(createItemRequestDto, new AbortController().signal)
-            .then(responseBody => {
-                if(responseBody["id"]) {
-                    window.location.href = "/item/" + responseBody["id"];
-                }
-            }).catch(e => {
-                if(e instanceof InvalidEntityException) {
-                    setFieldErrors(e.validationResult.fieldErrors);
-                }
-            });
+        const itemId = Number(searchParams.get("id"));
+
+        if(!itemId) {
+            itemApi.create(modifyItemRequestDto)
+                .then(responseBody => {
+                    if(responseBody["id"]) {
+                        window.location.href = "/item/" + responseBody["id"];
+                    }
+                }).catch(e => {
+                    if(e instanceof InvalidEntityException) {
+                        setFieldErrors(e.validationResult.fieldErrors);
+                    }
+                });
+        } else {
+            itemApi.update(itemId, modifyItemRequestDto)
+                .then(responseBody => {
+                    if(responseBody["id"]) {
+                        window.location.href = "/item/" + responseBody["id"];
+                    }
+                }).catch(e => {
+                    if(e instanceof InvalidEntityException) {
+                        setFieldErrors(e.validationResult.fieldErrors);
+                    }
+                });
+        }
     }
+
+    const [searchParams] = useSearchParams();
+    const { itemApi } = useContext(ApiContext);
 
     useEffect(() => {
 
-        
+        const id = Number(searchParams.get("id"));
 
-    }, []);
+        if(!id) return;
+
+        const abortController = new AbortController();
+        itemApi.getById(id, abortController.signal)
+            .then(retrievedItem => {
+
+                setName(retrievedItem["name"]);
+                setDescription(retrievedItem["description"]);
+                setPrice(retrievedItem["price"]);
+                setHasPrint(retrievedItem["hasPrint"]);
+
+                setSelectedMaterialsIds(retrievedItem["materials"].map(material => material["id"]));
+                setSelectedColorsIds(retrievedItem["colors"].map(color => color["id"]));
+
+                setSizesQuantities(retrievedItem["sizesQuantities"].map(sq => {
+                    return {size: sq["size"], quantity: sq["quantity"]};
+                }));
+
+                setImagesData(retrievedItem["images"].map(image => {
+                    return {uploadedImage: image, name: `id ${image["id"]} image`}
+                }));
+
+                setSelectedCategoriesSequences(getCategorySequences(
+                    categoriesTrees,
+                    retrievedItem["categories"].map(category => category["id"])
+                ));
+
+            });
+
+        return () => abortController.abort();
+    }, [categoriesTrees, itemApi, searchParams]);
+
+    function getCategorySequences(categoriesTrees, plainCategoriesIdsList) {
+
+        const sequences = [];
+
+        function findCategory(category, currentSequence) {
+
+            if(plainCategoriesIdsList.includes(category["id"]))
+                currentSequence.push(category["id"]);
+
+            if (category["subCategories"].length > 0) {
+                for (const subCategory of category["subCategories"]) {
+                    findCategory(subCategory, [...currentSequence]);
+                }
+            } else {
+                sequences.push(currentSequence);
+            }
+        }
+
+        for (const categoryTree of categoriesTrees) {
+            if (plainCategoriesIdsList.includes(categoryTree.id)) {
+                findCategory(categoryTree, []);
+            }
+        }
+
+        return sequences;
+    }
 
     return (
-        <div className={"CreateItemPage"}>
+        <div className="SaveItemPage">
             <div className="section no-margin">
-                <h1 className={"page-title"}>Создание товара</h1>
+                <h1 className="page-title">Создание товара</h1>
             </div>
 
             <div className="section block-title">Основное</div>
@@ -179,8 +257,8 @@ function CreateItemPage() {
                        value={name}
                        onChange={(e) => setName(e.target.value)}
                        type="text"
-                       id={"name"}
-                       placeholder={"Название товара"}/>
+                       id="name"
+                       placeholder="Название товара"/>
             </div>
             <div className="section form-row no-margin">
                 <label htmlFor="description">Описание</label>
@@ -188,8 +266,8 @@ function CreateItemPage() {
                        value={description}
                        onChange={(e) => setDescription(e.target.value)}
                        type="text"
-                       id={"description"}
-                       placeholder={"Описание товара"}/>
+                       id="description"
+                       placeholder="Описание товара"/>
             </div>
             <div className="section form-row">
                 <label htmlFor="price">Цена (₽)</label>
@@ -197,8 +275,8 @@ function CreateItemPage() {
                        value={price}
                        onChange={(e) => setPrice(e.target.value)}
                        type="number"
-                       id={"price"}
-                       placeholder={"Цена товара"}/>
+                       id="price"
+                       placeholder="Цена товара"/>
             </div>
 
             <div className="section block-title">Фотографии</div>
@@ -210,12 +288,16 @@ function CreateItemPage() {
                        ref={imageUploaderRef}/>
 
                 {imagesData.length === 0 && <p>Фотографии не добавлены</p>}
-                {imagesData.length !== 0 && imagesData.map((imageData) => {
+                {imagesData.length !== 0 && imagesData.map((imageData, i) => {
                     return (
                         <div key={imageData["uploadedImage"]["id"]} className="selects-row">
-                            <img src={Api.getBaseApiUrl() + "/image/" + imageData["uploadedImage"]["id"]}
+                            <img src={imageApi.getImageUrlByImageId(imageData["uploadedImage"]["id"])}
                                  alt={imageData["uploadedImage"]["id"]}/>
                             <span>{imageData["name"]}</span><span className="status-ready">загружена</span>
+                            <span onClick={() => removeImageByIndex(i)}
+                                  className="link danger">
+                                Удалить
+                            </span>
                         </div>
                     );
                 })}
@@ -261,17 +343,18 @@ function CreateItemPage() {
             <div className="section form-row">
                 <label htmlFor="has-print">С принтом</label>
                 <input type="checkbox"
-                       id={"has-print"}
+                       id="has-print"
+                       checked={hasPrint}
                        value={String(hasPrint)}
-                       onChange={(e) => setHasPrint(Boolean(e.target.value))}
+                       onChange={() => setHasPrint(!hasPrint)}
                 />
             </div>
 
             <div className="section">
                 <input type="button"
                        className="button"
-                       onClick={(e) => handleCreateItem(e)}
-                       value="Создать"/>
+                       onClick={(e) => handleSaveItem(e)}
+                       value="Сохранить"/>
             </div>
 
             <div className="errors-container">
@@ -284,6 +367,6 @@ function CreateItemPage() {
 }
 
 export default withHeaderAndFooter(adminAccessOnly(requiresUser(
-    CreateItemPage,
+    SaveItemPage,
     "Чтобы просмотреть эту страницу, нужно войти в аккаунт администратора."
 )));
