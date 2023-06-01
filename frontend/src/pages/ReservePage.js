@@ -1,15 +1,19 @@
 import withHeaderAndFooter from "../hoc/withHeaderAndFooter";
 import requiresUser from "../hoc/requiresUser";
 import {useParams} from "react-router-dom";
-import {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import Api from "../Api";
 import NotFoundException from "../exception/NotFoundException";
 import NotAuthorizedException from "../exception/NotAuthorizedException";
 import ErrorPage from "./ErrorPage";
 import "../css/ReservePage.css";
 import FailedRequestException from "../exception/FailedRequestException";
+import {AccessLevel, AppContext} from "../contexts/AppContext";
+import reserveApi from "../api/ReserveApi";
 
 function ReservePage() {
+
+    const { accessLevel } = useContext(AppContext);
 
     const ReserveState = {
         LOADING: "LOADING",
@@ -43,6 +47,20 @@ function ReservePage() {
         return () => abortController.abort();
     }, [ReserveState.ERROR, ReserveState.NOT_AUTHORIZED, ReserveState.NOT_FOUND, ReserveState.PRESENT, id]);
 
+    const handleCloseReserveClick = () => {
+
+        reserveApi.deleteById(id)
+            .then(() => window.history.back())
+            .catch(() => alert("Что-то пошло не так при закрытии резерва"));
+    }
+
+    const handleCancelReserveClick = () => {
+
+        reserveApi.cancelById(id)
+            .then(() => window.history.back())
+            .catch(() => alert("Что-то пошло не так при попытке отменить резерв"));
+    }
+
     if(reserveState === ReserveState.LOADING) return;
 
     if(reserveState === ReserveState.NOT_FOUND)
@@ -58,7 +76,7 @@ function ReservePage() {
         <div className="ReservePage">
 
             <div className="left-side">
-                <div className="page-title">Вы зарезервировали эти товары</div>
+                <div className="page-title">Резерв # {reserve["id"]}</div>
 
                 <div className="cart-items">
                     {reserve["entries"].map(reserveEntry => {
@@ -81,7 +99,7 @@ function ReservePage() {
                                         <div className="cart-item-name">{item["name"]}</div>
                                         <div className="cart-item-size">{sq["size"]["name"]}</div>
                                         <div className="cart-item-total-price">
-                                            {item["price"] * sq["quantity"]}₽
+                                            {reserveEntry["pricePerItem"] * sq["quantity"]}₽
                                         </div>
 
                                         <div className="cart-item-controls noselect disabled">
@@ -125,8 +143,24 @@ function ReservePage() {
                     <p>Дата создания:</p>
                     <p>{reserve["createdAtPresentation"]}</p>
                 </div>
-                <a href="/reserve" className="link">Все резервы</a>
-                <a href="/contacts" className="link">Связаться с нами</a>
+                <div className="reserve-info">
+                    <p>Оформитель:</p>
+                    <p>{reserve["owner"]["username"]} # {reserve["owner"]["id"]}</p>
+                </div>
+
+                <a href="/reserve" className="link">Мои резервы</a>
+
+                {accessLevel === AccessLevel.ADMIN &&
+                    <React.Fragment>
+                        <span className="link success" onClick={() => handleCloseReserveClick()}>
+                            Закрыть резерв
+                        </span>
+                        <span className="link danger" onClick={() => handleCancelReserveClick()}>
+                            Отменить резерв
+                        </span>
+                    </React.Fragment>
+                }
+
             </div>
 
         </div>

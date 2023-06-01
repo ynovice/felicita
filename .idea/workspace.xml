@@ -4,25 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Add ability to edit items">
-      <change afterPath="$PROJECT_DIR$/frontend/src/api/ItemApi.js" afterDir="false" />
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Major update, no time to explain">
+      <change afterPath="$PROJECT_DIR$/frontend/src/api/ReserveApi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Pagintation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/ReservesList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/css/AdminReservesManagerPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/css/CurrentUserReservesPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/css/Pagination.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/css/ReservesList.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/AdminReservesManagerPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/CurrentUserReservesPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/PaginationMeta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/ReserveShortInfoDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/response/ReservesPageDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/ReserveEntryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/api/BaseApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/BaseApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/api/ImageApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/ImageApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/CreateArticlePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/SaveArticlePage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/CreateItemPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/SaveItemPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/ItemPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/ItemPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/ItemApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/ItemApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/ReservePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/ReservePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/ReservesListPage.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminPanelPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/AdminPanelPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CreateArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/SaveArticlePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CreateItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/SaveItemPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CatalogPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CatalogPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/ItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ItemPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ImageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ImageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ImageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ImageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ReservePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ReservePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ReservesListPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ReserveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ReserveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/ReserveDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/ReserveDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/response/ItemsPageDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/response/ItemsPageDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Reserve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Reserve.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/ReserveRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/ReserveRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ItemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ReserveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ReserveService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ItemServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ReserveServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ReserveServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,10 +50,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
-        <option value="CSS File" />
         <option value="Class" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -136,8 +153,19 @@
         <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
+    <option name="excludedTypes">
+      <set>
+        <option value="HttpClient.HttpRequestRunConfigurationType" />
+      </set>
+    </option>
   </component>
   <component name="RunManager" selected="Spring Boot.Backend MySQL">
+    <configuration name="All in generated-requests" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="#2" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="ItemServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="felicita" />
       <extension name="coverage">
@@ -201,6 +229,8 @@
       <item itemvalue="Docker.MySQL Docker Container" />
       <item itemvalue="Docker.Postgres Docker Container" />
       <item itemvalue="Docker.Backend (Postgres + API)" />
+      <item itemvalue="HTTP Request.All in generated-requests" />
+      <item itemvalue="HTTP Request.generated-requests | #2" />
       <item itemvalue="JUnit.UserServiceTest.registerIfNotRegistered_givenNotRegistered_thenRegister" />
       <item itemvalue="JUnit.UserServiceTest" />
       <item itemvalue="JUnit.ItemServiceTest" />
@@ -210,6 +240,8 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.generated-requests | #2" />
+        <item itemvalue="HTTP Request.All in generated-requests" />
         <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="JUnit.ItemServiceTest" />
         <item itemvalue="JUnit.UserServiceTest.registerIfNotRegistered_givenNotRegistered_thenRegister" />
@@ -277,14 +309,8 @@
       <workItem from="1685275510727" duration="242000" />
       <workItem from="1685288608847" duration="56309000" />
       <workItem from="1685446499405" duration="6891000" />
-      <workItem from="1685461509254" duration="33873000" />
-    </task>
-    <task id="LOCAL-00004" summary="Initial commit.">
-      <created>1683125519564</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1683125519565</updated>
+      <workItem from="1685461509254" duration="34971000" />
+      <workItem from="1685613215827" duration="14785000" />
     </task>
     <task id="LOCAL-00005" summary="Create separate profiles for PostgreSQL and MySQl dbs. Remove unused code.">
       <created>1683203563091</created>
@@ -622,7 +648,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685565074016</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Add ability to edit items">
+      <created>1685574553759</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1685574553759</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -640,7 +673,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create Article page" />
     <MESSAGE value="Add ability to edit articles" />
     <MESSAGE value="Fix links style at the article page" />
     <MESSAGE value="Fix article page load error message" />
@@ -665,20 +697,16 @@
     <MESSAGE value="Refactor ItemServiceImpl.createItem" />
     <MESSAGE value="Fix &quot;key&quot; field in ItemCategoriesSelector" />
     <MESSAGE value="Add ability to edit items" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add ability to edit items" />
+    <MESSAGE value="Major update, no time to explain" />
+    <option name="LAST_COMMIT_MESSAGE" value="Major update, no time to explain" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/CartServiceImpl.java</url>
-          <line>120</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/CartServiceImpl.java</url>
-          <line>124</line>
-          <option name="timeStamp" value="9" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ReserveServiceImpl.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -31,6 +31,12 @@
 .link:hover {
     text-shadow: 0 0 5px #ffdf80;
 }
+.link.success {
+    color: #0d9150;
+}
+.link.success:hover {
+    text-shadow: 0 0 5px #36be7c;
+}
 .link.danger {
     color: #DE4D4D;
 }
@@ -60,16 +66,4 @@ option::-webkit-inner-spin-button {
 }
 input[type=number] {
     -moz-appearance:textfield; /* Firefox */
-}
-
-.pagination {
-    display: flex;
-    gap: 10px;
-    align-items: flex-end;
-}
-.pagination .pagination-title {
-    font-size: 16px;
-}
-.pagination span {
-    font-size: 20px;
 }

@@ -30,6 +30,13 @@ class ItemApi extends BaseApi {
         };
         return await this.performRequestGetResponseBody(BaseApi.API_BASE_URL + `/item/${id}`, requestParams);
     }
+
+    async deleteById(id) {
+        const requestParams = {
+            method: "delete"
+        };
+        await this.performRequest(BaseApi.API_BASE_URL + `/item/${id}`, requestParams);
+    }
 }
 
 const itemApi = new ItemApi();

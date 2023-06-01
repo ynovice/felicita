@@ -4,27 +4,26 @@ import com.github.ynovice.felicita.model.entity.Reserve;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 
 @Getter
 @Setter
-public class ReserveDto extends ReserveShortInfoDto{
+public class ReserveShortInfoDto {
 
-    private static final String DATE_TIME_PRESENTATION_FORMAT = "dd.MM.YYYY в HH:mm";
+    protected static final String DATE_TIME_PRESENTATION_FORMAT = "dd.MM.YYYY в HH:mm";
 
-    private List<ReserveEntryDto> entries;
+    private Long id;
+    private Integer totalPrice;
+    private Integer totalItems;
+    private ZonedDateTime createdAt;
+    private String createdAtPresentation;
+    private UserDto owner;
 
-    public static ReserveDto fromEntity(Reserve reserve) {
+    public static ReserveShortInfoDto fromEntity(Reserve reserve) {
 
-        ReserveDto dto = new ReserveDto();
+        ReserveShortInfoDto dto = new ReserveShortInfoDto();
         dto.setId(reserve.getId());
-        dto.setEntries(
-                reserve.getEntries()
-                        .stream()
-                        .map(ReserveEntryDto::fromEntity)
-                        .toList()
-        );
         dto.setTotalPrice(reserve.getTotalPrice());
         dto.setTotalItems(reserve.getTotalItems());
         dto.setCreatedAt(reserve.getCreatedAt());

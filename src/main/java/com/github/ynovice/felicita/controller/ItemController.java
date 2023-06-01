@@ -2,8 +2,8 @@ package com.github.ynovice.felicita.controller;
 
 import com.github.ynovice.felicita.exception.NotFoundException;
 import com.github.ynovice.felicita.model.dto.entity.ItemDto;
-import com.github.ynovice.felicita.model.dto.request.ModifyItemRequestDto;
 import com.github.ynovice.felicita.model.dto.request.ItemFilterParamsDto;
+import com.github.ynovice.felicita.model.dto.request.ModifyItemRequestDto;
 import com.github.ynovice.felicita.model.dto.response.ItemsPageDto;
 import com.github.ynovice.felicita.model.entity.Item;
 import com.github.ynovice.felicita.service.ItemService;
@@ -38,9 +38,8 @@ public class ItemController {
 
     @Secured("ROLE_ADMIN")
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteById(@PathVariable Long id) {
+    public void deleteById(@PathVariable Long id) {
         itemService.deleteById(id);
-        return ResponseEntity.ok().build();
     }
 
     @GetMapping("/{id}")

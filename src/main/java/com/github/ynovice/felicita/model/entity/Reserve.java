@@ -32,4 +32,12 @@ public class Reserve {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(referencedColumnName = "id")
     private User user;
+
+    public void updateTotalItems(int difference) {
+        totalItems += difference;
+    }
+
+    public void updateTotalPrice(int difference) {
+        totalPrice += difference;
+    }
 }

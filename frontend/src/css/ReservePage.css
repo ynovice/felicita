@@ -147,6 +147,10 @@
     color: #727270;
 }
 
+.ReservePage .right-side .link {
+    font-size: 18px;
+}
+
 
 @media screen and (max-width: 1279px){
     .ReservePage {
@@ -182,9 +186,5 @@
         width: 100%;
         padding: 25px 10px;
         margin-left: -10px;
-    }
-
-    .ReservePage .right-side a {
-        font-size: 18px;
     }
 }

@@ -9,6 +9,7 @@ import CartWidget from "../components/CartWidget";
 import {AppContext, ServerState} from "../contexts/AppContext";
 import RequestAbortedException from "../exception/RequestAbortedException";
 import {ApiContext} from "../contexts/ApiContext";
+import Pagination from "../components/Pagintation";
 
 function ItemPage() {
 
@@ -63,7 +64,6 @@ function ItemPage() {
         Api.getItemsPageByFilterParams({}, abortController.signal)
             .then(itemsPage => {
 
-
                 for (let i = 0; i < itemsPage["items"].length; i++) {
                     if(itemsPage["items"][i]["id"] === Number(itemId)) {
                         itemsPage["items"].splice(i, 1);
@@ -76,6 +76,13 @@ function ItemPage() {
 
         return () => abortController.abort();
     }, [itemId]);
+
+    const deleteCurrentItem = () => {
+
+        itemApi.deleteById(itemId)
+            .then(() => window.location.href = "/catalog")
+            .catch(() => alert("Что-то пошло не так при удалении товара"));
+    }
 
     if(appContext.serverState === ServerState.UNDEFINED) {
         return null;
@@ -105,23 +112,18 @@ function ItemPage() {
                     }
 
                 </div>
+
+
+
                 {item["images"].length > 1 &&
-                    <div className="pagination">
-                        {item["images"].map((image, i) => {
-
-                            if(i === displayedImageIndex)
-                                return <span key={image["id"]}>{i + 1}</span>;
-
-                            return <span key={image["id"]}
-                                      className="link"
-                                      onClick={() => setDisplayedImageIndex(i)}>{i + 1}</span>;
-                        })}
-                    </div>
+                    <Pagination currentPage={displayedImageIndex}
+                                totalPages={item["images"].length}
+                                switchToPage={setDisplayedImageIndex}/>
                 }
 
                 <div className="admin-controls">
                     <a href={`/admin/item/save?id=${itemId}`} className="link">Редактировать</a>
-                    <span className="link danger">Удалить</span>
+                    <span className="link danger" onClick={() => deleteCurrentItem()}>Удалить</span>
                 </div>
             </div>
 

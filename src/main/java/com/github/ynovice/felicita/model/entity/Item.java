@@ -2,6 +2,7 @@ package com.github.ynovice.felicita.model.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 
 import java.time.ZonedDateTime;
@@ -92,6 +93,17 @@ public class Item {
                 .stream()
                 .filter(sq -> sq.getSize().equals(size))
                 .findFirst();
+    }
+
+    public SizeQuantity createAndLinkSizeQuantity(@NonNull Size size) {
+
+        SizeQuantity sizeQuantity = new SizeQuantity();
+        sizeQuantity.setSize(size);
+        sizeQuantity.setQuantity(0);
+        sizeQuantity.setItem(this);
+
+        sizesQuantities.add(sizeQuantity);
+        return sizeQuantity;
     }
 
     @Override

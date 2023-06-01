@@ -19,13 +19,15 @@ import SaveArticlePage from "./pages/SaveArticlePage";
 import ArticlePage from "./pages/ArticlePage";
 import ConfirmReservePage from "./pages/ConfirmReservePage";
 import ReservePage from "./pages/ReservePage";
-import ReservesListPage from "./pages/ReservesListPage";
+import ReservesListPage from "./pages/CurrentUserReservesPage";
 import BlogPage from "./pages/BlogPage";
 import userApi from "./api/UserApi";
 import BaseApi from "./api/BaseApi";
 import {ApiContextProvider} from "./contexts/ApiContext";
 import imageApi from "./api/ImageApi";
 import itemApi from "./api/ItemApi";
+import AdminReservesManagerPage from "./pages/AdminReservesManagerPage";
+import reserveApi from "./api/ReserveApi";
 
 function App() {
 
@@ -46,7 +48,7 @@ function App() {
     };
 
     const apiContextValue = {
-        userApi, imageApi, itemApi
+        userApi, imageApi, itemApi, reserveApi
     };
 
     useEffect(() => {
@@ -118,6 +120,7 @@ function App() {
                                 <Route path="/admin" element={<AdminPanelPage />}/>
                                 <Route path="/admin/item/save" element={<SaveItemPage />}/>
                                 <Route path="/admin/article/save" element={<SaveArticlePage />}/>
+                                <Route path="/admin/reserve" element={<AdminReservesManagerPage />}/>
                             </Routes>
                         </BrowserRouter>
                     </div>

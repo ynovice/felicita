@@ -4,6 +4,7 @@ import React, {useState} from "react";
 import ItemFiltersContainer from "../components/ItemFiltersContainer";
 import Api from "../Api";
 import {useSearchParams} from "react-router-dom";
+import Pagination from "../components/Pagintation";
 
 function CatalogPage() {
 
@@ -18,13 +19,6 @@ function CatalogPage() {
 
     const [itemsPage, setItemsPage] = useState(null);
     const [catalogState, setCatalogState] = useState(CatalogState.LOADING);
-
-    let pagesNumbers = [];
-    if(itemsPage !== null) {
-        for (let i = 0; i < itemsPage["paginationMeta"]["totalPages"]; i++) {
-            pagesNumbers.push(i);
-        }
-    }
 
     const switchPage = (pageNumber) => {
         searchParams.set("page", pageNumber);
@@ -77,23 +71,11 @@ function CatalogPage() {
                     <div className="catalog-items">Товары по вашему запросу не найдены</div>
                 }
 
-                {pagesNumbers.length > 0 &&
-                    <div className="pagination">
-                        <span className="pagination-title">Страницa:</span>
-                        {pagesNumbers.map(pageNumber => {
-                            if(pageNumber === Number(searchParams.get("page"))) {
-                                return <span key={pageNumber}>{pageNumber + 1}</span>
-                            }
-
-                            return (
-                                <span key={pageNumber}
-                                      className={"link"}
-                                      onClick={() => switchPage(pageNumber)}>
-                            {pageNumber + 1}
-                        </span>
-                            );
-                        })}
-                    </div>
+                {itemsPage &&
+                    <Pagination title="Страница:"
+                                totalPages={itemsPage["paginationMeta"]["totalPages"]}
+                                currentPage={searchParams.get("page") ? Number(searchParams.get("page")) : 0}
+                                switchToPage={switchPage}/>
                 }
             </div>
         </div>

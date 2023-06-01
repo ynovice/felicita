@@ -3,9 +3,9 @@ package com.github.ynovice.felicita.service.impl;
 import com.github.ynovice.felicita.exception.InternalServerError;
 import com.github.ynovice.felicita.exception.InvalidEntityException;
 import com.github.ynovice.felicita.exception.NotFoundException;
-import com.github.ynovice.felicita.model.dto.request.ModifyItemRequestDto;
 import com.github.ynovice.felicita.model.dto.request.CreateSizeQuantityRequestDto;
 import com.github.ynovice.felicita.model.dto.request.ItemFilterParamsDto;
+import com.github.ynovice.felicita.model.dto.request.ModifyItemRequestDto;
 import com.github.ynovice.felicita.model.entity.*;
 import com.github.ynovice.felicita.repository.*;
 import com.github.ynovice.felicita.service.ImageService;
@@ -42,6 +42,8 @@ public class ItemServiceImpl implements ItemService {
     private final ColorRepository colorRepository;
     private final SizeRepository sizeRepository;
     private final SizeQuantityRepository sizeQuantityRepository;
+    private final ReserveRepository reserveRepository;
+    private final ReserveEntryRepository reserveEntryRepository;
 
     @Override
     public Item createItem(@NonNull ModifyItemRequestDto requestDto) {
@@ -143,8 +145,29 @@ public class ItemServiceImpl implements ItemService {
 
         Item item = itemRepository.findById(id).orElseThrow(NotFoundException::new);
 
+        List<ReserveEntry> reserveEntriesCopy = new ArrayList<>(item.getReserveEntries());
+
+        item.getReserveEntries().clear();
+
+        for(ReserveEntry reserveEntry : reserveEntriesCopy) {
+
+            Reserve reserve = reserveEntry.getReserve();
+
+            reserve.getEntries().remove(reserveEntry);
+
+            reserveEntryRepository.delete(reserveEntry);
+
+            if(reserve.getEntries().isEmpty())
+                reserveRepository.delete(reserve);
+        }
+
         itemRepository.delete(item);
         item.getImages().forEach(imageService::delete);
+    }
+
+    @Override
+    public void save(@NonNull Item item) {
+        itemRepository.save(item);
     }
 
     public BindingResult validate(@NonNull Item item) {

@@ -1,7 +1,7 @@
 package com.github.ynovice.felicita.service;
 
-import com.github.ynovice.felicita.model.dto.request.ModifyItemRequestDto;
 import com.github.ynovice.felicita.model.dto.request.ItemFilterParamsDto;
+import com.github.ynovice.felicita.model.dto.request.ModifyItemRequestDto;
 import com.github.ynovice.felicita.model.entity.Item;
 import com.github.ynovice.felicita.model.entity.Reserve;
 import lombok.NonNull;
@@ -22,4 +22,6 @@ public interface ItemService {
     Page<Item> getByFilters(int page, ItemFilterParamsDto filterParams);
 
     void deleteById(@NonNull Long id);
+
+    void save(@NonNull Item item);
 }

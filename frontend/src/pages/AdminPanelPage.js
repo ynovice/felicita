@@ -20,6 +20,10 @@ function AdminPanelPage() {
                 <a href="/admin/article/save" className="link">Создать статью для блога</a>
             </div>
 
+            <div className="section">
+                <a href="/admin/reserve" className="link">Менеджер зарезервированных товаров</a>
+            </div>
+
         </div>
     );
 }
