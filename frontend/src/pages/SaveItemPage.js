@@ -163,6 +163,8 @@ function SaveItemPage() {
                     if(e instanceof InvalidEntityException) {
                         setFieldErrors(e.validationResult.fieldErrors);
                     }
+                console.log(e);
+
                 });
         } else {
             itemApi.update(itemId, modifyItemRequestDto)
@@ -171,6 +173,7 @@ function SaveItemPage() {
                         window.location.href = "/item/" + responseBody["id"];
                     }
                 }).catch(e => {
+                console.log(e);
                     if(e instanceof InvalidEntityException) {
                         setFieldErrors(e.validationResult.fieldErrors);
                     }

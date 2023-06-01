@@ -7,7 +7,7 @@ class EntityValidationResult {
 
         if(invalidEntityDto) {
 
-            if(invalidEntityDto["invalidFeilds"].length > 0) this._fieldErrors = true;
+            if(invalidEntityDto["invalidFields"].length > 0) this._fieldErrors = true;
 
             let fieldErrors = [];
 

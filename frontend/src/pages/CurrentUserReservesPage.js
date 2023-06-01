@@ -11,7 +11,6 @@ import Pagination from "../components/Pagintation";
 
 function CurrentUserReservesPage() {
 
-
     const ReservesPageState = {
         LOADED: "LOADED",
         LOADING: "LOADING",
@@ -41,9 +40,9 @@ function CurrentUserReservesPage() {
         reserveApi.getReservesPageForCurrentUser(pageNumber, abortController.signal)
             .then(retrievedPage => {
 
-                const { totalItems, totalPages } = retrievedPage["paginationMeta"]
+                const { totalPages } = retrievedPage["paginationMeta"]
 
-                if(totalItems !== 0 && pageNumber >= totalPages)
+                if(totalPages !== 0 && pageNumber >= totalPages)
                     redirectToPage(totalPages - 1);
 
                 setReservesPage(retrievedPage);
@@ -70,10 +69,13 @@ function CurrentUserReservesPage() {
             <div className="list-container">
                 <ReservesList reserves={reservesPage["reserves"]}/>
                 <br/>
-                <Pagination currentPage={pageNumber}
-                            totalPages={reservesPage["paginationMeta"]["totalPages"]}
-                            switchToPage={redirectToPage}
-                            title="Страница:"/>
+                {reservesPage["paginationMeta"]["totalPages"] > 0 &&
+                    <Pagination currentPage={pageNumber}
+                                totalPages={reservesPage["paginationMeta"]["totalPages"]}
+                                switchToPage={redirectToPage}
+                                title="Страница:"/>
+                }
+
             </div>
 
 

@@ -24,6 +24,10 @@ function AdminPanelPage() {
                 <a href="/admin/reserve" className="link">Менеджер зарезервированных товаров</a>
             </div>
 
+            <div className="section">
+                <a href="/admin/cr" className="link">Заявки на обратную связь</a>
+            </div>
+
         </div>
     );
 }

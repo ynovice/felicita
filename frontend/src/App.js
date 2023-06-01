@@ -28,6 +28,8 @@ import imageApi from "./api/ImageApi";
 import itemApi from "./api/ItemApi";
 import AdminReservesManagerPage from "./pages/AdminReservesManagerPage";
 import reserveApi from "./api/ReserveApi";
+import callbackRequestApi from "./api/CallbackRequestApi";
+import CallbackRequestsPage from "./pages/CallbackRequestsPage";
 
 function App() {
 
@@ -48,7 +50,7 @@ function App() {
     };
 
     const apiContextValue = {
-        userApi, imageApi, itemApi, reserveApi
+        userApi, imageApi, itemApi, reserveApi, callbackRequestApi
     };
 
     useEffect(() => {
@@ -121,6 +123,7 @@ function App() {
                                 <Route path="/admin/item/save" element={<SaveItemPage />}/>
                                 <Route path="/admin/article/save" element={<SaveArticlePage />}/>
                                 <Route path="/admin/reserve" element={<AdminReservesManagerPage />}/>
+                                <Route path="/admin/cr" element={<CallbackRequestsPage />}/>
                             </Routes>
                         </BrowserRouter>
                     </div>
