@@ -4,28 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Major update, no time to explain">
-      <change afterPath="$PROJECT_DIR$/frontend/src/api/CallbackRequestApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/css/CallbackRequestsPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/CallbackRequestsPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/CallbackRequestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/CallbackRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/request/CreateCallbackRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/CallbackRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/CallbackRequestRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/CallbackRequestService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/CallbackRequestServiceImpl.java" afterDir="false" />
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Add callback requests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/EntityValidationResult.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/EntityValidationResult.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/BlogPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/BlogPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/MainPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/MainPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminPanelPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/AdminPanelPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/BlogPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/BlogPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CurrentUserReservesPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CurrentUserReservesPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/MainPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/SaveItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/SaveItemPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminReservesManagerPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/AdminReservesManagerPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,14 +277,7 @@
       <workItem from="1685288608847" duration="56309000" />
       <workItem from="1685446499405" duration="6891000" />
       <workItem from="1685461509254" duration="34971000" />
-      <workItem from="1685613215827" duration="25492000" />
-    </task>
-    <task id="LOCAL-00006" summary="Delete setupProxy.js">
-      <created>1683203713488</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1683203713488</updated>
+      <workItem from="1685613215827" duration="25880000" />
     </task>
     <task id="LOCAL-00007" summary="Create model entities">
       <created>1683215586263</created>
@@ -641,7 +615,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685629879768</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Add callback requests">
+      <created>1685641170203</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1685641170203</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -659,7 +640,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add ability to edit articles" />
     <MESSAGE value="Fix links style at the article page" />
     <MESSAGE value="Fix article page load error message" />
     <MESSAGE value="Create tests for UserService" />
@@ -684,7 +664,8 @@
     <MESSAGE value="Fix &quot;key&quot; field in ItemCategoriesSelector" />
     <MESSAGE value="Add ability to edit items" />
     <MESSAGE value="Major update, no time to explain" />
-    <option name="LAST_COMMIT_MESSAGE" value="Major update, no time to explain" />
+    <MESSAGE value="Add callback requests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add callback requests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -41,9 +41,9 @@ function AdminReservesManagerPage() {
         reserveApi.getReservesPageAdminScope(pageNumber, abortController.signal)
             .then(retrievedPage => {
 
-                const { totalItems, totalPages } = retrievedPage["paginationMeta"]
+                const { totalPages } = retrievedPage["paginationMeta"]
 
-                if(totalItems !== 0 && pageNumber >= totalPages)
+                if(totalPages !== 0 && pageNumber >= totalPages)
                     redirectToPage(totalPages - 1);
 
                 setReservesPage(retrievedPage);
@@ -69,10 +69,13 @@ function AdminReservesManagerPage() {
             <div className="list-container">
                 <ReservesList reserves={reservesPage["reserves"]} adminScope={true}/>
                 <br/>
-                <Pagination totalPages={reservesPage["paginationMeta"]["totalPages"]}
-                            currentPage={pageNumber}
-                            switchToPage={redirectToPage}
-                            title="Страница:"/>
+                {reservesPage["paginationMeta"]["totalPages"] > 0 &&
+                    <Pagination totalPages={reservesPage["paginationMeta"]["totalPages"]}
+                                currentPage={pageNumber}
+                                switchToPage={redirectToPage}
+                                title="Страница:"/>
+                }
+
             </div>
         </div>
     );
