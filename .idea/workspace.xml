@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Add callback requests">
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Minor fixes of LoginPage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/LoginPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/LoginPage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/LoginPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -278,14 +277,9 @@
       <workItem from="1685288608847" duration="56309000" />
       <workItem from="1685446499405" duration="6891000" />
       <workItem from="1685461509254" duration="34971000" />
-      <workItem from="1685613215827" duration="26400000" />
-    </task>
-    <task id="LOCAL-00008" summary="Add method to create items to ItemService">
-      <created>1683460282724</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1683460282724</updated>
+      <workItem from="1685613215827" duration="29753000" />
+      <workItem from="1685650038690" duration="2346000" />
+      <workItem from="1685727317484" duration="107000" />
     </task>
     <task id="LOCAL-00009" summary="Add ability to create new items">
       <created>1684149300016</created>
@@ -623,7 +617,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685641372344</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="add fake login fields">
+      <created>1685642050626</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1685642050626</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -641,9 +642,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix links style at the article page" />
-    <MESSAGE value="Fix article page load error message" />
-    <MESSAGE value="Create tests for UserService" />
     <MESSAGE value="Refactor cart functionality" />
     <MESSAGE value="Add images directory to git" />
     <MESSAGE value="Add ability to reserve items from cart" />
@@ -666,7 +664,10 @@
     <MESSAGE value="Add ability to edit items" />
     <MESSAGE value="Major update, no time to explain" />
     <MESSAGE value="Add callback requests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add callback requests" />
+    <MESSAGE value="add fake login fields" />
+    <MESSAGE value="remove commented code from LoginPage.js" />
+    <MESSAGE value="Minor fixes of LoginPage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor fixes of LoginPage" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
