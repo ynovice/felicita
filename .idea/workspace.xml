@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Minor fixes of LoginPage">
+      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/LoginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.yml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +28,7 @@
         <option value="Class" />
         <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -32,6 +40,9 @@
   </component>
   <component name="JsbtTreeLayoutManager">
     <layout place="tools.popupnpm">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+    <layout place="tools.popupGrunt">
       <scroll-view-position x="0" y="0" />
     </layout>
   </component>
@@ -126,7 +137,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="npm.React Frontend">
+  <component name="RunManager" selected="Docker.Dockerfile">
     <configuration name="All in generated-requests" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http">
       <method v="2" />
     </configuration>
@@ -163,22 +174,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTest.registerIfNotRegistered_givenNotRegistered_thenRegister" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="felicita" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.github.ynovice.felicita.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.github.ynovice.felicita.service" />
-      <option name="MAIN_CLASS_NAME" value="com.github.ynovice.felicita.service.UserServiceTest" />
-      <option name="METHOD_NAME" value="registerIfNotRegistered_givenNotRegistered_thenRegister" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Backend MySQL" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ACTIVE_PROFILES" value="dev,mysql" />
       <envs>
@@ -192,13 +187,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Docker.MySQL Docker Container" />
       <item itemvalue="Docker.Postgres Docker Container" />
       <item itemvalue="Docker.Backend (Postgres + API)" />
+      <item itemvalue="Docker.Dockerfile" />
       <item itemvalue="HTTP Request.All in generated-requests" />
       <item itemvalue="HTTP Request.generated-requests | #2" />
-      <item itemvalue="JUnit.UserServiceTest.registerIfNotRegistered_givenNotRegistered_thenRegister" />
       <item itemvalue="JUnit.UserServiceTest" />
       <item itemvalue="JUnit.ItemServiceTest" />
       <item itemvalue="npm.React Frontend" />
@@ -207,11 +216,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="HTTP Request.generated-requests | #2" />
         <item itemvalue="HTTP Request.All in generated-requests" />
         <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="JUnit.ItemServiceTest" />
-        <item itemvalue="JUnit.UserServiceTest.registerIfNotRegistered_givenNotRegistered_thenRegister" />
       </list>
     </recent_temporary>
   </component>
@@ -279,14 +288,20 @@
       <workItem from="1685461509254" duration="34971000" />
       <workItem from="1685613215827" duration="29753000" />
       <workItem from="1685650038690" duration="2346000" />
-      <workItem from="1685727317484" duration="107000" />
-    </task>
-    <task id="LOCAL-00009" summary="Add ability to create new items">
-      <created>1684149300016</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1684149300016</updated>
+      <workItem from="1685727317484" duration="2095000" />
+      <workItem from="1685729646688" duration="2813000" />
+      <workItem from="1685738409426" duration="879000" />
+      <workItem from="1685785765116" duration="913000" />
+      <workItem from="1685823691818" duration="179000" />
+      <workItem from="1685967023522" duration="752000" />
+      <workItem from="1685968583995" duration="969000" />
+      <workItem from="1686909696588" duration="772000" />
+      <workItem from="1686913604284" duration="988000" />
+      <workItem from="1687206955994" duration="3199000" />
+      <workItem from="1687674554097" duration="5784000" />
+      <workItem from="1687689170760" duration="6094000" />
+      <workItem from="1687860165821" duration="32000" />
+      <workItem from="1687984428164" duration="6551000" />
     </task>
     <task id="LOCAL-00010" summary="Create endpoint to get item by id">
       <created>1684149854242</created>
@@ -624,7 +639,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685642050626</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Minor fixes of LoginPage">
+      <created>1685727431701</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1685727431702</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
