@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="create-sizes-table" author="ynovice">
+        <sqlFile dbms="postgresql"
+                 endDelimiter="\n--go"
+                 splitStatements="true"
+                 stripComments="true" relativeToChangelogFile="true"
+                 path="/01-create-sizes-table.sql"/>
+        <rollback>
+            <sqlFile dbms="postgresql"
+                     endDelimiter="\n--go"
+                     splitStatements="true"
+                     stripComments="true" relativeToChangelogFile="true"
+                     path="/01-drop-sizes-table.sql"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="create-colors-table" author="ynovice">
+        <sqlFile dbms="postgresql"
+                 endDelimiter="\n--go"
+                 splitStatements="true"
+                 stripComments="true" relativeToChangelogFile="true"
+                 path="/02-create-colors-table.sql"/>
+        <rollback>
+            <sqlFile dbms="postgresql"
+                     endDelimiter="\n--go"
+                     splitStatements="true"
+                     stripComments="true" relativeToChangelogFile="true"
+                     path="/02-drop-colors-table.sql"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="create-materials-table" author="ynovice">
+        <sqlFile dbms="postgresql"
+                 endDelimiter="\n--go"
+                 splitStatements="true"
+                 stripComments="true" relativeToChangelogFile="true"
+                 path="/03-create-materials-table.sql"/>
+        <rollback>
+            <sqlFile dbms="postgresql"
+                     endDelimiter="\n--go"
+                     splitStatements="true"
+                     stripComments="true" relativeToChangelogFile="true"
+                     path="/03-drop-materials-table.sql"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="create-categories-table" author="ynovice">
+        <sqlFile dbms="postgresql"
+                 endDelimiter="\n--go"
+                 splitStatements="true"
+                 stripComments="true" relativeToChangelogFile="true"
+                 path="/10-create-categories-table.sql"/>
+        <rollback>
+            <sqlFile dbms="postgresql"
+                     endDelimiter="\n--go"
+                     splitStatements="true"
+                     stripComments="true" relativeToChangelogFile="true"
+                     path="/10-drop-categories-table.sql"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="create-users-table" author="ynovice">
+        <sqlFile dbms="postgresql"
+                 endDelimiter="\n--go"
+                 splitStatements="true"
+                 stripComments="true" relativeToChangelogFile="true"
+                 path="/20-create-users-table.sql"/>
+        <rollback>
+            <sqlFile dbms="postgresql"
+                     endDelimiter="\n--go"
+                     splitStatements="true"
+                     stripComments="true" relativeToChangelogFile="true"
+                     path="/20-drop-users-table.sql"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="create-oauth2-credentials-table" author="ynovice">
+        <sqlFile dbms="postgresql"
+                 endDelimiter="\n--go"
+                 splitStatements="true"
+                 stripComments="true" relativeToChangelogFile="true"
+                 path="/21-create-oauth2-credentials-table.sql"/>
+        <rollback>
+            <sqlFile dbms="postgresql"
+                     endDelimiter="\n--go"
+                     splitStatements="true"
+                     stripComments="true" relativeToChangelogFile="true"
+                     path="/21-drop-oauth2-credentials-table.sql"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="create-items-table" author="ynovice">
+        <sqlFile dbms="postgresql"
+                 endDelimiter="\n--go"
+                 splitStatements="true"
+                 stripComments="true" relativeToChangelogFile="true"
+                 path="/30-create-items-table.sql"/>
+        <rollback>
+            <sqlFile dbms="postgresql"
+                     endDelimiter="\n--go"
+                     splitStatements="true"
+                     stripComments="true" relativeToChangelogFile="true"
+                     path="/30-drop-items-table.sql"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="create-items-colors-table" author="ynovice">
+        <sqlFile dbms="postgresql"
+                 endDelimiter="\n--go"
+                 splitStatements="true"
+                 stripComments="true" relativeToChangelogFile="true"
+                 path="/31-create-items-colors-table.sql"/>
+        <rollback>
+            <sqlFile dbms="postgresql"
+                     endDelimiter="\n--go"
+                     splitStatements="true"
+                     stripComments="true" relativeToChangelogFile="true"
+                     path="/31-drop-items-colors-table.sql"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="create-items-materials-table" author="ynovice">
+        <sqlFile dbms="postgresql"
+                 endDelimiter="\n--go"
+                 splitStatements="true"
+                 stripComments="true" relativeToChangelogFile="true"
+                 path="/32-create-items-materials-table.sql"/>
+        <rollback>
+            <sqlFile dbms="postgresql"
+                     endDelimiter="\n--go"
+                     splitStatements="true"
+                     stripComments="true" relativeToChangelogFile="true"
+                     path="/32-drop-items-materials-table.sql"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="create-items-categories-table" author="ynovice">
+        <sqlFile dbms="postgresql"
+                 endDelimiter="\n--go"
+                 splitStatements="true"
+                 stripComments="true" relativeToChangelogFile="true"
+                 path="/33-create-items-categories-table.sql"/>
+        <rollback>
+            <sqlFile dbms="postgresql"
+                     endDelimiter="\n--go"
+                     splitStatements="true"
+                     stripComments="true" relativeToChangelogFile="true"
+                     path="/33-drop-items-categories-table.sql"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="create-carts-table" author="ynovice">
+        <sqlFile dbms="postgresql"
+                 endDelimiter="\n--go"
+                 splitStatements="true"
+                 stripComments="true" relativeToChangelogFile="true"
+                 path="/40-create-carts-table.sql"/>
+        <rollback>
+            <sqlFile dbms="postgresql"
+                     endDelimiter="\n--go"
+                     splitStatements="true"
+                     stripComments="true" relativeToChangelogFile="true"
+                     path="/40-drop-carts-table.sql"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="create-cart-entries-table" author="ynovice">
+        <sqlFile dbms="postgresql"
+                 endDelimiter="\n--go"
+                 splitStatements="true"
+                 stripComments="true" relativeToChangelogFile="true"
+                 path="/41-create-cart-entries-table.sql"/>
+        <rollback>
+            <sqlFile dbms="postgresql"
+                     endDelimiter="\n--go"
+                     splitStatements="true"
+                     stripComments="true" relativeToChangelogFile="true"
+                     path="/41-drop-cart-entries-table.sql"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="create-cart-entries-sizes-quantities-prev-states-table" author="ynovice">
+        <sqlFile dbms="postgresql"
+                 endDelimiter="\n--go"
+                 splitStatements="true"
+                 stripComments="true" relativeToChangelogFile="true"
+                 path="/42-create-cart-entries-sizes-quantities-prev-states-table.sql"/>
+        <rollback>
+            <sqlFile dbms="postgresql"
+                     endDelimiter="\n--go"
+                     splitStatements="true"
+                     stripComments="true" relativeToChangelogFile="true"
+                     path="/42-drop-cart-entries-sizes-quantities-prev-states-table.sql"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="create-reserves-table" author="ynovice">
+        <sqlFile dbms="postgresql"
+                 endDelimiter="\n--go"
+                 splitStatements="true"
+                 stripComments="true" relativeToChangelogFile="true"
+                 path="/50-create-reserves-table.sql"/>
+        <rollback>
+            <sqlFile dbms="postgresql"
+                     endDelimiter="\n--go"
+                     splitStatements="true"
+                     stripComments="true" relativeToChangelogFile="true"
+                     path="/50-drop-reserves-table.sql"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="create-reserve-entries-table" author="ynovice">
+        <sqlFile dbms="postgresql"
+                 endDelimiter="\n--go"
+                 splitStatements="true"
+                 stripComments="true" relativeToChangelogFile="true"
+                 path="/51-create-reserve-entries-table.sql"/>
+        <rollback>
+            <sqlFile dbms="postgresql"
+                     endDelimiter="\n--go"
+                     splitStatements="true"
+                     stripComments="true" relativeToChangelogFile="true"
+                     path="/51-drop-reserve-entries-table.sql"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="create-images-table" author="ynovice">
+        <sqlFile dbms="postgresql"
+                 endDelimiter="\n--go"
+                 splitStatements="true"
+                 stripComments="true" relativeToChangelogFile="true"
+                 path="/60-create-images-table.sql"/>
+        <rollback>
+            <sqlFile dbms="postgresql"
+                     endDelimiter="\n--go"
+                     splitStatements="true"
+                     stripComments="true" relativeToChangelogFile="true"
+                     path="/60-drop-images-table.sql"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="create-sizes-quantities-table" author="ynovice">
+        <sqlFile dbms="postgresql"
+                 endDelimiter="\n--go"
+                 splitStatements="true"
+                 stripComments="true" relativeToChangelogFile="true"
+                 path="/70-create-sizes-quantities-table.sql"/>
+        <rollback>
+            <sqlFile dbms="postgresql"
+                     endDelimiter="\n--go"
+                     splitStatements="true"
+                     stripComments="true" relativeToChangelogFile="true"
+                     path="/70-drop-sizes-quantities-table.sql"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="create-articles-table" author="ynovice">
+        <sqlFile dbms="postgresql"
+                 endDelimiter="\n--go"
+                 splitStatements="true"
+                 stripComments="true" relativeToChangelogFile="true"
+                 path="/80-create-articles-table.sql"/>
+        <rollback>
+            <sqlFile dbms="postgresql"
+                     endDelimiter="\n--go"
+                     splitStatements="true"
+                     stripComments="true" relativeToChangelogFile="true"
+                     path="/80-drop-articles-table.sql"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

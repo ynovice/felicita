@@ -1,0 +1,3 @@
+drop table categories;
+
+--go
