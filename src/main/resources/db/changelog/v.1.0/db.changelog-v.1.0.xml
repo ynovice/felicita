@@ -274,4 +274,19 @@
                      path="/80-drop-articles-table.sql"/>
         </rollback>
     </changeSet>
+
+    <changeSet id="create-callback-requests-table" author="ynovice">
+        <sqlFile dbms="postgresql"
+                 endDelimiter="\n--go"
+                 splitStatements="true"
+                 stripComments="true" relativeToChangelogFile="true"
+                 path="/90-create-callback-requests-table.sql"/>
+        <rollback>
+            <sqlFile dbms="postgresql"
+                     endDelimiter="\n--go"
+                     splitStatements="true"
+                     stripComments="true" relativeToChangelogFile="true"
+                     path="/90-drop-callback-requests-table.sql"/>
+        </rollback>
+    </changeSet>
 </databaseChangeLog>
