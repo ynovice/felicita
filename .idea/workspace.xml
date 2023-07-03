@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Add README.md; disable jpa ddl generation">
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Add liquibase change set">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/db.changelog-v.1.0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/db.changelog-v.1.0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +131,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Backend Postgres">
+  <component name="RunManager" selected="npm.React Frontend">
     <configuration name="All in generated-requests" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http">
       <method v="2" />
     </configuration>
@@ -297,7 +297,7 @@
       <workItem from="1687860165821" duration="32000" />
       <workItem from="1687984428164" duration="13433000" />
       <workItem from="1688210606969" duration="1529000" />
-      <workItem from="1688382207144" duration="3713000" />
+      <workItem from="1688382207144" duration="3917000" />
     </task>
     <task id="LOCAL-00010" summary="Create endpoint to get item by id">
       <created>1684149854242</created>
@@ -642,7 +642,7 @@
       <option name="project" value="LOCAL" />
       <updated>1685727431702</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -671,7 +671,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create reserve page; adapt ui for mobile and tablet devices." />
     <MESSAGE value="adapt article page for mobile and tablet devices." />
     <MESSAGE value="Create reserves list page" />
     <MESSAGE value="Create blog page; add ability to delete articles" />
@@ -696,7 +695,8 @@
     <MESSAGE value="Add react build folder to .dockerignore" />
     <MESSAGE value="Remove fake login form from login page" />
     <MESSAGE value="Add README.md; disable jpa ddl generation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add README.md; disable jpa ddl generation" />
+    <MESSAGE value="Add liquibase change set" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add liquibase change set" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

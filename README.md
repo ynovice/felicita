@@ -38,4 +38,10 @@ All website components (frontend, backend, database) are available to run from D
 git clone https://github.com/ynovice/felicita
 cd felicita
 docker-compose build
+docker-compose up
 ```
+
+It may take a few minutes to generate the docker images. Once the images have been successfully built and the
+containers run, you can go to http://localhost:3000/ to get to the home page of the site.
+
+In order to make the first user an administrator, you need to change their role from USER to ADMIN in the database.
