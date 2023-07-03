@@ -18,9 +18,9 @@ spring:
       max-request-size: 20MB
 
   jpa:
-    generate-ddl: true
+    generate-ddl: false
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
 
   liquibase:
     enabled: true
