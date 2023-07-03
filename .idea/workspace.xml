@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Add liquibase change set">
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Update README.md">
+      <change afterPath="$PROJECT_DIR$/article-page-screenshot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/catalog-page-screenshot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/item-page-screenshot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main-page-screenshot.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/MainPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,7 +302,7 @@
       <workItem from="1687860165821" duration="32000" />
       <workItem from="1687984428164" duration="13433000" />
       <workItem from="1688210606969" duration="1529000" />
-      <workItem from="1688382207144" duration="3917000" />
+      <workItem from="1688382207144" duration="5532000" />
     </task>
     <task id="LOCAL-00010" summary="Create endpoint to get item by id">
       <created>1684149854242</created>
@@ -642,7 +647,7 @@
       <option name="project" value="LOCAL" />
       <updated>1685727431702</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -671,7 +676,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adapt article page for mobile and tablet devices." />
     <MESSAGE value="Create reserves list page" />
     <MESSAGE value="Create blog page; add ability to delete articles" />
     <MESSAGE value="Remove inCage high order component" />
@@ -696,7 +700,8 @@
     <MESSAGE value="Remove fake login form from login page" />
     <MESSAGE value="Add README.md; disable jpa ddl generation" />
     <MESSAGE value="Add liquibase change set" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add liquibase change set" />
+    <MESSAGE value="Update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

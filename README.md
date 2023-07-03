@@ -1,5 +1,21 @@
 # Felicita
 
+*Main page*
+
+![Main page](main-page-screenshot.png)
+
+*Catalog page*
+
+![Catalog page](catalog-page-screenshot.png)
+
+*Item page*
+
+![Item page](item-page-screenshot.png)
+
+*Article page*
+
+![Article page](article-page-screenshot.png)
+
 ## Project description
 
 Felicita is an online clothing store with a user-friendly adaptive interface.
