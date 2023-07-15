@@ -4,48 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Update README.md">
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Update db changelog files&#10;&#10;Get rid of useless delimiters and other useless minor features">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Backend_Postgres.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Backend__Postgres___API_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/MySQL_Docker_Container.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Postgres_Docker_Container.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/React_Frontend.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-master.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-master.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/01-create-sizes-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/01-create-sizes-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/01-drop-sizes-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/01-drop-sizes-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/02-create-colors-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/02-create-colors-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/02-drop-colors-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/02-drop-colors-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/03-create-materials-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/03-create-materials-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/03-drop-materials-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/03-drop-materials-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/10-create-categories-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/10-create-categories-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/10-drop-categories-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/10-drop-categories-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/20-create-users-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/20-create-users-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/20-drop-users-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/20-drop-users-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/21-create-oauth2-credentials-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/21-create-oauth2-credentials-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/21-drop-oauth2-credentials-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/21-drop-oauth2-credentials-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/30-create-items-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/30-create-items-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/30-drop-items-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/30-drop-items-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/31-create-items-colors-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/31-create-items-colors-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/31-drop-items-colors-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/31-drop-items-colors-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/32-create-items-materials-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/32-create-items-materials-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/32-drop-items-materials-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/32-drop-items-materials-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/33-create-items-categories-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/33-create-items-categories-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/33-drop-items-categories-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/33-drop-items-categories-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/40-create-carts-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/40-create-carts-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/40-drop-carts-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/40-drop-carts-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/41-create-cart-entries-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/41-create-cart-entries-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/41-drop-cart-entries-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/41-drop-cart-entries-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/42-create-cart-entries-sizes-quantities-prev-states-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/42-create-cart-entries-sizes-quantities-prev-states-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/42-drop-cart-entries-sizes-quantities-prev-states-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/42-drop-cart-entries-sizes-quantities-prev-states-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/50-create-reserves-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/50-create-reserves-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/50-drop-reserves-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/50-drop-reserves-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/51-create-reserve-entries-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/51-create-reserve-entries-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/51-drop-reserve-entries-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/51-drop-reserve-entries-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/60-create-images-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/60-create-images-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/60-drop-images-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/60-drop-images-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/70-create-sizes-quantities-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/70-create-sizes-quantities-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/70-drop-sizes-quantities-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/70-drop-sizes-quantities-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/80-create-articles-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/80-create-articles-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/80-drop-articles-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/80-drop-articles-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/90-create-callback-requests-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/90-create-callback-requests-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/90-drop-callback-requests-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/90-drop-callback-requests-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/db.changelog-v.1.0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/db.changelog-v.1.0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-mysql.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-postgres.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,6 +125,13 @@
       <command value="mvn clean" />
       <command value="mvn package" />
       <command value=".Header .links-row .links-right, .Header .links-row .links-left" />
+      <command value="mvn liquibase:rollback -Dliquibase.rollbackTag=db_init" />
+      <command value="mvn liquibase:rollback -Dliquibase.rollbackTag=db_init -Dliquibase.url=jdbc:postgresql://localhost:5432/felicita" />
+      <command value="mvn liquibase:rollback -Dliquibase.rollbackTag=db_init -Dliquibase.url=jdbc:postgresql://localhost:5432/felicita -Dliquibase.changeLogFile=asd" />
+      <command value="mvn liquibase:rollback -Dliquibase.rollbackTag=db_init -Dliquibase.url=jdbc:postgresql://localhost:5432/felicita -Dliquibase.changeLogFile=asd -Dliquibase.password=felicita -Dliquibase.username=felicita" />
+      <command value="mvn liquibase:rollback -Dliquibase.rollbackTag=db_init -Dliquibase.url=jdbc:postgresql://localhost:5432/felicita -Dliquibase.changeLogFile=src/main/resources/db/changelog/db.changelog-mastesr.xml -Dliquibase.password=felicita -Dliquibase.username=felicita" />
+      <command value="mvn liquibase:rollback -Dliquibase.rollbackTag=db-init -Dliquibase.url=jdbc:postgresql://localhost:5432/felicita -Dliquibase.changeLogFile=src/main/resources/db/changelog/db.changelog-master.xml -Dliquibase.password=felicita -Dliquibase.username=felicita" />
+      <command value="mvn liquibase:rollback -Dliquibase.rollbackTag=db_init -Dliquibase.url=jdbc:postgresql://localhost:5432/felicita -Dliquibase.changeLogFile=src/main/resources/db/changelog/db.changelog-master.xml -Dliquibase.password=felicita -Dliquibase.username=felicita" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -170,60 +146,63 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="npm.React Frontend">
-    <configuration name="All in generated-requests" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http">
-      <method v="2" />
-    </configuration>
-    <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="#2" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="ItemServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="felicita" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.github.ynovice.felicita.service.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.github.ynovice.felicita.service" />
-      <option name="MAIN_CLASS_NAME" value="com.github.ynovice.felicita.service.ItemServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="felicita" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.github.ynovice.felicita.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.github.ynovice.felicita.service" />
-      <option name="MAIN_CLASS_NAME" value="com.github.ynovice.felicita.service.UserServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Backend MySQL" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <option name="ACTIVE_PROFILES" value="dev,mysql" />
+  <component name="RunManager" selected="Spring Boot.Backend Postgres">
+    <configuration name="Backend Postgres" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <envs>
         <env name="SPRING_DATASOURCE_PASSWORD" value="felicita" />
-        <env name="SPRING_DATASOURCE_URL" value="jdbc:mysql://localhost:3306/felicita" />
-        <env name="SPRING_DATASOURCE_USERNAME" value="root" />
+        <env name="SPRING_DATASOURCE_URL" value="jdbc:postgresql://localhost:5432/felicita" />
+        <env name="SPRING_DATASOURCE_USERNAME" value="felicita" />
       </envs>
       <module name="felicita" />
+      <selectedOptions>
+        <option name="spring.boot.profiles" visible="false" />
+      </selectedOptions>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.github.ynovice.felicita.Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
-      <deployment type="dockerfile">
+    <configuration name="Backend (Postgres + API)" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
         <settings>
-          <option name="sourceFilePath" value="Dockerfile" />
+          <option name="envFilePath" value="" />
+          <option name="removeImagesOnComposeDown" value="LOCAL" />
+          <option name="removeVolumesOnComposeDown" value="true" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="sourceFilePath" value="docker-compose.yml" />
+          <option name="upAlwaysRecreate" value="true" />
+          <option name="upRemoveOrphans" value="true" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="clean package" />
+      </method>
+    </configuration>
+    <configuration name="Postgres Docker Container" type="docker-deploy" factoryName="docker-image" server-name="Docker">
+      <deployment type="docker-image">
+        <settings>
+          <option name="imageTag" value="postgres" />
+          <option name="containerName" value="felicita-postgres" />
+          <option name="envVars">
+            <list>
+              <DockerEnvVarImpl>
+                <option name="name" value="POSTGRES_USER" />
+                <option name="value" value="felicita" />
+              </DockerEnvVarImpl>
+              <DockerEnvVarImpl>
+                <option name="name" value="POSTGRES_PASSWORD" />
+                <option name="value" value="felicita" />
+              </DockerEnvVarImpl>
+            </list>
+          </option>
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="5432" />
+                <option name="hostPort" value="5432" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
         </settings>
       </deployment>
       <method v="2" />
@@ -234,28 +213,19 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="React Frontend" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/frontend/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Docker.MySQL Docker Container" />
       <item itemvalue="Docker.Postgres Docker Container" />
       <item itemvalue="Docker.Backend (Postgres + API)" />
-      <item itemvalue="Docker.Dockerfile" />
-      <item itemvalue="HTTP Request.All in generated-requests" />
-      <item itemvalue="HTTP Request.generated-requests | #2" />
-      <item itemvalue="JUnit.UserServiceTest" />
-      <item itemvalue="JUnit.ItemServiceTest" />
       <item itemvalue="npm.React Frontend" />
       <item itemvalue="Spring Boot.Backend Postgres" />
-      <item itemvalue="Spring Boot.Backend MySQL" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Docker.Dockerfile" />
-        <item itemvalue="HTTP Request.generated-requests | #2" />
-        <item itemvalue="HTTP Request.All in generated-requests" />
-        <item itemvalue="JUnit.UserServiceTest" />
-        <item itemvalue="JUnit.ItemServiceTest" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -337,6 +307,7 @@
       <workItem from="1687984428164" duration="13433000" />
       <workItem from="1688210606969" duration="1529000" />
       <workItem from="1688382207144" duration="5532000" />
+      <workItem from="1689408077359" duration="654000" />
     </task>
     <task id="LOCAL-00010" summary="Create endpoint to get item by id">
       <created>1684149854242</created>
@@ -681,7 +652,7 @@
       <option name="project" value="LOCAL" />
       <updated>1685727431702</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -710,7 +681,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create reserves list page" />
     <MESSAGE value="Create blog page; add ability to delete articles" />
     <MESSAGE value="Remove inCage high order component" />
     <MESSAGE value="Refactor CreateItemPage&#10;&#10;Replace 'a' tags with 'span' tags where links weren't actually links." />
@@ -735,7 +705,8 @@
     <MESSAGE value="Add README.md; disable jpa ddl generation" />
     <MESSAGE value="Add liquibase change set" />
     <MESSAGE value="Update README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
+    <MESSAGE value="Update db changelog files&#10;&#10;Get rid of useless delimiters and other useless minor features" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update db changelog files&#10;&#10;Get rid of useless delimiters and other useless minor features" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

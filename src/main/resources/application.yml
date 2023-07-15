@@ -1,7 +1,6 @@
 spring:
-  profiles:
-    active: ${SPRING_PROFILES_ACTIVE}
   datasource:
+    driver-class-name: org.postgresql.Driver
     url: ${SPRING_DATASOURCE_URL}
     username: ${SPRING_DATASOURCE_USERNAME}
     password: ${SPRING_DATASOURCE_PASSWORD}
@@ -10,8 +9,8 @@ spring:
       client:
         registration:
           google:
-            client-id: 1030707742527-ai4fj55uob9s20gc4h68rnqtv6i22n4o.apps.googleusercontent.com
-            client-secret: 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
+            client-id: ${FELICITA_GOOGLE_CLIENT_ID}
+            client-secret: ${FELICITA_GOOGLE_CLIENT_SECRET}
   servlet:
     multipart:
       max-file-size: 20MB
@@ -21,10 +20,6 @@ spring:
     generate-ddl: false
     hibernate:
       ddl-auto: validate
-
-  liquibase:
-    enabled: true
-    change-log: classpath:db/changelog/db.changelog-master.xml
 
 app:
   cors:
