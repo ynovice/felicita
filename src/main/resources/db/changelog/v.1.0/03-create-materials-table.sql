@@ -4,13 +4,9 @@ create table materials
     name varchar(30) unique not null
 );
 
---go
-
 insert into materials (name)
     values ('лён'),
            ('полиэстр'),
            ('хлопок'),
            ('шёлк'),
            ('шерсть');
-
---go

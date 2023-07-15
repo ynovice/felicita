@@ -4,8 +4,6 @@ create table colors
     name varchar(30) unique not null
 );
 
---go
-
 insert into colors (name)
     values ('чёрный'),
            ('белый'),
@@ -20,5 +18,3 @@ insert into colors (name)
            ('серый'),
            ('хаки'),
            ('голубой');
-
---go

@@ -4,5 +4,3 @@ create table users
     role     varchar(40) not null,
     username varchar(60) not null
 );
-
---go

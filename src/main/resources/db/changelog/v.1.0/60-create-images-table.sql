@@ -4,5 +4,3 @@ create table images
     extension varchar(10) not null,
     item_id   bigint references items (id)
 );
-
---go

@@ -5,5 +5,3 @@ create table callback_requests
     name       varchar(255),
     phone      varchar(255)
 );
-
---go

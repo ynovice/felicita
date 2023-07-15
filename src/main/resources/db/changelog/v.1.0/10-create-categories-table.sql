@@ -5,14 +5,10 @@ create table categories
     parent_id bigint references categories (id) null
 );
 
---go
-
 insert into categories (name)
     values ('Мужское'),   -- id 1
            ('Женское'),   -- id 2
            ('Футболки');  -- id 3
-
---go
 
 insert into categories (name, parent_id)
     values ('Жилеты', 2),
@@ -25,5 +21,3 @@ insert into categories (name, parent_id)
            ('Брюки', 1),
            ('Футболки', 1),
            ('Термобельё', 1);
-
---go

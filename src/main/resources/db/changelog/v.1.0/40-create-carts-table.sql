@@ -5,5 +5,3 @@ create table carts
     total_price integer not null,
     user_id     bigint references users (id) unique not null
 );
-
---go

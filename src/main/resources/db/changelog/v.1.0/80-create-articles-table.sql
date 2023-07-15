@@ -7,5 +7,3 @@ create table articles
     name       varchar(200) not null,
     preview_id bigint references images (id)
 );
-
---go

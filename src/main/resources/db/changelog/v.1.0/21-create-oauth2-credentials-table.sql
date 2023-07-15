@@ -7,5 +7,3 @@ create table oauth2_credentials
     user_id      bigint references users (id) not null,
     primary key (auth_server, external_id, user_id)
 );
-
---go

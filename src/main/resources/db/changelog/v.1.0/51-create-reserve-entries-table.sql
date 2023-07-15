@@ -5,5 +5,3 @@ create table reserve_entries
     item_id        bigint references items (id) not null,
     reserve_id     bigint references reserves (id) not null
 );
-
---go

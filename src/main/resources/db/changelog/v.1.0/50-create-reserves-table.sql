@@ -6,5 +6,3 @@ create table public.reserves
     total_price integer not null,
     user_id     bigint references users (id)
 );
-
---go

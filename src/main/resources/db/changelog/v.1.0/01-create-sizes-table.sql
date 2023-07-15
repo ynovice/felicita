@@ -4,8 +4,6 @@ create table sizes
     name varchar(30) unique not null
 );
 
---go
-
 insert into sizes (name)
     values ('XXS'),
            ('XS'),
@@ -15,5 +13,3 @@ insert into sizes (name)
            ('XL'),
            ('XXL'),
            ('XXXL');
-
---go

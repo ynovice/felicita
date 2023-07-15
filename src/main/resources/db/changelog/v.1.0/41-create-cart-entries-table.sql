@@ -6,5 +6,3 @@ create table cart_entries
     constraint cart_entry_unique_cart_id_item_id
         unique (cart_id, item_id)
 );
-
---go

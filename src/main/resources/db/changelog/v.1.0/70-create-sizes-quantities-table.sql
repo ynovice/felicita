@@ -7,5 +7,3 @@ create table sizes_quantities
     reserve_entry_id bigint references reserve_entries (id),
     size_id          bigint not null references sizes (id)
 );
-
---go

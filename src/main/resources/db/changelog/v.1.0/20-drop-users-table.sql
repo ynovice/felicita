@@ -1,3 +1,1 @@
 drop table users;
-
---go
