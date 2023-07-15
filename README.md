@@ -36,7 +36,7 @@ products, update quantities, write blog posts, and review reserved items and cal
 - Spring Boot 3 (incl. sping oauth2 client)
 - Maven
 - Liquibase
-- MySQL / PostgreSQL
+- PostgreSQL
 
 #### Frontend
 

@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Update db changelog files&#10;&#10;Get rid of useless delimiters and other useless minor features">
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Backend_Postgres.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Backend__Postgres___API_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/MySQL_Docker_Container.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Postgres_Docker_Container.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/React_Frontend.xml" beforeDir="false" />
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Minor changes.&#10;&#10;Remove MySQL application properties profile.&#10;&#10;Remove integration between Spring and Liquibase.&#10;&#10;Move sensitive data from application properties to environment variables. &#10;&#10;Stop storing intellij run configs as project files.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-mysql.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-postgres.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -307,7 +299,7 @@
       <workItem from="1687984428164" duration="13433000" />
       <workItem from="1688210606969" duration="1529000" />
       <workItem from="1688382207144" duration="5532000" />
-      <workItem from="1689408077359" duration="654000" />
+      <workItem from="1689408077359" duration="1121000" />
     </task>
     <task id="LOCAL-00010" summary="Create endpoint to get item by id">
       <created>1684149854242</created>
@@ -652,7 +644,7 @@
       <option name="project" value="LOCAL" />
       <updated>1685727431702</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -681,7 +673,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create blog page; add ability to delete articles" />
     <MESSAGE value="Remove inCage high order component" />
     <MESSAGE value="Refactor CreateItemPage&#10;&#10;Replace 'a' tags with 'span' tags where links weren't actually links." />
     <MESSAGE value="Get rid of deprecated UserContext; Create BaseApi, UserApi and ApiContext." />
@@ -706,7 +697,8 @@
     <MESSAGE value="Add liquibase change set" />
     <MESSAGE value="Update README.md" />
     <MESSAGE value="Update db changelog files&#10;&#10;Get rid of useless delimiters and other useless minor features" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update db changelog files&#10;&#10;Get rid of useless delimiters and other useless minor features" />
+    <MESSAGE value="Minor changes.&#10;&#10;Remove MySQL application properties profile.&#10;&#10;Remove integration between Spring and Liquibase.&#10;&#10;Move sensitive data from application properties to environment variables. &#10;&#10;Stop storing intellij run configs as project files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor changes.&#10;&#10;Remove MySQL application properties profile.&#10;&#10;Remove integration between Spring and Liquibase.&#10;&#10;Move sensitive data from application properties to environment variables. &#10;&#10;Stop storing intellij run configs as project files." />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
