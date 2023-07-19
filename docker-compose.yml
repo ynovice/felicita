@@ -1,6 +1,15 @@
 version: '2'
 
 services:
+  db:
+    image: 'postgres'
+    container_name: felicita-postgres
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=felicita
+      - POSTGRES_PASSWORD=felicita
+
   frontend:
     image: 'felicita-frontend'
     build:
@@ -8,6 +17,7 @@ services:
     container_name: felicita-frontend-container
     ports:
       - '3000:3000'
+
   backend:
     image: 'felicita-backend'
     build:
@@ -22,12 +32,5 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://felicita-postgres:5432/felicita
       - SPRING_DATASOURCE_USERNAME=felicita
       - SPRING_DATASOURCE_PASSWORD=felicita
-
-  db:
-    image: 'postgres'
-    container_name: felicita-postgres
-    ports:
-      - '5432:5432'
-    environment:
-      - POSTGRES_USER=felicita
-      - POSTGRES_PASSWORD=felicita
+      - FELICITA_GOOGLE_CLIENT_ID=1030707742527-ai4fj55uob9s20gc4h68rnqtv6i22n4o.apps.googleusercontent.com
+      - FELICITA_GOOGLE_CLIENT_SECRET=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
