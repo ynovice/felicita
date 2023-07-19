@@ -13,8 +13,6 @@ ENV PATH="$PATH:/liquibase"
 WORKDIR /app
 COPY . .
 RUN apk add --no-cache maven && mvn clean package -DskipTests
-#CMD liquibase --changelog-file=src/main/resources/db/changelog/db.changelog-master.xml --url=jdbc:postgresql://felicita-postgres:5432/felicita --username=felicita --password=felicita --duplicate-file-mode=WARN update
-#CMD ["liquibase", "--changelog-file=src/main/resources/db/changelog/db.changelog-master.xml", "--url=jdbc:postgresql://felicita-postgres:5432/felicita", "--username=felicita", "--password=felicita", "--duplicate-file-mode=WARN", "update"]
-#ENTRYPOINT ["liquibase", "--changelog-file=src/main/resources/db/changelog/db.changelog-master.xml", "--url=jdbc:postgresql://felicita-postgres:5432/felicita", "--username=felicita", "--password=felicita", "--duplicate-file-mode=WARN", "update", "&&", "java", "-jar", "target/felicita-backend.jar"]
-#RUN ["chmod", "+x", "docker-entrypoint.sh"]
+
+RUN ["chmod", "+x", "docker-entrypoint.sh"]
 ENTRYPOINT ["./docker-entrypoint.sh"]

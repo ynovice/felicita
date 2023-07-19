@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Update README.md">
-      <change afterPath="$PROJECT_DIR$/docker-entrypoint.sh" afterDir="false" />
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Update docker configuration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +300,7 @@
       <workItem from="1688210606969" duration="1529000" />
       <workItem from="1688382207144" duration="5532000" />
       <workItem from="1689408077359" duration="7336000" />
-      <workItem from="1689780003077" duration="7330000" />
+      <workItem from="1689780003077" duration="8532000" />
     </task>
     <task id="LOCAL-00010" summary="Create endpoint to get item by id">
       <created>1684149854242</created>
@@ -647,7 +645,7 @@
       <option name="project" value="LOCAL" />
       <updated>1685727431702</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -676,7 +674,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Remove inCage high order component" />
     <MESSAGE value="Refactor CreateItemPage&#10;&#10;Replace 'a' tags with 'span' tags where links weren't actually links." />
     <MESSAGE value="Get rid of deprecated UserContext; Create BaseApi, UserApi and ApiContext." />
     <MESSAGE value="Create adminAccessOnly hoc" />
@@ -701,7 +698,8 @@
     <MESSAGE value="Update db changelog files&#10;&#10;Get rid of useless delimiters and other useless minor features" />
     <MESSAGE value="Minor changes.&#10;&#10;Remove MySQL application properties profile.&#10;&#10;Remove integration between Spring and Liquibase.&#10;&#10;Move sensitive data from application properties to environment variables. &#10;&#10;Stop storing intellij run configs as project files." />
     <MESSAGE value="Update README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
+    <MESSAGE value="Update docker configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update docker configuration" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
