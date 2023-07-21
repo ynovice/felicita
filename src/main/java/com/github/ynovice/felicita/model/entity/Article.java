@@ -1,34 +1,22 @@
 package com.github.ynovice.felicita.model.entity;
 
-import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.ZonedDateTime;
-
-@Entity
-@Table(name = "articles")
+@NoArgsConstructor
 @Getter
 @Setter
-public class Article {
+public class Article extends ArticleShortInfo {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(nullable = false)
-    private ZonedDateTime createdAt;
-
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "preview_id", referencedColumnName = "id")
-    private Image preview;
-
-    @Column(nullable = false)
-    private String author;
-
-    @Column(nullable = false, length = 200)
-    private String name;
-
-    @Column(nullable = false, length = 50000)
     private String content;
+
+    public Article(ArticleShortInfo articleShortInfo) {
+
+        id = articleShortInfo.getId();
+        createdAt = articleShortInfo.getCreatedAt();
+        previewId = articleShortInfo.getPreviewId();
+        author = articleShortInfo.getAuthor();
+        name = articleShortInfo.getName();
+    }
 }

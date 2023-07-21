@@ -5,9 +5,9 @@ import com.github.ynovice.felicita.exception.NotFoundException;
 import com.github.ynovice.felicita.model.dto.request.CreateArticleRequestDto;
 import com.github.ynovice.felicita.model.dto.request.UpdateArticleDto;
 import com.github.ynovice.felicita.model.entity.Article;
+import com.github.ynovice.felicita.model.entity.ArticleShortInfo;
 import com.github.ynovice.felicita.model.entity.User;
-import com.github.ynovice.felicita.repository.ArticleRepository;
-import com.github.ynovice.felicita.repository.ImageRepository;
+import com.github.ynovice.felicita.repository.Articles;
 import com.github.ynovice.felicita.service.ArticleService;
 import com.github.ynovice.felicita.service.UserService;
 import com.github.ynovice.felicita.validator.ArticleValidator;
@@ -25,11 +25,9 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ArticleServiceImpl implements ArticleService {
 
-    private final ArticleRepository articleRepository;
+    private final Articles articles;
 
     private final UserService userService;
-
-    private final ImageRepository imageRepository;
 
     private final ArticleValidator articleValidator;
 
@@ -43,50 +41,45 @@ public class ArticleServiceImpl implements ArticleService {
         article.setAuthor(user.getUsername());
         article.setName(dto.getName());
         article.setContent(dto.getContent());
-
-        if(dto.getPreviewId() != null) {
-            article.setPreview(imageRepository.getReferenceById(dto.getPreviewId()));
-        }
+        article.setPreviewId(dto.getPreviewId());
 
         BindingResult validationResult = validate(article);
         if (validationResult.hasErrors()) throw new InvalidEntityException(validationResult);
 
-        articleRepository.saveAndFlush(article);
+        articles.create(article);
         return article;
     }
 
     @Override
-    public List<Article> getAll() {
-        return articleRepository.findAll();
+    public List<ArticleShortInfo> getAll() {
+        return articles.findAll(null);
     }
 
     @Override
     public Article update(UpdateArticleDto dto) {
 
-        Article article = articleRepository.findById(dto.getId()).orElseThrow(NotFoundException::new);
+        Article article = articles.findById(dto.getId())
+                .orElseThrow(NotFoundException::new);
 
         article.setName(dto.getName());
         article.setContent(dto.getContent());
-
-        if(dto.getPreviewId() != null) {
-            article.setPreview(imageRepository.getReferenceById(dto.getPreviewId()));
-        }
+        article.setPreviewId(dto.getPreviewId());
 
         BindingResult validationResult = validate(article);
         if(validationResult.hasErrors()) throw new InvalidEntityException(validationResult);
 
-        articleRepository.save(article);
+        articles.update(article);
         return article;
     }
 
     @Override
     public Article getById(Long id) {
-        return articleRepository.findById(id).orElseThrow(NotFoundException::new);
+        return articles.findById(id).orElseThrow(NotFoundException::new);
     }
 
     @Override
     public void deleteById(Long id) {
-        articleRepository.deleteById(id);
+        articles.deleteById(id);
     }
 
     private BindingResult validate(@NonNull Article article) {

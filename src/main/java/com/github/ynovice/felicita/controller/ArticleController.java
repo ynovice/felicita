@@ -1,6 +1,7 @@
 package com.github.ynovice.felicita.controller;
 
 import com.github.ynovice.felicita.model.dto.entity.ArticleDto;
+import com.github.ynovice.felicita.model.dto.entity.ArticleShortInfoDto;
 import com.github.ynovice.felicita.model.dto.request.CreateArticleRequestDto;
 import com.github.ynovice.felicita.model.dto.request.UpdateArticleDto;
 import com.github.ynovice.felicita.service.ArticleService;
@@ -28,11 +29,11 @@ public class ArticleController {
     }
 
     @GetMapping
-    public ResponseEntity<List<ArticleDto>> getAll() {
+    public ResponseEntity<List<ArticleShortInfoDto>> getAll() {
         return ResponseEntity.ok(
                 articleService.getAll()
                         .stream()
-                        .map(ArticleDto::fromEntity)
+                        .map(ArticleShortInfoDto::fromEntity)
                         .toList()
         );
     }

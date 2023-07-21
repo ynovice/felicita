@@ -73,7 +73,7 @@ function SaveArticlePage() {
                         .then(article => {
 
                             setName(article["name"]);
-                            setUploadedImage(article["preview"]);
+                            setUploadedImageId(article["previewId"]);
 
                             (function loopedEditorUpdater() {
                                 setTimeout(function () {
@@ -118,7 +118,7 @@ function SaveArticlePage() {
                     id: Number(searchParams.get("id")),
                     name: name,
                     content: DOMPurify.sanitize(html.join("")),
-                    previewId: uploadedImage["id"]
+                    previewId: uploadedImageId
                 };
 
                 Api.updateArticle(requestDto)
@@ -134,7 +134,7 @@ function SaveArticlePage() {
                 const requestDto = {
                     name: name,
                     content: DOMPurify.sanitize(html.join("")),
-                    previewId: uploadedImage["id"]
+                    previewId: uploadedImageId
                 };
 
                 Api.createArticle(requestDto)
@@ -153,7 +153,8 @@ function SaveArticlePage() {
         });
     }
 
-    const [uploadedImage, setUploadedImage] = useState(null);
+    const [uploadedImageId, setUploadedImageId] = useState(null);
+
     const [previewFileInputRef] = useState(useRef());
     const { imageApi } = useContext(ApiContext);
 
@@ -165,7 +166,9 @@ function SaveArticlePage() {
         if(!image) return;
 
         imageApi.uploadImage(image)
-            .then((newUploadedImage) => setUploadedImage(newUploadedImage))
+            .then((newUploadedImage) => {
+                setUploadedImageId(newUploadedImage["id"])
+            })
             .catch(() => alert("Что-то пошло не так при загрузке изображения."));
     }
 
@@ -173,8 +176,8 @@ function SaveArticlePage() {
         previewFileInputRef.current.click();
     }
 
-    const imageUrl = uploadedImage ?
-        imageApi.getImageUrlByImageId(uploadedImage["id"]) :
+    const imageUrl = uploadedImageId ?
+        imageApi.getImageUrlByImageId(uploadedImageId) :
         "/ui/placeholders/article-placeholder.png";
 
     return (
@@ -195,9 +198,9 @@ function SaveArticlePage() {
 
                 <Button value="Выбрать другое" onClick={() => handleChooseAnotherPreviewClick()}/>
 
-                {uploadedImage !== null &&
+                {uploadedImageId !== null &&
                     <span id="reset-preview"
-                          className="link danger" onClick={() => setUploadedImage(null)}>
+                          className="link danger" onClick={() => setUploadedImageId(null)}>
                         Сбросить
                     </span>
                 }

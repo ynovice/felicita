@@ -14,7 +14,7 @@ public class ArticleDto {
 
     private Long id;
     private String createdAtPresentation;
-    private ImageDto preview;
+    private Long previewId;
     private String name;
     private String content;
     private String author;
@@ -26,9 +26,7 @@ public class ArticleDto {
         dto.setCreatedAtPresentation(
                 article.getCreatedAt().format(DateTimeFormatter.ofPattern(DATE_TIME_PRESENTATION_FORMAT))
         );
-        dto.setPreview(
-                ImageDto.fromEntity(article.getPreview())
-        );
+        dto.setPreviewId(article.getPreviewId());
         dto.setName(article.getName());
         dto.setContent(article.getContent());
         dto.setAuthor(article.getAuthor());

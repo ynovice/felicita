@@ -1,8 +1,7 @@
 package com.github.ynovice.felicita.validator;
 
 import com.github.ynovice.felicita.model.entity.Article;
-import com.github.ynovice.felicita.model.entity.Image;
-import com.github.ynovice.felicita.repository.ImageRepository;
+import com.github.ynovice.felicita.repository.Images;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -14,7 +13,7 @@ import org.springframework.validation.Validator;
 @RequiredArgsConstructor
 public class ArticleValidator  implements Validator {
 
-    private final ImageRepository imageRepository;
+    private final Images images;
 
     @Override
     public boolean supports(@NonNull Class<?> clazz) {
@@ -28,7 +27,7 @@ public class ArticleValidator  implements Validator {
 
         validateName(article, errors);
         validateContent(article, errors);
-        validatePreview(article, errors);
+        validatePreviewId(article, errors);
     }
 
     public void validateName(@NonNull Article article, @NonNull Errors errors) {
@@ -79,16 +78,16 @@ public class ArticleValidator  implements Validator {
         }
     }
 
-    public void validatePreview(@NonNull Article article, @NonNull Errors errors) {
+    public void validatePreviewId(@NonNull Article article, @NonNull Errors errors) {
 
-        Image preview = article.getPreview();
+        Long previewId = article.getPreviewId();
 
-        if(preview == null) return;
+        if(previewId == null) return;
 
-        if(!imageRepository.existsById(preview.getId())) {
+        if(!images.existsById(previewId)) {
             errors.rejectValue(
-                    "preview",
-                    "article.preview.dontExist",
+                    "previewId",
+                    "article.previewId.dontExist",
                     "Произошла ошибка при загрузке превью статьи"
             );
         }

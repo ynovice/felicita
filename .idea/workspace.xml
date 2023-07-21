@@ -4,9 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Update docker configuration">
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Replace ArticleRepository (JPA) with JdbcArticleDao">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/config/DatabaseConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/ArticleShortInfoDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/ArticleShortInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/Articles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/Images.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/JdbcArticleDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/JdbcImageDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/mapper/ArticleRowMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/mapper/ArticleShortInfoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/BlogPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/BlogPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/SaveArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/SaveArticlePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/controller/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/ArticleDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/ArticleDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/entity/Image.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/repository/ArticleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/ArticleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/service/impl/ArticleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/validator/ArticleValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/validator/ArticleValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/80-create-articles-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/v.1.0/80-create-articles-table.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,16 +37,21 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
-        <option value="Class" />
         <option value="CSS File" />
         <option value="Dockerfile" />
         <option value="Liquibase Changelog" />
         <option value="JavaScript File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -61,7 +86,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "migrate-from-jpa-to-jdbc",
     "jdk.selected.JAVA_MODULE": "17",
     "last_opened_file_path": "/home/cgw/Projects/felicita/frontend/public/ui/social",
     "list.type.of.created.stylesheet": "CSS",
@@ -301,6 +326,8 @@
       <workItem from="1688382207144" duration="5532000" />
       <workItem from="1689408077359" duration="7336000" />
       <workItem from="1689780003077" duration="8532000" />
+      <workItem from="1689806256910" duration="2768000" />
+      <workItem from="1689854270195" duration="19593000" />
     </task>
     <task id="LOCAL-00010" summary="Create endpoint to get item by id">
       <created>1684149854242</created>
@@ -674,7 +701,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactor CreateItemPage&#10;&#10;Replace 'a' tags with 'span' tags where links weren't actually links." />
     <MESSAGE value="Get rid of deprecated UserContext; Create BaseApi, UserApi and ApiContext." />
     <MESSAGE value="Create adminAccessOnly hoc" />
     <MESSAGE value="Remove inCage hoc" />
@@ -699,7 +725,8 @@
     <MESSAGE value="Minor changes.&#10;&#10;Remove MySQL application properties profile.&#10;&#10;Remove integration between Spring and Liquibase.&#10;&#10;Move sensitive data from application properties to environment variables. &#10;&#10;Stop storing intellij run configs as project files." />
     <MESSAGE value="Update README.md" />
     <MESSAGE value="Update docker configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update docker configuration" />
+    <MESSAGE value="Replace ArticleRepository (JPA) with JdbcArticleDao" />
+    <option name="LAST_COMMIT_MESSAGE" value="Replace ArticleRepository (JPA) with JdbcArticleDao" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

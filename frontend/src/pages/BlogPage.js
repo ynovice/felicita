@@ -53,8 +53,8 @@ function BlogPage() {
                 <div className="articles-list">
                     {articles.map(article => {
 
-                        const imageUrl = article["preview"] !== null ?
-                            imageApi.getImageUrlByImageId(article["preview"]["id"]) :
+                        const imageUrl = article["previewId"] !== null ?
+                            imageApi.getImageUrlByImageId(article["previewId"]) :
                             "/ui/placeholders/article-placeholder.png";
 
                         return (

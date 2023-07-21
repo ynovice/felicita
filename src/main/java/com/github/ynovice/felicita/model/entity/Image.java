@@ -2,14 +2,17 @@ package com.github.ynovice.felicita.model.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "images")
+@NoArgsConstructor
 @Getter
 @Setter
 public class Image {
 
+    @org.springframework.data.annotation.Id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,6 +24,8 @@ public class Image {
     @JoinColumn(referencedColumnName = "id")
     private Item item;
 
-    @OneToOne(mappedBy = "preview")
-    private Article article;
+    public Image(Long id, String extension) {
+        this.id = id;
+        this.extension = extension;
+    }
 }
