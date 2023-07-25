@@ -30,6 +30,7 @@ import AdminReservesManagerPage from "./pages/AdminReservesManagerPage";
 import reserveApi from "./api/ReserveApi";
 import callbackRequestApi from "./api/CallbackRequestApi";
 import CallbackRequestsPage from "./pages/CallbackRequestsPage";
+import categoryApi from "./api/CategoryApi";
 
 function App() {
 
@@ -50,7 +51,7 @@ function App() {
     };
 
     const apiContextValue = {
-        userApi, imageApi, itemApi, reserveApi, callbackRequestApi
+        userApi, imageApi, itemApi, reserveApi, callbackRequestApi, categoryApi
     };
 
     useEffect(() => {
