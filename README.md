@@ -16,6 +16,8 @@
 
 ![Article page](article-page-screenshot.png)
 
+Check out the full design: [Figma](https://www.figma.com/file/qyiGaOFrYI4lSQs88XOcDn/Felicita?type=design&node-id=0%3A1&mode=design&t=RygDKDx8vw7nRkH4-1)
+
 ## Project description
 
 Felicita is an online clothing store with a user-friendly adaptive interface.

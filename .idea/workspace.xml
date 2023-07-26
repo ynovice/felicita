@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Rename api folder to apis. Remove deprecated methods from SaveArticlePage.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/ArticlePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/ArticlePage.css" afterDir="false" />
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Update ArticlePage design">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -310,7 +309,7 @@
       <workItem from="1689854270195" duration="24283000" />
       <workItem from="1690021676804" duration="187000" />
       <workItem from="1690295482516" duration="13093000" />
-      <workItem from="1690382217307" duration="17438000" />
+      <workItem from="1690382217307" duration="17742000" />
     </task>
     <task id="LOCAL-00010" summary="Create endpoint to get item by id">
       <created>1684149854242</created>
@@ -655,7 +654,7 @@
       <option name="project" value="LOCAL" />
       <updated>1685727431702</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -684,7 +683,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add preview field to Article model" />
     <MESSAGE value="Display preview at blog page" />
     <MESSAGE value="Refactor CreateItemPage; fix images urls in constants" />
     <MESSAGE value="Refactor ItemServiceImpl.createItem" />
@@ -709,7 +707,8 @@
     <MESSAGE value="Exclude uploaded images from git" />
     <MESSAGE value="Switch SaveArticlePage and Button to dark theme; update ArticlePage" />
     <MESSAGE value="Rename api folder to apis. Remove deprecated methods from SaveArticlePage." />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename api folder to apis. Remove deprecated methods from SaveArticlePage." />
+    <MESSAGE value="Update ArticlePage design" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update ArticlePage design" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
