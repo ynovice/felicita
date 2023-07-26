@@ -5,16 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Switch SaveArticlePage and Button to dark theme; update ArticlePage">
+      <change afterPath="$PROJECT_DIR$/frontend/src/apis/ArticleApi.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/ArticlePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/ArticlePage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/Button.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/Button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/Header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/SaveArticlePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/SaveArticlePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/BaseApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/apis/BaseApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/CallbackRequestApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/apis/CallbackRequestApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/CategoryApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/apis/CategoryApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/ImageApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/apis/ImageApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/ItemApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/apis/ItemApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/ReserveApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/apis/ReserveApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/UserApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/apis/UserApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminReservesManagerPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/AdminReservesManagerPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CurrentUserReservesPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CurrentUserReservesPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ReservePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ReservePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/SaveArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/SaveArticlePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/ArticleDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/ArticleDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/SaveItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/SaveItemPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -318,7 +326,7 @@
       <workItem from="1689854270195" duration="24283000" />
       <workItem from="1690021676804" duration="187000" />
       <workItem from="1690295482516" duration="13093000" />
-      <workItem from="1690382217307" duration="5827000" />
+      <workItem from="1690382217307" duration="7338000" />
     </task>
     <task id="LOCAL-00010" summary="Create endpoint to get item by id">
       <created>1684149854242</created>
@@ -663,7 +671,7 @@
       <option name="project" value="LOCAL" />
       <updated>1685727431702</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

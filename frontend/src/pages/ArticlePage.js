@@ -7,7 +7,7 @@ import Api from "../Api";
 import NotFoundException from "../exception/NotFoundException";
 import {AccessLevel, AppContext} from "../contexts/AppContext";
 import FailedRequestException from "../exception/FailedRequestException";
-import imageApi from "../api/ImageApi";
+import imageApi from "../apis/ImageApi";
 
 function ArticlePage () {
 

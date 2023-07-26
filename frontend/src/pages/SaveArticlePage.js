@@ -3,15 +3,15 @@ import requiresUser from "../hoc/requiresUser";
 import "../css/SaveArticlePage.css";
 import React, {useContext, useEffect, useMemo, useRef, useState} from "react";
 import EditorJS from '@editorjs/editorjs';
-import Api from "../Api";
 import edjsHtml from "editorjs-html";
 import InvalidEntityException from "../exception/InvalidEntityException";
 import {useSearchParams} from "react-router-dom";
 import adminAccessOnly from "../hoc/adminAccessOnly";
 import Button from "../components/Button";
-import {ApiContext} from "../contexts/ApiContext";
 import {UpdatedUserContext} from "../contexts/UserContext";
 import {formattedDate} from "../constants";
+import articleApi from "../apis/ArticleApi";
+import imageApi from "../apis/ImageApi";
 
 function SaveArticlePage() {
 
@@ -44,11 +44,11 @@ function SaveArticlePage() {
                 config: {
                     uploader: {
                         uploadByFile(file) {
-                            return Api.uploadImage(file).then((imageDto) => {
+                            return imageApi.uploadImage(file).then((imageDto) => {
                                 return {
                                     success: 1,
                                     file: {
-                                        url: Api.getImageUrlByImageId(imageDto["id"])
+                                        url: imageApi.getImageUrlByImageId(imageDto["id"])
                                     }
                                 }
                             });
@@ -75,7 +75,7 @@ function SaveArticlePage() {
 
                 const editedArticleId = searchParams.get("id");
                 if(editedArticleId) {
-                    Api.getArticleById(Number(editedArticleId))
+                    articleApi.getById(Number(editedArticleId), abortController.signal)
                         .then(article => {
 
                             setName(article["name"]);
@@ -90,7 +90,6 @@ function SaveArticlePage() {
                                     } else {
                                         currentEditor.blocks.renderFromHTML(article["content"]);
                                     }
-                                    console.log("exec")
                                 }, 100);
                             })();
                         })
@@ -133,7 +132,7 @@ function SaveArticlePage() {
                     previewId: uploadedImageId
                 };
 
-                Api.updateArticle(requestDto)
+                articleApi.update(requestDto)
                     .then(articleDto => {
                         window.location.href = "/article/" + articleDto["id"];
                     })
@@ -149,7 +148,7 @@ function SaveArticlePage() {
                     previewId: uploadedImageId
                 };
 
-                Api.createArticle(requestDto)
+                articleApi.createArticle(requestDto)
                     .then(articleDto => {
                         window.location.href = "/article/" + articleDto["id"];
                     })
@@ -167,7 +166,6 @@ function SaveArticlePage() {
 
     const [uploadedImageId, setUploadedImageId] = useState(null);
     const [previewFileInputRef] = useState(useRef());
-    const { imageApi } = useContext(ApiContext);
 
     const handleImageUpload = (e) => {
         e.preventDefault();
@@ -225,7 +223,6 @@ function SaveArticlePage() {
             <div id="editor" className="article-content"></div>
 
             <Button value="Save" onClick={() => handleSaveClick()}/>
-            {/*<input type="button" className="button" value="Сохранить" onClick={() => handleSaveClick()}/>*/}
 
             <div className="errors-container">
                 {fieldErrors.map(fieldError => {
@@ -235,53 +232,6 @@ function SaveArticlePage() {
 
         </div>
     );
-    // return (
-    //     <div className="SaveArticlePage">
-    //         <h1 className="page-title">Создание статьи</h1>
-    //
-    //         <div className="section">
-    //             <p className="section-title">Превью статьи</p>
-    //
-    //             <input type="file"
-    //                    id="file-uploader"
-    //                    ref={previewFileInputRef}
-    //                    onChange={(e) => handleImageUpload(e)}/>
-    //
-    //             <img src={imageUrl}
-    //                  alt="article preview"
-    //                  className="article-preview"/>
-    //
-    //             <Button value="Выбрать другое" onClick={() => handleChooseAnotherPreviewClick()}/>
-    //
-    //             {uploadedImageId !== null &&
-    //                 <span id="reset-preview"
-    //                       className="link danger" onClick={() => setUploadedImageId(null)}>
-    //                     Сбросить
-    //                 </span>
-    //             }
-    //
-    //         </div>
-    //
-    //         <textarea ref={nameAreaRef}
-    //                   onChange={(e) => setName(e.target.value)}
-    //                   value={name}
-    //                   className="article-name-editor"
-    //                   placeholder="Название статьи"
-    //                   cols="30"
-    //                   rows="10">
-    //         </textarea>
-    //
-    //         <div id="editor"></div>
-    //
-    //         <input type="button" className="button" value="Сохранить" onClick={() => handleSaveClick()}/>
-    //
-    //         <div className="errors-container">
-    //             {fieldErrors.map(fieldError => {
-    //                 return <p key={fieldError.errorCode}>{fieldError.errorMessage}</p>
-    //             })}
-    //         </div>
-    //     </div>
-    // );
 }
 
 export default withHeaderAndFooter(adminAccessOnly(requiresUser(
