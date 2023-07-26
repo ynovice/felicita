@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter;
 @Setter
 public class ArticleDto {
 
-    private static final String DATE_TIME_PRESENTATION_FORMAT = "dd.MM.YYYY в HH:mm";
+    private static final String DATE_TIME_PRESENTATION_FORMAT = "YYYY.MM.dd";
 
     private Long id;
     private String createdAtPresentation;

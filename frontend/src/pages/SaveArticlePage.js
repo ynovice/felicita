@@ -10,6 +10,8 @@ import {useSearchParams} from "react-router-dom";
 import adminAccessOnly from "../hoc/adminAccessOnly";
 import Button from "../components/Button";
 import {ApiContext} from "../contexts/ApiContext";
+import {UpdatedUserContext} from "../contexts/UserContext";
+import {formattedDate} from "../constants";
 
 function SaveArticlePage() {
 
@@ -18,11 +20,15 @@ function SaveArticlePage() {
     const [name, setName] = useState("");
     const [nameAreaRef] = useState(React.createRef());
 
+    const [articleAuthor, setArticleAuthor] = useState("");
+    const [articleDatePresentation, setArticleDatePresentation] = useState("");
+
     useEffect(() => {
         nameAreaRef.current.style.height = "5px";
         nameAreaRef.current.style.height = (nameAreaRef.current.scrollHeight) + "px";
-
     }, [nameAreaRef, name])
+
+    const {user} = useContext(UpdatedUserContext);
 
     const DOMPurify = useMemo(() => require("dompurify")(window), []);
     const [editor, setEditor] = useState(null);
@@ -73,6 +79,8 @@ function SaveArticlePage() {
                         .then(article => {
 
                             setName(article["name"]);
+                            setArticleAuthor(article["author"])
+                            setArticleDatePresentation(article["createdAtPresentation"]);
                             setUploadedImageId(article["previewId"]);
 
                             (function loopedEditorUpdater() {
@@ -90,6 +98,9 @@ function SaveArticlePage() {
                             console.log(e)
                             alert("Произошла ошибка при попытке загрузить редактируемую статью");
                         });
+                } else {
+                    setArticleAuthor(user["username"]);
+                    setArticleDatePresentation(formattedDate());
                 }
 
                 return currentEditor;
@@ -98,12 +109,13 @@ function SaveArticlePage() {
             return new EditorJS({
                 holder: "editor",
                 placeholder: "Нажмите, чтобы начать писать статью",
+                minHeight: 50,
                 tools
             });
         });
 
         return () => abortController.abort();
-    }, [searchParams]);
+    }, [searchParams, user]);
 
     const [fieldErrors, setFieldErrors] = useState([]);
     const handleSaveClick = () => {
@@ -154,7 +166,6 @@ function SaveArticlePage() {
     }
 
     const [uploadedImageId, setUploadedImageId] = useState(null);
-
     const [previewFileInputRef] = useState(useRef());
     const { imageApi } = useContext(ApiContext);
 
@@ -182,51 +193,95 @@ function SaveArticlePage() {
 
     return (
         <div className="SaveArticlePage">
-            <h1 className="page-title">Создание статьи</h1>
 
-            <div className="section">
-                <p className="section-title">Превью статьи</p>
+            <div className="article-content-heading">
+                <div className="article-preview-container">
+                    <input type="file"
+                           id="file-uploader"
+                           ref={previewFileInputRef}
+                           onChange={(e) => handleImageUpload(e)}/>
+                    <img src={imageUrl}
+                         onClick={() => handleChooseAnotherPreviewClick()}
+                         className="article-preview"
+                         alt="Choose preview"/>
+                    <p>Click to choose preview</p>
+                </div>
+                <div className="article-heading-text">
+                    <textarea ref={nameAreaRef}
+                              onChange={(e) => setName(e.target.value)}
+                              value={name}
+                              placeholder="Article title"
+                              className="article-title"
+                              cols="30"
+                              rows="10">
 
-                <input type="file"
-                       id="file-uploader"
-                       ref={previewFileInputRef}
-                       onChange={(e) => handleImageUpload(e)}/>
+                    </textarea>
 
-                <img src={imageUrl}
-                     alt="article preview"
-                     className="article-preview"/>
-
-                <Button value="Выбрать другое" onClick={() => handleChooseAnotherPreviewClick()}/>
-
-                {uploadedImageId !== null &&
-                    <span id="reset-preview"
-                          className="link danger" onClick={() => setUploadedImageId(null)}>
-                        Сбросить
-                    </span>
-                }
-
+                    <div className="article-date">Author: {articleAuthor}</div>
+                    <div className="article-date">Written on {articleDatePresentation}</div>
+                </div>
             </div>
 
-            <textarea ref={nameAreaRef}
-                      onChange={(e) => setName(e.target.value)}
-                      value={name}
-                      className="article-name-editor"
-                      placeholder="Название статьи"
-                      cols="30"
-                      rows="10">
-            </textarea>
+            <div id="editor" className="article-content"></div>
 
-            <div id="editor"></div>
-
-            <input type="button" className="button" value="Сохранить" onClick={() => handleSaveClick()}/>
+            <Button value="Save" onClick={() => handleSaveClick()}/>
+            {/*<input type="button" className="button" value="Сохранить" onClick={() => handleSaveClick()}/>*/}
 
             <div className="errors-container">
                 {fieldErrors.map(fieldError => {
                     return <p key={fieldError.errorCode}>{fieldError.errorMessage}</p>
                 })}
             </div>
+
         </div>
     );
+    // return (
+    //     <div className="SaveArticlePage">
+    //         <h1 className="page-title">Создание статьи</h1>
+    //
+    //         <div className="section">
+    //             <p className="section-title">Превью статьи</p>
+    //
+    //             <input type="file"
+    //                    id="file-uploader"
+    //                    ref={previewFileInputRef}
+    //                    onChange={(e) => handleImageUpload(e)}/>
+    //
+    //             <img src={imageUrl}
+    //                  alt="article preview"
+    //                  className="article-preview"/>
+    //
+    //             <Button value="Выбрать другое" onClick={() => handleChooseAnotherPreviewClick()}/>
+    //
+    //             {uploadedImageId !== null &&
+    //                 <span id="reset-preview"
+    //                       className="link danger" onClick={() => setUploadedImageId(null)}>
+    //                     Сбросить
+    //                 </span>
+    //             }
+    //
+    //         </div>
+    //
+    //         <textarea ref={nameAreaRef}
+    //                   onChange={(e) => setName(e.target.value)}
+    //                   value={name}
+    //                   className="article-name-editor"
+    //                   placeholder="Название статьи"
+    //                   cols="30"
+    //                   rows="10">
+    //         </textarea>
+    //
+    //         <div id="editor"></div>
+    //
+    //         <input type="button" className="button" value="Сохранить" onClick={() => handleSaveClick()}/>
+    //
+    //         <div className="errors-container">
+    //             {fieldErrors.map(fieldError => {
+    //                 return <p key={fieldError.errorCode}>{fieldError.errorMessage}</p>
+    //             })}
+    //         </div>
+    //     </div>
+    // );
 }
 
 export default withHeaderAndFooter(adminAccessOnly(requiresUser(

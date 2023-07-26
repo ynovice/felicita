@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Update header design">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Switch SaveArticlePage and Button to dark theme; update ArticlePage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/ArticlePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/ArticlePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/Button.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/Button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/Header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/SaveArticlePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/SaveArticlePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/SaveArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/SaveArticlePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/ArticleDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/ynovice/felicita/model/dto/entity/ArticleDto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +76,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "migrate-from-jpa-to-jdbc",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "/home/cgw/Projects/felicita/frontend/public/ui/social",
+    "last_opened_file_path": "/home/cgw/Desktop/felicita",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -143,7 +151,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="npm.React Frontend">
+  <component name="RunManager" selected="Spring Boot.Backend Postgres">
     <configuration name="Backend Postgres" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <envs>
         <env name="SPRING_DATASOURCE_PASSWORD" value="felicita" />
@@ -309,7 +317,8 @@
       <workItem from="1689806256910" duration="2768000" />
       <workItem from="1689854270195" duration="24283000" />
       <workItem from="1690021676804" duration="187000" />
-      <workItem from="1690295482516" duration="4410000" />
+      <workItem from="1690295482516" duration="13093000" />
+      <workItem from="1690382217307" duration="5827000" />
     </task>
     <task id="LOCAL-00010" summary="Create endpoint to get item by id">
       <created>1684149854242</created>
@@ -654,7 +663,7 @@
       <option name="project" value="LOCAL" />
       <updated>1685727431702</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -683,8 +692,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create adminAccessOnly hoc" />
-    <MESSAGE value="Remove inCage hoc" />
     <MESSAGE value="Change header and footer design, add social links" />
     <MESSAGE value="Add preview field to Article model" />
     <MESSAGE value="Display preview at blog page" />
@@ -708,7 +715,9 @@
     <MESSAGE value="Update docker configuration" />
     <MESSAGE value="Replace ArticleRepository (JPA) with JdbcArticleDao" />
     <MESSAGE value="Update header design" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update header design" />
+    <MESSAGE value="Exclude uploaded images from git" />
+    <MESSAGE value="Switch SaveArticlePage and Button to dark theme; update ArticlePage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Switch SaveArticlePage and Button to dark theme; update ArticlePage" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

@@ -1,8 +1,3 @@
-:root {
-    --primary-black: #191D20;
-    --primary-milky: #E7D5C7;
-}
-
 .Header {
     width: 100%;
     display: flex;
