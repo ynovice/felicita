@@ -4,25 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Switch SaveArticlePage and Button to dark theme; update ArticlePage">
-      <change afterPath="$PROJECT_DIR$/frontend/src/apis/ArticleApi.js" afterDir="false" />
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Rename api folder to apis. Remove deprecated methods from SaveArticlePage.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/Api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/api/BaseApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/apis/BaseApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/api/CallbackRequestApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/apis/CallbackRequestApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/api/CategoryApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/apis/CategoryApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/api/ImageApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/apis/ImageApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/api/ItemApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/apis/ItemApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/api/ReserveApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/apis/ReserveApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/api/UserApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/apis/UserApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminReservesManagerPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/AdminReservesManagerPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CurrentUserReservesPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/CurrentUserReservesPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ReservePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ReservePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/SaveArticlePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/SaveArticlePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/SaveItemPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/SaveItemPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/ArticlePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/css/ArticlePage.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +143,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Backend Postgres">
+  <component name="RunManager" selected="npm.React Frontend">
     <configuration name="Backend Postgres" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <envs>
         <env name="SPRING_DATASOURCE_PASSWORD" value="felicita" />
@@ -326,7 +310,7 @@
       <workItem from="1689854270195" duration="24283000" />
       <workItem from="1690021676804" duration="187000" />
       <workItem from="1690295482516" duration="13093000" />
-      <workItem from="1690382217307" duration="7338000" />
+      <workItem from="1690382217307" duration="17438000" />
     </task>
     <task id="LOCAL-00010" summary="Create endpoint to get item by id">
       <created>1684149854242</created>
@@ -671,7 +655,7 @@
       <option name="project" value="LOCAL" />
       <updated>1685727431702</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -700,7 +684,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Change header and footer design, add social links" />
     <MESSAGE value="Add preview field to Article model" />
     <MESSAGE value="Display preview at blog page" />
     <MESSAGE value="Refactor CreateItemPage; fix images urls in constants" />
@@ -725,7 +708,8 @@
     <MESSAGE value="Update header design" />
     <MESSAGE value="Exclude uploaded images from git" />
     <MESSAGE value="Switch SaveArticlePage and Button to dark theme; update ArticlePage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Switch SaveArticlePage and Button to dark theme; update ArticlePage" />
+    <MESSAGE value="Rename api folder to apis. Remove deprecated methods from SaveArticlePage." />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename api folder to apis. Remove deprecated methods from SaveArticlePage." />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
