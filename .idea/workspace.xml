@@ -4,9 +4,115 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Update docker configuration">
+    <list default="true" id="10421323-7e7a-43b1-8cdc-8683c82c7184" name="Changes" comment="Update ArticlePage design">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.dockerignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/ui/banner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/ui/down-arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/ui/oauth/google.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/ui/oauth/vk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/ui/placeholders/article-placeholder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/ui/placeholders/item-placeholder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/ui/social/inst.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/ui/social/maps.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/ui/social/vk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/Api.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/EntityValidationResult.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/BaseApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/CallbackRequestApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/ImageApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/ItemApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/ReserveApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/UserApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Button.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/CartWidget.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Footer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ItemCategoriesSelector.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ItemCategoryFilter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ItemCheckboxFilter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ItemFiltersContainer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ItemPropertySelector.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ItemRadioFilter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ItemsCatalog.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/LogoutButton.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Pagintation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ReservesList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/SizesQuantitiesSelector.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/constants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/contexts/ApiContext.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/contexts/AppContext.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/contexts/UserContext.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/AdminPanelPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/AdminReservesManagerPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/ArticlePage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/BlogPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/Button.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/CallbackRequestsPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/CartPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/CartWidget.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/CatalogPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/ConfirmReservePage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/CurrentUserReservesPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/ErrorPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/Footer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/Header.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/ItemPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/ItemsCatalog.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/ItemsFilter.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/LoginPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/MainPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/PageWithHeaderAndFooter.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/Pagination.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/ProfilePage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/ReservePage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/ReservesList.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/SaveArticlePage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/SaveItemPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/css/item-checkbox-or-select-filter.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/exception/BadRequestException.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/exception/FailedRequestException.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/exception/InternalServerError.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/exception/InvalidEntityException.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/exception/NotAuthorizedException.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/exception/NotFoundException.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/exception/RedirectionException.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/exception/RequestAbortedException.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/hoc/adminAccessOnly.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/hoc/requiresUser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/hoc/withHeaderAndFooter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminPanelPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/AdminReservesManagerPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ArticlePage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/BlogPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CallbackRequestsPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CartPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CatalogPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ConfirmReservePage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/CurrentUserReservesPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ErrorPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ItemPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/LoginPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/MainPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ReservePage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/SaveArticlePage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/SaveItemPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,16 +123,21 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
-        <option value="Class" />
         <option value="CSS File" />
         <option value="Dockerfile" />
         <option value="Liquibase Changelog" />
+        <option value="Interface" />
+        <option value="Class" />
         <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -43,6 +154,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2P63sDXABX79Sl4zSJMCZfRb5uP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -51,41 +165,41 @@
     <option name="showMembers" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "/home/cgw/Projects/felicita/frontend/public/ui/social",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15586546",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "spring.configuration.checksum": "c15d1e866df42e567cedc944647c5b1b",
-    "ts.external.directory.path": "/snap/intellij-idea-ultimate/430/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/cgw/Projects/felicita-backend&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15586546&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;c15d1e866df42e567cedc944647c5b1b&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/snap/intellij-idea-ultimate/442/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql",
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;,
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.github.ynovice.felicita.repository" />
@@ -138,14 +252,14 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Backend Postgres">
+  <component name="RunManager" selected="Docker.Dockerfile">
     <configuration name="Backend Postgres" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <envs>
         <env name="SPRING_DATASOURCE_PASSWORD" value="felicita" />
         <env name="SPRING_DATASOURCE_URL" value="jdbc:postgresql://localhost:5432/felicita" />
         <env name="SPRING_DATASOURCE_USERNAME" value="felicita" />
       </envs>
-      <module name="felicita" />
+      <module name="felicita-backend" />
       <selectedOptions>
         <option name="spring.boot.profiles" visible="false" />
       </selectedOptions>
@@ -169,6 +283,14 @@
       <method v="2">
         <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="clean package" />
       </method>
+    </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
     </configuration>
     <configuration name="Postgres Docker Container" type="docker-deploy" factoryName="docker-image" server-name="Docker">
       <deployment type="docker-image">
@@ -205,19 +327,17 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="React Frontend" type="js.build_tools.npm">
-      <package-json value="$PROJECT_DIR$/frontend/package.json" />
-      <command value="start" />
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Docker.Postgres Docker Container" />
       <item itemvalue="Docker.Backend (Postgres + API)" />
-      <item itemvalue="npm.React Frontend" />
+      <item itemvalue="Docker.Dockerfile" />
       <item itemvalue="Spring Boot.Backend Postgres" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.Dockerfile" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -301,6 +421,13 @@
       <workItem from="1688382207144" duration="5532000" />
       <workItem from="1689408077359" duration="7336000" />
       <workItem from="1689780003077" duration="8532000" />
+      <workItem from="1689806256910" duration="2768000" />
+      <workItem from="1689854270195" duration="24283000" />
+      <workItem from="1690021676804" duration="187000" />
+      <workItem from="1690295482516" duration="13093000" />
+      <workItem from="1690382217307" duration="17742000" />
+      <workItem from="1696072015053" duration="2776000" />
+      <workItem from="1696075691026" duration="1655000" />
     </task>
     <task id="LOCAL-00010" summary="Create endpoint to get item by id">
       <created>1684149854242</created>
@@ -645,7 +772,7 @@
       <option name="project" value="LOCAL" />
       <updated>1685727431702</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -674,12 +801,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactor CreateItemPage&#10;&#10;Replace 'a' tags with 'span' tags where links weren't actually links." />
-    <MESSAGE value="Get rid of deprecated UserContext; Create BaseApi, UserApi and ApiContext." />
-    <MESSAGE value="Create adminAccessOnly hoc" />
-    <MESSAGE value="Remove inCage hoc" />
-    <MESSAGE value="Change header and footer design, add social links" />
-    <MESSAGE value="Add preview field to Article model" />
     <MESSAGE value="Display preview at blog page" />
     <MESSAGE value="Refactor CreateItemPage; fix images urls in constants" />
     <MESSAGE value="Refactor ItemServiceImpl.createItem" />
@@ -699,7 +820,13 @@
     <MESSAGE value="Minor changes.&#10;&#10;Remove MySQL application properties profile.&#10;&#10;Remove integration between Spring and Liquibase.&#10;&#10;Move sensitive data from application properties to environment variables. &#10;&#10;Stop storing intellij run configs as project files." />
     <MESSAGE value="Update README.md" />
     <MESSAGE value="Update docker configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update docker configuration" />
+    <MESSAGE value="Replace ArticleRepository (JPA) with JdbcArticleDao" />
+    <MESSAGE value="Update header design" />
+    <MESSAGE value="Exclude uploaded images from git" />
+    <MESSAGE value="Switch SaveArticlePage and Button to dark theme; update ArticlePage" />
+    <MESSAGE value="Rename api folder to apis. Remove deprecated methods from SaveArticlePage." />
+    <MESSAGE value="Update ArticlePage design" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update ArticlePage design" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

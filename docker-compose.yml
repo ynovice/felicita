@@ -10,14 +10,6 @@ services:
       - POSTGRES_USER=felicita
       - POSTGRES_PASSWORD=felicita
 
-  frontend:
-    image: 'felicita-frontend'
-    build:
-      context: frontend
-    container_name: felicita-frontend-container
-    ports:
-      - '3000:3000'
-
   backend:
     image: 'felicita-backend'
     build:
